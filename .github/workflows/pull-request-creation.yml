@@ -1,0 +1,41 @@
+name: Pull Request Creation
+on:  
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  pr-creation:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.86.1'
+          extended: true
+      
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run Hugo
+        run: hugo server -s exampleSite/ --themesDir=../.. --disableFastRender &
+        
+      - name: Install puppeteer-headful
+        uses: mujo-code/puppeteer-headful@master
+        env:
+          CI: 'true'
+      - name: Take screenshots
+        uses: flameddd/screenshots-ci-action@v1.1.1
+        with:
+          url: http://localhost:1313
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          path: screenshots
+          name: Download-screenshots
+      
