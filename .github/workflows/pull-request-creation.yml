@@ -46,7 +46,7 @@ jobs:
         run: find ./screenshots -name '^desktopPage(?!:1920|1280).*\.jpeg' -delete
 
       - name: Post screenshots to pull request
-        uses: edunad/action-image@v1.0.0
+        uses: edunad/actions-image@v1.0.1
         with:
           path: './screenshots/*.jpeg'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
