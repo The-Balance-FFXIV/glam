@@ -43,7 +43,7 @@ jobs:
           devices: iPhone X
 
       - name: Remove unneeded screenshots
-        run: find ./screenshots -type f ! -name "*desktopPage1920*.jpeg" -a ! -name "*desktopPage1280*.jpeg" -a ! -name "iPhone_X*.jpeg"\) -delete
+        run: find ./screenshots -type f ! -name "*desktopPage1920*.jpeg" -a ! -name "*desktopPage1280*.jpeg" -a ! -name "iPhone_X*.jpeg" -delete
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
