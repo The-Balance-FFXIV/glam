@@ -42,8 +42,12 @@ jobs:
           url: http://localhost:1313
           devices: iPhone X
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+      - name: Remove unneeded screenshots
+        run: find ./screenshots -name '^desktopPage(?!:1920|1280).*\.jpeg' -delete
+
+      - name: Post screenshots to pull request
+        uses: edunad/action-image@v1.0.0
         with:
-          path: screenshots
-          name: screenshots
+          path: './screenshots/*.jpeg'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          title: 'Screenshots of example site'
