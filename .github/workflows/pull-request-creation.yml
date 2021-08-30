@@ -18,24 +18,32 @@ jobs:
         with:
           hugo-version: '0.86.1'
           extended: true
-      
-      - name: Install dependencies
-        run: yarn install
 
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.1'
+
+      - name: Install dependencies
+        run: |
+          yarn
+          npm install -g postcss-cli autoprefixer postcss tailwindcss
       - name: Run Hugo
         run: hugo server -s exampleSite/ --themesDir=../.. --disableFastRender &
-        
+
       - name: Install puppeteer-headful
         uses: mujo-code/puppeteer-headful@master
         env:
           CI: 'true'
+
       - name: Take screenshots
         uses: flameddd/screenshots-ci-action@v1.1.1
         with:
           url: http://localhost:1313
+          devices: iPhone X
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
           path: screenshots
-          name: Download-screenshots
-      
+          name: screenshots
