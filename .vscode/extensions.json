@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "budparr.language-hugo-vscode",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "EditorConfig.EditorConfig"
     ]
 }
