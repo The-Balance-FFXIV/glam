@@ -7,7 +7,7 @@ Usage:
 <!-- #5865F2 is discord's offical "blurple" color -->
 <!-- Large, medium, small breakpoints are arbitrary. Currently, just using tailwind width classes, but this can be tweaked however needed. -->
 <a {{ with .Get "invite_code" }} href="https://discord.gg/{{ . }}" {{ end }} >
-<img src="/img/Discord-Logo+Wordmark-White.png"
+<img src="/theme-assests/discord-large.png"
 {{ $size := .Get "size" }}
 {{ if $size | eq "large"}}
 	class="w-max"
