@@ -1,18 +1,19 @@
-<!--
+{{/*
 Shortcode for Discord Invite
 Usage:
 < discordInvite invite_code=<> size=<> color=<> image=<> >
- -->
+ */}}
 
 <!-- #5865F2 is discord's offical "blurple" color -->
 <!-- Large, medium, small breakpoints are arbitrary. Currently, just using tailwind width classes, but this can be tweaked however needed. -->
 <a {{ with .Get "invite_code" }} href="https://discord.gg/{{ . }}" {{ end }} >
 <img src="/img/Discord-Logo+Wordmark-White.png"
-{{ if .Get "size" | eq "large"}}
+{{ $size := .Get "size" }}
+{{ if $size | eq "large"}}
 	class="w-max"
-{{ else if .Get "size" | eq "medium" }}
+{{ else if $size | eq "medium" }}
 	class="w-2/3"
-{{ else if .Get "size" | eq "small" }}
+{{ else if $size| eq "small" }}
 	class="w-1/3"
 {{ end }}
 {{ if .Get "image" }}
