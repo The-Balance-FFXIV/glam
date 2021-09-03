@@ -1,0 +1,20 @@
+<div class="tabbed">
+    {{/* TODO: make some of this shortcodes */}}
+    {{/* TODO: make a data table for this stuff */}}
+    {{ $roles := slice "tanks" "healers" "melee" "ranged" "caster" }}
+    {{ range $index, $role := $roles }}
+        <input type="radio" id="tab-{{ $role }}" name="css-tabs" {{ if eq $index 0 }}checked{{ end }}>
+    {{ end }}
+    
+    <ul class="tabs">
+        {{ range $role := $roles}}
+        <li class="tab"><label for="tab-{{ $role }}">{{ $role | title }}</label></li>
+        {{ end }}
+    </ul>
+    
+    {{ range $role := $roles }}
+    <div class="tab-content">
+        Info about {{ $role | title }}
+    </div>
+    {{ end }}
+</div>
