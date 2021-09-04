@@ -1,20 +1,18 @@
 <div class="tabbed">
-    {{/* TODO: make some of this shortcodes */}}
-    {{/* TODO: make a data table for this stuff */}}
-    {{ $roles := slice "tanks" "healers" "melee" "ranged" "caster" }}
+    {{ $roles := .Site.Data.frontpage.slider.roles }}
     {{ range $index, $role := $roles }}
         <input type="radio" id="tab-{{ $role }}" name="css-tabs" {{ if eq $index 0 }}checked{{ end }}>
     {{ end }}
     
     <ul class="tabs">
-        {{ range $role := $roles}}
-        <li class="tab"><label for="tab-{{ $role }}">{{ $role | title }}</label></li>
+        {{ range $role := $roles }}
+            {{ $map := index $.Site.Data.frontpage.slider $role }} 
+            <li class="tab"><label for="tab-{{ $role }}">{{ index $map "name" }}</label></li>
         {{ end }}
     </ul>
     
     {{ range $role := $roles }}
-    <div class="tab-content">
-        Info about {{ $role | title }}
-    </div>
+        {{ $map := index $.Site.Data.frontpage.slider $role }}
+        {{ partial "components/role_slider/content.html" $map }}
     {{ end }}
 </div>
