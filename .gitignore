@@ -143,3 +143,9 @@ dist
 # Ignore all local history of files
 .history
 .ionide
+static/theme-assets/discord-large1.png
+package-lock.json
+exampleSite/config.toml
+assets/css/main.css
+theme.toml
+package.json
