@@ -23,4 +23,8 @@ Glam is a theme for The Balance website
 | Far   | Baz         |
 {{% /tabs/tabContent %}}
 
+{{% tabs/tabContent %}}
+I don't know what to put here.
+{{% /tabs/tabContent %}}
+
 {{< /tabs/tabHeader >}}
