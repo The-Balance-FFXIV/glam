@@ -1,0 +1,58 @@
+name: Pull Request Creation
+on:  
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  pr-creation:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.86.1'
+          extended: true
+
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.1'
+
+      - name: Install dependencies
+        run: |
+          yarn
+          npm install -g postcss-cli autoprefixer postcss tailwindcss
+      - name: Run Hugo
+        run: hugo server -s exampleSite/ --themesDir=../.. --disableFastRender &
+
+      - name: Install puppeteer-headful
+        uses: mujo-code/puppeteer-headful@master
+        env:
+          CI: 'true'
+
+      - name: Take screenshots
+        uses: flameddd/screenshots-ci-action@v1.1.1
+        with:
+          url: http://localhost:1313
+          devices: iPhone X
+
+      - name: Remove unneeded screenshots
+        run: find ./screenshots -type f ! -name "*desktopPage1920*.jpeg" -a ! -name "*desktopPage1280*.jpeg" -a ! -name "iPhone_X*.jpeg" -delete
+
+      - name: Rename generated screenshots
+        run: find ./screenshots -type f -name "*.jpeg" | sed -e "p;s/-.*/.jpeg/" | xargs -n2 mv
+
+      - name: Save PR number
+        run: |
+          mkdir -p ./pr
+          echo ${{ github.event.number }} > ./screenshots/PR_NR
+      - uses: actions/upload-artifact@v2
+        with:
+          name: screenshots
+          path: screenshots/
