@@ -45,8 +45,35 @@ jobs:
       - name: Remove unneeded screenshots
         run: find ./screenshots -type f ! -name "*desktopPage1920*.jpeg" -a ! -name "*desktopPage1280*.jpeg" -a ! -name "iPhone_X*.jpeg" -delete
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+      - name: Rename generated screenshots
+        run: find ./screenshots -type f -name "*.jpeg" | sed -e "p;s/-.*/.jpeg/" | xargs -n2 mv
+
+      - name: Upload a 1920x1080 picture
+        uses: devicons/public-upload-to-imgur@v2.2.1
+        id: imgur_1920x1080
         with:
-          path: screenshots
-          name: screenshots
+          path: ./screenshots/*1920x1080* 
+          client_id: ${{secrets.IMGUR_CLIENT_ID}} 
+      - name: Upload a 1280x720 picture
+        uses: devicons/public-upload-to-imgur@v2.2.1
+        id: imgur_1280x720
+        with:
+          path: ./screenshots/*1280x720* 
+          client_id: ${{secrets.IMGUR_CLIENT_ID}} 
+      - name: Upload an iPhone X picture
+        uses: devicons/public-upload-to-imgur@v2.2.1
+        id: imgur_iPhoneX
+        with:
+          path: ./screenshots/*iPhone_X*
+          client_id: ${{secrets.IMGUR_CLIENT_ID}} 
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            ## 1920x1080
+            ![1920x1080](${{ fromJSON(steps.imgur_1920x1080.outputs.imgur_urls)[0] }})
+            ## 1280x720
+            ![1280x720](${{ fromJSON(steps.imgur_1280x720.outputs.imgur_urls)[0] }})
+            ## iPhone X
+            ![iPhoneX](${{ fromJSON(steps.imgur_iPhoneX.outputs.imgur_urls)[0] }})
