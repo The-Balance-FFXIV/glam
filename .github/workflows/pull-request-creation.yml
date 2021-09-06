@@ -1,8 +1,6 @@
 name: Pull Request Creation
 on:  
-  pull_request_target:
-    branches:
-      - main
+  pull_request_target
 
 jobs:
   pr-creation:
@@ -11,6 +9,8 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
         with:
+          ref: ${{github.event.pull_request.head.ref}}
+          repository: ${{github.event.pull_request.head.repo.full_name}}
           fetch-depth: 0
 
       - name: Setup Hugo
