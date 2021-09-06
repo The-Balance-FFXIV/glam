@@ -1,6 +1,4 @@
 <div class="tabbed">
-    {{/* TODO: make some of this shortcodes */}}
-    {{/* TODO: make a data table for this stuff */}}
     {{ $tabs := .Params }}
     {{ range $index, $tab := $tabs }}
         <input type="radio" id="tab-{{ $tab }}" name="css-tabs" {{ if eq $index 0 }}checked{{ end }}>
