@@ -58,4 +58,32 @@ It unfortunately also means we're limited to 5 tabs at current.
 .tabbed [type="radio"]:nth-of-type(4):checked ~ .tab-content:nth-of-type(4),
 .tabbed [type="radio"]:nth-of-type(5):checked ~ .tab-content:nth-of-type(5) {
 	@apply block;
-} 
+}
+
+/*
+w-1/5 is just being used for testing without a layout
+*/
+.card {
+	@apply flex flex-col w-1/5;
+}
+
+.card-content {
+	@apply flex flex-row font-sans gap-3;
+}
+
+.card-content-border {
+	@apply border-l-8 pl-3 pt-6;
+	border-color: #3871c2;
+}
+
+.card-content-title {
+	@apply font-bold text-white text-lg pt-3;
+}
+
+.card-content-patch {
+	@apply font-bold;
+}
+
+.card-content-updated {
+	@apply font-bold pb-3;
+}
