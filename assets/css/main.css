@@ -67,7 +67,7 @@ It unfortunately also means we're limited to 5 tabs at current.
 w-1/5 is just being used for testing without a layout
 */
 .card {
-	@apply flex flex-col w-1/5;
+	@apply flex flex-col;
 }
 
 .card-content {
