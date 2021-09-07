@@ -1,0 +1,9 @@
+<div class="tab-content">
+    <h1><img src={{ .icon }} /> {{ .name }}</h1>
+    <div>
+        {{ .role_text_md | markdownify }}
+    </div>
+    {{ range (index . "jobs") }}
+        {{ partial "components/role_slider/job.html" . }}
+    {{ end }}
+</div>
