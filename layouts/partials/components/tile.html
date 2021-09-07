@@ -1,0 +1,23 @@
+<div class="tile-block flex flex-col w-1/5">
+	{{ if isset . "ImagePath" }}
+	<div>
+		<img class="w-full" src="{{ .ImagePath }}" />
+	</div>
+	{{ end }}
+	{{ range $element_index, $element_value := .Items}}
+	{{ $color := "#323f4b"}}
+	{{ if eq (mod $element_index 2) 1 }}
+		{{ $color = "#2a3641"}}
+	{{ end }}
+	<div class="flex flex-row font-sans gap-3" style="background-color: {{ $color }};">
+		<div class="border-l-8 pl-3 pt-6" style="border-color: #3871c2;">
+			<div><img src="{{ $element_value.Icon }}" /></div>
+		</div>
+		<div>
+			<div class="font-bold text-white text-lg pt-3">{{ $element_value.Name }}</div>
+			<div class="font-bold" style="color: #7b8794 ">Patch: {{ $element_value.Patch }}</div>
+			<div class="font-bold pb-3" style="color: #7b8794 ">Updated: {{ $element_value.Updated }}</div>
+		</div>
+	</div>
+	{{ end }}
+</div>
