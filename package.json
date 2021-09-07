@@ -1,0 +1,16 @@
+{
+  "name": "glam",
+  "version": "1.0.0",
+  "description": "\"Glam is a hugo theme for The Balance website\"",
+  "main": "index.js",
+  "repository": "https://github.com/The-Balance-FFXIV/glam",
+  "author": "Oowazu Nonowazu <oowazu.nonowazu@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "autoprefixer": "^10.3.4",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.2.9"
+  }
+}
