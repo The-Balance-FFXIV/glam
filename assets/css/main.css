@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
+* TABS
+*/
 .tabbed {
 	@apply overflow-x-hidden my-4 pb-2;
 }

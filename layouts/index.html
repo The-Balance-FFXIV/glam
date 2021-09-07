@@ -1,6 +1,7 @@
 {{ define "main" }}
 	<h1>Home</h1>
 	{{ .Content }}
+	{{ partial "components/role_slider.html" . }}
 	{{ $item1 := dict "Icon" "https://xivapi.com/i/003000/003410.png" "Name" "Leveling Guide" "Patch" "5.3" "Updated" "23 Jul 2021"}}
 	{{ $item2 := dict "Icon" "https://xivapi.com/i/003000/003410.png" "Name" "Skills Overview" "Patch" "5.3" "Updated" "23 Jul 2021"}}
 	{{ $content := dict "ImagePath" "https://via.placeholder.com/350x100" "Items" (slice $item1 $item2) }}
