@@ -2,7 +2,7 @@ baseURL = "https://example.com"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "Balance Glam"
-theme = "glam_dev"
+theme = "glam"
 
 [menu]
   [[menu.main]]
