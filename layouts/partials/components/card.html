@@ -9,15 +9,31 @@
 	{{ if eq (mod $element_index 2) 1 }}
 		{{ $color = "#2a3641"}}
 	{{ end }}
-	<div class="card-content" style="background-color: {{ $color }};">
-		<div class="card-content-border">
-			<div><img src="{{ $element_value.Icon }}" /></div>
+	<div {{if isset $element_value "Patch"}}class="card-flex-col-wrapper" {{ else }}class="card-flex-col-wrapper pl-3 pr-3"{{end}} style="background-color: #323f4b; border-color: #3871c2;">
+		<div {{if isset $element_value "Patch"}}class="card-content pl-3 pr-3 items-center" {{ else }}class="card-content pt-3 pb-3 items-center"{{end}} style="background-color: {{ $color }};">
+			<div>
+				<div><img src="{{ $element_value.Icon }}" /></div>
+			</div>
+			<div>
+				<div class="card-content-title">{{ upper $element_value.Name }}</div>
+					{{ if isset $element_value "Patch"}}
+						<div class="card-content-patch" style="color: #7b8794 ">Patch: {{ upper $element_value.Patch }}</div>
+					{{ end }}
+					{{ if isset $element_value "Updated"}}
+						<div class="card-content-updated" style="color: #7b8794 ">Updated: {{ upper $element_value.Updated }}</div>
+					{{ end }}
+			</div>
 		</div>
-		<div>
-			<div class="card-content-title">{{ $element_value.Name }}</div>
-			<div class="card-content-patch" style="color: #7b8794 ">Patch: {{ $element_value.Patch }}</div>
-			<div class="card-content-updated" style="color: #7b8794 ">Updated: {{ $element_value.Updated }}</div>
+		{{ if isset $element_value "Extra"}}
+		<div class="extra-content text-white pl-3 pb-3">
+			{{ $element_value.Extra }}
 		</div>
+		{{ end }}
+		{{ if isset $element_value "Link" }}
+		<div class="text-right pt-1 pb-3">
+			<a class="text-link-orange font-bold" href="{{ $element_value.Link.Value }}">{{ $element_value.Link.Text }} ≫</a>
+		</div>
+		{{ end }}
 	</div>
 	{{ end }}
 </div>

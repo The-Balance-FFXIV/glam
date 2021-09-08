@@ -72,15 +72,20 @@ w-1/5 is just being used for testing without a layout
 
 .card-content {
 	@apply flex flex-row font-sans gap-3;
+	border-color: #2a3641;
 }
 
 .card-content-border {
 	@apply border-l-8 pl-3 pt-6;
 	border-color: #3871c2;
 }
+.card-content-border-no-info {
+	@apply pt-3 pb-3;
+	border-color: #3871c2;
+}
 
 .card-content-title {
-	@apply font-bold text-white text-lg pt-3;
+	@apply font-bold text-white text-lg pt-3 pr-3;
 }
 
 .card-content-patch {
@@ -89,4 +94,7 @@ w-1/5 is just being used for testing without a layout
 
 .card-content-updated {
 	@apply font-bold pb-3;
+}
+.card-flex-col-wrapper{
+	@apply flex flex-col divide-y-2 border-l-8 divide-line-divide-color;
 }
