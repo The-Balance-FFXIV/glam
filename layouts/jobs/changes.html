@@ -1,0 +1,6 @@
+{{ define "main" }}
+    {{ range sort .Params.changes "patch" "desc" }}
+        <h2>{{ .patch }}</h2>
+        {{ .description | markdownify }}
+    {{ end }}
+{{ end }}

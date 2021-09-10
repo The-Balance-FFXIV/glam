@@ -1,0 +1,6 @@
+{{ define "main" }}
+    {{ range .Params.bis }}
+        <h2><a href="{{ .link }}">{{ .name }}</a></h2>
+        {{ .description | markdownify }}
+    {{ end }}
+{{ end }}

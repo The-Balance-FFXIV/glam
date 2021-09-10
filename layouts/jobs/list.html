@@ -1,5 +1,5 @@
 {{ define "main" }}
-<section class="grid grid-cols-3 grid-rows-4">
+<section class="grid grid-cols-3 grid-rows-4 gap-3">
 	<div class="col-span-2">
 		{{ .Content }}
 	</div>
@@ -7,9 +7,47 @@
 		<h1>Character image</h1>
 		<img src="" />
 	</div>
-	<div class="row-span-2"><h1>Job Fundamentals</h1></div>
-	<div class="row-span-2"><h1>Basics</h1></div>
+	<div class="row-span-2">
+		<h1>Job Fundamentals</h1>
+		<div>
+			{{ with .Site.GetPage "leveling-guide" }}
+				<h3>Leveling guide</h3>
+				<p>Patch: {{ .Params.patch }}</p>
+				<p>Updated: {{ time.Format "2 Jan, 2006" .Params.lastmod }}</p>
+			{{ end }}
+		</div>
+		<div>
+			{{ with .Site.GetPage "skills-overview" }}
+				<h3>Skills Overview</h3>
+				<p>Patch: {{ .Params.patch }}</p>
+				<p>Updated: {{ time.Format "2 Jan, 2006" .Params.lastmod }}</p>
+			{{ end }}
+		</div>
+	</div>
+	<div class="row-span-2">
+		<div>
+			{{ with .Site.GetPage "basic-guide" }}
+				<h3>Basic Guide (LV 90)</h3>
+				<p>Patch: {{ .Params.patch }}</p>
+				<p>Updated: {{ time.Format "2 Jan, 2006" .Params.lastmod }}</p>
+			{{ end }}
+		</div>
+		<div>
+			{{ with .Site.GetPage "openers" }}
+				<h3>Openers (LV 90)</h3>
+				<p>Patch: {{ .Params.patch }}</p>
+				<p>Updated: {{ time.Format "2 Jan, 2006" .Params.lastmod }}</p>
+			{{ end }}
+		</div>
+	</div>
 	<div class="row-span-2"><h1>Most Recent Changes</h1></div>
-	<div class="col-span-2"><h1>FAQ</h1></div>
+	<div class="col-span-2">
+		<h1>FAQ</h1>
+		{{ with .Site.GetPage "faq" }}
+			{{ range $index, $qna := first 2 .Params.qna }}
+				<p><a href="./faq/#q{{ $index }}">{{ $qna.question }}</a></p>
+			{{ end }}
+		{{ end }}
+	</div>
 </section>
 {{ end }}
