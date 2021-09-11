@@ -1,0 +1,50 @@
+<div class="card">
+	{{ if isset . "image" }}
+	<div>
+		<img class="w-full" src="{{ .image }}" />
+	</div>
+	{{ end }}
+	<div class="bg-card-background-color">
+		{{ range $element_value := .items}}
+			<div {{if isset $element_value "patch"}}class="card-flex-col-wrapper" {{ else }}class="card-flex-col-wrapper pl-3 pr-3"{{end}}>
+				{{ if isset $element_value "inlineLink"}}<a href="{{ $element_value.inlineLink }}">{{ end }}
+				<div {{if isset $element_value "patch"}}class="card-content pl-3 pr-3 items-center" {{ else }}class="card-content pt-3 pb-3 items-center"{{end}}>
+					<div>
+						<div><img src="{{ $element_value.icon }}" /></div>
+					</div>
+					<div>
+						<div class="card-content-title">{{ upper $element_value.name }}</div>
+							{{ if isset $element_value "patch"}}
+								<div class="card-content-patch">Patch: {{ upper $element_value.patch }}</div>
+							{{ end }}
+							{{ if isset $element_value "updated"}}
+								<div class="card-content-updated">Updated: {{ $element_value.updated }}</div>
+							{{ end }}
+					</div>
+				</div>
+				{{ if isset $element_value "extra"}}
+				<div class="extra-content">
+					{{ $element_value.extra }}
+				</div>
+				{{ end }}
+				{{ if isset $element_value "extraList" }}
+					{{ range $listValue := $element_value.extraList }}
+					<div class="extra-list-item">
+						{{ $listValue }}
+					</div>
+					{{end}}
+				{{ end }}
+				{{/*  At this point, consider breaking this function apart into individual components  */}}
+				{{ if isset $element_value "bis" }}
+					{{ partial "components/bis_table.html" $element_value }}
+				{{end}}
+				{{ if isset $element_value "link" }}
+				<div class="content-link">
+					<a href="{{ $element_value.link.value }}">{{ $element_value.link.text }} ≫</a>
+				</div>
+				{{ end }}
+				{{ if isset $element_value "inlineLink"}}</a>{{ end }}
+			</div>
+		{{ end }}
+	</div>
+</div>

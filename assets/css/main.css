@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /*
 * TABS
 */
@@ -62,4 +61,64 @@ It unfortunately also means we're limited to 5 tabs at current.
 .tabbed [type="radio"]:nth-of-type(4):checked ~ .tab-content:nth-of-type(4),
 .tabbed [type="radio"]:nth-of-type(5):checked ~ .tab-content:nth-of-type(5) {
 	@apply block;
+}
+
+/*
+w-1/5 is just being used for testing without a layout
+*/
+.card {
+	@apply flex flex-col;
+}
+
+.card-content {
+	@apply flex flex-row font-sans gap-3;
+	border-color: #2a3641;
+}
+
+.card-content-border {
+	@apply border-l-8 pl-3 pt-6;
+	border-color: #3871c2;
+}
+.card-content-border-no-info {
+	@apply pt-3 pb-3;
+	border-color: #3871c2;
+}
+
+.card-content-title {
+	@apply font-bold text-white text-lg pt-3 pr-3;
+}
+
+.card-content-patch {
+	@apply font-bold text-card-header-text-color;
+}
+
+.card-content-updated {
+	@apply font-bold text-card-header-text-color pb-3;
+}
+.card-flex-col-wrapper{
+	@apply flex flex-col divide-y-2 border-l-8 divide-line-divide-color border-card-border-color;
+}
+
+.card-flex-col-wrapper:nth-child(even){
+	@apply bg-card-even-color;
+}
+
+.extra-content{
+	@apply text-white pl-3 pb-3;
+}
+
+.content-link{
+	@apply text-right pt-1 pb-3 text-link-orange font-bold;
+}
+
+.extra-list-item{
+	@apply py-1.5 text-white;
+}
+
+.extra-list-item a{
+	@apply text-link-orange font-semibold;
+}
+
+.bis-item {
+	@apply text-link-orange font-semibold;
 }

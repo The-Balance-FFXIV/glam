@@ -1,0 +1,33 @@
+{{ $bisLen := len .bis}}
+<div class="grid grid-cols-2 grid-rows-1">
+    <div class="col-span-1 pl-3">
+        <div class="text-white font-bold py-3">CURRENT TIER</div>
+        {{ $rowCountString :=  ""}}
+        {{ if eq (mod $bisLen 2) 0}}
+            {{ $rowCountString = printf "grid-rows-%d" $bisLen}}
+        {{ else }}
+            {{/*  Goal: round up to the nearest even number if odd. Hugo does integer division by default so we use this to accomplish the goal
+                Note, if there is only 1 item this is weird behavior.
+                This section may also be uneed because the ultimate list will control the size of this div anyways... */}}
+            {{ $rowCountString = printf "grid-rows-%d" (mul (div $bisLen 2) 2) }}
+        {{ end }}
+        <div class={{print "grid grid-cols-2 " $rowCountString " gap-3"}}>
+            {{ range $bisIndex, $bisName := .bis }}
+                {{ $bisItemClass := "bis-item" }}
+                {{/*  {{ if eq $bisIndex $bisLen }}
+                    {{ $bisItemClass = (print $bisItemClass " col-span-2") }}
+                {{ end }}  */}}
+                {{/*  TODO: figure out a better id than the name. Its too long and has to many spaces to be a clean link.  */}}
+                <div class="bis-item"><a href={{ print "best-in-slot/#" $bisName.name }}>{{ $bisName.name }} ≫</a></div>
+            {{ end }}
+        </div>
+    </div>
+    <div>
+        <div class="py-3 text-white font-bold">ULTIMATES</div>
+        <div class="grid grid-cols-1 grid-rows-4 gap-3">
+            {{ range $bisName := .bis }}
+                <div class="bis-item"><a href={{ print "best-in-slot/#" $bisName.name }}>{{ $bisName.name }} ≫</a></div>
+            {{ end }}
+        </div>
+    </div>
+</div>
