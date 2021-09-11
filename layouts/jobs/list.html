@@ -9,45 +9,65 @@
 	</div>
 	<div class="row-span-2">
 		<h1>Job Fundamentals</h1>
-		<div>
-			{{ with .Page.GetPage "leveling-guide" }}
-				<h3>Leveling guide</h3>
-				<p>Patch: {{ .Params.patch }}</p>
-				<p>Updated: {{ time.Format "2 Jan, 2006" .Params.lastmod }}</p>
-			{{ end }}
-		</div>
-		<div>
-			{{ with .Page.GetPage "skills-overview" }}
-				<h3>Skills Overview</h3>
-				<p>Patch: {{ .Params.patch }}</p>
-				<p>Updated: {{ time.Format "2 Jan, 2006" .Params.lastmod }}</p>
-			{{ end }}
-		</div>
+		{{ $levelingInfo := dict "" "" }}
+		{{ $skillsInfo := dict "" "" }}
+		{{ with .Page.GetPage "leveling-guide" }}
+				{{ $levelingInfo = dict "icon" "" "name" "Leveling Guide" "patch" .Params.patch "updated" (time.Format "2 Jan, 2006" .Params.lastmod) }}
+		{{ end }}
+		{{ with .Page.GetPage "skills-overview" }}
+			{{ $skillsInfo = dict "icon" "" "name" "Leveling Guide" "patch" .Params.patch "updated" (time.Format "2 Jan, 2006" .Params.lastmod) }}
+		{{ end }}
+		{{ $content := dict "image" "" "items" (slice $levelingInfo $skillsInfo)}}
+		{{ partial "components/card.html" $content }}
 	</div>
 	<div class="row-span-2">
-		<div>
-			{{ with .Page.GetPage "basic-guide" }}
-				<h3>Basic Guide (LV {{ .Site.Params.maxLevel }})</h3>
-				<p>Patch: {{ .Params.patch }}</p>
-				<p>Updated: {{ time.Format "2 Jan, 2006" .Params.lastmod }}</p>
-			{{ end }}
-		</div>
-		<div>
-			{{ with .Page.GetPage "openers" }}
-				<h3>Openers (LV {{ .Site.Params.maxLevel }})</h3>
-				<p>Patch: {{ .Params.patch }}</p>
-				<p>Updated: {{ time.Format "2 Jan, 2006" .Params.lastmod }}</p>
-			{{ end }}
-		</div>
+		<h1>Guides</h1>
+		{{ $basicInfo := dict "" "" }}
+		{{ $openerInfo := dict "" "" }}
+		{{ with .Page.GetPage "basic-guide" }}
+			{{ $guideName := printf "Basic Guide (LV %d)" .Site.Params.maxLevel}}
+			{{ $basicInfo = dict "icon" "" "name" $guideName "patch" .Params.patch "updated" (time.Format "2 Jan, 2006" .Params.lastmod)}}
+		{{ end }}
+		{{ with .Page.GetPage "openers" }}
+			{{ $guideName := printf "Openers (LV %d)" .Site.Params.maxLevel}}
+			{{ $openerInfo = dict "icon" "" "name" $guideName "patch" .Params.patch "updated" (time.Format "2 Jan, 2006" .Params.lastmod)}}
+		{{ end }}
+		{{ $content := dict "image" "" "items" (slice $basicInfo $openerInfo)}}
+		{{ partial "components/card.html" $content }}
 	</div>
-	<div class="row-span-2"><h1>Most Recent Changes</h1></div>
+	<div class="row-span-2">
+		{{ $optBlock := dict "display" "block" }}
+		{{ $markdown_content := `# Patch 5.3
+
+\- Change 1
+
+\- Change 2` }}
+			
+		{{ $markdown_content = $markdown_content | .RenderString $optBlock }}
+		{{ $itemLink := dict "text" "See all changes" "value" "#"}}
+		{{ $item1 := dict "icon" "" "name" "Most Recent Changes" "extra" $markdown_content "link" $itemLink}}
+		{{ $content := dict "items" (slice $item1) }}
+		{{ partial "components/card.html" $content }}
+	</div>
 	<div class="col-span-2">
-		<h1>FAQ</h1>
+		{{/*  <h1>FAQ</h1>  */}}
+		{{/*  This seems questionable but Hugo string concat is annoying  */}}
+		{{ $formatString := "%s%s"}}
+		{{ $linkFormatString := "[%s](./faq/#q%d)\n\n"}}
+		{{ $markdown_content := ""}}
+		{{ $currentLink := "" }}
 		{{ with .Page.GetPage "faq" }}
 			{{ range $index, $qna := first 2 .Params.qna }}
-				<p><a href="./faq/#q{{ $index }}">{{ $qna.question }}</a></p>
+				{{ $currentLink = printf $linkFormatString $qna.question $index }}
+				{{ $markdown_content = printf $formatString $markdown_content $currentLink }}
 			{{ end }}
 		{{ end }}
+		{{ $optBlock := dict "display" "block" }}
+			
+		{{ $markdown_content = $markdown_content | .RenderString $optBlock }}
+		{{ $item1 := dict "icon" "" "name" "FAQs" "extra" $markdown_content }}
+		{{ $content := dict "items" (slice $item1) }}
+		{{ partial "components/card.html" $content }}
 	</div>
 </section>
 {{ end }}
