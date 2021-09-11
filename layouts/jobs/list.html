@@ -35,19 +35,18 @@
 		{{ $content := dict "image" "" "items" (slice $basicInfo $openerInfo)}}
 		{{ partial "components/card.html" $content }}
 	</div>
-	<div class="row-span-2">
-		{{ $optBlock := dict "display" "block" }}
-		{{ $markdown_content := `# Patch 5.3
-
-\- Change 1
-
-\- Change 2` }}
-			
-		{{ $markdown_content = $markdown_content | .RenderString $optBlock }}
-		{{ $itemLink := dict "text" "See all changes" "value" "#"}}
-		{{ $item1 := dict "icon" "" "name" "Most Recent Changes" "extra" $markdown_content "link" $itemLink}}
-		{{ $content := dict "items" (slice $item1) }}
-		{{ partial "components/card.html" $content }}
+	<div class="row-span-2 pr-10">
+		{{ with .Page.GetPage "job-changes"}}
+			{{ $optBlock := dict "display" "block" }}
+			{{ $latestChanges := index (last 1 .Params.changes) 0 }}
+			{{ $markdown_content := print "Patch " $latestChanges.patch ": \n\n" $latestChanges.description }}
+				
+			{{ $markdown_content = $markdown_content | .RenderString $optBlock }}
+			{{ $itemLink := dict "text" "See all changes" "value" "#"}}
+			{{ $item1 := dict "icon" "" "name" "Most Recent Changes" "extra" $markdown_content "link" $itemLink}}
+			{{ $content := dict "items" (slice $item1) }}
+			{{ partial "components/card.html" $content }}
+		{{ end }}
 	</div>
 	<div class="col-span-2 row-span-2">
 		{{ $linkFormatString := "[Q: %s](./faq/#q%d)"}}
