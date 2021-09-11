@@ -67,4 +67,23 @@
 		{{ partial "components/card.html" $content }}
 	</div>
 </section>
+
+<div class="pb-3">Gearing</div>
+<section class="grid grid-cols-3 grid-rows-2 gap-y-3 gap-x-10">
+	<div class="col-span-2 row-span-2">
+		{{ with .Page.GetPage "best-in-slot"}}
+			{{ $bisInfo := dict "icon" "" "name" "Best-in-slot (BIS) Gear Sets" "patch"
+			 .Params.patch "updated" (time.Format "2 Jan, 2006" .Params.lastmod) "bis" .Params.bis}}
+			{{ $content := dict "items" (slice $bisInfo) }}
+			{{ partial "components/card.html" $content }}
+		{{ end }}
+	</div>
+	<div class="md:pr-10 pr-2">
+		{{ with .Page.GetPage "stat-priority" }}
+			{{ $statInfo := dict "icon" "" "name" "Stats & Materia" "extraList" (slice .Params.priority) "link" (dict "text" "Why this priority?" "value" "stat-priority")}}
+			{{ $content := dict "items" (slice $statInfo) }}
+			{{ partial "components/card.html" $content }}
+		{{ end }}
+	</div>
+</section>
 {{ end }}

@@ -33,6 +33,10 @@
 					</div>
 					{{end}}
 				{{ end }}
+				{{/*  At this point, consider breaking this function apart into individual components  */}}
+				{{ if isset $element_value "bis" }}
+					{{ partial "components/bis_table.html" $element_value }}
+				{{end}}
 				{{ if isset $element_value "link" }}
 				<div class="content-link">
 					<a href="{{ $element_value.link.value }}">{{ $element_value.link.text }} ≫</a>
