@@ -89,12 +89,24 @@ w-1/5 is just being used for testing without a layout
 }
 
 .card-content-patch {
-	@apply font-bold;
+	@apply font-bold text-card-header-text-color;
 }
 
 .card-content-updated {
-	@apply font-bold pb-3;
+	@apply font-bold text-card-header-text-color pb-3;
 }
 .card-flex-col-wrapper{
-	@apply flex flex-col divide-y-2 border-l-8 divide-line-divide-color;
+	@apply flex flex-col divide-y-2 border-l-8 divide-line-divide-color border-card-border-color;
+}
+
+.card-flex-col-wrapper:nth-child(even){
+	@apply bg-card-even-color;
+}
+
+.extra-content{
+	@apply text-white pl-3 pb-3;
+}
+
+.content-link{
+	@apply text-right pt-1 pb-3 text-link-orange font-bold;
 }

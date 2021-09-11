@@ -3,9 +3,9 @@
 	{{ .Content }}
 	{{ partial "components/role_slider.html" . }}
 	<div class="flex flex-row gap-3">
-		{{ $item1 := dict "Icon" "https://xivapi.com/i/003000/003410.png" "Name" "Leveling Guide" "Patch" "5.3" "Updated" "23 Jul 2021"}}
-		{{ $item2 := dict "Icon" "https://xivapi.com/i/003000/003410.png" "Name" "Skills Overview" "Patch" "5.3" "Updated" "23 Jul 2021"}}
-		{{ $content := dict "ImagePath" "https://via.placeholder.com/350x100" "Items" (slice $item1 $item2) }}
+		{{ $item1 := dict "icon" "https://xivapi.com/i/003000/003410.png" "name" "Leveling Guide" "patch" "5.3" "updated" "23 Jul 2021"}}
+		{{ $item2 := dict "icon" "https://xivapi.com/i/003000/003410.png" "name" "Skills Overview" "patch" "5.3" "updated" "23 Jul 2021"}}
+		{{ $content := dict "image" "https://via.placeholder.com/350x100" "items" (slice $item1 $item2) }}
 		{{ partial "components/card.html" $content }}
 
 		{{ $optBlock := dict "display" "block" }}
@@ -16,9 +16,9 @@
 \- Change 2` }}
 
 		{{ $markdown_content = $markdown_content | .RenderString $optBlock }}
-		{{ $itemLink := dict "Text" "See all changes" "Value" "#"}}
-		{{ $item1 = dict "Icon" "https://xivapi.com/i/003000/003410.png" "Name" "Most Recent Job Changes" "Extra" $markdown_content "Link" $itemLink}}
-		{{ $content = dict "Items" (slice $item1) }}
+		{{ $itemLink := dict "text" "See all changes" "value" "#"}}
+		{{ $item1 = dict "icon" "https://xivapi.com/i/003000/003410.png" "name" "Most Recent Job Changes" "extra" $markdown_content "link" $itemLink}}
+		{{ $content = dict "items" (slice $item1) }}
 		{{ partial "components/card.html" $content }}
 	</div>
 {{ end }}
