@@ -110,3 +110,11 @@ w-1/5 is just being used for testing without a layout
 .content-link{
 	@apply text-right pt-1 pb-3 text-link-orange font-bold;
 }
+
+.extra-list-item{
+	@apply py-1.5;
+}
+
+.extra-list-item a{
+	@apply text-link-orange font-semibold;
+}

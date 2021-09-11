@@ -1,5 +1,5 @@
 {{ define "main" }}
-<section class="grid grid-cols-3 grid-rows-4 gap-3">
+<section class="grid grid-cols-3 grid-rows-5 gap-3">
 	<div class="col-span-2">
 		{{ .Content }}
 	</div>
@@ -49,23 +49,20 @@
 		{{ $content := dict "items" (slice $item1) }}
 		{{ partial "components/card.html" $content }}
 	</div>
-	<div class="col-span-2">
-		{{/*  <h1>FAQ</h1>  */}}
-		{{/*  This seems questionable but Hugo string concat is annoying  */}}
-		{{ $formatString := "%s%s"}}
-		{{ $linkFormatString := "[%s](./faq/#q%d)\n\n"}}
-		{{ $markdown_content := ""}}
+	<div class="col-span-2 row-span-2">
+		{{ $linkFormatString := "[Q: %s](./faq/#q%d)"}}
 		{{ $currentLink := "" }}
+		{{ $questionList := slice  }}
 		{{ with .Page.GetPage "faq" }}
 			{{ range $index, $qna := first 2 .Params.qna }}
 				{{ $currentLink = printf $linkFormatString $qna.question $index }}
-				{{ $markdown_content = printf $formatString $markdown_content $currentLink }}
+				{{ $renderedLink := $currentLink | $.RenderString }}
+				{{ $questionList = $questionList | append $renderedLink }}
 			{{ end }}
 		{{ end }}
-		{{ $optBlock := dict "display" "block" }}
 			
-		{{ $markdown_content = $markdown_content | .RenderString $optBlock }}
-		{{ $item1 := dict "icon" "" "name" "FAQs" "extra" $markdown_content }}
+		{{ $linkInfo := dict "text" "See all frequently asked questions" "value" "faq"}}
+		{{ $item1 := dict "icon" "" "name" "Frequently Asked Questions" "extraList" $questionList "link" $linkInfo }}
 		{{ $content := dict "items" (slice $item1) }}
 		{{ partial "components/card.html" $content }}
 	</div>

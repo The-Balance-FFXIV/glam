@@ -5,7 +5,7 @@
 	</div>
 	{{ end }}
 	<div class="bg-card-background-color">
-		{{ range $element_index, $element_value := .items}}
+		{{ range $element_value := .items}}
 			<div {{if isset $element_value "patch"}}class="card-flex-col-wrapper" {{ else }}class="card-flex-col-wrapper pl-3 pr-3"{{end}}>
 				<div {{if isset $element_value "patch"}}class="card-content pl-3 pr-3 items-center" {{ else }}class="card-content pt-3 pb-3 items-center"{{end}}>
 					<div>
@@ -25,6 +25,13 @@
 				<div class="extra-content">
 					{{ $element_value.extra }}
 				</div>
+				{{ end }}
+				{{ if isset $element_value "extraList" }}
+					{{ range $listValue := $element_value.extraList }}
+					<div class="extra-list-item">
+						{{ $listValue }}
+					</div>
+					{{end}}
 				{{ end }}
 				{{ if isset $element_value "link" }}
 				<div class="content-link">
