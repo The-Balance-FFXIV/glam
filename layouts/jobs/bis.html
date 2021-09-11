@@ -1,6 +1,6 @@
 {{ define "main" }}
     {{ range .Params.bis }}
         <h2><a href="{{ .link }}">{{ .name }}</a></h2>
-        {{ .description | markdownify }}
+        {{ .description | .Page.RenderString }}
     {{ end }}
 {{ end }}

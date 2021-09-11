@@ -1,6 +1,6 @@
 {{ define "main" }}
     {{ range $index, $qa := .Params.qna }}
         <h2 id="q{{ $index }}">{{ $qa.question }}</h2>
-        {{ $qa.answer | markdownify }}
+        {{ $qa.answer | .Page.RenderString }}
     {{ end }}
 {{ end }}
