@@ -12,10 +12,10 @@
 		{{ $levelingInfo := dict "" "" }}
 		{{ $skillsInfo := dict "" "" }}
 		{{ with .Page.GetPage "leveling-guide" }}
-				{{ $levelingInfo = dict "icon" "" "name" "Leveling Guide" "patch" .Params.patch "updated" (time.Format "2 Jan, 2006" .Params.lastmod) }}
+				{{ $levelingInfo = dict "icon" "" "name" "Leveling Guide" "patch" .Params.patch "updated" (time.Format "2 Jan, 2006" .Params.lastmod) "inlineLink" "leveling-guide" }}
 		{{ end }}
 		{{ with .Page.GetPage "skills-overview" }}
-			{{ $skillsInfo = dict "icon" "" "name" "Leveling Guide" "patch" .Params.patch "updated" (time.Format "2 Jan, 2006" .Params.lastmod) }}
+			{{ $skillsInfo = dict "icon" "" "name" "Skills Overview" "patch" .Params.patch "updated" (time.Format "2 Jan, 2006" .Params.lastmod) "inlineLink" "skills-overview" }}
 		{{ end }}
 		{{ $content := dict "image" "" "items" (slice $levelingInfo $skillsInfo)}}
 		{{ partial "components/card.html" $content }}
@@ -26,11 +26,11 @@
 		{{ $openerInfo := dict "" "" }}
 		{{ with .Page.GetPage "basic-guide" }}
 			{{ $guideName := printf "Basic Guide (LV %d)" .Site.Params.maxLevel}}
-			{{ $basicInfo = dict "icon" "" "name" $guideName "patch" .Params.patch "updated" (time.Format "2 Jan, 2006" .Params.lastmod)}}
+			{{ $basicInfo = dict "icon" "" "name" $guideName "patch" .Params.patch "updated" (time.Format "2 Jan, 2006" .Params.lastmod) "inlineLink" "basic-guide"}}
 		{{ end }}
 		{{ with .Page.GetPage "openers" }}
 			{{ $guideName := printf "Openers (LV %d)" .Site.Params.maxLevel}}
-			{{ $openerInfo = dict "icon" "" "name" $guideName "patch" .Params.patch "updated" (time.Format "2 Jan, 2006" .Params.lastmod)}}
+			{{ $openerInfo = dict "icon" "" "name" $guideName "patch" .Params.patch "updated" (time.Format "2 Jan, 2006" .Params.lastmod) "inlineLink" "openers"}}
 		{{ end }}
 		{{ $content := dict "image" "" "items" (slice $basicInfo $openerInfo)}}
 		{{ partial "components/card.html" $content }}
@@ -42,7 +42,7 @@
 			{{ $markdown_content := print "Patch " $latestChanges.patch ": \n\n" $latestChanges.description }}
 				
 			{{ $markdown_content = $markdown_content | .RenderString $optBlock }}
-			{{ $itemLink := dict "text" "See all changes" "value" "#"}}
+			{{ $itemLink := dict "text" "See all changes" "value" "job-changes"}}
 			{{ $item1 := dict "icon" "" "name" "Most Recent Changes" "extra" $markdown_content "link" $itemLink}}
 			{{ $content := dict "items" (slice $item1) }}
 			{{ partial "components/card.html" $content }}
