@@ -77,7 +77,7 @@
 			{{ partial "components/card.html" $content }}
 		{{ end }}
 	</div>
-	<div class="md:pr-10 pr-2">
+	<div class="md:pr-10 pr-2 text-white">
 		{{ with .Page.GetPage "stat-priority" }}
 			{{ $statInfo := dict "icon" "" "name" "Stats & Materia" "extraList" (slice .Params.priority) "link" (dict "text" "Why this priority?" "value" "stat-priority")}}
 			{{ $content := dict "items" (slice $statInfo) }}
@@ -85,4 +85,52 @@
 		{{ end }}
 	</div>
 </section>
+
+<div class="px-20 pt-6">
+	<div class="pb-3">Advanced Guides</div>
+	<section class="grid grid-cols-2 gap-4">
+		<div>
+			{{ with .Page.GetPage "advanced-guide"}}
+				{{ $advancedInfo := dict "icon" "" "name" "Advanced Guide" "patch"
+				.Params.patch "updated" (time.Format "2 Jan, 2006" .Params.lastmod)}}
+				{{ $content := dict "image" "https://via.placeholder.com/300x150" "items" (slice $advancedInfo) }}
+				{{ partial "components/card.html" $content }}
+			{{ end }}
+		</div>
+		<div>
+			{{ with .Page.GetPage "fight-tips"}}
+				{{ $fightsInfo := dict "icon" "" "name" "Fight Tips" "patch"
+				.Params.patch "updated" (time.Format "2 Jan, 2006" .Params.lastmod)}}
+				{{ $content := dict "image" "https://via.placeholder.com/300x150" "items" (slice $fightsInfo) }}
+				{{ partial "components/card.html" $content }}
+			{{ end }}
+		</div>
+	</section> 
+</div>
+
+<div class="px-20 pt-6">
+	<div class="pb-3">Healer Resources</div>
+	<section class="grid grid-cols-2 gap-4">
+		<div>
+			{{ $otherGuideInfo := dict "icon" "" "name" "Guides" }}
+			{{ $guide1 := dict "icon" "" "name" "Guide 1" "patch" "5.3" "updated" "8 Sep, 2021"}}
+			{{ $guide2 := dict "icon" "" "name" "Guide 2" "patch" "5.3" "updated" "8 Sep, 2021"}}
+			{{ $guide3 := dict "icon" "" "name" "Guide 3" "patch" "5.3" "updated" "8 Sep, 2021"}}
+			{{ $content := dict "items" (slice $otherGuideInfo $guide1 $guide2 $guide3) }}
+			{{ partial "components/card.html" $content }}
+		</div>
+		<div class="text-card-header-text-color font-semibold">
+			{{ $dummyToolList := slice (dict "name" "Tool 1" "link" "docs.google.com/somethingorother") (dict "name" "Tool 2" "link" "discord.gg/randomgarbagethatcannotbevalidihope") (dict "name" "Tool 3" "link" "youtube.com/iamarealvideo")}}
+			{{ $toolList := slice  }}
+			{{ $toolFormatString := "[%s](%s)\n\nHosted on: %s"}}
+			{{ range $tool := $dummyToolList }}
+				{{ $toolMarkdown := (printf $toolFormatString $tool.name $tool.link (index (split $tool.link "/") 0)) | $.RenderString }}
+				{{ $toolList = $toolList | append $toolMarkdown }}
+			{{ end }}
+			{{ $externalInfo := dict "icon" "" "name" "External Tools" "extraList" $toolList}}
+			{{ $content := dict "items" (slice $externalInfo) }}
+			{{ partial "components/card.html" $content }}
+		</div>
+	</section>
+</div>
 {{ end }}
