@@ -112,7 +112,7 @@ w-1/5 is just being used for testing without a layout
 }
 
 .extra-list-item{
-	@apply py-1.5 text-white;
+	@apply py-1.5;
 }
 
 .extra-list-item a{
