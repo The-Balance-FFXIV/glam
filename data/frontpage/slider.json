@@ -1,0 +1,65 @@
+{
+    "roles": [
+        "tanks",
+        "healers",
+        "melee",
+        "ranged",
+        "casters"
+    ],
+    "tanks": {
+        "name": "Tanks",
+        "icon": "/theme-assets/tank.png",
+        "role_link": "/jobs/tanks/",
+        "role_text_md": "*Lorum ipsum dolor sit amet...*",
+        "jobs": [
+            {
+                "name": "Warrior",
+                "job_link": "/jobs/tanks/warrior/",
+                "icon": "/theme-assets/warrior.png"
+            },
+            {
+                "name": "Paladin",
+                "job_link": "/jobs/tanks/paladin/",
+                "icon": "/theme-assets/paladin.png"
+            },
+            {
+                "name": "Bunbreaker",
+                "job_link": "/jobs/tanks/gunbreaker/",
+                "icon": "/theme-assets/gunbreaker.png"
+            },
+            {
+                "name": "Dark Knight",
+                "job_link": "/jobs/tanks/dark-knight/",
+                "icon": "/theme-assets/dark-knight.png"
+            }
+        ]
+    },
+    "healers": {
+        "name": "Healers",
+        "icon": "/theme-assets/healer.png",
+        "role_link": "/jobs/healers/",
+        "role_text_md": "*Lorum ipsum dolor sit amet...*",
+        "jobs": []
+    },
+    "melee": {
+        "name": "Melee",
+        "icon": "/theme-assets/melee.png",
+        "role_link": "/jobs/melee/",
+        "role_text_md": "*Lorum ipsum dolor sit amet...*",
+        "jobs": []
+    },
+    "ranged": {
+        "name": "Physical Ranged",
+        "icon": "/theme-assets/ranged.png",
+        "role_link": "/jobs/ranged/",
+        "role_text_md": "*Lorum ipsum dolor sit amet...*",
+        "jobs": []
+    },
+    "casters": {
+        "name": "Casters",
+        "icon": "/theme-assets/casters.png",
+        "role_link": "/jobs/casters/",
+        "role_text_md": "*Lorum ipsum dolor sit amet...*",
+        "jobs": []
+    }
+}

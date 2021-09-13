@@ -6,12 +6,35 @@ theme = "glam"
 
 [menu]
   [[menu.main]]
-    identifier = 'home'
-    name = 'home'
-    url = '/'
-    weight = -1
+    identifier = 'jobs'
+    name = 'Combat Jobs'
+    url = '/jobs/'
+    weight = 10
   [[menu.main]]
-    identifier = 'about'
-    name = 'about'
-    url = '/about/'
-    weight = 100
+    identifier = 'other-jobs'
+    name = 'Other Jobs'
+    url = '/jobs/'
+    weight = 20
+  [[menu.main]]
+    identifier = 'encounters'
+    name = 'Fight Encounters'
+    url = '/encounters/'
+    weight = 30
+  [[menu.main]]
+    identifier = 'tools'
+    name = 'Tools'
+    url = '/tools/'
+    weight = 40
+  [[menu.main]]
+    identifier = 'other-guides'
+    name = 'Other Guides'
+    url = '/guides/'
+    weight = 50
+  [[menu.main]]
+    identifier = 'news'
+    name = 'Newsfeed'
+    url = '/news/'
+    weight = 60
+
+[params]
+  maxLevel = 90 
