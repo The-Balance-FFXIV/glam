@@ -1,0 +1,132 @@
+backend:
+  name: git-gateway
+  branch: main
+local_backend: true
+media_folder: "static/img"
+public_folder: "/img"
+collections:
+  ##
+  # Scholar guide
+  ##
+  - label: "Scholar guide"
+    name: "sch-guide"
+    files:
+      - label: "Landing page"
+        name: "landing"
+        file: "content/jobs/healers/scholar/_index.md"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Leveling Guide"
+        name: "leveling-guide"
+        file: "content/jobs/healers/scholar/leveling-guide.md"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Patch", name: "patch", widget: "string"}
+          - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+          - label: "Changelog entry"
+            name: "changelog"
+            widget: "list"
+            summary: "{{fields.date}}: {{fields.message}}"
+            fields:
+              - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+              - {label: "Message", name: "message", widget: "string"}
+      - label: "Basic guide"
+        name: "basic-guide"
+        file: "content/jobs/healers/scholar/basic-guide.md"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Patch", name: "patch", widget: "string"}
+          - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+          - label: "Changelog entry"
+            name: "changelog"
+            widget: "list"
+            summary: "{{fields.date}}: {{fields.message}}"
+            fields:
+              - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+              - {label: "Message", name: "message", widget: "string"}
+      - label: "Skills overview"
+        name: "skills-overview"
+        file: "content/jobs/healers/scholar/skills-overview.md"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Patch", name: "patch", widget: "string"}
+          - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+          - label: "Changelog entry"
+            name: "changelog"
+            widget: "list"
+            summary: "{{fields.date}}: {{fields.message}}"
+            fields:
+              - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+              - {label: "Message", name: "message", widget: "string"}
+      # TODO: Openers and rotations
+      - label: "Frequently Asked Questions"
+        name: "faq"
+        file: "content/jobs/healers/scholar/faq.md"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "qna"}
+          - {label: "Patch", name: "patch", widget: "string"}
+          - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+          - label: "Changelog entry"
+            name: "changelog"
+            widget: "list"
+            summary: "{{fields.date}}: {{fields.message}}"
+            fields:
+              - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+              - {label: "Message", name: "message", widget: "string"}
+          - label: "FAQ Entry"
+            name: "qna"
+            widget: "list"
+            summary: "{{fields.question}}: {{fields.answer}}"
+            fields:
+              - {label: "Question", name: "question", widget: "string"}
+              - {label: "Answer", name: "answer", widget: "markdown"}
+      - label: "Advanced guide"
+        name: "advanced-guide"
+        file: "content/jobs/healers/scholar/advanced-guide.md"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Patch", name: "patch", widget: "string"}
+          - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+          - label: "Changelog entry"
+            name: "changelog"
+            widget: "list"
+            summary: "{{fields.date}}: {{fields.message}}"
+            fields:
+              - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+              - {label: "Message", name: "message", widget: "string"}
+      - label: "Best in Slot"
+        name: "bis"
+        file: "content/jobs/healers/scholar/best-in-slot.md"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "bis"}
+          - {label: "Patch", name: "patch", widget: "string"}
+          - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+          - label: "Changelog entry"
+            name: "changelog"
+            widget: "list"
+            summary: "{{fields.date}}: {{fields.message}}"
+            fields:
+              - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+              - {label: "Message", name: "message", widget: "string"}
+          - label: "Sets"
+            name: "bis"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Type", name: "type", widget: "select", options: ["etro"], default: "etro"}
+              - {label: "Link", name: "link", widget: "string"}
+              - {label: "Description", name: "description", widget: "markdown", required: false, default: ""}
+      # TODO: stats and materia
+      - label: "Job Changes"
+        name: "job-changes"
+        file: "content/jobs/healers/scholar/job-changes.md"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "changes"}
+          - label: "Change"
+            name: "changes"
+            widget: "list"
+            summary: "{{fields.patch}}"
+            fields:
+              - {label: "Patch", name: "patch", widget: "string"}
+              - {label: "Description", name: "description", widget: "markdown"}
