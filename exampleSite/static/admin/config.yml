@@ -58,7 +58,20 @@ collections:
             fields:
               - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
               - {label: "Message", name: "message", widget: "string"}
-      # TODO: Openers and rotations
+      - label: "Openers"
+        name: "openers"
+        file: "content/jobs/healers/scholar/openers.md"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Patch", name: "patch", widget: "string"}
+          - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+          - label: "Changelog entry"
+            name: "changelog"
+            widget: "list"
+            summary: "{{fields.date}}: {{fields.message}}"
+            fields:
+              - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+              - {label: "Message", name: "message", widget: "string"}
       - label: "Frequently Asked Questions"
         name: "faq"
         file: "content/jobs/healers/scholar/faq.md"
@@ -117,7 +130,20 @@ collections:
               - {label: "Type", name: "type", widget: "select", options: ["etro"], default: "etro"}
               - {label: "Link", name: "link", widget: "string"}
               - {label: "Description", name: "description", widget: "markdown", required: false, default: ""}
-      # TODO: stats and materia
+      - label: "Stat Priority"
+        name: "stat-priority"
+        file: "content/jobs/healers/scholar/stat-priority.md"
+        fields:
+          - {label: "Patch", name: "patch", widget: "string"}
+          - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+          - label: "Changelog entry"
+            name: "changelog"
+            widget: "list"
+            summary: "{{fields.date}}: {{fields.message}}"
+            fields:
+              - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+              - {label: "Message", name: "message", widget: "string"}
+          - {label: "Priority", name: "priority", widget: "string"}
       - label: "Job Changes"
         name: "job-changes"
         file: "content/jobs/healers/scholar/job-changes.md"
