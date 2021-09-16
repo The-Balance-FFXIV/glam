@@ -3,6 +3,28 @@
 @tailwind utilities;
 
 /*
+* Global
+ */
+
+body {
+	background-color: #2c3641;
+}
+
+.white-text {
+	@apply text-white;
+}
+
+/*
+  Jobs List
+*/
+
+.role-header {
+	@apply font-bold text-white text-4xl pb-3;
+	text-transform: uppercase;
+}
+
+
+/*
 * TABS
 */
 .tabbed {

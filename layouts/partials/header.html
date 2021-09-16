@@ -1,7 +1,9 @@
-<nav class="flex space-x-8">
-  <h1 class="flex-none"><a href="/">{{ .Site.Title }}</a></h1>
-  <span class="flex-auto"></span>
-  {{ range $menuItem := .Site.Menus.main }}
-    <h1 class="flex-none"><a href="{{ $menuItem.URL }}" title="{{ $menuItem.Title }}">{{ $menuItem.Name }}</a></h1>
-  {{ end }}
-</nav>
+<div class="container mx-auto">
+  <nav class="flex space-x-8">
+    <h1 class="flex-none"><a href="/">{{ .Site.Title }}</a></h1>
+    <span class="flex-auto"></span>
+    {{ range $menuItem := .Site.Menus.main }}
+      <h1 class="flex-none"><a href="{{ $menuItem.URL }}" title="{{ $menuItem.Title }}">{{ $menuItem.Name }}</a></h1>
+    {{ end }}
+  </nav>
+</div>
