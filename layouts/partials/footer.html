@@ -1,60 +1,24 @@
-<footer class="container mx-auto">
-    <h1>The Balance</h1>
-    <div class="flex">
-        <div>
-            <h1>Combat Jobs</h1>
-            <ul>
-                <li>Tanks</li>
-                <li>Healers</li>
-                <li>Melee</li>
-                <li>Casters</li>
-                <li>Physical Ranged</li>
-            </ul>
+<footer class="footer">
+  <div class="container mx-auto">
+    <h2>The Balance</h2>
+    <div class="flex ">
+      {{ range .Site.Menus.main }}
+        <div class="flex-auto">
+          <h3 class="footer-header pb-1">
+            {{ .Name }}
+          </h3>
+          {{ if .HasChildren }}
+              <ul>
+              {{ range .Children}}
+                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+              {{ end }}
+              </ul>
+          {{ end }}
         </div>
-        <div>
-            <h1>Other Jobs</h1>
-            <ul>
-                <li>Crafters</li>
-                <li>Gatherers</li>
-                <li>Limited Jobs</li>
-            </ul>
-        </div>
-        <div>
-            <h1>Fight Encounters</h1>
-            <ul>
-                <li>Extreme</li>
-                <li>Unreal</li>
-                <li>Savage</li>
-                <li>Ultimate</li>
-                <li>Exploratory Content</li>
-            </ul>
-        </div>
-        <div>
-            <h1>Tools</h1>
-            <ul>
-                <li>Add-ons</li>
-                <li>BiS Solvers</li>
-                <li>Connection Tools</li>
-                <li>DoH/DoL Tools</li>
-                <li>Log Analysis Tools</li>
-                <li>Rotation Solvers</li>
-            </ul>
-        </div>
-        <div>
-            <h1>Other Guides</h1>
-            <ul>
-                <li>New Player Resources</li>
-                <li>Endgame Content &amp; Gearing Guide</li>
-                <li>Island Sanctuary</li>
-            </ul>
-        </div>
-        <div>
-            <h1>Info</h1>
-            <ul>
-                <li>About</li>
-                <li>Contributing</li>
-                <li>License</li>
-            </ul>
-        </div>
-    </div> {{/* End flex */}}
+      {{ end }}
+    </div>
+    <div class="py-5 footer-copyright">
+      Copyright Here
+    </div>
+  </div>
 </footer>
