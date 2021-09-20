@@ -135,3 +135,39 @@ w-1/5 is just being used for testing without a layout
 .bis-item {
 	@apply text-link-orange font-semibold;
 }
+
+
+/**
+Footer
+ */
+
+
+.footer {
+	@apply bg-card-even-color;
+}
+
+.footer a {
+	color: #FF9956;
+	font-size: 17px; 
+}
+
+.footer a:hover {
+	text-decoration: underline;
+}
+
+.footer ul li {
+	padding: .1em 0;
+}
+
+.footer-header {
+	@apply text-white;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 2.8px;
+}
+
+.footer-copyright {
+	@apply text-center text-sm font-light;
+	color: #8f99a4;
+}
+
