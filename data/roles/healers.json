@@ -3,7 +3,7 @@
     "name": "Healers",
     "order": 2,
     "color": "#61ce7e",
-    "icon": "/theme-assets/healer.png",
+    "icon": "/theme-assets/healers.png",
     "role_link": "/jobs/healers/",
     "role_text_md": "*Lorum ipsum dolor sit amet...*",
     "jobs": []

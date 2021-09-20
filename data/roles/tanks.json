@@ -3,7 +3,7 @@
     "name": "Tanks",
     "order": 1,
     "color": "#4d8be6",
-    "icon": "/theme-assets/tank.png",
+    "icon": "/theme-assets/tanks.png",
     "role_link": "/jobs/tanks/",
     "role_text_md": "Tasked with holding the attention of the enemies, Tanks are the role that manages enemy positioning and takes a majority of the damage in a given encounter. Each tank comes equipped with both personal and party mitigation tools, as well as a damage toolkit unique to each specific job.",
     "jobs": [
