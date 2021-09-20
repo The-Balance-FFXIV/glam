@@ -1,0 +1,10 @@
+{
+    "title": "ranged",
+    "name": "Physical Ranged",
+    "order": 4,
+    "color": "#f15c5c",
+    "icon": "/theme-assets/ranged.png",
+    "role_link": "/jobs/ranged/",
+    "role_text_md": "*Lorum ipsum dolor sit amet...*",
+    "jobs": []
+}

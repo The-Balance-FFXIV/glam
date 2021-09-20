@@ -1,0 +1,15 @@
+<div class="tab-content">
+  <div class="flex">
+    <div class="flex-1 role-info">
+      <h1><img src={{ .icon }} /> {{ .name }}</h1>
+      <div>
+          {{ .role_text_md | markdownify }}
+      </div>
+    </div>
+    <div class="flex-grow flex items-center">
+      {{ range (index . "jobs") }}
+          {{ partial "homepage/role_slider/job.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</div>

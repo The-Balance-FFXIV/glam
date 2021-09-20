@@ -1,0 +1,15 @@
+<div class="tabbed">
+    {{ range $index, $role := sort .Site.Data.roles "order" }}
+        <input type="radio" id="tab-{{ $role.name | urlize }}" name="css-tabs" {{ if eq $index 0 }}checked{{ end }}>
+    {{ end }}
+    
+    <ul class="tabs">
+        {{ range $role := sort .Site.Data.roles "order" }}
+            <li class="tab"><label for="tab-{{ $role.name | urlize }}" style="border-top-color: {{ $role.color }};">{{ $role.name }}</label></li>
+        {{ end }}
+    </ul>
+    
+    {{ range $role := sort .Site.Data.roles "order" }}
+        {{ partial "homepage/role_slider/content.html" $role }}
+    {{ end }}
+</div>

@@ -1,0 +1,10 @@
+{
+    "title": "casters",
+    "name": "Casters",
+    "order": 5,
+    "color":"#f15c5c",
+    "icon": "/theme-assets/casters.png",
+    "role_link": "/jobs/casters/",
+    "role_text_md": "*Lorum ipsum dolor sit amet...*",
+    "jobs": []
+}
