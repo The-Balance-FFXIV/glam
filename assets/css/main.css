@@ -156,7 +156,8 @@ Footer
 }
 
 .footer a {
-	color: #eea971;
+	color: #FF9956;
+	font-size: 17px; 
 }
 
 .footer a:hover {
@@ -169,8 +170,9 @@ Footer
 
 .footer-header {
 	@apply text-white;
+	font-size: 14px;
 	text-transform: uppercase;
-	letter-spacing: .05em;
+	letter-spacing: 2.8px;
 }
 
 .footer-copyright {
