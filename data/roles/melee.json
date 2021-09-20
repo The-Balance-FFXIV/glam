@@ -1,0 +1,10 @@
+{
+    "title": "melee",
+    "name": "Melee",
+    "order": 3,
+    "color": "#f15c5c",
+    "icon": "/theme-assets/melee.png",
+    "role_link": "/jobs/melee/",
+    "role_text_md": "*Lorum ipsum dolor sit amet...*",
+    "jobs": []
+}

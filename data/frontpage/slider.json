@@ -8,9 +8,10 @@
     ],
     "tanks": {
         "name": "Tanks",
+        "color": "#4d8be6",
         "icon": "/theme-assets/tank.png",
         "role_link": "/jobs/tanks/",
-        "role_text_md": "*Lorum ipsum dolor sit amet...*",
+        "role_text_md": "Tasked with holding the attention of the enemies, Tanks are the role that manages enemy positioning and takes a majority of the damage in a given encounter. Each tank comes equipped with both personal and party mitigation tools, as well as a damage toolkit unique to each specific job.",
         "jobs": [
             {
                 "name": "Warrior",
@@ -36,6 +37,7 @@
     },
     "healers": {
         "name": "Healers",
+        "color": "#61ce7e",
         "icon": "/theme-assets/healer.png",
         "role_link": "/jobs/healers/",
         "role_text_md": "*Lorum ipsum dolor sit amet...*",
@@ -43,6 +45,7 @@
     },
     "melee": {
         "name": "Melee",
+        "color": "#f15c5c",
         "icon": "/theme-assets/melee.png",
         "role_link": "/jobs/melee/",
         "role_text_md": "*Lorum ipsum dolor sit amet...*",
@@ -50,6 +53,7 @@
     },
     "ranged": {
         "name": "Physical Ranged",
+        "color": "#f15c5c",
         "icon": "/theme-assets/ranged.png",
         "role_link": "/jobs/ranged/",
         "role_text_md": "*Lorum ipsum dolor sit amet...*",
@@ -57,6 +61,7 @@
     },
     "casters": {
         "name": "Casters",
+        "color":"#f15c5c",
         "icon": "/theme-assets/casters.png",
         "role_link": "/jobs/casters/",
         "role_text_md": "*Lorum ipsum dolor sit amet...*",
