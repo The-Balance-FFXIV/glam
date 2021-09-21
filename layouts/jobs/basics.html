@@ -1,0 +1,39 @@
+{{ define "main" }}
+<div class="guide-banner-background">
+    <div class="grid grid-cols-7 grid-rows-3 p-20">
+        <div class="col-span-5 text-white">
+            <img class="sm-job-icon inline pr-2" src='{{ print "/" (lower .Parent.Title) ".svg" }}' />
+            <div class="inline align-middle font-bold" style="font-size: 20px;"> {{ .Parent.Title }} </div> 
+        </div>
+        <div class="row-span-3 col-span-2 bg-dark-block-color text-white divide-y-2 px-2">
+            <div class="p-4">Guide Info</div>
+            <div class="p-2">
+                <div class="pb-2">Last Updated: {{ (time.Format "2 Jan, 2006" .Params.lastmod) }}</div>
+                <div>Patch Applicable: {{ .Param "patch" }}</div>
+            </div>
+            <div class="p-2 text-right text-link-orange">Jump to recent changes ≫</div>
+        </div>
+        <div class="col-span-5 row-span-2 text-white">
+            <div>
+                <img class="inline pr-12" src="https://cdn-sharing.adobecc.com/content/storage/id/urn:aaid:sc:US:bad19158-0956-4ee9-beb2-8c7f6919ec26;revision=0?component_id=74b88994-0794-40c2-8744-834fae3447fc&api_key=CometServer1&access_token=1632231394_urn%3Aaaid%3Asc%3AUS%3Abad19158-0956-4ee9-beb2-8c7f6919ec26%3Bpublic_be45347bb0dbb043d0ed9f97747aa5398cd122e2" />
+                <div class="inline font-bold align-middle" style="font-size: 60px;">Basic Guide (Lv {{ .Site.Params.maxLevel }})</div>
+                <div style="font-size: 15px;">The Endwalker-updated guide on how to pick up and play {{ .Parent.Title }} in trials and raids.</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mx-20">
+    <div class="inline-block bg-dark-block-color text-white w-3/4 pt-10">
+        {{ .Content }}
+    </div>
+    <div class="inline-block bg-dark-block-color flex-shrink-0 px-4 pt-10 divide-y-2 mt-4 w-1/5 ml-6 align-top sticky top-0">
+        <div class="text-white font-bold pb-4" style="font-size: 20px;">TABLE OF CONTENTS</div>
+        <div class="text-link-orange font-bold py-2">{{ .TableOfContents }}</div>
+        <div>&nbsp;</div>
+    </div>
+</div>
+
+<div class="mx-20 mt-20">
+    {{ partial "components/guide_meta_slider.html" . }}
+</div>
+{{ end }}

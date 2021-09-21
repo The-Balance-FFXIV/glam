@@ -1,0 +1,59 @@
+<div class="tabbed">
+    {{ $metaCategories := slice "Guide Meta" "Contributors" "Changelog"}}
+    {{ range $index, $role := $metaCategories }}
+        <input type="radio" id="tab-{{ $role }}" name="css-tabs" {{ if eq $index 0 }}checked{{ end }}>
+    {{ end }}
+    
+    <ul class="tabs" style="border-width: 0px;">
+        {{ range $role := $metaCategories }}
+            <li class="tab meta-tab"><label for="tab-{{ $role }}" style="border-width: 0px;">{{ $role }}</label></li>
+        {{ end }}
+    </ul>
+    
+    {{ range $role := $metaCategories }}
+        <div class="tab-content" style="background-color: #192129;">
+            <div class="flex">
+            <div class="flex-1 role-info">
+                <div>
+                    {{/* This implementation is probably less than ideal right now */}}
+                    {{if eq . "Guide Meta"}}
+                        <div class="questions-block pt-4 pb-8 pl-8">
+                            <div class="pb-4">HAVE ANY QUESTIONS?</div>
+                            <img class="inline-block pr-4" src="https://cdn-sharing.adobecc.com/content/storage/id/urn:aaid:sc:US:bad19158-0956-4ee9-beb2-8c7f6919ec26;revision=0?component_id=b29b5538-3f62-426f-b299-dffbec111bba&api_key=CometServer1&access_token=1632231394_urn%3Aaaid%3Asc%3AUS%3Abad19158-0956-4ee9-beb2-8c7f6919ec26%3Bpublic_be45347bb0dbb043d0ed9f97747aa5398cd122e2">
+                            <img class="inline-block" src="https://cdn-sharing.adobecc.com/content/storage/id/urn:aaid:sc:US:bad19158-0956-4ee9-beb2-8c7f6919ec26;revision=0?component_id=fc746d65-2be1-4c42-82c2-b1848b7a808a&api_key=CometServer1&access_token=1632231394_urn%3Aaaid%3Asc%3AUS%3Abad19158-0956-4ee9-beb2-8c7f6919ec26%3Bpublic_be45347bb0dbb043d0ed9f97747aa5398cd122e2">
+                            <div class="inline-block text-link-orange font-bold"><a href="https://discord.gg/thebalanceffxiv">discord.gg/thebalanceffxiv</a></div>
+                        </div>
+                        <div class="authors pl-8 pb-10">
+                            <div class="font-bold pb-4">AUTHORS</div>
+                            <div class="flex flex-row gap-12">
+                                {{ range $author := $.Page.Params.authors }}
+                                    <div>
+                                        <div class="mx-auto rounded-full bg-black bg-contain p-2 bg-origin-content bg-no-repeat" style="width: 90px; height: 90px; background-image: url(/scholar.svg)"></div>
+                                        <div class="text-center">{{ .name }}</div>
+                                    </div>
+                                {{ end }}
+                            </div>
+                        </div>
+                    {{ else if eq . "Contributors" }}
+                        <div class="py-6">
+                            {{ range $author := $.Page.Params.contributors }}
+                                <div>
+                                    <div class="mx-auto rounded-full bg-black bg-contain p-2 bg-origin-content bg-no-repeat" style="width: 90px; height: 90px; background-image: url(/scholar.svg)"></div>
+                                    <div class="text-center">{{ .name }}</div>
+                                </div>
+                            {{ end }}
+                        </div>
+                    {{ else }}
+                        {{ range $change := $.Page.Params.changelog }}
+                        <div class="py-4">
+                            <div>{{ time.Format "2 Jan, 2006" .date }}</div>
+                            <div>{{ .message | markdownify }}</div>
+                        </div>
+                        {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+            </div>
+        </div>
+    {{ end }}
+</div>

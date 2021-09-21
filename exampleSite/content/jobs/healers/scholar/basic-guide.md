@@ -2,6 +2,14 @@
 layout: basics
 lastmod: '2021-09-08'
 patch: 5.3
+authors: 
+  - name: "Author 1 (discordName#12345)"
+    image: "image"
+  - name: "Author 2 (discordName#12345)"
+    image: "image"
+contributors:
+  - name: "Contributor 1"
+    image: "image"
 changelog:
   - date: '2021-09-09'
     message: Made it lorem ipsum
