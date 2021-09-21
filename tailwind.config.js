@@ -10,6 +10,7 @@ module.exports = {
         'card-even-color': '#3a4651',
         'card-border-color' : '#3871c2',
         'card-header-text-color' : '#7b8794',
+        'dark-block-color' : '#1F2933'
       }
     },
   },

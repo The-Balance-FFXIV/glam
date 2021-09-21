@@ -144,3 +144,15 @@ w-1/5 is just being used for testing without a layout
 .bis-item {
 	@apply text-link-orange font-semibold;
 }
+
+.guide-banner-background{
+	@apply w-full bg-cover;
+	background-image: url("https://cdn-sharing.adobecc.com/content/storage/id/urn:aaid:sc:US:bad19158-0956-4ee9-beb2-8c7f6919ec26;revision=0?component_id=8c208bf9-c013-41ea-a42b-985d01244081&api_key=CometServer1&access_token=1632039758_urn%3Aaaid%3Asc%3AUS%3Abad19158-0956-4ee9-beb2-8c7f6919ec26%3Bpublic_4a9621fac025f0f59fa733a8ee58158a7a915037");
+    background-repeat: no-repeat;
+    /*height: 309px; /* need a better way than fixing it to the size of the image */
+}
+
+.sm-job-icon {
+	height: 35px;
+	width: 35px;
+}
