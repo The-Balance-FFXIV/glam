@@ -7,11 +7,8 @@
  */
 
 body {
-	background-color: #2c3641;
-}
-
-.white-text {
 	@apply text-white;
+	background-color: #2c3641;
 }
 
 /*
@@ -44,8 +41,6 @@ body {
 	@apply block px-3 py-3 cursor-pointer;
 	margin-bottom: -1px;
 	border: 1px solid #ccc;
-	background: #eee;
-	color: #666;
 	font-size: 12px; 
 	font-weight: 600;
 	text-transform: uppercase;
@@ -53,10 +48,9 @@ body {
 	transition: all 0.3s;
 }
 
-.tab:hover label {
+/* .tab:hover label {
 	border-top-color: #333;
-	color: #333;
-}
+} */
 
 .tab-content {
 	@apply hidden;
@@ -66,16 +60,13 @@ body {
 This is honestly a dirty, very bad, no good hack, but it does make the tabs nice
 It unfortunately also means we're limited to 5 tabs at current.
 */
-.tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) label,
+/* this is styling for tabs that are checked */
+/* .tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) label,
 .tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .tab:nth-of-type(2) label,
 .tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs .tab:nth-of-type(3) label,
 .tabbed [type="radio"]:nth-of-type(4):checked ~ .tabs .tab:nth-of-type(4) label,
 .tabbed [type="radio"]:nth-of-type(5):checked ~ .tabs .tab:nth-of-type(5) label {
-	border-bottom-color: #fff;
-	border-top-color: black;
-	background: #fff;
-	color: #222;
-}
+} */
 
 .tabbed [type="radio"]:nth-of-type(1):checked ~ .tab-content:nth-of-type(1),
 .tabbed [type="radio"]:nth-of-type(2):checked ~ .tab-content:nth-of-type(2),
@@ -145,14 +136,38 @@ w-1/5 is just being used for testing without a layout
 	@apply text-link-orange font-semibold;
 }
 
-.guide-banner-background{
-	@apply w-full bg-cover;
-	background-image: url("https://cdn-sharing.adobecc.com/content/storage/id/urn:aaid:sc:US:bad19158-0956-4ee9-beb2-8c7f6919ec26;revision=0?component_id=8c208bf9-c013-41ea-a42b-985d01244081&api_key=CometServer1&access_token=1632039758_urn%3Aaaid%3Asc%3AUS%3Abad19158-0956-4ee9-beb2-8c7f6919ec26%3Bpublic_4a9621fac025f0f59fa733a8ee58158a7a915037");
-    background-repeat: no-repeat;
-    /*height: 309px; /* need a better way than fixing it to the size of the image */
+
+/**
+Footer
+ */
+
+
+.footer {
+	@apply bg-card-even-color;
 }
 
-.sm-job-icon {
-	height: 35px;
-	width: 35px;
+.footer a {
+	color: #FF9956;
+	font-size: 17px; 
 }
+
+.footer a:hover {
+	text-decoration: underline;
+}
+
+.footer ul li {
+	padding: .1em 0;
+}
+
+.footer-header {
+	@apply text-white;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 2.8px;
+}
+
+.footer-copyright {
+	@apply text-center text-sm font-light;
+	color: #8f99a4;
+}
+
