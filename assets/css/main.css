@@ -9,6 +9,37 @@
 body {
 	@apply text-white;
 	background-color: #2c3641;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+
+/*
+Header/Navbar
+ */
+
+.navbar {
+	height: 80px;
+	background: #000000;
+	opacity: 1;
+}
+
+.navbar-container {
+	@apply container mx-auto;
+	height: 100%;
+}
+
+.nav-item {
+	font-size: 16px;
+}
+
+/**
+Content
+ */
+
+#content {
+	margin-bottom: 60px;
 }
 
 /*
@@ -144,11 +175,12 @@ Footer
 
 .footer {
 	@apply bg-card-even-color;
+	margin-top: auto;
 }
 
 .footer a {
 	color: #FF9956;
-	font-size: 17px; 
+	font-size: 17px;
 }
 
 .footer a:hover {
