@@ -1,5 +1,5 @@
-{{ $list := .Site.Menus.main }}
 {{ $current := . }}
+{{ $list := .Site.Menus.main | append .Site.Menus.header }}
 <nav class="bg-black">
   <div class="container mx-auto px-2 md:px-0">
     <div class="flex justify-between">
@@ -13,7 +13,7 @@
       </div>
       <!-- Navbar items -->
       <div class="hidden md:flex items-center space-x-3 ">
-        {{ range .Site.Menus.main }}
+        {{ range $list }}
         <a
           href="{{ .URL }}"
           class="py-4 px-2 font-semibold text-white hover:opacity-75 {{ if eq $current.URL .URL }} text-link-orange {{ end }}"
@@ -21,16 +21,6 @@
         >
           {{ .Name }}
         </a>
-        {{ end }}
-        {{/* Extra menu items from header-only menus */}}
-        {{ range .Site.Menus.header }}
-        <a
-          href="{{ .URL }}"
-          class="py-4 px-2 font-semibold text-white hover:opacity-75 {{ if eq $current.URL .URL }} text-link-orange {{ end }}"
-          title="{{ .Title }}"
-        >
-        {{ .Name }}
-       </a>
         {{ end }}
       </div>
       <!-- Mobile menu button -->
