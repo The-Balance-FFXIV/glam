@@ -13,7 +13,7 @@
       </div>
       <!-- Navbar items -->
       <div class="hidden md:flex items-center space-x-3 ">
-        {{ range $list }}
+        {{ range .Site.Menus.main }}
         <a
           href="{{ .URL }}"
           class="py-4 px-2 font-semibold text-white hover:opacity-75 {{ if eq $current.URL .URL }} text-link-orange {{ end }}"
@@ -21,6 +21,16 @@
         >
           {{ .Name }}
         </a>
+        {{ end }}
+        {{/* Extra menu items from header-only menus */}}
+        {{ range .Site.Menus.header }}
+        <a
+          href="{{ .URL }}"
+          class="py-4 px-2 font-semibold text-white hover:opacity-75 {{ if eq $current.URL .URL }} text-link-orange {{ end }}"
+          title="{{ .Title }}"
+        >
+        {{ .Name }}
+       </a>
         {{ end }}
       </div>
       <!-- Mobile menu button -->
