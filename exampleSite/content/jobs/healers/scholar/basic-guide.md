@@ -1,5 +1,4 @@
 ---
-layout: basics
 lastmod: '2021-09-10'
 patch: 5.3
 title: "Basic Guide (Lv 90)"
