@@ -1,7 +1,9 @@
 ---
 layout: basics
-lastmod: '2021-09-08'
+lastmod: '2021-09-10'
 patch: 5.3
+title: "Basic Guide (Lv 90)"
+description: "The Endwalker-updated guide on how to pick up and play Scholar in trials and raids."
 authors: 
   - name: "Author 1 (discordName#12345)"
     image: "image"
