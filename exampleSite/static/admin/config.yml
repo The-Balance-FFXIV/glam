@@ -8,6 +8,7 @@ collections:
   ##
   # Specialty data config
   ##
+  # role metadata
   - label: "Role metadata"
     name: "role-data"
     folder: "data/roles/"
@@ -29,6 +30,21 @@ collections:
           - {label: "Name", name: "name", widget: "string"}
           - {label: "Link", name: "job_link", widget: "string"}
           - {label: "Icon", name: "icon", widget: "string"}
+  # user "profiles"
+  - label: "Author profile"
+    name: "author-profile"
+    folder: "data/author/"
+    format: "json"
+    identifier_field: "username"
+    create: true
+    fields:
+      - {label: "Username", name: "username", widget: "string"}
+      - {label: "Display Name", name: "name", widget: "string"}
+      - label: "Social information"
+        name: "socials"
+        widget: "object"
+        fields:
+          - {label: "Discord Name", name: "discord_id", widget: "string"}
   ##
   # Scholar guide
   ##
