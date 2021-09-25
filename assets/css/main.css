@@ -211,3 +211,14 @@ Footer
 	color: #8f99a4;
 }
 
+.guide-banner-background{
+    @apply w-full bg-cover;
+    background-repeat: no-repeat;
+    /*height: 309px; /* need a better way than fixing it to the size of the image */
+}
+
+.sm-job-icon {
+    height: 35px;
+    width: 35px;
+}
+
