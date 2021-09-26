@@ -27,18 +27,11 @@
                             <div class="font-bold pb-4">AUTHORS</div>
                             <div class="flex flex-row gap-12">
                                 {{ range $author := $.Page.Params.authors }}
-                                    {{ $authorName := "" }}
-                                    {{ $authorDiscord := "" }}
-                                    {{ range $curAuthor := $.Site.Data.author }}
-                                        {{ if eq $curAuthor.username $author}}
-                                            {{ $authorName = .name }}
-                                            {{ $authorDiscord = .socials.discord_id}}
-                                        {{ end }}
-                                    {{ end }}
+                                    {{ $authorData := index $.Site.Data.author $author }}
                                     <div>
                                         <div class="mx-auto rounded-full bg-black bg-contain p-2 bg-origin-content bg-no-repeat" style="width: 90px; height: 90px; background-image: url(/theme-assets/jobs/scholar.svg)"></div>
-                                        <div class="text-center">{{ $authorName }}</div>
-                                        <div class="text-center">{{ $authorDiscord }}</div>
+                                        <div class="text-center">{{ $authorData.name }}</div>
+                                        <div class="text-center">{{ $authorData.socials.discord_id }}</div>
                                     </div>
                                 {{ end }}
                             </div>
