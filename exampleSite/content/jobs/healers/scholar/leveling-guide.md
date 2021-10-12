@@ -1,6 +1,9 @@
 ---
 lastmod: '2021-09-08'
 patch: 5.3
+authors:
+  - nonowazu
+  - johndoe
 changelog:
   - date: '2021-09-09'
     message: Made it lorem ipsum
