@@ -3,7 +3,9 @@ authors:
   - nonowazu
   - johndoe
 patch: 5.3
-lastmod: 2021-09-08
+authors:
+  - nonowazu
+  - johndoe
 changelog:
   - date: 2021-09-09
     message: Made it lorem ipsum
