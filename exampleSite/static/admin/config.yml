@@ -61,6 +61,14 @@ collections:
         file: "content/jobs/healers/scholar/leveling-guide.md"
         fields:
           - {label: "Body", name: "body", widget: "markdown"}
+          - label: "Author(s)"
+            name: "authors"
+            widget: "relation"
+            multiple: true
+            collection: "author-profile"
+            search_fields: ["username", "name"]
+            value_field: "username"
+            display_fields: ["username", "name"]
           - {label: "Patch", name: "patch", widget: "string"}
           - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
           - label: "Changelog entry"
@@ -75,6 +83,14 @@ collections:
         file: "content/jobs/healers/scholar/basic-guide.md"
         fields:
           - {label: "Body", name: "body", widget: "markdown"}
+          - label: "Author(s)"
+            name: "authors"
+            widget: "relation"
+            multiple: true
+            collection: "author-profile"
+            search_fields: ["username", "name"]
+            value_field: "username"
+            display_fields: ["username", "name"]
           - {label: "Patch", name: "patch", widget: "string"}
           - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
           - label: "Changelog entry"
@@ -89,6 +105,14 @@ collections:
         file: "content/jobs/healers/scholar/skills-overview.md"
         fields:
           - {label: "Body", name: "body", widget: "markdown"}
+          - label: "Author(s)"
+            name: "authors"
+            widget: "relation"
+            multiple: true
+            collection: "author-profile"
+            search_fields: ["username", "name"]
+            value_field: "username"
+            display_fields: ["username", "name"]
           - {label: "Patch", name: "patch", widget: "string"}
           - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
           - label: "Changelog entry"
@@ -103,6 +127,14 @@ collections:
         file: "content/jobs/healers/scholar/openers.md"
         fields:
           - {label: "Body", name: "body", widget: "markdown"}
+          - label: "Author(s)"
+            name: "authors"
+            widget: "relation"
+            multiple: true
+            collection: "author-profile"
+            search_fields: ["username", "name"]
+            value_field: "username"
+            display_fields: ["username", "name"]
           - {label: "Patch", name: "patch", widget: "string"}
           - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
           - label: "Changelog entry"
@@ -119,6 +151,14 @@ collections:
           - {label: "Layout", name: "layout", widget: "hidden", default: "qna"}
           - {label: "Patch", name: "patch", widget: "string"}
           - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+          - label: "Author(s)"
+            name: "authors"
+            widget: "relation"
+            multiple: true
+            collection: "author-profile"
+            search_fields: ["username", "name"]
+            value_field: "username"
+            display_fields: ["username", "name"]
           - label: "Changelog entry"
             name: "changelog"
             widget: "list"
@@ -138,6 +178,14 @@ collections:
         file: "content/jobs/healers/scholar/advanced-guide.md"
         fields:
           - {label: "Body", name: "body", widget: "markdown"}
+          - label: "Author(s)"
+            name: "authors"
+            widget: "relation"
+            multiple: true
+            collection: "author-profile"
+            search_fields: ["username", "name"]
+            value_field: "username"
+            display_fields: ["username", "name"]
           - {label: "Patch", name: "patch", widget: "string"}
           - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
           - label: "Changelog entry"
@@ -153,6 +201,14 @@ collections:
         fields:
           - {label: "Layout", name: "layout", widget: "hidden", default: "bis"}
           - {label: "Patch", name: "patch", widget: "string"}
+          - label: "Author(s)"
+            name: "authors"
+            widget: "relation"
+            multiple: true
+            collection: "author-profile"
+            search_fields: ["username", "name"]
+            value_field: "username"
+            display_fields: ["username", "name"]
           - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
           - label: "Changelog entry"
             name: "changelog"
@@ -175,6 +231,14 @@ collections:
         file: "content/jobs/healers/scholar/stat-priority.md"
         fields:
           - {label: "Patch", name: "patch", widget: "string"}
+          - label: "Author(s)"
+            name: "authors"
+            widget: "relation"
+            multiple: true
+            collection: "author-profile"
+            search_fields: ["username", "name"]
+            value_field: "username"
+            display_fields: ["username", "name"]
           - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
           - label: "Changelog entry"
             name: "changelog"
