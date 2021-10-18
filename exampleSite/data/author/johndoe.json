@@ -3,5 +3,6 @@
   "name": "John Doe",
   "socials": {
     "discord_id": "johndoe#1111"
-  }
+  },
+  "image": "/img/profile/nono_grey_hair.jpg"
 }
