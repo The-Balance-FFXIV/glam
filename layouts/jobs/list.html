@@ -92,16 +92,14 @@
     <section class="grid grid-cols-2 gap-8">
       <div>
         {{ with .Page.GetPage "advanced-guide"}}
-          {{ $advancedInfo := dict "icon" "" "name" "Advanced Guide" "patch"
-          .Params.patch "updated" (time.Format "2 Jan, 2006" .Params.lastmod)}}
+          {{ $advancedInfo := dict "icon" "" "name" "Advanced Guide" "patch" .Params.patch "updated" (time.Format "2 Jan, 2006" .Params.lastmod)}}
           {{ $content := dict "image" "https://via.placeholder.com/300x150" "items" (slice $advancedInfo) }}
           {{ partial "components/card.html" $content }}
         {{ end }}
       </div>
       <div>
         {{ with .Page.GetPage "fight-tips"}}
-          {{ $fightsInfo := dict "icon" "" "name" "Fight Tips" "patch"
-          .Params.patch "updated" (time.Format "2 Jan, 2006" .Params.lastmod)}}
+          {{ $fightsInfo := dict "icon" "" "name" "Fight Tips" "patch" .Params.patch "updated" (time.Format "2 Jan, 2006" .Params.lastmod)}}
           {{ $content := dict "image" "https://via.placeholder.com/300x150" "items" (slice $fightsInfo) }}
           {{ partial "components/card.html" $content }}
         {{ end }}
