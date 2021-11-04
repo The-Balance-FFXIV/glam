@@ -11,6 +11,12 @@ module.exports = {
         'card-border-color' : '#3871c2',
         'card-header-text-color' : '#7b8794',
         'dark-block-color' : '#1F2933'
+      },
+      zIndex: {
+          '-1': '-1',
+      },
+      dropShadow: {
+          'lg': '4px 4px 2px rgba(0, 0, 0, 0.2)'
       }
     },
   },
