@@ -5,9 +5,9 @@
 {{ end }}
 
 <a href="{{ .inlineLink }}" class="flex flex-col group">
-	{{ if isset . "image" }}
+	{{ with .image }}
 	<div>
-		<img class="w-full" src="{{ .image }}" />
+		<img class="w-full" src="{{ . }}" />
 	</div>
 	{{ end }}
 	<div class="bg-card-light px-5 py-5 border-l-8 border-{{ $borderClass }}">

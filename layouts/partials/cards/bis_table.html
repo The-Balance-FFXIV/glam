@@ -5,9 +5,9 @@
 {{ end }}
 
 <div class="card">
-	{{ if isset . "image" }}
+	{{ with .image }}
 	<div>
-		<img class="w-full" src="{{ .image }}" />
+		<img class="w-full" src="{{ . }}" />
 	</div>
 	{{ end }}
 	<div class="bg-card-light px-5 py-6 border-l-8 border-{{ $borderClass }}">
