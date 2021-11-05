@@ -25,9 +25,7 @@ jobs:
           node-version: '14.1'
 
       - name: Install dependencies
-        run: |
-          yarn
-          npm install -g postcss-cli autoprefixer postcss tailwindcss
+        run: yarn
       - name: Run Hugo
         run: hugo server -s exampleSite/ --themesDir=../.. --disableFastRender &
 
