@@ -8,7 +8,7 @@
 
 body {
 	@apply text-white;
-	background-color: #2c3641;
+	background-color: #222528;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
@@ -39,7 +39,6 @@ Content
  */
 
 #content {
-	margin-bottom: 60px;
 }
 
 /*
@@ -47,7 +46,7 @@ Content
 */
 
 .role-header {
-	@apply font-bold text-white text-4xl pb-3;
+	@apply font-bold text-white text-4xl pb-5 filter drop-shadow-lg;
 	text-transform: uppercase;
 }
 
@@ -151,10 +150,6 @@ w-1/5 is just being used for testing without a layout
 	@apply flex flex-col divide-y-2 border-l-8 divide-line-divide-color border-card-border-color;
 }
 
-.card-flex-col-wrapper:nth-child(even){
-	@apply bg-card-even-color;
-}
-
 .extra-content{
 	@apply text-white pl-3 pb-3;
 }
@@ -175,6 +170,13 @@ w-1/5 is just being used for testing without a layout
 	@apply text-link-orange font-semibold;
 }
 
+.link {
+    @apply text-link-orange font-semibold hover:underline;
+}
+
+.nested-link a {
+    @apply link;
+}
 
 /**
 Footer
@@ -182,7 +184,7 @@ Footer
 
 
 .footer {
-	@apply bg-card-even-color;
+	@apply bg-card-light;
 	margin-top: auto;
 }
 

@@ -1,0 +1,35 @@
+{{ $role := .Page.Parent.Params.menu.main.role }}
+
+<div class="container mx-auto">
+  <div class="pb-3 role-header">Advanced Guides</div>
+  <section class="grid grid-cols-2 gap-8">
+    <div>
+      {{ with .Page.GetPage "advanced-guide"}}
+        {{ $content := dict
+          "role" $role
+          "icon" "/theme-assets/advanced_guide.svg"
+          "name" "Advanced Guide"
+          "patch" .Params.patch
+          "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
+          "image" (printf "/theme-assets/jobs/%s_advanced_guide.png" (lower $.Title))
+          "inlineLink" "advanced-guide"
+        }}
+        {{ partial "cards/guide.html" $content }}
+      {{ end }}
+    </div>
+    <div>
+      {{ with .Page.GetPage "fight-tips"}}
+        {{ $content := dict
+          "role" $role
+          "icon" "/theme-assets/fight_tips.svg"
+          "name" "Fight Tips"
+          "patch" .Params.patch
+          "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
+          "image" (printf "/theme-assets/jobs/%s_fight_tips.png" (lower $.Title))
+          "inlineLink" "advanced-guide"
+        }}
+        {{ partial "cards/guide.html" $content }}
+      {{ end }}
+    </div>
+  </section>
+</div>

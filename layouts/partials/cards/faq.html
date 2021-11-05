@@ -1,0 +1,21 @@
+{{ $borderClass := "gray-600" }}
+
+{{ if isset . "role"  }}
+  {{ $borderClass = .role }}
+{{ end }}
+
+<div class="flex flex-col">
+	<div class="bg-card-light px-5 py-5 border-l-8 border-{{ $borderClass }}">
+    <div class="border-b border-card-dark pb-5">
+      {{ partial "cards/_header.html" . }}
+    </div>
+    <div class="divide-y divide-card-dark">
+      {{ range $question := .questions }}
+          <div class="py-2 nested-link">
+            {{ $question }}
+          </div>
+      {{ end }}
+    </div>
+    {{ partial "cards/_footer.html" . }}
+	</div>
+</div>

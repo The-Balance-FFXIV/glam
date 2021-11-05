@@ -1,10 +1,10 @@
-<div class="card">
+<div class="flex flex-col">
 	{{ if isset . "image" }}
 	<div>
 		<img class="w-full" src="{{ .image }}" />
 	</div>
 	{{ end }}
-	<div class="bg-card-background-color">
+	<div class="bg-card-light">
 		{{ range $element_value := .items}}
 			<div {{if isset $element_value "patch"}}class="card-flex-col-wrapper" {{ else }}class="card-flex-col-wrapper pl-3 pr-3"{{end}}>
 				{{ if isset $element_value "inlineLink"}}<a href="{{ $element_value.inlineLink }}">{{ end }}

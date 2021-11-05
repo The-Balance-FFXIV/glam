@@ -1,0 +1,11 @@
+{{ if isset . "readMoreLink" }}
+<div class="border-t border-card-dark pt-5 text-right">
+  <a href="{{ .readMoreLink }}" class="link">
+    {{ $readMoreText := "Read more" }}
+    {{ if isset . "readMoreText"}}
+      {{ $readMoreText = .readMoreText }}
+    {{ end }}
+    {{ $readMoreText }} »
+  </a>
+</div>
+{{ end }}

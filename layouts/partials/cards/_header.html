@@ -1,0 +1,18 @@
+<div class="flex items-center {{ if isset . "inlineLink" }}transform-gpu translate-x-0 group-hover:translate-x-2 transition-all{{ end }}">
+  {{ if isset . "icon"}}
+  <div class="mr-8">
+    <img src="{{ .icon }}" />
+  </div>
+  {{ end }}
+  <div>
+    <div class="font-bold text-white text-lg uppercase tracking-widest">
+      {{ .name }}
+    </div>
+      {{ if isset . "patch"}}
+        <div class="font-bold text-card-header-text-color">Patch: {{ upper .patch }}</div>
+      {{ end }}
+      {{ if isset . "updated"}}
+        <div class="font-bold text-card-header-text-color">Updated: {{ .updated }}</div>
+      {{ end }}
+  </div>
+</div>

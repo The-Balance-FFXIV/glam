@@ -1,0 +1,16 @@
+{{ $borderClass := "gray-600" }}
+
+{{ if isset . "role"  }}
+  {{ $borderClass = .role }}
+{{ end }}
+
+<a href="{{ .inlineLink }}" class="flex flex-col group">
+	{{ if isset . "image" }}
+	<div>
+		<img class="w-full" src="{{ .image }}" />
+	</div>
+	{{ end }}
+	<div class="bg-card-light px-5 py-5 border-l-8 border-{{ $borderClass }}">
+    {{ partial "cards/_header.html" . }}
+	</div>
+</a>

@@ -1,0 +1,64 @@
+{{ $role := .Page.Parent.Params.menu.main.role }}
+
+<div class="py-14 bg-no-repeat bg-cover" style="background-image: url('/theme-assets/jobs/{{ lower $role }}_ressources_background.png');">
+  <div class="container mx-auto">
+    <div class="pb-3 role-header">{{ $role }} Resources</div>
+    <section class="grid grid-cols-12 gap-9">
+
+      <div class="col-span-6">
+        <div class="divide-y divide-card-dark">
+          <div class="bg-card-light p-4 font-bold text-white text-lg uppercase tracking-widest">
+            Guides
+          </div>
+          {{ $content := dict
+            "role" $role
+            "name" "Guide 1"
+            "icon" (printf "/theme-assets/jobs/%s.svg" (lower $role))
+            "patch" "5.3"
+            "updated" "8 Sep, 2021"
+          }}
+          {{ partial "cards/guide.html" $content }}
+
+          {{ $content := dict
+            "role" $role
+            "name" "Guide 2"
+            "icon" (printf "/theme-assets/jobs/%s.svg" (lower $role))
+            "patch" "5.3"
+            "updated" "8 Sep, 2021"
+          }}
+          {{ partial "cards/guide.html" $content }}
+
+          {{ $content := dict
+            "role" $role
+            "name" "Guide 3"
+            "icon" (printf "/theme-assets/jobs/%s.svg" (lower $role))
+            "patch" "5.3"
+            "updated" "8 Sep, 2021"
+          }}
+          {{ partial "cards/guide.html" $content }}
+        </div>
+      </div>
+
+      <div class="col-span-6">
+        <div class="divide-y divide-card-dark">
+          <div class="bg-card-light p-4 font-bold text-white text-lg uppercase tracking-widest">
+            External Tools
+          </div>
+          {{ $dummyToolList := slice
+            (dict "name" "Tool 1" "link" "docs.google.com/somethingorother")
+            (dict "name" "Tool 2" "link" "discord.gg/randomgarbagethatcannotbevalidihope")
+            (dict "name" "Tool 3" "link" "youtube.com/iamarealvideo")
+          }}
+          {{ range $tool := $dummyToolList }}
+            {{ $content := dict
+              "role" $role
+              "name" $tool.name
+              "description" (printf "Hosted on %s" (index (split $tool.link "/") 0))
+              "inlineLink" $tool.link
+            }}
+            {{ partial "cards/link.html" $content }}
+          {{ end }}
+      </div>
+    </section>
+  </div>
+</div>

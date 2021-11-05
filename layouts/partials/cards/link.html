@@ -1,0 +1,12 @@
+{{ $borderClass := "gray-600" }}
+
+{{ if isset . "role"  }}
+  {{ $borderClass = .role }}
+{{ end }}
+
+<a href="{{ .inlineLink }}" class="flex flex-col group">
+	<div class="bg-card-light px-5 py-6 border-l-8 border-{{ $borderClass }}">
+    <p class="link">{{ .name }}</p>
+    <p class="font-bold text-card-header-text-color">{{ .description }}</p>
+	</div>
+</a>
