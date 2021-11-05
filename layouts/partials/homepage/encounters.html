@@ -1,3 +1,5 @@
+{{ $savageNames := .Site.Data.encounter.savage.names }}
+{{ $ultimateNames := .Site.Data.encounter.ultimate.names }}
 <div class="flex flex-col">
   <div class="w-full">
     <div class="flex flex-row items-end">
@@ -5,31 +7,10 @@
       <a class="text-link-orange" href="#">See all encounter guides >></a>
     </div>
     <div class="flex flex-row mt-8">
-      {{/* TODO: need a component for this – how to manage data? */}}
-      <div class="flex flex-col w-1/4 mr-4 bg-border-dark-color h-96">
-        <div class="flex-grow bg-link-orange w-full h-full"></div>
-        <div>
-          <h2 class="text-2xl uppercase p-4 font-bold">Eden's Promise</h2>
-        </div>
-      </div>
-      <div class="flex flex-col w-1/4 mr-4 bg-border-dark-color h-96">
-        <div class="flex-grow bg-link-orange w-full h-full"></div>
-        <div>
-          <h2 class="text-2xl uppercase p-4 font-bold">Eden's Verse</h2>
-        </div>
-      </div>
-      <div class="flex flex-col w-1/4 mr-4 bg-border-dark-color h-96">
-        <div class="flex-grow bg-link-orange w-full h-full"></div>
-        <div>
-          <h2 class="text-2xl uppercase p-4 font-bold">Eden's Gate</h2>
-        </div>
-      </div>
-      <div class="flex flex-col w-1/4 mr-0 bg-border-dark-color h-96">
-        <div class="flex-grow bg-link-orange w-full h-full"></div>
-        <div>
-          <h2 class="text-2xl uppercase p-4 font-bold">Older Tiers</h2>
-        </div>
-      </div>
+      {{ range $savageName := $savageNames }}
+        {{ $map := index $.Site.Data.encounter.savage $savageName }}
+        {{ partial "homepage/encounters/card.html" $map }}
+      {{ end }}
     </div>
   </div>
   <div class="w-full mt-24">
@@ -38,32 +19,10 @@
       <a class="text-link-orange" href="#">See all encounter guides >></a>
     </div>
     <div class="flex flex-row mt-8">
-      {{/* TODO: need a component for this – how to manage data? */}}
-      <div class="flex flex-col w-1/4 mr-4 bg-border-dark-color h-96">
-        <div class="flex-grow bg-link-orange w-full h-full"></div>
-        <div>
-          <h2 class="text-2xl uppercase p-4 font-bold">Dragonsong Ultimate</h2>
-        </div>
-      </div>
-      <div class="flex flex-col w-1/4 mr-4 bg-border-dark-color h-96">
-        <div class="flex-grow bg-link-orange w-full h-full"></div>
-        <div>
-          <h2 class="text-2xl uppercase p-4 font-bold">The Epic of Alexander</h2>
-        </div>
-      </div>
-      <div class="flex flex-col w-1/4 mr-4 bg-border-dark-color h-96">
-        <div class="flex-grow bg-link-orange w-full h-full"></div>
-        <div>
-          <h2 class="text-2xl uppercase p-4 font-bold">The Weapon's Refrain</h2>
-        </div>
-      </div>
-      <div class="flex flex-col w-1/4 mr-0 bg-border-dark-color h-96">
-        <div class="flex-grow bg-link-orange w-full h-full"></div>
-        <div>
-          <h2 class="text-2xl uppercase p-4 font-bold">The Unending Coil of Bahamut</h2>
-        </div>
-      </div>
+      {{ range $ultimateName := $ultimateNames }}
+        {{ $map := index $.Site.Data.encounter.ultimate $ultimateName }}
+        {{ partial "homepage/encounters/card.html" $map }}
+      {{ end }}
     </div>
   </div>
-  {{/* ditto above */}}
 </div>
