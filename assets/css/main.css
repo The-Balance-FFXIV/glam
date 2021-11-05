@@ -30,8 +30,8 @@ header::after {
 	left:0;
 	width:100%;
 	height:100%;
-	background: #19191A;
-	opacity:0.7;
+	background: #0E263D;
+	opacity:0.65;
 	z-index:-1;
 }
 
