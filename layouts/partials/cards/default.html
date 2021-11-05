@@ -1,8 +1,4 @@
-{{ $borderClass := "gray-600" }}
-
-{{ if isset . "role"  }}
-  {{ $borderClass = .role }}
-{{ end }}
+{{ $borderClass := default "gray-600" .role }}
 
 <div class="card">
 	{{ with .image }}
