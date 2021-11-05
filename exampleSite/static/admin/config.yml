@@ -8,7 +8,7 @@ collections:
   ##
   # Specialty data config
   ##
-  # role metadata
+  # role metadata for role slider
   - label: "Role metadata"
     name: "role-data"
     folder: "data/roles/"
@@ -30,6 +30,26 @@ collections:
           - {label: "Name", name: "name", widget: "string"}
           - {label: "Link", name: "job_link", widget: "string"}
           - {label: "Icon", name: "icon", widget: "string"}
+  # role landing page
+  - label: "Role landing pages"
+    name: "role-landing"
+    files:
+      - label: "Healers"
+        name: "healers"
+        file: "content/jobs/healers/_index.md"
+        fields:
+        - {label: "Body", name: "body", widget: "markdown"}
+        - label: "Menu hierarchy"
+          name: "menu"
+          widget: "hidden"
+          default:
+            main:
+              name: "Healers"
+              parent: "jobs"
+        - label: "Role"
+          name: "role"
+          widget: "hidden"
+          default: "healer"
   # user "profiles"
   - label: "Author profile"
     name: "author-profile"

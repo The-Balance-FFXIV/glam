@@ -1,9 +1,8 @@
 ---
 menu:
-    main:
-        name: 'Healers'   
-        parent: 'jobs'
-role: 'healer'
+  main:
+    name: Healers
+    parent: jobs
+role: healer
 ---
-
-# About healers
+Healers do stuff and junk.
