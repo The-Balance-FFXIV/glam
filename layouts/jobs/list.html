@@ -2,12 +2,12 @@
 
 {{ $role := "healer" }}
 
-{{ partial "components/job_header.html" . }}
+{{ partial "job/header.html" . }}
 
 <div class="space-y-14">
-  {{ partial "components/job_fundamentals.html" . }}
-  {{ partial "components/job_gearing.html" . }}
-  {{ partial "components/job_advanced_guides.html" . }}
-  {{ partial "components/job_ressources.html" . }}
+  {{ partial "job/fundamentals.html" . }}
+  {{ partial "job/gearing.html" . }}
+  {{ partial "job/advanced_guides.html" . }}
+  {{ partial "job/ressources.html" . }}
 </div>
 {{ end }}
