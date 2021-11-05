@@ -1,4 +1,4 @@
-<div class="tab-content p-8">
+<div class="tab-content">
   <div class="flex">
     <div class="flex-1 w-1/2 role-info text-center">
       <div class="flex flex-col justify-center">
@@ -9,7 +9,7 @@
           {{ .role_text_md | markdownify }}
       </div>
     </div>
-    <div class="flex-grow w-1/2 flex items-center p-4">
+    <div class="tab-jobs">
       {{ range (index . "jobs") }}
           {{ partial "homepage/role_slider/job.html" . }}
       {{ end }}

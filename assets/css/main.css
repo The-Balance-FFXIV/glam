@@ -108,7 +108,16 @@ Content
 } */
 
 .tab-content {
-	@apply hidden;
+	@apply hidden p-8;
+}
+
+.tab-jobs {
+	@apply flex-grow w-1/2 flex items-center p-4;
+}
+
+.tab-jobs img {
+	@apply mb-2;
+	height:50px;
 }
 
 /*
@@ -209,8 +218,7 @@ Footer
 
 
 .footer {
-	@apply bg-card-light;
-	margin-top: auto;
+	@apply bg-card-light mt-24;
 }
 
 .footer a {
