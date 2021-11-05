@@ -1,5 +1,5 @@
-{{ $savageNames := .Site.Data.encounter.savage.names }}
-{{ $ultimateNames := .Site.Data.encounter.ultimate.names }}
+{{ $savageEncounters := .Site.Data.encounter.savage.encounters }}
+{{ $ultimateEncounters := .Site.Data.encounter.ultimate.encounters }}
 <div class="flex flex-col">
   <div class="w-full">
     <div class="flex flex-row items-end">
@@ -7,9 +7,8 @@
       <a class="text-link-orange" href="#">See all encounter guides >></a>
     </div>
     <div class="flex flex-row mt-8">
-      {{ range $savageName := $savageNames }}
-        {{ $map := index $.Site.Data.encounter.savage $savageName }}
-        {{ partial "homepage/encounters/card.html" $map }}
+      {{ range $encounter := $savageEncounters }}
+        {{ partial "homepage/encounters/card.html" $encounter }}
       {{ end }}
     </div>
   </div>
@@ -19,9 +18,8 @@
       <a class="text-link-orange" href="#">See all encounter guides >></a>
     </div>
     <div class="flex flex-row mt-8">
-      {{ range $ultimateName := $ultimateNames }}
-        {{ $map := index $.Site.Data.encounter.ultimate $ultimateName }}
-        {{ partial "homepage/encounters/card.html" $map }}
+      {{ range $ultimateEncounter := $ultimateEncounters }}
+        {{ partial "homepage/encounters/card.html" $ultimateEncounter }}
       {{ end }}
     </div>
   </div>

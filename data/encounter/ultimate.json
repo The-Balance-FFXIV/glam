@@ -1,28 +1,30 @@
 {
-    "names": [
-        "dsu",
-        "tea",
-        "uwu",
-        "ucob"
-    ],
-    "dsu": {
-        "name": "Dragonsong Ultimate",
-        "image_link": "theme-assets/homepage/encounters/ultimate/ucob/Image@2x.png",
-        "encounter_link": "#"
-    },
-    "tea": {
-        "name": "The Epic of Alexander",
-        "image_link": "theme-assets/homepage/encounters/ultimate/tea/Image@2x.png",
-        "encounter_link": "#"
-    },
-    "uwu": {
-        "name": "The Weapon's Refrain",
-        "image_link": "theme-assets/homepage/encounters/ultimate/uwu/Image@2x.png",
-        "encounter_link": "#"
-    },
-    "ucob": {
-        "name": "The Unending Coil of Bahamut",
-        "image_link": "theme-assets/homepage/encounters/ultimate/ucob/Image@2x.png",
-        "encounter_link": "#"
-    }
+    "category": "ultimate",
+    "encounters": [
+        {
+            "id": "dsu",
+            "name": "Dragonsong Ultimate",
+            "image_link": "theme-assets/homepage/encounters/ultimate/ucob/Image@2x.png",
+            "encounter_link": "#"
+        },
+        {
+            "id": "tea",
+            "name": "The Epic of Alexander",
+            "image_link": "theme-assets/homepage/encounters/ultimate/tea/Image@2x.png",
+            "encounter_link": "#"
+            
+        },
+        {
+            "id": "uwu",
+            "name": "The Weapon's Refrain",
+            "image_link": "theme-assets/homepage/encounters/ultimate/uwu/Image@2x.png",
+            "encounter_link": "#"
+        },
+        {
+            "id": "ucob",
+            "name": "The Unending Coil of Bahamut",
+            "image_link": "theme-assets/homepage/encounters/ultimate/ucob/Image@2x.png",
+            "encounter_link": "#"
+        }
+    ]
 }
