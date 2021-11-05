@@ -1,6 +1,6 @@
 {
     "title": "melee",
-    "name": "Melee",
+    "name": "Melee DPS",
     "order": 3,
     "color": "#f15c5c",
     "icon": "/theme-assets/melee.png",

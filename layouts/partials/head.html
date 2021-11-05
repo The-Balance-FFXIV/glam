@@ -4,8 +4,10 @@
 
 {{ $styles := resources.Get "css/main.css" | postCSS }}
 {{ $headerJs := resources.Get "js/header.js" }}
+{{ $roleSliderJs := resources.Get "js/role_slider.js" }}
 
 <script type="text/javascript" src="{{ $headerJs.RelPermalink }}" defer></script>
+<script type="text/javascript" src="{{ $roleSliderJs.RelPermalink }}" defer></script>
 {{ if .Site.IsServer }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
 {{ else }}

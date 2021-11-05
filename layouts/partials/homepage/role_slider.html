@@ -1,11 +1,19 @@
-<div class="tabbed">
+<div id="roleSlider" class="tabbed bg-card-dark-background-color">
     {{ range $index, $role := sort .Site.Data.roles "order" }}
         <input type="radio" id="tab-{{ $role.name | urlize }}" name="css-tabs" {{ if eq $index 0 }}checked{{ end }}>
     {{ end }}
     
-    <ul class="tabs">
+    <ul class="tabs flex">
         {{ range $role := sort .Site.Data.roles "order" }}
-            <li class="tab"><label for="tab-{{ $role.name | urlize }}" style="border-top-color: {{ $role.color }};">{{ $role.name }}</label></li>
+            <li class="tab flex-grow text-center">
+              <label for="tab-{{ $role.name | urlize }}" class="border-t-4"
+                style="border-top-color: {{ $role.color }}">
+                <div class="flex items-center justify-center">
+                  <img class="inline-block mr-2" src="/theme-assets/icons/role_{{ $role.title | urlize }}.svg" alt="" />
+                  {{ $role.name }}
+                </div>
+              </label>
+            </li>
         {{ end }}
     </ul>
     
