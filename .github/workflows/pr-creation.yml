@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: |
           yarn
-          npm install -g postcss-cli autoprefixer postcss tailwindcss
+          npm install postcss-cli autoprefixer postcss tailwindcss
       - name: Run Hugo
         run: hugo server -s exampleSite/ --themesDir=../.. --disableFastRender &
 
