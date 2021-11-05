@@ -2,7 +2,7 @@
 <div class="guide-banner-background" style='background-image: url(/theme-assets/jobs/{{ lower .Parent.Title }}_background.png);'>
     <div class="grid grid-cols-7 grid-rows-3 p-20">
         <div class="col-span-5 text-white">
-            <img class="sm-job-icon inline pr-2" src='{{ print "/theme-assets/jobs/" (lower .Parent.Title) ".svg" }}' />
+            <img class="job-icon-sm inline pr-2" src='{{ print "/theme-assets/jobs/" (lower .Parent.Title) ".svg" }}' />
             <div class="inline align-middle font-bold" style="font-size: 20px;"> {{ .Parent.Title }} </div> 
         </div>
         <div class="row-span-3 col-span-2 bg-dark-block-color text-white divide-y-2 px-2">

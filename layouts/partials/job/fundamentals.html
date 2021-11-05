@@ -1,0 +1,107 @@
+{{ $role := .Page.Parent.Params.role }}
+
+<div class="container mx-auto">
+  <section class="grid xl:grid-cols-12 gap-6 xl:gap-8">
+    <div class="xl:col-span-6 xl:row-start-1 xl:row-span-2">
+      <h1 class="role-header">Job Fundamentals</h1>
+      {{ partial "cards/default.html" (dict "content" .Content "role" $role) }}
+    </div>
+
+    <div class="xl:col-span-6 xl:row-start-3">
+      {{ with .Page.GetPage "leveling-guide" }}
+          {{ $levelingInfo := dict
+            "role" $role
+            "image" (printf "/theme-assets/jobs/%s_leveling_guide.png" (lower $.Title))
+            "icon" "/theme-assets/sprout.svg"
+            "name" "Leveling Guide"
+            "patch" .Params.patch
+            "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
+            "inlineLink" "leveling-guide"
+          }}
+          {{ partial "cards/guide.html" $levelingInfo }}
+      {{ end }}
+    </div>
+
+    <div class="xl:col-span-6 xl:row-start-1 xl:row-span-3">
+      <div class="divide-y divide-card-dark">
+        {{ with .Page.GetPage "basic-guide" }}
+          {{ $guideName := printf "Basic Guide (LV %d)" .Site.Params.maxLevel}}
+          {{ $basicInfo := dict
+            "role" $role
+            "image" (printf "/theme-assets/jobs/%s_basic_guide.png" (lower $.Title))
+            "icon" "/theme-assets/book.svg"
+            "name" $guideName
+            "patch" .Params.patch
+            "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
+            "inlineLink" "basic-guide"
+          }}
+          {{ partial "cards/guide.html" $basicInfo }}
+        {{ end }}
+        {{ with .Page.GetPage "skills-overview" }}
+          {{ $skillsInfo := dict
+            "role" $role
+            "icon" "/theme-assets/skills.svg"
+            "name" "Skills Overview"
+            "patch" .Params.patch
+            "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
+            "inlineLink" "skills-overview"
+          }}
+          {{ partial "cards/guide.html" $skillsInfo }}
+        {{ end }}
+        {{ with .Page.GetPage "openers" }}
+          {{ $guideName := printf "Openers (LV %d)" .Site.Params.maxLevel}}
+          {{ $openerInfo := dict
+            "role" $role
+            "icon" "/theme-assets/clock.svg"
+            "name" $guideName
+            "patch" .Params.patch
+            "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
+            "inlineLink" "openers"
+          }}
+          {{ partial "cards/guide.html" $openerInfo }}
+        {{ end }}
+      </div>
+    </div>
+
+    <div class="xl:col-span-9">
+      {{ $linkFormatString := "[Q: %s](./faq/#q%d)"}}
+      {{ $currentLink := "" }}
+      {{ $questionList := slice  }}
+      {{ with .Page.GetPage "faq" }}
+        {{ range $index, $qna := first 2 .Params.qna }}
+          {{ $currentLink = printf $linkFormatString $qna.question $index }}
+          {{ $renderedLink := $currentLink | $.RenderString }}
+          {{ $questionList = $questionList | append $renderedLink }}
+        {{ end }}
+      {{ end }}
+
+      {{ $content := dict
+        "role" $role
+        "name" "Frequently Asked Questions"
+        "icon" "/theme-assets/question_bubble.svg"
+        "questions" $questionList
+        "readMoreText" "See all frequently asked questions"
+        "readMoreLink" "faq"
+      }}
+      {{ partial "cards/faq.html" $content }}
+    </div>
+
+    <div class="xl:col-span-3">
+      {{ with .Page.GetPage "job-changes"}}
+        {{ $optBlock := dict "display" "block" }}
+        {{ $latestChanges := index (last 1 .Params.changes) 0 }}
+        {{ $markdown_content := print "Patch " $latestChanges.patch ": \n\n" $latestChanges.description }}
+        {{ $markdown_content = $markdown_content | .RenderString $optBlock }}
+        {{ $content := dict
+          "role" $role
+          "name" "Most Recent Job Changes"
+          "icon" "/theme-assets/news.svg"
+          "content" $markdown_content
+          "readMoreText" "See all changes"
+          "readMoreLink" "job-changes"
+        }}
+        {{ partial "cards/default.html" $content }}
+      {{ end }}
+    </div>
+  </section>
+</div>
