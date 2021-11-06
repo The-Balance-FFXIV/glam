@@ -2,7 +2,7 @@
 {{ $list := .Site.Menus.main | append .Site.Menus.header }}
 <header class="bg-center bg-cover relative z-10">
   <nav class="z-20">
-    <div class="container mx-auto px-2 md:px-0">
+    <div class="container mx-auto">
       <div class="flex justify-center">
         <!-- Navbar items -->
         <div class="hidden md:flex items-center space-x-3 ">
@@ -15,9 +15,9 @@
           {{ end }}
         </div>
         <!-- Mobile menu button -->
-        <div class="md:hidden flex items-center">
+        <div class="md:hidden flex items-center bg-card-light w-full px-2">
           <button class="outline-none mobile-menu-button">
-            <svg class=" w-6 h-6 text-gray-500 hover:opacity-75 " x-show="!showMenu" fill="none" stroke-linecap="round"
+            <svg class=" w-12 h-12 text-link-orange hover:opacity-75 " x-show="!showMenu" fill="none" stroke-linecap="round"
               stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -31,7 +31,7 @@
         {{ range $list }}
         <li>
           <a href="{{ .URL }}"
-            class="block text-sm px-2 py-4 text-white font-semibold {{ if eq $current.URL .URL }}text-link-orange{{ end }}"
+            class="block text-sm px-2 py-3 text-white font-semibold {{ if eq $current.URL .URL }}text-link-orange{{ end }}"
             title="{{ .Title }}">
             {{ .Name }}
           </a>

@@ -22,7 +22,7 @@ Header/Navbar
 header,
 .general-page-bg {
 	background-image: url("/theme-assets/homepage/endwalker@2x.png");
-	height: 500px;
+	@apply h-96;
 }
 header::after,
 .general-page-bg:after {
@@ -68,6 +68,14 @@ Heading
 	@apply h-shadow flex-grow text-4xl font-head tracking-wider uppercase font-bold;
 }
 
+
+.nav-item {
+	font-size: 16px;
+}
+
+.mobile-menu {
+	@apply bg-card-light;
+}
 
 /**
 Table of Contents
@@ -130,7 +138,7 @@ Content
 * TABS
 */
 .tabbed {
-	@apply overflow-x-hidden my-4 pb-2;
+	@apply overflow-x-hidden my-4 pb-2 -mt-16;
 }
 
 .tabbed [type="radio"] {
@@ -146,7 +154,7 @@ Content
 }
 
 .tab > label {
-	@apply block sm:hidden px-3 py-3 cursor-pointer;
+	@apply block md:hidden px-3 py-3 cursor-pointer;
 	margin-bottom: -1px;
 	font-size: 1.5rem; 
 	font-weight: 600;
@@ -157,8 +165,12 @@ Content
 	border-right: 2px solid #141415;
 }
 
+.tabs.desktop {
+	@apply hidden md:flex items-stretch p-0 list-none flex-col md:flex-row;
+}
+
 .tab.desktop > label {
-	@apply hidden sm:block;
+	@apply hidden md:block;
 }
 
 
@@ -172,16 +184,16 @@ Content
 }
 
 .tab-content {
-	@apply hidden p-8;
+	@apply hidden p-4 sm:p-8;
 }
 
 .tab-jobs {
-	@apply block w-full sm:w-1/2 sm:flex-grow sm:flex items-center p-4 justify-evenly font-head;
+	@apply items-center block sm:flex sm:flex-wrap sm:flex-grow w-full sm:w-1/2 md:w-2/3 lg:w-3/4 p-4 md:justify-evenly font-head ;
 }
 
 .tab-jobs img {
-	@apply mb-2;
-	height:50px;
+	/* @apply mb-2;
+	height:50px; */
 }
 
 /*

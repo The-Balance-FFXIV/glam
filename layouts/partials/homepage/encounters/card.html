@@ -1,8 +1,8 @@
-<div class="flex-1 flex-col w-full sm:w-1/2 lg:w-1/4 mr-4 mb-8 bg-card-light">
-  <a class="block flex-1" href="{{ .link_to }}">
+<div class="flex flex-col w-full sm:w-1/2 lg:w-1/4 mb-8">
+  <a class="block bg-card-light sm:mx-2" href="{{ .link_to }}">
     <img class="block" src="{{ .image_link }}" alt="" />
     <div class="bg-card-light">
-      <h2 class="flex items-center text-2xl uppercase p-4 font-semibold tracking-wider h-24">{{ .name }}</h2>
+      <h2 class="flex items-center text-md md:text-2xl uppercase px-4 font-semibold tracking-wider h-20 md:h-24">{{ .name }}</h2>
     </div>
   </a>
 </div>

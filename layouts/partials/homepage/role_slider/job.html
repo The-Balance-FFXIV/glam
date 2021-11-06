@@ -1,5 +1,7 @@
-<div class="flex flex-grow flex-col w-full justify-center items-center my-4">
-    <img src="{{ .icon }}" />
-    <h3 class="text-2xl uppercase mt-1 font-bold tracking-widest">{{ .name }}</h3>
-    <a class="text-link-orange mt-2 font-sans font-bold tracking-wide" href="{{ .job_link }}">Guides &amp; Resources &raquo;</a>
+<div class="flex flex-grow flex-col w-full py-3 md:w-1/2 xl:w-1/5 justify-center items-center my-4">
+  <a class="flex flex-row items-center md:flex-col md:text-center" href="{{ .job_link }}">
+    <img class="w-8 h-8 md:w-16 md:h-16 mr-4 md:mr-0 md:mb-4" src="{{ .icon }}" />
+    <h3 class="text-xl uppercase mt-1 font-bold tracking-widest">{{ .name }}</h3>
+    <span class="text-link-orange mt-2 hidden md:block font-sans font-bold tracking-wide">Guides &amp; Resources &raquo;</span>
+  </a>
 </div>
