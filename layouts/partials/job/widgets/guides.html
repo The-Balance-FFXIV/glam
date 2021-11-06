@@ -1,0 +1,33 @@
+<div class="divide-y divide-card-dark">
+  <div class="bg-card-light p-4">
+    <p class="card-title">
+      Guides
+    </p>
+  </div>
+  {{ $content := dict
+    "role" .role
+    "name" "Guide 1"
+    "icon" (printf "/theme-assets/jobs/%s.svg" (lower .role))
+    "patch" "5.3"
+    "updated" "8 Sep, 2021"
+  }}
+  {{ partial "cards/guide.html" $content }}
+
+  {{ $content := dict
+    "role" .role
+    "name" "Guide 2"
+    "icon" (printf "/theme-assets/jobs/%s.svg" (lower .role))
+    "patch" "5.3"
+    "updated" "8 Sep, 2021"
+  }}
+  {{ partial "cards/guide.html" $content }}
+
+  {{ $content := dict
+    "role" .role
+    "name" "Guide 3"
+    "icon" (printf "/theme-assets/jobs/%s.svg" (lower .role))
+    "patch" "5.3"
+    "updated" "8 Sep, 2021"
+  }}
+  {{ partial "cards/guide.html" $content }}
+</div>

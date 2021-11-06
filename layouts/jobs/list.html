@@ -1,11 +1,16 @@
 {{ define "main" }}
 
+{{ $role := .Page.Parent.Params.role }}
+
 {{ partial "job/header.html" . }}
 
 <div class="space-y-14">
   {{ partial "job/fundamentals.html" . }}
   {{ partial "job/gearing.html" . }}
   {{ partial "job/advanced_guides.html" . }}
-  {{ partial "job/ressources.html" . }}
+
+  <div class="py-14 bg-no-repeat bg-cover" style="background-image: url('/theme-assets/jobs/{{ lower $role }}_ressources_background.png');">
+    {{ partial "job/role_ressources.html" . }}
+  </div>
 </div>
 {{ end }}
