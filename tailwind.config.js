@@ -2,6 +2,9 @@ module.exports = {
   purge: ['layouts/**/*.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      'sans': ['Roboto', 'sans-serif'],
+    },
     extend: {
       dropShadow: {
         '3xl': '0 100px 100px rgba(0, 0, 0, 0.75)',
@@ -22,7 +25,10 @@ module.exports = {
       },
       dropShadow: {
           'lg': '2px 2px 5px rgba(0, 0, 0, 0.5)'
-      }
+      },
+      fontSize: {
+        'base': '0.9375rem',
+      },
     },
   },
   variants: {
