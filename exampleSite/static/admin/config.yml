@@ -55,7 +55,7 @@ collections:
     format: "json"
     identifier_field: "category"
     create: true
-    fields: {
+    fields:
       - {label: "Category", name: "category", widget: "string"}
       - label: "Encounters" 
         name: "encounters"
@@ -65,7 +65,6 @@ collections:
           - {label: "Name of Encounter", name: "name", widget: "string"}
           - {label: "Image Link", name: "image_link", widget: "string"}
           - {label: "Encounter Link", name: "encounter_link", widget: "string"}
-    }
   ##
   # Scholar guide
   ##
