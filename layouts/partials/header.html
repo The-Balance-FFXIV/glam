@@ -1,6 +1,6 @@
 {{ $current := . }}
 {{ $list := .Site.Menus.main | append .Site.Menus.header }}
-<nav class="bg-black">
+<nav class="bg-black z-50">
   <div class="container mx-auto px-2 md:px-0">
     <div class="flex justify-between">
       <div class="flex space-x-7">
@@ -26,7 +26,7 @@
       <!-- Mobile menu button -->
       <div class="md:hidden flex items-center">
         <button class="outline-none mobile-menu-button">
-          <svg class=" w-6 h-6 text-gray-500 hover:opacity-75 "
+          <svg class=" w-8 h-8 text-link-orange hover:opacity-75 "
                x-show="!showMenu"
                fill="none"
                stroke-linecap="round"
