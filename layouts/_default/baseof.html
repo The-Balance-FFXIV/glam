@@ -2,8 +2,13 @@
 <html lang="en">
     {{- partial "head.html" . -}}
     <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
+        {{ $title := .Title }}
+        {{ if eq $title "Home"}}
+          {{- partial "header_home.html" . -}}
+        {{ else }}
+          {{- partial "header.html" . -}}
+        {{ end}}
+        <div id="content" class="z-20">
         {{- block "main" . }}{{- end }}
         </div>
         {{- partial "footer.html" . -}}

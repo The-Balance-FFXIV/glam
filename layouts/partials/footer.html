@@ -1,10 +1,10 @@
 <footer class="footer">
-  <div class="container mx-auto">
-    <h2>The Balance</h2>
-    <div class="flex ">
+  <div class="container mx-auto my-16">
+    <img src="/theme-assets/the_balance.png" />
+    <div class="flex mt-16">
       {{ range .Site.Menus.main }}
         <div class="flex-auto">
-          <h3 class="footer-header pb-1">
+          <h3 class="footer-header pb-1 font-bold">
             {{ .Name }}
           </h3>
           {{ if .HasChildren }}

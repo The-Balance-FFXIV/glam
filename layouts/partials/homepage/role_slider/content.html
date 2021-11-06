@@ -1,12 +1,15 @@
 <div class="tab-content">
   <div class="flex">
-    <div class="flex-1 role-info">
-      <h1><img src={{ .icon }} /> {{ .name }}</h1>
-      <div>
+    <div class="flex-1 w-1/2 role-info text-center">
+      <div class="flex flex-col justify-center">
+        <img class="inline-block mx-auto my-4 max-w-none w-20" src={{ .icon }} /> 
+        <a href="#" class="text-link-orange my-4">{{ .nameSingular }} Guides & Resources >></a>
+      </div>
+      <div class="text-left">
           {{ .role_text_md | markdownify }}
       </div>
     </div>
-    <div class="flex-grow flex items-center">
+    <div class="tab-jobs">
       {{ range (index . "jobs") }}
           {{ partial "homepage/role_slider/job.html" . }}
       {{ end }}

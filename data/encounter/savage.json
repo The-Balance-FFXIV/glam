@@ -1,0 +1,29 @@
+{
+    "category": "savage",
+    "encounters": [
+        {
+            "id": "edenPromise",
+            "name": "Eden's Promise",
+            "image_link": "theme-assets/homepage/encounters/savage/eden_promise/Image@2x.png",
+            "encounter_link": "#"
+        },
+        {
+            "id":"edenVerse",
+            "name": "Eden's Verse",
+            "image_link": "theme-assets/homepage/encounters/savage/eden_verse/Image@2x.png",
+            "encounter_link": "#"
+        },
+        {
+            "id": "edenGate",
+            "name": "Eden's Gate",
+            "image_link": "theme-assets/homepage/encounters/savage/eden_gate/Image@2x.png",
+            "encounter_link": "#"
+        },
+        {
+            "id": "oldTiers",
+            "name": "Older Tiers",
+            "image_link": "theme-assets/homepage/encounters/savage/old_tiers/Image@2x.png",
+            "encounter_link": "#"
+        }
+    ]
+}

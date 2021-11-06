@@ -19,6 +19,22 @@ body {
 Header/Navbar
  */
 
+header {
+	background-image: url("/theme-assets/homepage/endwalker@2x.png");
+	height: 500px;
+}
+header::after {
+	content:'';
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background: #0E263D;
+	opacity:0.65;
+	z-index:-1;
+}
+
 .navbar {
 	height: 80px;
 	background: #000000;
@@ -55,7 +71,7 @@ Content
 * TABS
 */
 .tabbed {
-	@apply overflow-x-hidden my-4 pb-2;
+	@apply overflow-x-hidden my-4 pb-2 -mt-44;
 }
 
 .tabbed [type="radio"] {
@@ -65,17 +81,26 @@ Content
 
 .tabs {
 	@apply flex items-stretch p-0 list-none;
-	border-bottom: 1px solid #ccc;
 }
 .tab > label {
 	@apply block px-3 py-3 cursor-pointer;
 	margin-bottom: -1px;
-	border: 1px solid #ccc;
-	font-size: 12px; 
+	font-size: 1.5rem; 
 	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	transition: all 0.3s;
+	background: #1E1E1F;
+	border-right: 2px solid #141415;
+}
+
+.tab > label.selected {
+	@apply bg-card-light;
+	border-bottom: none;
+}
+
+.tab:last-of-type > label{
+	border-right:none;
 }
 
 /* .tab:hover label {
@@ -83,7 +108,16 @@ Content
 } */
 
 .tab-content {
-	@apply hidden;
+	@apply hidden p-8;
+}
+
+.tab-jobs {
+	@apply flex-grow w-1/2 flex items-center p-4;
+}
+
+.tab-jobs img {
+	@apply mb-2;
+	height:50px;
 }
 
 /*
@@ -91,19 +125,20 @@ This is honestly a dirty, very bad, no good hack, but it does make the tabs nice
 It unfortunately also means we're limited to 5 tabs at current.
 */
 /* this is styling for tabs that are checked */
-/* .tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) label,
+.tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) label,
 .tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .tab:nth-of-type(2) label,
 .tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs .tab:nth-of-type(3) label,
 .tabbed [type="radio"]:nth-of-type(4):checked ~ .tabs .tab:nth-of-type(4) label,
 .tabbed [type="radio"]:nth-of-type(5):checked ~ .tabs .tab:nth-of-type(5) label {
-} */
+	@apply bg-card-light;
+}
 
 .tabbed [type="radio"]:nth-of-type(1):checked ~ .tab-content:nth-of-type(1),
 .tabbed [type="radio"]:nth-of-type(2):checked ~ .tab-content:nth-of-type(2),
 .tabbed [type="radio"]:nth-of-type(3):checked ~ .tab-content:nth-of-type(3),
 .tabbed [type="radio"]:nth-of-type(4):checked ~ .tab-content:nth-of-type(4),
 .tabbed [type="radio"]:nth-of-type(5):checked ~ .tab-content:nth-of-type(5) {
-	@apply block;
+	@apply block bg-card-light;
 }
 
 .tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .meta-tab:nth-of-type(1),
@@ -184,8 +219,7 @@ Footer
 
 
 .footer {
-	@apply bg-card-light;
-	margin-top: auto;
+	@apply bg-card-light mt-24;
 }
 
 .footer a {
@@ -229,3 +263,11 @@ Footer
     height: 150px;
 }
 
+.h-shadow {
+  color: white;
+  text-shadow: 2px 2px 2px #222;
+}
+
+.join-community {
+	background-image: url("/theme-assets/homepage/join-community.png");
+}

@@ -68,6 +68,23 @@ collections:
         widget: "object"
         fields:
           - {label: "Discord Name", name: "discord_id", widget: "string"}
+  # encounter metadata
+  - label: "Encounter metadata"
+    name: "encounter-guide"
+    folder: "data/encounter"
+    format: "json"
+    identifier_field: "category"
+    create: true
+    fields:
+      - {label: "Category", name: "category", widget: "string"}
+      - label: "Encounters" 
+        name: "encounters"
+        widget: "list"
+        fields:
+          - {label: "Identifier", name: "id", widget: "string"}
+          - {label: "Name of Encounter", name: "name", widget: "string"}
+          - {label: "Image Link", name: "image_link", widget: "string"}
+          - {label: "Encounter Link", name: "encounter_link", widget: "string"}
   ##
   # Scholar guide
   ##

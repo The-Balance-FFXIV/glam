@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      dropShadow: {
+        '3xl': '0 100px 100px rgba(0, 0, 0, 0.75)',
+      },
       colors: {
         'line-divide-color': '#2a3641',
         'link-orange': '#FF9900',
