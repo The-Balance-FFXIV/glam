@@ -67,7 +67,7 @@ Content
 * TABS
 */
 .tabbed {
-	@apply overflow-x-hidden my-4 pb-2 -mt-44;
+	@apply overflow-x-hidden my-4 pb-2;
 }
 
 .tabbed [type="radio"] {
@@ -76,32 +76,12 @@ Content
 }
 
 .tabs {
-	@apply flex items-stretch p-0 list-none;
+	@apply flex items-stretch p-0 list-none divide-x divide-card-dark border-b border-card-dark;
 }
+
 .tab > label {
-	@apply block px-3 py-3 cursor-pointer;
-	margin-bottom: -1px;
-	font-size: 1.5rem; 
-	font-weight: 600;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	transition: all 0.3s;
-	background: #1E1E1F;
-	border-right: 2px solid #141415;
+	@apply block px-7 py-3 cursor-pointer text-xl font-bold text-white uppercase tracking-widest bg-card-lighter transition-all;
 }
-
-.tab > label.selected {
-	@apply bg-card-light;
-	border-bottom: none;
-}
-
-.tab:last-of-type > label{
-	border-right:none;
-}
-
-/* .tab:hover label {
-	border-top-color: #333;
-} */
 
 .tab-content {
 	@apply hidden p-8;
