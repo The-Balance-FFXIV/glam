@@ -1,56 +1,47 @@
 <div class="tabbed">
-    {{ $metaCategories := slice "Guide Meta" "Contributors" "Changelog"}}
-    {{ range $index, $role := $metaCategories }}
-        <input type="radio" id="tab-{{ $role }}" name="css-tabs" {{ if eq $index 0 }}checked{{ end }}>
-    {{ end }}
+  {{ $metaCategories := slice "Guide Meta" "Contributors" "Changelog"}}
+  {{ range $index, $role := $metaCategories }}
+    <input type="radio" id="tab-{{ $role }}" name="css-tabs" {{ if eq $index 0 }}checked{{ end }}>
+  {{ end }}
     
-    <ul class="tabs" style="border-width: 0px;">
-        {{ range $role := $metaCategories }}
-            <li class="tab meta-tab"><label for="tab-{{ $role }}" style="border-width: 0px;">{{ $role }}</label></li>
-        {{ end }}
-    </ul>
-    
+  <ul class="tabs">
     {{ range $role := $metaCategories }}
-        <div class="tab-content" style="background-color: #192129;">
-            <div class="flex">
-            <div class="flex-1 role-info">
-                <div>
-                    {{/* This implementation is probably less than ideal right now */}}
-                    {{if eq . "Guide Meta"}}
-                        <div class="questions-block pt-4 pb-8 pl-8">
-                            <div class="pb-4">HAVE ANY QUESTIONS?</div>
-                            <img class="inline-block pr-4" src="/theme-assets/the_balance.png">
-                            <img class="inline-block" src="/theme-assets/orange_discord_no_text.png">
-                            <div class="inline-block text-link-orange font-bold"><a href="https://discord.gg/thebalanceffxiv">discord.gg/thebalanceffxiv</a></div>
-                        </div>
-                        <div class="authors pl-8 pb-10">
-                            <div class="font-bold pb-4">AUTHORS</div>
-                            <div class="flex flex-row gap-12">
-                                {{ range $author := $.Page.Params.authors }}
-                                    {{ partial "components/author_box.html" (index $.Site.Data.author $author) }}
-                                {{ end }}
-                            </div>
-                        </div>
-                    {{ else if eq . "Contributors" }}
-                        <div class="py-6">
-                            {{ range $author := $.Page.Params.contributors }}
-                                <div>
-                                    <div class="mx-auto rounded-full bg-black bg-contain p-2 bg-origin-content bg-no-repeat" style="width: 90px; height: 90px; background-image: url(/theme-assets/jobs/scholar.svg)"></div>
-                                    <div class="text-center">{{ .name }}</div>
-                                </div>
-                            {{ end }}
-                        </div>
-                    {{ else }}
-                        {{ range $change := $.Page.Params.changelog }}
-                        <div class="py-4">
-                            <div>{{ time.Format "2 Jan, 2006" .date }}</div>
-                            <div>{{ .message | markdownify }}</div>
-                        </div>
-                        {{ end }}
-                    {{ end }}
-                </div>
-            </div>
-            </div>
-        </div>
+      <li class="tab meta-tab"><label for="tab-{{ $role }}">{{ $role }}</label></li>
     {{ end }}
+  </ul>
+    
+  {{ range $role := $metaCategories }}
+    <div class="tab-content">
+      {{/* This implementation is probably less than ideal right now */}}
+      {{ if eq . "Guide Meta" }}
+        <div class="card-title mb-5">Have any questions?</div>
+        <div class="flex items-center mb-9">
+          <img class="mr-4" src="/theme-assets/the_balance.png">
+          <div class="flex items-center">
+            <img class="mr-2" src="/theme-assets/orange_discord_no_text.png">
+            <a class="link" href="https://discord.gg/thebalanceffxiv">discord.gg/thebalanceffxiv</a>
+          </div>
+        </div>
+        <div class="card-title mb-5">Authors</div>
+        <div class="flex flex-row gap-12">
+          {{ range $author := $.Page.Params.authors }}
+            {{ partial "components/author_box.html" (index $.Site.Data.author $author) }}
+          {{ end }}
+        </div>
+      {{ else if eq . "Contributors" }}
+        <div class="py-6">
+          {{ range $author := $.Page.Params.contributors }}
+            {{ partial "components/author_box.html" $author }}
+          {{ end }}
+        </div>
+      {{ else }}
+        {{ range $change := $.Page.Params.changelog }}
+          <div class="py-4">
+              <div>{{ time.Format "2 Jan, 2006" .date }}</div>
+              <div>{{ .message | markdownify }}</div>
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  {{ end }}
 </div>

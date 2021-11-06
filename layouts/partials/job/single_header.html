@@ -1,0 +1,29 @@
+<div class="h-60 xl:h-80" style='background-image: url(/theme-assets/jobs/{{ lower .Parent.Title }}_background.png);'>
+  <div class="container mx-auto z-10 relative flex items-center h-full">
+    <div class="grid grid-cols-12 gap-8 w-full items-center">
+        <div class="col-span-9 text-white">
+          <div class="flex items-center">
+            <img class="job-icon-sm mr-4 filter drop-shadow-lg" src='{{ print "/theme-assets/jobs/" (lower .Parent.Title) ".svg" }}' />
+            <div class="font-bold uppercase tracking-widest filter drop-shadow-lg"> {{ .Parent.Title }} </div> 
+          </div>
+          <div>
+            <div class="flex items-center">
+              <img class="inline mr-8 filter drop-shadow-lg" src="/theme-assets/book.svg" />
+              <div class="font-bold filter drop-shadow-lg" style="font-size: 60px;">{{ .Title }}</div>
+            </div>
+            <div style="font-size: 15px;">{{ .Param "description"}}</div>
+          </div>
+        </div>
+        <div class="col-span-3 bg-card-light text-white divide-y divide-page px-5">
+            <div class="card-title py-5">Guide Info</div>
+            <div class="py-3 space-y-2 text-gray-light font-bold">
+                <div>Last Updated: {{ (time.Format "2 Jan, 2006" .Params.lastmod) }}</div>
+                <div>Patch Applicable: {{ .Param "patch" }}</div>
+            </div>
+            <div class="py-4 text-right">
+              <a href="#" class="link">Jump to recent changes »</a>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

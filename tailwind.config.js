@@ -14,6 +14,7 @@ module.exports = {
       colors: {
         'line-divide-color': '#2a3641',
         'link-orange': '#FF9900',
+        'card-lighter': '#1E1E1F',
         'card-light': '#19191A',
         'card-dark': '#101111',
         'card-border-color' : '#3871c2',
@@ -21,6 +22,10 @@ module.exports = {
         'tank': '#3A7AD6',
         'healer': '#47C168',
         'dps': '#D84D4D',
+        'page': '#222528',
+        'gray': {
+            'light': '#C9C9C9',
+        }
       },
       zIndex: {
           '-1': '-1',
