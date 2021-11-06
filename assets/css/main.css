@@ -116,10 +116,11 @@ It unfortunately also means we're limited to 5 tabs at current.
 }
 
 /*
-w-1/5 is just being used for testing without a layout
+  Card
 */
-.card {
-	@apply flex flex-col;
+
+.card-title {
+    @apply font-bold text-white text-lg uppercase tracking-widest;
 }
 
 .card-content {
