@@ -139,7 +139,32 @@ Content
 }
 
 .tabs {
-	@apply flex items-stretch font-head p-0 list-none divide-x divide-card-dark border-b border-card-dark;
+	@apply flex items-stretch font-head p-0 list-none flex-col sm:flex-row divide-x divide-card-dark border-b border-card-dark;
+}
+.tabs-desktop {
+	@apply hidden sm:flex items-stretch p-0 list-none flex-col sm:flex-row;
+}
+
+.tab > label {
+	@apply block sm:hidden px-3 py-3 cursor-pointer;
+	margin-bottom: -1px;
+	font-size: 1.5rem; 
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	transition: all 0.3s;
+	background: #1E1E1F;
+	border-right: 2px solid #141415;
+}
+
+.tab.desktop > label {
+	@apply hidden sm:block;
+}
+
+
+.tab > label.selected {
+	@apply bg-card-light;
+	border-bottom: none;
 }
 
 .tab > label {
@@ -151,7 +176,7 @@ Content
 }
 
 .tab-jobs {
-	@apply flex-grow w-1/2 flex items-center p-4 justify-evenly font-head;
+	@apply block w-full sm:w-1/2 sm:flex-grow sm:flex items-center p-4 justify-evenly font-head;
 }
 
 .tab-jobs img {
@@ -172,11 +197,11 @@ It unfortunately also means we're limited to 5 tabs at current.
 	@apply bg-card-light;
 }
 
-.tabbed [type="radio"]:nth-of-type(1):checked ~ .tab-content:nth-of-type(1),
-.tabbed [type="radio"]:nth-of-type(2):checked ~ .tab-content:nth-of-type(2),
-.tabbed [type="radio"]:nth-of-type(3):checked ~ .tab-content:nth-of-type(3),
-.tabbed [type="radio"]:nth-of-type(4):checked ~ .tab-content:nth-of-type(4),
-.tabbed [type="radio"]:nth-of-type(5):checked ~ .tab-content:nth-of-type(5) {
+.tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs > .tab:nth-of-type(1) > .tab-content,
+.tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs > .tab:nth-of-type(2) > .tab-content,
+.tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs > .tab:nth-of-type(3) > .tab-content,
+.tabbed [type="radio"]:nth-of-type(4):checked ~ .tabs > .tab:nth-of-type(4) > .tab-content,
+.tabbed [type="radio"]:nth-of-type(5):checked ~ .tabs > .tab:nth-of-type(5) > .tab-content {
 	@apply block bg-card-light flex content-center md:h-96;
 }
 

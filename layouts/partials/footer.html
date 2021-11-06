@@ -1,9 +1,9 @@
 <footer class="footer">
-  <div class="container mx-auto mt-16 mb-8">
+  <div class="container px-4 sm:px-0 mx-auto mt-16">
     <img src="/theme-assets/the_balance.png" />
-    <div class="flex mt-16">
+    <div class="flex flex-wrap sm:flex-row sm:flex-nowrap mt-16">
       {{ range .Site.Menus.main }}
-        <div class="flex-auto">
+        <div class="flex flex-col w-1/2 sm:w-full">
           <h3 class="footer-header pb-1 font-bold">
             {{ .Name }}
           </h3>

@@ -1,13 +1,11 @@
 {{ define "main" }}
-<div class="container mx-auto">
-  <div class="-mt-44">
-    {{ partial "homepage/role_slider.html" . }}
-  </div>
+<div class="container px-4 sm:px-0 mx-auto">
+  {{ partial "homepage/role_slider.html" . }}
   {{/*  {{ partial "homepage/recents.html" . }}  */}}
 </div>
   {{ partial "homepage/join.html" . }}
-<!--div class="container mx-auto">
-{{/*  {{ partial "homepage/encounters.html" . }}  */}}
-</div-->
+<div class="container px-4 sm:px-0 mx-auto">
+  {{ partial "homepage/encounters.html" . }}
+</div>
 {{/*  {{ partial "homepage/spotlight.html" . }}  */}}
 {{ end }}

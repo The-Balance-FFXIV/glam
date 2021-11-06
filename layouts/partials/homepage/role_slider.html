@@ -2,10 +2,10 @@
     {{ range $index, $role := sort .Site.Data.roles "order" }}
         <input type="radio" id="tab-{{ $role.name | urlize }}" name="css-tabs" {{ if eq $index 0 }}checked{{ end }}>
     {{ end }}
-    
-    <ul class="tabs flex">
-        {{ range $role := sort .Site.Data.roles "order" }}
-            <li class="tab flex-grow text-center">
+    {{/*  This extra ul is to create the desktop look + feel while keeping a mobile accordion  */}}
+    <ul class="tabs-desktop">
+      {{ range $role := sort .Site.Data.roles "order" }}
+            <li class="tab desktop flex-grow text-center">
               <label for="tab-{{ $role.name | urlize }}" class="border-t-4"
                 style="border-top-color: {{ $role.color }}">
                 <div class="flex items-center justify-center">
@@ -16,8 +16,18 @@
             </li>
         {{ end }}
     </ul>
-    
-    {{ range $role := sort .Site.Data.roles "order" }}
-        {{ partial "homepage/role_slider/content.html" $role }}
-    {{ end }}
+    <ul class="tabs flex flex-col sm:flex-row">
+        {{ range $role := sort .Site.Data.roles "order" }}
+            <li class="tab flex-grow text-center">
+              <label for="tab-{{ $role.name | urlize }}" class="border-t-4"
+                style="border-top-color: {{ $role.color }}">
+                <div class="flex items-center justify-center">
+                  <img class="inline-block mr-2" src="/theme-assets/icons/role/role_{{ $role.title | urlize }}.svg" alt="" />
+                  {{ $role.name }}
+                </div>
+              </label>
+              {{ partial "homepage/role_slider/content.html" $role }}
+            </li>
+        {{ end }}
+    </ul>
 </div>
