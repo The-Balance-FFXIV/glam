@@ -58,10 +58,8 @@ Content
 */
 
 .role-header {
-	@apply font-bold text-white text-4xl pb-5 filter drop-shadow-lg;
-	text-transform: uppercase;
+	@apply font-bold text-white text-4xl filter drop-shadow-lg uppercase;
 }
-
 
 /*
 * TABS
