@@ -5,7 +5,7 @@
             <img class="job-icon-sm inline pr-2" src='{{ print "/theme-assets/jobs/" (lower .Parent.Title) ".svg" }}' />
             <div class="inline align-middle font-bold" style="font-size: 20px;"> {{ .Parent.Title }} </div> 
         </div>
-        <div class="row-span-3 col-span-2 bg-dark-block-color text-white divide-y-2 px-2">
+        <div class="row-span-3 col-span-2 bg-card-light text-white divide-y-2 px-2">
             <div class="p-4">Guide Info</div>
             <div class="p-2">
                 <div class="pb-2">Last Updated: {{ (time.Format "2 Jan, 2006" .Params.lastmod) }}</div>
@@ -23,10 +23,10 @@
     </div>
 </div>
 <div class="mx-20">
-    <div class="inline-block bg-dark-block-color text-white w-3/4 pt-10">
+    <div class="inline-block bg-card-light text-white w-3/4 pt-10">
         {{ .Content }}
     </div>
-    <div class="inline-block bg-dark-block-color flex-shrink-0 px-4 pt-10 divide-y-2 mt-4 w-1/5 ml-6 align-top sticky top-0">
+    <div class="inline-block bg-card-light flex-shrink-0 px-4 pt-10 divide-y-2 mt-4 w-1/5 ml-6 align-top sticky top-0">
         <div class="text-white font-bold pb-4" style="font-size: 20px;">TABLE OF CONTENTS</div>
         <div class="text-link-orange font-bold py-2">{{ .TableOfContents }}</div>
         <div>&nbsp;</div>
