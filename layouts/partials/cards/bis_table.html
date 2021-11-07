@@ -1,12 +1,12 @@
 {{ $borderClass := default "gray-600" .role }}
 
-<div class="card">
+<div>
 	{{ with .image }}
 	<div>
 		<img class="w-full" src="{{ . }}" />
 	</div>
 	{{ end }}
-	<div class="bg-card-light px-5 py-6 border-l-8 border-{{ $borderClass }}">
+	<div class="card card-{{ $borderClass }}">
     <div class="border-b border-card-dark pb-5">
       {{ partial "cards/_header.html" . }}
     </div>

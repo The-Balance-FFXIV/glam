@@ -16,13 +16,21 @@ changelog:
     message: This article didn't exist
 ---
 
+## Openers
+
+Openers are designed to do a few very important things:
+
+1. Get abilities on cooldown as soon as possible. This keeps us from sitting on skills that are ready which could potentially cause lost uses.
+2. Get strong abilities under raid buffs. This helps to maximize damage done. More damage is always better, especially when it's free!
+3. Set up our rotation for the rest of the fight (or until a transition/extended period of downtime). This is especially important for fight specific optimizations and using the right opener may gain a use of important abilities like the Gnashing Fang combo.
+
+The theoretical standard opener for a full-uptime encounter is the 4th GCD No Mercy opener:
+
+At higher levels of gameplay, you can and should adjust your opener based on your group composition and the specifics of the fight.
+
 ## Basic rotation
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur gravida, elit ac malesuada pharetra, ex ante euismod neque, in accumsan sapien lorem quis enim. Curabitur posuere laoreet auctor. Maecenas mauris risus, luctus a urna ut, mattis laoreet odio. Cras lorem nunc, tincidunt vel felis eu, interdum eleifend lorem. Mauris egestas elit lorem, eu pulvinar enim accumsan laoreet. Mauris id sodales lorem. Phasellus condimentum elit nec ex placerat dapibus. In egestas dapibus lacus id suscipit. Curabitur dolor arcu, tincidunt sed purus ut, luctus accumsan enim. Morbi convallis sem in tellus tristique dignissim. Duis porttitor dui odio, quis iaculis lorem elementum quis. Etiam ut lectus vitae lacus ultrices porta eu vel erat. Etiam gravida ex in eros placerat condimentum. Nulla feugiat porta mauris, in egestas dolor tincidunt vitae. Duis sed tincidunt metus, id vehicula risus. Sed vitae magna ut felis aliquet volutpat et nec arcu.
-
-Nam blandit lacus in lacus luctus, nec fermentum augue ullamcorper. Sed pellentesque sagittis tellus, vel hendrerit augue tempor et. Nam fermentum, ante vitae ultrices venenatis, ligula nisl eleifend diam, ullamcorper hendrerit eros metus in erat. Donec pretium ultricies purus efficitur ultricies. Sed nisi augue, auctor at suscipit eget, pellentesque non lacus. Maecenas volutpat nisl vel lacus semper gravida. Praesent auctor tellus id ultrices venenatis. Sed fringilla, sapien dictum feugiat mollis, lorem nunc viverra erat, ut aliquet eros urna sit amet libero. Cras interdum lectus auctor tortor porttitor finibus. Etiam nisl velit, imperdiet quis nulla volutpat, egestas porta lacus. Mauris erat orci, bibendum a ligula a, iaculis sodales turpis.
-
-## Other
+### Priority System
 
 Nullam tempus est turpis, quis sollicitudin ex lacinia quis. Vestibulum blandit non orci ac gravida. Mauris vel eros molestie elit gravida pulvinar. Aliquam lacinia maximus ipsum, nec mollis lacus placerat sit amet. Etiam sodales arcu augue, volutpat porttitor enim convallis vitae. Phasellus eget pharetra ligula. Vivamus eu sem leo. Cras fringilla in lectus eget luctus. Praesent eu aliquet eros. Nulla ultricies, ipsum id bibendum interdum, ligula velit gravida turpis, a molestie velit est sit amet ante. Integer quis lorem pretium, vehicula eros vel, auctor urna. Suspendisse at dolor risus. Cras eget urna ut ligula consectetur gravida. Vivamus quis arcu eleifend erat rhoncus bibendum. Duis vestibulum, turpis vel pharetra varius, urna sapien euismod leo, quis semper nunc lectus eget neque.
 

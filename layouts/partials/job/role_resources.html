@@ -1,0 +1,19 @@
+{{ $role := .Page.Parent.Params.role }}
+
+<div class="container mx-auto">
+  <div class="w-full flex flex-row mb-8">
+    <div class="role-header">{{ $role }} Resources</div>
+    <div class="text-right flex-grow self-end">
+      <a class="link" href="{{ .Parent.RelPermalink }}">Go to {{ $role }} page »</a>
+    </div>
+  </div>
+  <section class="grid grid-cols-12 gap-9">
+
+    <div class="col-span-6">
+      {{ partial "job/widgets/guides.html" (dict "role" $role) }}
+    </div>
+
+    <div class="col-span-6">
+      {{ partial "job/widgets/external_tools.html" (dict "role" $role) }}
+  </section>
+</div>

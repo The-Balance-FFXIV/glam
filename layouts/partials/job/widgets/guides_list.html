@@ -1,0 +1,48 @@
+{{ $guideList := slice }}
+
+{{ with .Page.GetPage "leveling-guide" }}
+  {{ $guideList = $guideList | append (dict "icon" "/theme-assets/sprout.svg" "name" "Leveling Guide" "link" "leveling-guide") }}
+{{ end }}
+
+{{ with .Page.GetPage "skills-overview" }}
+  {{ $guideList = $guideList | append (dict "icon" "/theme-assets/skills.svg" "name" "Skills Overview" "link" "skills-overview") }}
+{{ end }}
+
+{{ with .Page.GetPage "faq" }}
+  {{ $guideList = $guideList | append (dict "icon" "/theme-assets/question_bubble.svg" "name" "FAQ" "link" "faq") }}
+{{ end }}
+
+{{ with .Page.GetPage "job-changes" }}
+  {{ $guideList = $guideList | append (dict "icon" "/theme-assets/news.svg" "name" "Latest Job Changes" "link" "job-changes") }}
+{{ end }}
+
+{{ with .Page.GetPage "basic-guide" }}
+  {{ $guideList = $guideList | append (dict "icon" "/theme-assets/book.svg" "name" (printf "Basic Guide (LV %d)" .Site.Params.maxLevel) "link" "basic-guide") }}
+{{ end }}
+
+{{ with .Page.GetPage "openers" }}
+  {{ $guideList = $guideList | append (dict "icon" "/theme-assets/clock.svg" "name" "Openers" "link" "openers") }}
+{{ end }}
+
+{{ with .Page.GetPage "best-in-slot" }}
+  {{ $guideList = $guideList | append (dict "icon" "/theme-assets/armoury.svg" "name" "Best-in-slot (BIS) Gear Sets" "link" "best-in-slot") }}
+{{ end }}
+
+{{ with .Page.GetPage "stat-priority" }}
+  {{ $guideList = $guideList | append (dict "icon" "/theme-assets/materia.svg" "name" "Stats & Materia Priority" "link" "stat-priority") }}
+{{ end }}
+
+{{ with .Page.GetPage "advanced-guide" }}
+  {{ $guideList = $guideList | append (dict "icon" "/theme-assets/advanced_guide.svg" "name" "Advanced Guide" "link" "advanced-guide") }}
+{{ end }}
+
+{{ with .Page.GetPage "fight-tips" }}
+  {{ $guideList = $guideList | append (dict "icon" "/theme-assets/fight_tips.svg" "name" "Fight Tips" "link" "fight-tips") }}
+{{ end }}
+
+{{ range $guideList }}
+  <div class="flex items-center">
+    <img src="{{ .icon }}" class="h-4 w-4 object-contain mr-2">
+    <a href="{{ $.Page.Parent.Permalink }}{{ .link }}" class="link">{{ .name }}</a>
+  </div>
+{{ end }}
