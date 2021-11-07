@@ -166,7 +166,7 @@ Content
 }
 
 .tabs.desktop {
-	@apply hidden md:flex items-stretch p-0 list-none flex-col md:flex-row divide-x divide-card-dark;
+	@apply hidden md:flex items-stretch p-0 list-none flex-col md:flex-row divide-x divide-card-dark md:divide-x-0;
 }
 
 .tab.desktop > label {
