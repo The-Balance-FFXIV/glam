@@ -7,7 +7,7 @@
  */
 
 body {
-	@apply text-white;
+	@apply font-kumbhsans text-white;
 	background-color: #222528;
 	display: flex;
 	flex-direction: column;
@@ -80,6 +80,10 @@ Content
     @apply drop-shadow-lg-dps;
 }
 
+.role-info {
+	@apply flex flex-col w-4/12 text-center justify-center;
+}
+
 /*
 * TABS
 */
@@ -105,7 +109,7 @@ Content
 }
 
 .tab-jobs {
-	@apply flex-grow w-1/2 flex items-center p-4;
+	@apply flex-grow w-1/2 flex items-center p-4 justify-evenly;
 }
 
 .tab-jobs img {
@@ -131,7 +135,7 @@ It unfortunately also means we're limited to 5 tabs at current.
 .tabbed [type="radio"]:nth-of-type(3):checked ~ .tab-content:nth-of-type(3),
 .tabbed [type="radio"]:nth-of-type(4):checked ~ .tab-content:nth-of-type(4),
 .tabbed [type="radio"]:nth-of-type(5):checked ~ .tab-content:nth-of-type(5) {
-	@apply block bg-card-light;
+	@apply block bg-card-light flex content-center md:h-96;
 }
 
 /*
