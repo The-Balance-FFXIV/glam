@@ -1,5 +1,6 @@
 ---
-teaser: /img/jobs/scholar_advanced_guide.png
+images:
+  - /img/jobs/scholar_advanced_guide.png
 authors:
   - johndoe
 patch: 5.3

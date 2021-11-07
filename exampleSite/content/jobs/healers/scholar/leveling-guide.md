@@ -1,5 +1,6 @@
 ---
-teaser: /img/jobs/scholar_leveling_guide.png
+images:
+  - /img/jobs/scholar_leveling_guide.png
 authors:
   - johndoe
 patch: "5.4"

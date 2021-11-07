@@ -9,17 +9,21 @@
 
     <div class="xl:col-span-6 xl:row-start-3">
       {{ with .Page.GetPage "leveling-guide" }}
-          {{ $levelingInfo := dict
-            "role" $role
-            "image" .Params.teaser
-            "imageClass" "h-52"
-            "icon" "/theme-assets/sprout.svg"
-            "name" "Leveling Guide"
-            "patch" .Params.patch
-            "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
-            "inlineLink" "leveling-guide"
-          }}
-          {{ partial "cards/guide.html" $levelingInfo }}
+        {{ $teaserImage := "" }}
+        {{ with .Params.images }}
+          {{ $teaserImage = (index . 0) }}
+        {{ end }}
+        {{ $levelingInfo := dict
+          "role" $role
+          "image" $teaserImage
+          "imageClass" "h-52"
+          "icon" "/theme-assets/sprout.svg"
+          "name" "Leveling Guide"
+          "patch" .Params.patch
+          "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
+          "inlineLink" "leveling-guide"
+        }}
+        {{ partial "cards/guide.html" $levelingInfo }}
       {{ end }}
     </div>
 
@@ -27,9 +31,13 @@
       <div class="divide-y divide-card-dark">
         {{ with .Page.GetPage "basic-guide" }}
           {{ $guideName := printf "Basic Guide (LV %d)" .Site.Params.maxLevel}}
+          {{ $teaserImage := "" }}
+          {{ with .Params.images }}
+            {{ $teaserImage = (index . 0) }}
+          {{ end }}
           {{ $basicInfo := dict
             "role" $role
-            "image" .Params.teaser
+            "image" $teaserImage
             "imageClass" "h-72"
             "icon" "/theme-assets/book.svg"
             "name" $guideName
