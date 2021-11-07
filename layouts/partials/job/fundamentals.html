@@ -11,7 +11,8 @@
       {{ with .Page.GetPage "leveling-guide" }}
           {{ $levelingInfo := dict
             "role" $role
-            "image" (printf "/theme-assets/jobs/%s_leveling_guide.png" (lower $.Title))
+            "image" .Params.teaser
+            "imageClass" "h-52"
             "icon" "/theme-assets/sprout.svg"
             "name" "Leveling Guide"
             "patch" .Params.patch
@@ -28,7 +29,8 @@
           {{ $guideName := printf "Basic Guide (LV %d)" .Site.Params.maxLevel}}
           {{ $basicInfo := dict
             "role" $role
-            "image" (printf "/theme-assets/jobs/%s_basic_guide.png" (lower $.Title))
+            "image" .Params.teaser
+            "imageClass" "h-72"
             "icon" "/theme-assets/book.svg"
             "name" $guideName
             "patch" .Params.patch

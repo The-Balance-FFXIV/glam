@@ -1,4 +1,7 @@
 ---
+teaser: /img/jobs/scholar_advanced_guide.png
+authors:
+  - johndoe
 patch: 5.3
 lastmod: 2021-09-08
 changelog:

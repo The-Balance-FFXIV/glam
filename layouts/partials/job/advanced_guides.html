@@ -11,7 +11,8 @@
           "name" "Advanced Guide"
           "patch" .Params.patch
           "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
-          "image" (printf "/theme-assets/jobs/%s_advanced_guide.png" (lower $.Title))
+          "image" .Params.teaser
+          "imageClass" "h-100"
           "inlineLink" "advanced-guide"
         }}
         {{ partial "cards/guide.html" $content }}
@@ -25,7 +26,8 @@
           "name" "Fight Tips"
           "patch" .Params.patch
           "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
-          "image" (printf "/theme-assets/jobs/%s_fight_tips.png" (lower $.Title))
+          "image" .Params.teaser
+          "imageClass" "h-100"
           "inlineLink" "advanced-guide"
         }}
         {{ partial "cards/guide.html" $content }}

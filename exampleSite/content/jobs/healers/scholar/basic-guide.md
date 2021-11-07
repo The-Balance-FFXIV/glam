@@ -1,19 +1,21 @@
 ---
-lastmod: '2021-09-10'
-patch: 5.3
-title: "Basic Guide (Lv 90)"
-description: "The Endwalker-updated guide on how to pick up and play Scholar in trials and raids."
+teaser: /img/jobs/scholar_basic_guide.png
 authors:
   - nonowazu
   - johndoe
-contributors:
-  - name: "Contributor 1"
-    image: "image"
+patch: 5.3
+lastmod: 2021-09-10
 changelog:
-  - date: '2021-09-09'
+  - date: 2021-09-09
     message: Made it lorem ipsum
-  - date: '2021-01-01'
+  - date: 2021-01-01
     message: This article didn't exist
+title: Basic Guide (Lv 90)
+contributors:
+  - name: Contributor 1
+    image: image
+description: The Endwalker-updated guide on how to pick up and play Scholar in
+  trials and raids.
 ---
 
 ## Basic rotation

@@ -18,6 +18,9 @@ module.exports = {
         'healer': '#47C168',
         'dps': '#D84D4D',
       },
+      height: {
+        '100': '25rem', 
+      },
       zIndex: {
           '-1': '-1',
       },
