@@ -57,8 +57,27 @@ Content
   Jobs List
 */
 
+.role-header,
+.role-header-healer,
+.role-header-tank,
+.role-header-dps {
+	@apply font-bold text-white text-4xl filter uppercase font-head tracking-wider;
+}
+
 .role-header {
-	@apply font-bold text-white text-4xl filter drop-shadow-lg uppercase;
+	@apply drop-shadow-lg;
+}
+
+.role-header-healer {
+    @apply drop-shadow-lg-healer;
+}
+
+.role-header-tank {
+    @apply drop-shadow-lg-tank;
+}
+
+.role-header-dps {
+    @apply drop-shadow-lg-dps;
 }
 
 /*
@@ -120,7 +139,7 @@ It unfortunately also means we're limited to 5 tabs at current.
 */
 
 .card-title {
-    @apply font-bold text-white text-lg uppercase tracking-widest;
+    @apply font-bold text-white text-lg uppercase tracking-widest font-head;
 }
 
 .card-content {
@@ -255,7 +274,7 @@ Markdown - Can be used to auto apply styling to tags within the .markdown class
 }
 
 .markdown h3 {
-    @apply text-xl font-bold text-white uppercase tracking-widest mb-6;
+    @apply text-xl font-bold text-white uppercase tracking-widest mb-6 font-head;
 }
 
 .markdown p,
