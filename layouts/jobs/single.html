@@ -3,7 +3,16 @@
 {{ $role := .Page.Parent.Page.Parent.Params.role }}
 
 <div class="space-y-16">
-  {{ partial "job/single_header.html" . }}
+  {{ $header := dict
+    "role" $role
+    "job" .Parent.Title
+    "title" .Title
+    "icon" "/theme-assets/book.svg"
+    "description" .Params.description
+    "lastmod" .Params.lastmod
+    "patch" .Params.patch
+  }}
+  {{ partial "job/single_header.html" $header }}
 
   <div class="container mx-auto">
     <div class="grid grid-cols-12 items-start gap-8 w-full">
