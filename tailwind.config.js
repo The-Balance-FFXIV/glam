@@ -6,9 +6,14 @@ module.exports = {
   theme: {
     fontFamily: {
       'sans': ['Roboto', 'sans-serif'],
+      'head': ['Kumbh Sans', 'sans-serif']
     },
     extend: {
       dropShadow: {
+        'lg': '2px 2px 3px #000000',
+        'lg-healer': '2px 2px 3px #256A1D',
+        'lg-tank': '2px 2px 3px #1D3D6A',
+        'lg-dps': '2px 2px 3px #6A1D1D',
         '3xl': '0 100px 100px rgba(0, 0, 0, 0.75)',
       },
       colors: {
@@ -29,9 +34,6 @@ module.exports = {
       },
       zIndex: {
           '-1': '-1',
-      },
-      dropShadow: {
-          'lg': '2px 2px 5px rgba(0, 0, 0, 0.5)'
       },
       fontSize: {
         'base': '0.9375rem',
@@ -64,7 +66,7 @@ module.exports = {
                 ...acc,
                 ...variants.reduce((a, variant) => ({
                     ...a,
-                    [`.overlay-${e(key)}-${variant}`]: {
+                    [`.card-${e(key)}-${variant}`]: {
                         '--tw-border-color': colors[key][variant],
                     },
                 }), {}),
