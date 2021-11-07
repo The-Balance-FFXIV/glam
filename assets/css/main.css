@@ -7,7 +7,7 @@
  */
 
 body {
-	@apply font-kumbhsans text-white;
+	@apply font-sans text-white;
 	background-color: #222528;
 	display: flex;
 	flex-direction: column;
@@ -35,6 +35,10 @@ header::after {
 	z-index:-1;
 }
 
+header nav {
+	@apply font-head;
+}
+
 .navbar {
 	height: 80px;
 	background: #000000;
@@ -45,6 +49,23 @@ header::after {
 	@apply container mx-auto;
 	height: 100%;
 }
+/**
+Link
+ */
+
+ .orange-link {
+	 @apply text-link-orange font-bold tracking-wide;
+ }
+
+
+/**
+Heading
+ */
+
+ .section-head {
+	@apply h-shadow flex-grow text-4xl font-head tracking-wider uppercase font-bold;
+}
+
 
 /**
 Content
@@ -97,7 +118,7 @@ Content
 }
 
 .tabs {
-	@apply flex items-stretch p-0 list-none divide-x divide-card-dark border-b border-card-dark;
+	@apply flex items-stretch font-head p-0 list-none divide-x divide-card-dark border-b border-card-dark;
 }
 
 .tab > label {
@@ -109,7 +130,7 @@ Content
 }
 
 .tab-jobs {
-	@apply flex-grow w-1/2 flex items-center p-4 justify-evenly;
+	@apply flex-grow w-1/2 flex items-center p-4 justify-evenly font-head;
 }
 
 .tab-jobs img {
@@ -217,7 +238,7 @@ Footer
 }
 
 .footer-header {
-	@apply text-white;
+	@apply text-white font-head;
 	font-size: 14px;
 	text-transform: uppercase;
 	letter-spacing: 2.8px;

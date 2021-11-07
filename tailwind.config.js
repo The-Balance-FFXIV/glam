@@ -5,7 +5,6 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      'kumbhsans': ['Kumbh Sans', 'sans-serif'],
       'sans': ['Roboto', 'sans-serif'],
       'head': ['Kumbh Sans', 'sans-serif']
     },
@@ -41,7 +40,6 @@ module.exports = {
       },
       fontSize: {
         'base': '0.9375rem',
-        'content': "15px"
       },
     },
   },
