@@ -188,7 +188,7 @@ Content
 }
 
 .tab-jobs {
-	@apply items-center block sm:flex sm:flex-wrap sm:flex-grow w-full sm:w-1/2 md:w-2/3 lg:w-3/4 p-4 md:justify-evenly font-head ;
+	@apply items-center block sm:flex sm:flex-wrap sm:flex-grow w-full sm:w-1/2 md:w-2/3 lg:w-3/4 p-4 md:justify-evenly font-head;
 }
 
 .tab-jobs img {

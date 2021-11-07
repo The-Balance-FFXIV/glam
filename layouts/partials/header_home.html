@@ -1,11 +1,10 @@
 {{ $current := . }}
 {{ $list := .Site.Menus.main | append .Site.Menus.header }}
-<header class="bg-center bg-cover relative z-10">
-  <nav class="z-20">
+  <nav class="fixed md:absolute top-0 left-0 w-full z-50">
     <div class="container mx-auto">
       <div class="flex justify-center">
         <!-- Navbar items -->
-        <div class="hidden md:flex items-center space-x-3 ">
+        <div class="hidden lg:flex items-center space-x-3 ">
           {{ range $list }}
           <a href="{{ .URL }}"
             class="py-4 px-4 font-semibold text-xl text-white hover:opacity-75 {{ if eq $current.URL .URL }} text-link-orange {{ end }}"
@@ -15,7 +14,7 @@
           {{ end }}
         </div>
         <!-- Mobile menu button -->
-        <div class="md:hidden flex items-center bg-card-light w-full px-2 py-3">
+        <div class="lg:hidden flex items-center bg-card-light w-full px-2 py-3">
           <button class="outline-none mobile-menu-button">
             <svg class="w-8 h-8 text-link-orange hover:opacity-75 " x-show="!showMenu" fill="none" stroke-linecap="round"
               stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -40,10 +39,9 @@
       </ul>
     </div>
   </nav>
-  <div class="flex items-center justify-center my-20 z-10">
+  <div class="absolute top-16 left-0 w-full flex items-center justify-center my-20 z-10">
     <!-- Website Logo -->
     <a href="/" class="flex items-center px-10 sm:px-0 py-4">
       <img src="/theme-assets/the_balance.svg" alt="The Balance" />
     </a>
   </div>
-</header>
