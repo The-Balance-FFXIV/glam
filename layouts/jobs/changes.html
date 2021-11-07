@@ -1,108 +1,45 @@
 {{ define "main" }}
-<div class="guide-banner-background" style='background-image: url(/theme-assets/jobs/{{ lower .Parent.Title }}_background.png);'>
-    <div class="grid grid-cols-7 grid-rows-3 p-20">
-        <div class="col-span-5 text-white">
-            <img class="job-icon-sm inline pr-2" src='{{ print "/theme-assets/jobs/" (lower .Parent.Title) ".svg" }}' />
-            <div class="inline align-middle font-bold" style="font-size: 20px;"> {{ .Parent.Title }} </div> 
+
+{{ $role := .Page.Parent.Page.Parent.Params.role }}
+
+<div class="space-y-16">
+  {{ $header := dict
+    "role" $role
+    "job" .Parent.Title
+    "title" "Latest Job Changes"
+    "icon" "/theme-assets/news.svg"
+    "lastmod" .Params.lastmod
+    "patch" .Params.patch
+  }}
+  {{ partial "job/single_header.html" $header }}
+
+  <div class="container mx-auto">
+    <div class="grid grid-cols-12 items-start gap-8 w-full">
+      <div class="col-span-9 bg-card-light text-white py-14 px-10">
+        <div class="markdown max-w-none">
+          {{ range sort .Params.changes "patch" "desc" }}
+            <h2>{{ .patch }}</h2>
+            {{ .description | markdownify }}
+          {{ end }}
         </div>
-        <div class="row-span-3 col-span-2 bg-card-light text-white divide-y-2 px-2">
-            <div class="p-4">Guide Info</div>
-            <div class="p-2">
-                <div class="pb-2">Last Updated: {{ (time.Format "2 Jan, 2006" .Params.lastmod) }}</div>
-                <div>Patch Applicable: {{ .Param "patch" }}</div>
-            </div>
-            <div class="p-2 text-right text-link-orange font-bold"><a href="#">Jump to recent changes ≫</a></div>
-        </div>
-        <div class="col-span-5 row-span-2 text-white">
-            <div>
-                <img class="inline pr-12" src="/theme-assets/book.png" />
-                <div class="inline font-bold align-middle" style="font-size: 60px;">{{ .Title }}</div>
-                <div style="font-size: 15px;">{{ .Param "description"}}</div>
-            </div>
-        </div>
+      </div>
+      <div class="col-span-3 bg-card-light text-white divide-y divide-page px-5 sticky top-8">
+        <div class="card-title pt-6 pb-5">Table of Contents</div>
+        <div class="nested-link font-bold py-2">{{ .TableOfContents }}</div>
+        <div>&nbsp;</div>
+      </div>
     </div>
-</div>
-<div class="mx-20">
-    <div class="inline-block bg-card-light text-white w-3/4 pt-10">
-    {{ range sort .Params.changes "patch" "desc" }}
-        <h2>{{ .patch }}</h2>
-        {{ .description | markdownify }}
-    {{ end }}
   </div>
-  <div class="inline-block bg-card-light flex-shrink-0 px-4 pt-10 divide-y-2 mt-4 w-1/5 ml-6 align-top sticky top-0">
-      <div class="text-white font-bold pb-4" style="font-size: 20px;">TABLE OF CONTENTS</div>
-      <div class="text-link-orange font-bold py-2">{{ .TableOfContents }}</div>
-      <div>&nbsp;</div>
-  </div>
-</div>
 
-<div class="mx-20 my-20">
-  {{ partial "components/guide_meta_slider.html" . }}
-</div>
+  <div class="container mx-auto">
+    {{ partial "components/guide_meta_slider.html" . }}
+  </div>
 
-<div class="px-20 pb-20" style="background-image: url(/theme-assets/jobs/{{ lower .Parent.Title }}_resources_background.png);">
-  <div class="w-full flex flex-row py-6">
-      <div class="text-white font-bold text-4xl">{{ .Parent.Title }} Resources</div>
-      <div class="text-link-orange text-right flex-grow self-end font-bold"><a href="{{ .Parent.RelPermalink }}">Go to {{ .Parent.Title }} page ≫</a></div>
+  <div class="py-14 bg-no-repeat bg-cover" style="background-image: url('/theme-assets/jobs/{{ lower .Parent.Title }}_resources_background.png');">
+    {{ partial "job/job_resources.html" .Parent }}
   </div>
-  <div class="flex flex-row gap-10">
-      <div class="w-1/2">
-          <div class="divide-y border-l-8  border-card-border-color px-2 bg-line-divide-color">
-              <div class="text-white font-semibold text-2xl">Guides</div>
-              <div class="grid grid-rows-4 grid-cols-3 gap-x-6 gap-y-2">
-                  <div><div class="inline-block pr-2"><img src="/theme-assets/sprout.png" /></div><div class="inline-block">Leveling Guide</div></div>
-                  <div><div class="inline-block pr-2"><img src="/theme-assets/sprout.png" /></div><div class="inline-block">Basic Guide (Lv 90)</div></div>
-                  <div><div class="inline-block pr-2"><img src="/theme-assets/sprout.png" /></div><div class="inline-block">Advanced Guide (Lv 90)</div></div>
-                  <div><div class="inline-block pr-2"><img src="/theme-assets/sprout.png" /></div><div class="inline-block">Skills Overview</div></div>
-                  <div><div class="inline-block pr-2"><img src="/theme-assets/sprout.png" /></div><div class="inline-block">Openers</div></div>
-                  <div><div class="inline-block pr-2"><img src="/theme-assets/sprout.png" /></div><div class="inline-block">Fight Tips</div></div>
-                  <div><div class="inline-block pr-2"><img src="/theme-assets/sprout.png" /></div><div class="inline-block">FAQ</div></div>
-                  <div><div class="inline-block pr-2"><img src="/theme-assets/sprout.png" /></div><div class="inline-block">Best-in-Slot (BiS) Gear Sets</div></div>
-                  <div>&nbsp</div>
-                  <div><div class="inline-block pr-2"><img src="/theme-assets/sprout.png" /></div><div class="inline-block">Latest Job Changes</div></div>
-                  <div><div class="inline-block pr-2"><img src="/theme-assets/sprout.png" /></div><div class="inline-block">Stats & Materia Priority</div></div>
-              </div>
-          </div>
-      </div>
-      <div class="text-card-header-text-color font-semibold bg-line-divide-color divide-y border-l-8  border-card-border-color px-2 w-1/2">
-              {{ $dummyToolList := slice (dict "name" "Tool 1" "link" "docs.google.com/somethingorother") (dict "name" "Tool 2" "link" "discord.gg/randomgarbagethatcannotbevalidihope") (dict "name" "Tool 3" "link" "youtube.com/iamarealvideo")}}
-              {{ $toolList := slice  }}
-              {{ $toolFormatString := "[%s](%s)\n\nHosted on: %s"}}
-              {{ range $tool := $dummyToolList }}
-              {{ $toolMarkdown := (printf $toolFormatString $tool.name $tool.link (index (split $tool.link "/") 0)) | $.RenderString }}
-              {{ $toolList = $toolList | append $toolMarkdown }}
-              {{ end }}
-          <div class="font-semibold text-white text-2xl py-4">External Tools</div>
-          {{ range $tool := $toolList }}
-                  <div class="py-4">{{ $tool }}</div>
-          {{ end}}
-          <div>&nbsp;</div>
-      </div>
-  </div>
-</div>
-<div class="bg-line-divide-color px-20 pb-6">
-  <div class="font-bold text-white text-4xl w-full pt-12 pb-6">TANK RESOURCES</div>
-  <section class="grid grid-cols-2 gap-8">
-      <div>
-        {{ $otherGuideInfo := dict "icon" "" "name" "Guides" }}
-        {{ $guide1 := dict "icon" "" "name" "Guide 1" "patch" "5.3" "updated" "8 Sep, 2021"}}
-        {{ $guide2 := dict "icon" "" "name" "Guide 2" "patch" "5.3" "updated" "8 Sep, 2021"}}
-        {{ $guide3 := dict "icon" "" "name" "Guide 3" "patch" "5.3" "updated" "8 Sep, 2021"}}
-        {{ $content := dict "items" (slice $otherGuideInfo $guide1 $guide2 $guide3) }}
-        {{ partial "components/card.html" $content }}
-      </div>
-      <div class="text-card-header-text-color font-semibold">
-        {{ $dummyToolList := slice (dict "name" "Tool 1" "link" "docs.google.com/somethingorother") (dict "name" "Tool 2" "link" "discord.gg/randomgarbagethatcannotbevalidihope") (dict "name" "Tool 3" "link" "youtube.com/iamarealvideo")}}
-        {{ $toolList := slice  }}
-        {{ $toolFormatString := "[%s](%s)\n\nHosted on: %s"}}
-        {{ range $tool := $dummyToolList }}
-          {{ $toolMarkdown := (printf $toolFormatString $tool.name $tool.link (index (split $tool.link "/") 0)) | $.RenderString }}
-          {{ $toolList = $toolList | append $toolMarkdown }}
-        {{ end }}
-        {{ $externalInfo := dict "icon" "" "name" "External Tools" "extraList" $toolList}}
-        {{ $content := dict "items" (slice $externalInfo) }}
-        {{ partial "components/card.html" $content }}
-      </div>
-    </section>
+
+  {{ partial "job/role_resources.html" .Parent }}
+
 </div>
 {{ end }}
