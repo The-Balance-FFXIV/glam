@@ -166,21 +166,15 @@ Content
 }
 
 .tabs.desktop {
-	@apply hidden md:flex items-stretch p-0 list-none flex-col md:flex-row;
+	@apply hidden md:flex items-stretch p-0 list-none flex-col md:flex-row divide-x divide-card-dark;
 }
 
 .tab.desktop > label {
-	@apply hidden md:block;
-}
-
-
-.tab > label.selected {
-	@apply bg-card-light;
-	border-bottom: none;
+	@apply hidden md:block border-b border-card-dark;
 }
 
 .tab > label {
-	@apply block px-7 py-3 cursor-pointer text-xl font-bold text-white uppercase tracking-widest bg-card-lighter transition-all;
+	@apply block md:hidden px-7 py-3 cursor-pointer text-xl font-bold text-white uppercase tracking-widest bg-card-lighter transition-all;
 }
 
 .tab-content {
@@ -200,6 +194,7 @@ Content
 This is honestly a dirty, very bad, no good hack, but it does make the tabs nice
 It unfortunately also means we're limited to 5 tabs at current.
 */
+
 /* this is styling for tabs that are checked */
 .tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) label,
 .tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .tab:nth-of-type(2) label,
@@ -207,6 +202,7 @@ It unfortunately also means we're limited to 5 tabs at current.
 .tabbed [type="radio"]:nth-of-type(4):checked ~ .tabs .tab:nth-of-type(4) label,
 .tabbed [type="radio"]:nth-of-type(5):checked ~ .tabs .tab:nth-of-type(5) label {
 	@apply bg-card-light;
+	border-bottom-color: theme(colors.card-light);
 }
 
 .tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs > .tab:nth-of-type(1) > .tab-content,
