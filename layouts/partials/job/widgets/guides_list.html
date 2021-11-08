@@ -43,6 +43,6 @@
 {{ range $guideList }}
   <div class="flex items-center">
     <img src="{{ .icon }}" class="h-4 w-4 object-contain mr-2">
-    <a href="{{ $.Page.Parent.Permalink }}{{ .link }}" class="link">{{ .name }}</a>
+    <a href="{{ $.Page.Permalink }}{{ .link }}" class="link">{{ .name }}</a>
   </div>
 {{ end }}
