@@ -1,6 +1,5 @@
 ---
-images:
-  - /img/jobs/scholar_fight_tips.png
+cardHeaderImage: /img/jobs/scholar_fight_tips.png
 authors:
   - nonowazu
 patch: 5.3

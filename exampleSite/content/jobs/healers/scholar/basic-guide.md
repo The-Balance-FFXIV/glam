@@ -1,4 +1,5 @@
 ---
+cardHeaderImage: /img/jobs/scholar_basic_guide.png
 authors:
   - nonowazu
   - johndoe
@@ -10,8 +11,6 @@ changelog:
   - date: 2021-01-01
     message: This article didn't exist
 title: Basic Guide (Lv 90)
-images:
-  - /img/jobs/scholar_basic_guide.png
 contributors:
   - name: Contributor 1
     image: image

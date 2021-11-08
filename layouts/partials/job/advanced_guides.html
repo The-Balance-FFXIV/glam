@@ -5,17 +5,13 @@
   <section class="grid grid-cols-2 gap-8">
     <div>
       {{ with .Page.GetPage "advanced-guide"}}
-        {{ $teaserImage := "" }}
-        {{ with .Params.images }}
-          {{ $teaserImage = (index . 0) }}
-        {{ end }}
         {{ $content := dict
           "role" $role
           "icon" "/theme-assets/advanced_guide.svg"
           "name" "Advanced Guide"
           "patch" .Params.patch
           "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
-          "image" $teaserImage
+          "image" .Params.cardHeaderImage
           "imageClass" "h-100"
           "inlineLink" "advanced-guide"
         }}
@@ -24,17 +20,13 @@
     </div>
     <div>
       {{ with .Page.GetPage "fight-tips"}}
-        {{ $teaserImage := "" }}
-        {{ with .Params.images }}
-          {{ $teaserImage = (index . 0) }}
-        {{ end }}
         {{ $content := dict
           "role" $role
           "icon" "/theme-assets/fight_tips.svg"
           "name" "Fight Tips"
           "patch" .Params.patch
           "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
-          "image" $teaserImage
+          "image" .Params.cardHeaderImage
           "imageClass" "h-100"
           "inlineLink" "advanced-guide"
         }}

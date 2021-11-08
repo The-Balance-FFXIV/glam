@@ -9,13 +9,9 @@
 
     <div class="xl:col-span-6 xl:row-start-3">
       {{ with .Page.GetPage "leveling-guide" }}
-        {{ $teaserImage := "" }}
-        {{ with .Params.images }}
-          {{ $teaserImage = (index . 0) }}
-        {{ end }}
         {{ $levelingInfo := dict
           "role" $role
-          "image" $teaserImage
+          "image" .Params.cardHeaderImage
           "imageClass" "h-52"
           "icon" "/theme-assets/sprout.svg"
           "name" "Leveling Guide"
@@ -31,13 +27,9 @@
       <div class="divide-y divide-card-dark">
         {{ with .Page.GetPage "basic-guide" }}
           {{ $guideName := printf "Basic Guide (LV %d)" .Site.Params.maxLevel}}
-          {{ $teaserImage := "" }}
-          {{ with .Params.images }}
-            {{ $teaserImage = (index . 0) }}
-          {{ end }}
           {{ $basicInfo := dict
             "role" $role
-            "image" $teaserImage
+            "image" .Params.cardHeaderImage
             "imageClass" "h-72"
             "icon" "/theme-assets/book.svg"
             "name" $guideName
