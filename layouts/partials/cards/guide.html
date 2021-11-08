@@ -4,7 +4,7 @@
   {{ if isset . "image" }}
   <div class="bg-card-dark {{ .imageClass }}">
     {{ with .image }}
-      <img class="w-full {{ if isset . "imageClass" }}object-cover h-full{{ end }}" src="{{ . }}" />
+      <img class="w-full {{ if isset $ "imageClass" }}object-cover h-full{{ end }}" src="{{ . }}" />
     {{ else }}
       <div class="p-12 flex items-center justify-center h-full">
         <img class="w-full max-w-xs" src="/theme-assets/the_balance.svg" />
