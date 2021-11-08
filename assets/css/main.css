@@ -46,10 +46,6 @@ header::after {
 	height: 100%;
 }
 
-.nav-item {
-	font-size: 16px;
-}
-
 /**
 Content
  */
@@ -61,17 +57,34 @@ Content
   Jobs List
 */
 
-.role-header {
-	@apply font-bold text-white text-4xl pb-5 filter drop-shadow-lg;
-	text-transform: uppercase;
+.role-header,
+.role-header-healer,
+.role-header-tank,
+.role-header-dps {
+	@apply font-bold text-white text-4xl filter uppercase font-head tracking-wider;
 }
 
+.role-header {
+	@apply drop-shadow-lg;
+}
+
+.role-header-healer {
+    @apply drop-shadow-lg-healer;
+}
+
+.role-header-tank {
+    @apply drop-shadow-lg-tank;
+}
+
+.role-header-dps {
+    @apply drop-shadow-lg-dps;
+}
 
 /*
 * TABS
 */
 .tabbed {
-	@apply overflow-x-hidden my-4 pb-2 -mt-44;
+	@apply overflow-x-hidden my-4 pb-2;
 }
 
 .tabbed [type="radio"] {
@@ -80,32 +93,12 @@ Content
 }
 
 .tabs {
-	@apply flex items-stretch p-0 list-none;
+	@apply flex items-stretch p-0 list-none divide-x divide-card-dark border-b border-card-dark;
 }
+
 .tab > label {
-	@apply block px-3 py-3 cursor-pointer;
-	margin-bottom: -1px;
-	font-size: 1.5rem; 
-	font-weight: 600;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	transition: all 0.3s;
-	background: #1E1E1F;
-	border-right: 2px solid #141415;
+	@apply block px-7 py-3 cursor-pointer text-xl font-bold text-white uppercase tracking-widest bg-card-lighter transition-all;
 }
-
-.tab > label.selected {
-	@apply bg-card-light;
-	border-bottom: none;
-}
-
-.tab:last-of-type > label{
-	border-right:none;
-}
-
-/* .tab:hover label {
-	border-top-color: #333;
-} */
 
 .tab-content {
 	@apply hidden p-8;
@@ -141,33 +134,17 @@ It unfortunately also means we're limited to 5 tabs at current.
 	@apply block bg-card-light;
 }
 
-.tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .meta-tab:nth-of-type(1),
-.tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .meta-tab:nth-of-type(2),
-.tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs .meta-tab:nth-of-type(3),
-.tabbed [type="radio"]:nth-of-type(4):checked ~ .tabs .meta-tab:nth-of-type(4),
-.tabbed [type="radio"]:nth-of-type(5):checked ~ .tabs .meta-tab:nth-of-type(5) {
-	background-color:#192129;
-}
-
 /*
-w-1/5 is just being used for testing without a layout
+  Card
 */
-.card {
-	@apply flex flex-col;
+
+.card-title {
+    @apply font-bold text-white text-lg uppercase tracking-widest font-head;
 }
 
 .card-content {
 	@apply flex flex-row font-sans gap-3;
 	border-color: #2a3641;
-}
-
-.card-content-border {
-	@apply border-l-8 pl-3 pt-6;
-	border-color: #3871c2;
-}
-.card-content-border-no-info {
-	@apply pt-3 pb-3;
-	border-color: #3871c2;
 }
 
 .card-content-title {
@@ -270,4 +247,42 @@ Footer
 
 .join-community {
 	background-image: url("/theme-assets/homepage/join-community.png");
+}
+
+/**
+Markdown - Can be used to auto apply styling to tags within the .markdown class
+ */
+
+.markdown {
+    @apply text-base text-gray-light;
+}
+
+.markdown h2 {
+    @apply text-3xl font-bold text-white flex items-center;
+}
+
+.markdown h2:not(:first-child) {
+    @apply mt-11;
+}
+
+.markdown h2:after {
+    @apply bg-page ml-5;
+    flex: 1 0 0%;
+    content: '';
+    width: 100%;
+    height: 1px;
+}
+
+.markdown h3 {
+    @apply text-xl font-bold text-white uppercase tracking-widest mb-6 font-head;
+}
+
+.markdown p,
+.markdown h2,
+.markdown ol {
+    @apply mb-8;
+}
+
+.markdown ol {
+    @apply list-decimal pl-10 space-y-2;
 }

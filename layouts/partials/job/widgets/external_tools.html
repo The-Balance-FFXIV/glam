@@ -1,0 +1,21 @@
+<div class="divide-y divide-card-dark">
+  <div class="bg-card-light p-4">
+    <p class="card-title">
+      External Tools
+    </p>
+  </div>
+  {{ $dummyToolList := slice
+    (dict "name" "Tool 1" "link" "docs.google.com/somethingorother")
+    (dict "name" "Tool 2" "link" "discord.gg/randomgarbagethatcannotbevalidihope")
+    (dict "name" "Tool 3" "link" "youtube.com/iamarealvideo")
+  }}
+  {{ range $tool := $dummyToolList }}
+    {{ $content := dict
+      "role" $.role
+      "name" $tool.name
+      "description" (printf "Hosted on %s" (index (split $tool.link "/") 0))
+      "inlineLink" $tool.link
+    }}
+    {{ partial "cards/link.html" $content }}
+  {{ end }}
+</div>

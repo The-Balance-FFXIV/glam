@@ -41,4 +41,6 @@ theme = "glam"
     weight = 60
 
 [params]
-  maxLevel = 90 
+  maxLevel = 90
+  maxTierGearsets = 8 
+  maxUltimateGearsets = 4

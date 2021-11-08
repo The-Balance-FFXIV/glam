@@ -1,12 +1,12 @@
 {{ $borderClass := default "gray-600" .role }}
 
-<div class="card">
+<div>
 	{{ with .image }}
 	<div>
 		<img class="w-full" src="{{ . }}" />
 	</div>
 	{{ end }}
-	<div class="bg-card-light px-5 py-6 border-l-8 border-{{ $borderClass }}">
+	<div class="card card-{{ $borderClass }}">
     <div class="border-b border-card-dark pb-5">
       {{ partial "cards/_header.html" . }}
     </div>
@@ -15,19 +15,19 @@
           <div class="col-span-2">
               <div class="text-white font-bold py-3 uppercase tracking-widest">Current Tier</div>
               <div class="grid grid-cols-2 gap-3">
-                  {{ range $bisIndex, $bisName := .bis }}
-                      {{ $bisItemClass := "bis-item" }}
-                      {{/*  TODO: figure out a better id than the name. Its too long and has to many spaces to be a clean link.  */}}
-                      <div class="link"><a href={{ print "best-in-slot/#" $bisName.name }}>{{ $bisName.name }} »</a></div>
+                  {{ $gearsetsList := first site.Params.maxTierGearsets .bis }}
+                  {{ range $index, $item := $gearsetsList }}
+                      <div class="link"><a href={{ printf "best-in-slot/#%d" $index }}>{{ $item.name }} »</a></div>
                   {{ end }}
               </div>
           </div>
           <div>
               <div class="text-white font-bold py-3 uppercase tracking-widest">Ultimates</div>
               <div class="grid grid-cols-1 gap-3">
-                  {{ range $bisName := .bis }}
-                      <div class="link"><a href={{ print "best-in-slot/#" $bisName.name }}>{{ $bisName.name }} »</a></div>
-                  {{ end }}
+                {{ $gearsetsList := first site.Params.maxUltimateGearsets .bis }}
+                {{ range $index, $item := $gearsetsList }}
+                    <div class="link"><a href={{ printf "best-in-slot/#%d" $index }}>{{ $item.name }} »</a></div>
+                {{ end }}
               </div>
           </div>
       </div>

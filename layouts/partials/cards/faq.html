@@ -1,7 +1,7 @@
 {{ $borderClass := default "gray-600" .role }}
 
 <div class="flex flex-col">
-	<div class="bg-card-light px-5 py-5 border-l-8 border-{{ $borderClass }}">
+	<div class="card card-{{ $borderClass }}">
     <div class="border-b border-card-dark pb-5">
       {{ partial "cards/_header.html" . }}
     </div>
