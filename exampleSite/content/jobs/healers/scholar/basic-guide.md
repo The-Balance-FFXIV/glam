@@ -1,5 +1,5 @@
 ---
-cardHeaderImage: /img/jobs/scholar_basic_guide.png
+card_header_image: /img/jobs/scholar_basic_guide.png
 authors:
   - nonowazu
   - johndoe

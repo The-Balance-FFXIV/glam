@@ -1,5 +1,5 @@
 ---
-cardHeaderImage: /img/jobs/scholar_leveling_guide.png
+card_header_image: /img/jobs/scholar_leveling_guide.png
 authors:
   - johndoe
 patch: "5.4"

@@ -11,7 +11,7 @@
       {{ with .Page.GetPage "leveling-guide" }}
         {{ $levelingInfo := dict
           "role" $role
-          "image" .Params.cardHeaderImage
+          "image" .Params.card_header_image
           "imageClass" "h-52"
           "icon" "/theme-assets/sprout.svg"
           "name" "Leveling Guide"
@@ -29,7 +29,7 @@
           {{ $guideName := printf "Basic Guide (LV %d)" .Site.Params.maxLevel}}
           {{ $basicInfo := dict
             "role" $role
-            "image" .Params.cardHeaderImage
+            "image" .Params.card_header_image
             "imageClass" "h-72"
             "icon" "/theme-assets/book.svg"
             "name" $guideName
