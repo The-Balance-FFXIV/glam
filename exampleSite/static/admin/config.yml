@@ -90,6 +90,8 @@ collections:
   ##
   - label: "Scholar guide"
     name: "sch-guide"
+    media_folder: "/static/img/jobs"
+    public_folder: "/img/jobs"
     files:
       - label: "Landing page"
         name: "landing"
@@ -101,6 +103,7 @@ collections:
         file: "content/jobs/healers/scholar/leveling-guide.md"
         fields:
           - {label: "Body", name: "body", widget: "markdown"}
+          - { label: "Card Header Image", name: "card_header_image", widget: "image", choose_url: false, required: false }
           - label: "Author(s)"
             name: "authors"
             widget: "relation"
@@ -123,6 +126,7 @@ collections:
         file: "content/jobs/healers/scholar/basic-guide.md"
         fields:
           - {label: "Body", name: "body", widget: "markdown"}
+          - { label: "Card Header Image", name: "card_header_image", widget: "image", choose_url: false, required: false }
           - label: "Author(s)"
             name: "authors"
             widget: "relation"
@@ -145,6 +149,7 @@ collections:
         file: "content/jobs/healers/scholar/skills-overview.md"
         fields:
           - {label: "Body", name: "body", widget: "markdown"}
+          - { label: "Card Header Image", name: "card_header_image", widget: "image", choose_url: false, required: false }
           - label: "Author(s)"
             name: "authors"
             widget: "relation"
@@ -167,6 +172,7 @@ collections:
         file: "content/jobs/healers/scholar/openers.md"
         fields:
           - {label: "Body", name: "body", widget: "markdown"}
+          - { label: "Card Header Image", name: "card_header_image", widget: "image", choose_url: false, required: false }
           - label: "Author(s)"
             name: "authors"
             widget: "relation"
@@ -191,6 +197,7 @@ collections:
           - {label: "Layout", name: "layout", widget: "hidden", default: "qna"}
           - {label: "Patch", name: "patch", widget: "string"}
           - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+          - { label: "Card Header Image", name: "card_header_image", widget: "image", choose_url: false, required: false }
           - label: "Author(s)"
             name: "authors"
             widget: "relation"
@@ -218,6 +225,7 @@ collections:
         file: "content/jobs/healers/scholar/advanced-guide.md"
         fields:
           - {label: "Body", name: "body", widget: "markdown"}
+          - { label: "Card Header Image", name: "card_header_image", widget: "image", choose_url: false, required: false }
           - label: "Author(s)"
             name: "authors"
             widget: "relation"
@@ -241,6 +249,7 @@ collections:
         fields:
           - {label: "Layout", name: "layout", widget: "hidden", default: "bis"}
           - {label: "Patch", name: "patch", widget: "string"}
+          - { label: "Card Header Image", name: "card_header_image", widget: "image", choose_url: false, required: false }
           - label: "Author(s)"
             name: "authors"
             widget: "relation"
@@ -271,6 +280,7 @@ collections:
         file: "content/jobs/healers/scholar/stat-priority.md"
         fields:
           - {label: "Patch", name: "patch", widget: "string"}
+          - { label: "Card Header Image", name: "card_header_image", widget: "image", choose_url: false, required: false }
           - label: "Author(s)"
             name: "authors"
             widget: "relation"
@@ -293,6 +303,7 @@ collections:
         file: "content/jobs/healers/scholar/job-changes.md"
         fields:
           - {label: "Layout", name: "layout", widget: "hidden", default: "changes"}
+          - { label: "Card Header Image", name: "card_header_image", widget: "image", choose_url: false, required: false }
           - label: "Change"
             name: "changes"
             widget: "list"
@@ -300,3 +311,27 @@ collections:
             fields:
               - {label: "Patch", name: "patch", widget: "string"}
               - {label: "Description", name: "description", widget: "markdown"}
+      - label: "Fight tips"
+        name: "fight-tips"
+        file: "content/jobs/healers/scholar/fight-tips.md"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
+          - { label: "Card Header Image", name: "card_header_image", widget: "image", choose_url: false, required: false }
+          - label: "Author(s)"
+            name: "authors"
+            widget: "relation"
+            multiple: true
+            collection: "author-profile"
+            search_fields: ["username", "name"]
+            value_field: "username"
+            display_fields: ["username", "name"]
+          - {label: "Patch", name: "patch", widget: "string"}
+          - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+          - label: "Changelog entry"
+            name: "changelog"
+            widget: "list"
+            summary: "{{fields.date}}: {{fields.message}}"
+            fields:
+              - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+              - {label: "Message", name: "message", widget: "string"}
+      

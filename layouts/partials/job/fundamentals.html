@@ -9,16 +9,17 @@
 
     <div class="xl:col-span-6 xl:row-start-3">
       {{ with .Page.GetPage "leveling-guide" }}
-          {{ $levelingInfo := dict
-            "role" $role
-            "image" (printf "/theme-assets/jobs/%s_leveling_guide.png" (lower $.Title))
-            "icon" "/theme-assets/sprout.svg"
-            "name" "Leveling Guide"
-            "patch" .Params.patch
-            "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
-            "inlineLink" "leveling-guide"
-          }}
-          {{ partial "cards/guide.html" $levelingInfo }}
+        {{ $levelingInfo := dict
+          "role" $role
+          "image" .Params.card_header_image
+          "imageClass" "h-52"
+          "icon" "/theme-assets/sprout.svg"
+          "name" "Leveling Guide"
+          "patch" .Params.patch
+          "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
+          "inlineLink" "leveling-guide"
+        }}
+        {{ partial "cards/guide.html" $levelingInfo }}
       {{ end }}
     </div>
 
@@ -28,7 +29,8 @@
           {{ $guideName := printf "Basic Guide (LV %d)" .Site.Params.maxLevel}}
           {{ $basicInfo := dict
             "role" $role
-            "image" (printf "/theme-assets/jobs/%s_basic_guide.png" (lower $.Title))
+            "image" .Params.card_header_image
+            "imageClass" "h-72"
             "icon" "/theme-assets/book.svg"
             "name" $guideName
             "patch" .Params.patch

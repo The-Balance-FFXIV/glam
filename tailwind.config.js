@@ -32,6 +32,9 @@ module.exports = {
             'light': '#C9C9C9',
         }
       },
+      height: {
+        '100': '25rem', 
+      },
       zIndex: {
           '-1': '-1',
       },
