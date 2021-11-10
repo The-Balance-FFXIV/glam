@@ -70,10 +70,12 @@
       {{ $currentLink := "" }}
       {{ $questionList := slice  }}
       {{ with .Page.GetPage "faq" }}
-        {{ range $index, $qna := first 2 .Params.qna }}
-          {{ $currentLink = printf $linkFormatString $qna.question $index }}
-          {{ $renderedLink := $currentLink | $.RenderString }}
-          {{ $questionList = $questionList | append $renderedLink }}
+        {{ with .Params.qna }}
+          {{ range $index, $qna := first 2 . }}
+            {{ $currentLink = printf $linkFormatString $qna.question $index }}
+            {{ $renderedLink := $currentLink | $.RenderString }}
+            {{ $questionList = $questionList | append $renderedLink }}
+          {{ end }}
         {{ end }}
       {{ end }}
 

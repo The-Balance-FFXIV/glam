@@ -9,12 +9,24 @@
   "private": false,
   "dependencies": {
     "autoprefixer": "^10.3.3",
+    "netlify-cms-app": "^2.15.58",
     "postcss": "^8.3.6",
     "postcss-cli": "^8.3.1",
     "postcss-import": "^14.0.2",
     "tailwindcss": "^2.2.8"
   },
+  "devDependencies": {
+    "esbuild": "^0.13.13",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "netlify-cms-proxy-server": "^1.3.22"
+  },
   "scripts": {
-    "dev": "hugo server -s exampleSite/ --themesDir=../.. --disableFastRender"
+    "serve:hugo": "hugo server -s exampleSite/ --themesDir=../.. -d ../dist --disableFastRender",
+    "serve:cms": "npm run build:cms & netlify-cms-proxy-server",
+    "build": "npm run build:hugo && npm run build:cms",
+    "build:cms": "esbuild cms/index.js --bundle --minify --outfile=dist/admin/index.js",
+    "build:hugo": "hugo --gc --minify"
   }
 }
