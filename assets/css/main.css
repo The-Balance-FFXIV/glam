@@ -79,9 +79,11 @@ Content
 */
 
 .role-header,
-.role-header-healer,
-.role-header-tank,
-.role-header-dps {
+.role-header-healers,
+.role-header-tanks,
+.role-header-melee,
+.role-header-ranged,
+.role-header-casters {
 	@apply font-bold text-white text-4xl filter uppercase font-head tracking-wider;
 }
 
@@ -89,16 +91,18 @@ Content
 	@apply drop-shadow-lg;
 }
 
-.role-header-healer {
-    @apply drop-shadow-lg-healer;
+.role-header-healers {
+    @apply drop-shadow-lg-healers;
 }
 
-.role-header-tank {
-    @apply drop-shadow-lg-tank;
+.role-header-tanks {
+    @apply drop-shadow-lg-tanks;
 }
 
-.role-header-dps {
-    @apply drop-shadow-lg-dps;
+.role-header-melee,
+.role-header-ranged,
+.role-header-casters {
+    @apply drop-shadow-lg-melee;
 }
 
 .role-info {

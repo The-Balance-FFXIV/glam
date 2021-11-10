@@ -1,12 +1,7 @@
 import {
   createAuthorsField, createBodyField, createChangelogField, createLastUpdatedField, createStaticLayoutField, createPatchField, createThumbnailField,
 } from '../fields/fields';
-
-export const roles = {
-  HEALER: 'healers',
-  TANK: 'tanks',
-  DPS: 'dps',
-};
+import { roles } from '../roles';
 
 export const jobs = [
   {
@@ -69,82 +64,82 @@ export const jobs = [
     id: 'dragoon',
     label: 'Dragoon guide',
     name: 'drg-guide',
-    role: roles.DPS,
+    role: roles.MELEE,
     customFields: [],
   },
   {
     id: 'reaper',
     label: 'Reaper guide',
     name: 'rpr-guide',
-    role: roles.DPS,
+    role: roles.MELEE,
     customFields: [],
   },
   {
     id: 'samurai',
     label: 'Samurai guide',
     name: 'sam-guide',
-    role: roles.DPS,
+    role: roles.MELEE,
     customFields: [],
   },
   {
     id: 'monk',
     label: 'Monk guide',
     name: 'mnk-guide',
-    role: roles.DPS,
+    role: roles.MELEE,
     customFields: [],
   },
   {
     id: 'ninja',
     label: 'Ninja guide',
     name: 'nin-guide',
-    role: roles.DPS,
+    role: roles.MELEE,
     customFields: [],
   },
   {
     id: 'dancer',
     label: 'Dancer guide',
     name: 'dnc-guide',
-    role: roles.DPS,
+    role: roles.RANGED,
     customFields: [],
   },
   {
     id: 'machinist',
     label: 'Machinist guide',
     name: 'mch-guide',
-    role: roles.DPS,
+    role: roles.RANGED,
     customFields: [],
   },
   {
     id: 'bard',
     label: 'Bard guide',
     name: 'brd-guide',
-    role: roles.DPS,
+    role: roles.RANGED,
     customFields: [],
   },
   {
     id: 'black-mage',
     label: 'Black Mage guide',
     name: 'blm-guide',
-    role: roles.DPS,
+    role: roles.CASTER,
     customFields: [],
   },
   {
     id: 'summoner',
     label: 'Summoner guide',
     name: 'smn-guide',
-    role: roles.DPS,
+    role: roles.CASTER,
     customFields: [],
   },
   {
     id: 'red-mage',
     label: 'Red Mage guide',
     name: 'rdm-guide',
-    role: roles.DPS,
+    role: roles.CASTER,
     customFields: [],
   },
 ];
 
-const getPathForJob = (job) => `content/jobs/${job.role}/${job.id}`;
+const getPathForJob = (job) => `content/jobs/${job.role.name.toLowerCase()}/${job.id}`;
 
 const createLandingPage = (job, folderPrefix) => ({
   label: 'Landing page',

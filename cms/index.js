@@ -2,6 +2,7 @@ import CMS from 'netlify-cms-app';
 import { createAuthorCollection } from './collections/authors';
 import { createGuidesCollection } from './collections/guides';
 import { createJobCollections } from './collections/jobs';
+import { createRoleLandingPageCollection } from './collections/roleLandingPages';
 import { createRoleMetaSlider } from './collections/roleMetaSlider';
 
 window.CMS_MANUAL_INIT = true;
@@ -46,6 +47,7 @@ CMS.init({
       createRoleMetaSlider(),
       createAuthorCollection(IS_LOCAL_BUILD ? LOCAL_FOLDER_PREFIX : ''),
       createGuidesCollection(IS_LOCAL_BUILD ? LOCAL_FOLDER_PREFIX : ''),
+      createRoleLandingPageCollection(IS_LOCAL_BUILD ? LOCAL_FOLDER_PREFIX : ''),
       ...createJobCollections(IS_LOCAL_BUILD ? LOCAL_FOLDER_PREFIX : ''),
     ],
   },
