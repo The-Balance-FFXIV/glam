@@ -152,6 +152,7 @@ const createLandingPage = (job, folderPrefix) => ({
   file: `${folderPrefix}${getPathForJob(job)}/_index.md`,
   fields: [
     createBodyField(),
+    { label: 'Job Name', name: 'job_name', widget: 'string' },
   ],
 });
 

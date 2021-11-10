@@ -5,7 +5,7 @@
 <div class="space-y-16">
   {{ $header := dict
     "role" $role
-    "job" .Parent.Title
+    "job" .Parent.Params.job_name
     "title" .Title
     "icon" "/theme-assets/book.svg"
     "description" .Params.description
@@ -33,7 +33,7 @@
     {{ partial "components/guide_meta_slider.html" . }}
   </div>
 
-  <div class="py-14 bg-no-repeat bg-cover" style="background-image: url('/theme-assets/jobs/{{ lower .Parent.Title }}_resources_background.png');">
+  <div class="py-14 bg-no-repeat bg-cover" style="background-image: url('/theme-assets/jobs/{{ lower .Parent.Params.job_name }}_resources_background.png');">
     {{ partial "job/job_resources.html" .Parent }}
   </div>
 
