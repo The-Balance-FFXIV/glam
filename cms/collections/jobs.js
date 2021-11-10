@@ -368,7 +368,7 @@ const createFightTips = (job, folderPrefix) => ({
 const createJobCollection = (job, folderPrefix) => ({
   label: job.label,
   name: job.name,
-  media_folder: '/static/img/jobs',
+  media_folder: `/${folderPrefix}static/img/jobs`,
   public_folder: '/img/jobs',
   files: [
     createLandingPage(job, folderPrefix),
