@@ -8,7 +8,7 @@ import { createRoleMetaSlider } from './collections/roleMetaSlider';
 window.CMS_MANUAL_INIT = true;
 
 const LOCAL_FOLDER_PREFIX = 'exampleSite/';
-const IS_LOCAL_BUILD = true;
+const IS_LOCAL_BUILD = false;
 
 /* eslint-disable-next-line */
 const createBackendConfig = (isLocalBackend = false) => {
