@@ -3,6 +3,7 @@ menu:
   main:
     name: Healers
     parent: jobs
-role: healer
+role: healers
+resources_background_image: /img/healers_ressources.png
 ---
 Healers do stuff and junk.

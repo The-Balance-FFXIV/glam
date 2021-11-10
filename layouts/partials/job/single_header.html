@@ -1,9 +1,11 @@
-<div class="h-60 xl:h-80 bg-no-repeat bg-cover" style='background-image: url(/theme-assets/jobs/{{ lower .job }}_background.png);'>
+{{ $jobName := (lower (replace .job " " "_")) }}
+
+<div class="h-60 xl:h-80 bg-no-repeat bg-cover bg-center" style="background-image: url({{ .backgroundImage }});">
   <div class="container mx-auto z-10 relative flex items-center h-full">
     <div class="grid grid-cols-12 gap-8 w-full items-center">
         <div class="col-span-9 text-white">
           <div class="flex items-center mb-7">
-            <img class="job-icon-sm mr-4 filter drop-shadow-lg-{{ .role }}" src='{{ print "/theme-assets/jobs/" (lower .job) ".svg" }}' />
+            <img class="job-icon-sm mr-4 filter drop-shadow-lg-{{ .role }}" src="/theme-assets/jobs/{{ .role }}/{{ $jobName }}.svg" />
             <div class="card-title filter drop-shadow-lg-{{ .role }}">{{ .job }}</div> 
           </div>
           <div>

@@ -12,36 +12,38 @@
     
   {{ range $role := $metaCategories }}
     <div class="tab-content">
-      {{/* This implementation is probably less than ideal right now */}}
-      {{ if eq . "Guide Meta" }}
-        <div class="card-title mb-5">Have any questions?</div>
-        <div class="flex items-center mb-9">
-          <img class="mr-4" src="/theme-assets/the_balance.png">
-          <div class="flex items-center">
-            <img class="mr-2" src="/theme-assets/orange_discord_no_text.png">
-            <a class="link" href="https://discord.gg/thebalanceffxiv">discord.gg/thebalanceffxiv</a>
+      <div>
+        {{/* This implementation is probably less than ideal right now */}}
+        {{ if eq . "Guide Meta" }}
+          <div class="card-title mb-5">Have any questions?</div>
+          <div class="flex items-center mb-9">
+            <img class="mr-4" src="/theme-assets/the_balance.png">
+            <div class="flex items-center">
+              <img class="mr-2" src="/theme-assets/orange_discord_no_text.png">
+              <a class="link" href="https://discord.gg/thebalanceffxiv">discord.gg/thebalanceffxiv</a>
+            </div>
           </div>
-        </div>
-        <div class="card-title mb-5">Authors</div>
-        <div class="flex flex-row gap-12">
-          {{ range $author := $.Page.Params.authors }}
-            {{ partial "components/author_box.html" (index $.Site.Data.author $author) }}
-          {{ end }}
-        </div>
-      {{ else if eq . "Contributors" }}
-        <div class="py-6">
-          {{ range $author := $.Page.Params.contributors }}
-            {{ partial "components/author_box.html" $author }}
-          {{ end }}
-        </div>
-      {{ else }}
-        {{ range $change := $.Page.Params.changelog }}
-          <div class="py-4">
-              <div>{{ time.Format "2 Jan, 2006" .date }}</div>
-              <div>{{ .message | markdownify }}</div>
+          <div class="card-title mb-5">Authors</div>
+          <div class="flex flex-row gap-12">
+            {{ range $author := $.Page.Params.authors }}
+              {{ partial "components/author_box.html" (index $.Site.Data.author $author) }}
+            {{ end }}
           </div>
+        {{ else if eq . "Contributors" }}
+          <div class="py-6">
+            {{ range $author := $.Page.Params.contributors }}
+              {{ partial "components/author_box.html" $author }}
+            {{ end }}
+          </div>
+        {{ else }}
+          {{ range $change := $.Page.Params.changelog }}
+            <div class="py-4">
+                <div>{{ time.Format "2 Jan, 2006" .date }}</div>
+                <div>{{ .message | markdownify }}</div>
+            </div>
+          {{ end }}
         {{ end }}
-      {{ end }}
+      </div>
     </div>
   {{ end }}
 </div>
