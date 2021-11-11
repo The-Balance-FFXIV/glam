@@ -131,7 +131,7 @@ Content
 }
 
 .role-info {
-	@apply flex flex-col w-4/12 text-center justify-center;
+	@apply flex flex-col w-full lg:w-6/12 xl:w-4/12 text-center justify-center;
 }
 
 /*
@@ -147,10 +147,11 @@ Content
 }
 
 .tabs {
-	@apply flex items-stretch font-head p-0 list-none flex-col sm:flex-row divide-x divide-card-dark border-b border-card-dark;
+	@apply flex items-stretch font-head p-0 list-none flex-col sm:flex-row border-b border-card-dark;
 }
-.tabs-desktop {
-	@apply hidden sm:flex items-stretch p-0 list-none flex-col sm:flex-row;
+
+.tab-jobs {
+	@apply items-center block sm:flex sm:flex-wrap sm:flex-grow w-full sm:w-1/2 md:w-full lg:w-6/12 xl:w-8/12 md:justify-evenly font-head;
 }
 
 .tab > label {
@@ -181,10 +182,6 @@ Content
 	@apply hidden p-4 sm:p-8;
 }
 
-.tab-jobs {
-	@apply items-center block sm:flex sm:flex-wrap sm:flex-grow w-full sm:w-1/2 md:w-2/3 lg:w-3/4 p-4 md:justify-evenly font-head;
-}
-
 .tab-jobs img {
 	/* @apply mb-2;
 	height:50px; */
@@ -210,7 +207,7 @@ It unfortunately also means we're limited to 5 tabs at current.
 .tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs > .tab:nth-of-type(3) > .tab-content,
 .tabbed [type="radio"]:nth-of-type(4):checked ~ .tabs > .tab:nth-of-type(4) > .tab-content,
 .tabbed [type="radio"]:nth-of-type(5):checked ~ .tabs > .tab:nth-of-type(5) > .tab-content {
-	@apply block bg-card-light flex content-center md:h-96;
+	@apply block bg-card-light flex content-center xl:h-96;
 }
 
 #meta-slider {
