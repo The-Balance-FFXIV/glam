@@ -20,16 +20,22 @@
             {{ end }}
           </div>
         </div>
+        {{ if or (.lastmod) (.patch) }}
         <div class="col-span-3 bg-card-light text-white divide-y divide-page px-5">
             <div class="card-title pt-5 pb-4">Guide Info</div>
             <div class="py-3 space-y-2 text-gray-light font-bold">
-                <div>Last Updated: {{ (time.Format "2 Jan, 2006" .lastmod) }}</div>
-                <div>Patch Applicable: {{ .patch }}</div>
+              {{ with .lastmod }}
+                <div>Last Updated: {{ (time.Format "2 Jan, 2006" .) }}</div>
+              {{ end }}
+              {{ with .patch }}
+                <div>Patch Applicable: {{ . }}</div>
+              {{ end }}
             </div>
             <div class="py-4 text-right">
               <a href="#" class="link">Jump to recent changes »</a>
             </div>
         </div>
+        {{ end }}
     </div>
   </div>
 </div>
