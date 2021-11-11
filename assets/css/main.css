@@ -131,7 +131,7 @@ Content
 }
 
 .role-info {
-	@apply flex flex-col w-full lg:w-6/12 xl:w-4/12 text-center justify-center;
+	@apply flex flex-col w-full lg:w-4/12 xl:w-1/3 text-center justify-center;
 }
 
 /*
@@ -151,7 +151,7 @@ Content
 }
 
 .tab-jobs {
-	@apply items-center block sm:flex sm:flex-wrap sm:flex-grow w-full sm:w-1/2 md:w-full lg:w-6/12 xl:w-8/12 md:justify-evenly font-head;
+	@apply items-center block sm:flex sm:flex-wrap sm:flex-grow w-full lg:w-1/2 md:justify-evenly font-head mt-4 lg:mt-0;
 }
 
 .tab > label {

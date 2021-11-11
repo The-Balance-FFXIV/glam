@@ -11,8 +11,8 @@
             style="border-top-color: {{ $role.color }}">
             <div class="flex items-center justify-center">
               <img class="inline-block mr-2" src="/theme-assets/icons/role/role_{{ $role.title | urlize }}.svg" alt="" />
-              <span class="md:hidden lg:inline">{{ $role.name }}</span>
-              <span class="hidden md:inline lg:hidden text-lg">{{ replace $role.name "DPS" "" }}</span>
+              <span class="md:hidden xl:inline">{{ $role.name }}</span>
+              <span class="hidden md:inline xl:hidden text-lg">{{ replace $role.name "DPS" "" }}</span>
             </div>
           </label>
         </li>
