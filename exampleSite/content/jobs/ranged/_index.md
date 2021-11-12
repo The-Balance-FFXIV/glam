@@ -5,4 +5,4 @@ menu:
     parent: jobs
 role: ranged
 ---
-Ranged DPS move and shoot and stuff
+Ranged move and shoot and stuff.

@@ -3,6 +3,6 @@ menu:
   main:
     name: Tanks
     parent: jobs
-role: tank
+role: tanks
 ---
-Tanks take damage and stuff
+Tanks take damage and stuff.

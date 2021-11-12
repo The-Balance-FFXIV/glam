@@ -164,23 +164,6 @@ collections:
   - label: "Role landing pages"
     name: "role-landing"
     files:
-      - label: "Healers"
-        name: "healers"
-        file: "content/jobs/healers/_index.md"
-        fields:
-        - {label: "Body", name: "body", widget: "markdown"}
-        - label: "Menu hierarchy"
-          name: "menu"
-          widget: "hidden"
-          default:
-            main:
-              name: "Healers"
-              parent: "jobs"
-        - label: "Role"
-          name: "role"
-          widget: "select"
-          options: ["healer"]
-          default: ["healer"]
       - label: "Tanks"
         name: "tanks"
         file: "content/jobs/tanks/_index.md"
@@ -188,28 +171,54 @@ collections:
         - {label: "Body", name: "body", widget: "markdown"}
         - label: "Menu hierarchy"
           name: "menu"
-          widget: "hidden"
-          default:
-            main:
-              name: "Tanks"
-              parent: "jobs"
+          widget: "object"
+          fields:
+            - label: "Main"
+              name: "main"
+              widget: "object"
+              fields: 
+                - {label: "Name", name: "name", widget: "select", options: ["Tanks"], default: ["Tanks"]}
+                - {label: "Parent", name: "parent", widget: "select", options: ["jobs"], default: ["jobs"]}
         - label: "Role"
           name: "role"
           widget: "select"
-          options: ["tank"]
-          default: ["tank"]
-      - label: "Melees"
-        name: "melees"
-        file: "content/jobs/melees/_index.md"
+          options: ["tanks"]
+          default: ["tanks"]
+      - label: "Healers"
+        name: "healers"
+        file: "content/jobs/healers/_index.md"
         fields:
         - {label: "Body", name: "body", widget: "markdown"}
         - label: "Menu hierarchy"
           name: "menu"
-          widget: "hidden"
-          default:
-            main:
-              name: "Melees"
-              parent: "jobs"
+          widget: "object"
+          fields:
+            - label: "Main"
+              name: "main"
+              widget: "object"
+              fields: 
+                - {label: "Name", name: "name", widget: "select", options: ["Healers"], default: ["Healers"]}
+                - {label: "Parent", name: "parent", widget: "select", options: ["jobs"], default: ["jobs"]}
+        - label: "Role"
+          name: "role"
+          widget: "select"
+          options: ["healers"]
+          default: ["healers"]
+      - label: "Melee"
+        name: "melee"
+        file: "content/jobs/melee/_index.md"
+        fields:
+        - {label: "Body", name: "body", widget: "markdown"}
+        - label: "Menu hierarchy"
+          name: "menu"
+          widget: "object"
+          fields:
+            - label: "Main"
+              name: "main"
+              widget: "object"
+              fields: 
+                - {label: "Name", name: "name", widget: "select", options: ["Melee"], default: ["Melee"]}
+                - {label: "Parent", name: "parent", widget: "select", options: ["jobs"], default: ["jobs"]}
         - label: "Role"
           name: "role"
           widget: "select"
@@ -222,11 +231,14 @@ collections:
         - {label: "Body", name: "body", widget: "markdown"}
         - label: "Menu hierarchy"
           name: "menu"
-          widget: "hidden"
-          default:
-            main:
-              name: "Ranged"
-              parent: "jobs"
+          widget: "object"
+          fields:
+            - label: "Main"
+              name: "main"
+              widget: "object"
+              fields: 
+                - {label: "Name", name: "name", widget: "select", options: ["Ranged"], default: ["Ranged"]}
+                - {label: "Parent", name: "parent", widget: "select", options: ["jobs"], default: ["jobs"]}
         - label: "Role"
           name: "role"
           widget: "select"
@@ -239,16 +251,19 @@ collections:
         - {label: "Body", name: "body", widget: "markdown"}
         - label: "Menu hierarchy"
           name: "menu"
-          widget: "hidden"
-          default:
-            main:
-              name: "Casters"
-              parent: "jobs"
+          widget: "object"
+          fields:
+            - label: "Main"
+              name: "main"
+              widget: "object"
+              fields: 
+                - {label: "Name", name: "name", widget: "select", options: ["Casters"], default: ["Casters"]}
+                - {label: "Parent", name: "parent", widget: "select", options: ["jobs"], default: ["jobs"]}
         - label: "Role"
           name: "role"
           widget: "select"
-          options: ["caster"]
-          default: ["caster"]
+          options: ["casters"]
+          default: ["casters"]
   # user "profiles"
   - label: "Author profile"
     name: "author-profile"
