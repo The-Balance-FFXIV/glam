@@ -11,22 +11,22 @@
         {
             "name": "Paladin",
             "job_link": "/jobs/tanks/paladin/",
-            "icon": "/theme-assets/jobs/tanks/paladin.svg"
+            "icon": "/theme-assets/jobs/tanks/paladin/paladin.svg"
         },
         {
             "name": "Warrior",
             "job_link": "/jobs/tanks/warrior/",
-            "icon": "/theme-assets/jobs/tanks/warrior.svg"
+            "icon": "/theme-assets/jobs/tanks/warrior/warrior.svg"
         },
         {
             "name": "Dark Knight",
             "job_link": "/jobs/tanks/dark-knight/",
-            "icon": "/theme-assets/jobs/tanks/dark_knight.svg"
+            "icon": "/theme-assets/jobs/tanks/dark_knight/dark_knight.svg"
         },
         {
             "name": "Gunbreaker",
             "job_link": "/jobs/tanks/gunbreaker/",
-            "icon": "/theme-assets/jobs/tanks/gunbreaker.svg"
+            "icon": "/theme-assets/jobs/tanks/gunbreaker/gunbreaker.svg"
         }
     ]
 }

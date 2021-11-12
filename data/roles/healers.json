@@ -11,22 +11,22 @@
         {
             "name": "White Mage",
             "job_link": "/jobs/healers/white-mage/",
-            "icon": "/theme-assets/jobs/healers/white_mage.svg"
+            "icon": "/theme-assets/jobs/healers/white_mage/white_mage.svg"
         },
         {
             "name": "Scholar",
             "job_link": "/jobs/healers/scholar/",
-            "icon": "/theme-assets/jobs/healers/scholar.svg"
+            "icon": "/theme-assets/jobs/healers/scholar/scholar.svg"
         },
         {
             "name": "Astrologian",
             "job_link": "/jobs/healers/astrologian/",
-            "icon": "/theme-assets/jobs/healers/astrologian.svg"
+            "icon": "/theme-assets/jobs/healers/astrologian/astrologian.svg"
         },
         {
             "name": "Sage",
             "job_link": "/jobs/healers/sage/",
-            "icon": "/theme-assets/jobs/healers/sage.svg"
+            "icon": "/theme-assets/jobs/healers/sage/sage.svg"
         }
     ]
 }
