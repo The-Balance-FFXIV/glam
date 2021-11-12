@@ -30,6 +30,16 @@ collections:
           - {label: "Name", name: "name", widget: "string"}
           - {label: "Link", name: "job_link", widget: "string"}
           - {label: "Icon", name: "icon", widget: "string"}
+  # job landing page
+  - label: "Job landing pges"
+    name: "job-landing"
+    files:
+      - label: "Combat Jobs"
+        name: "combat-jobs"
+        file: "content/jobs/_index.md"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown"}
   # role landing page
   - label: "Role landing pages"
     name: "role-landing"
