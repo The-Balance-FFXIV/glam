@@ -169,6 +169,10 @@ It unfortunately also means we're limited to 5 tabs at current.
 	@apply block bg-card-light flex content-center md:h-96;
 }
 
+#meta-slider {
+	@apply flex-col h-auto;	
+}
+
 /*
   Card
 */
