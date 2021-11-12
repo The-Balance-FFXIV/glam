@@ -180,6 +180,70 @@ collections:
           name: "role"
           widget: "hidden"
           default: "healer"
+      - label: "Tanks"
+        name: "tanks"
+        file: "content/jobs/tanks/_index.md"
+        fields:
+        - {label: "Body", name: "body", widget: "markdown"}
+        - label: "Menu hierarchy"
+          name: "menu"
+          widget: "hidden"
+          default:
+            main:
+              name: "Tanks"
+              parent: "jobs"
+        - label: "Role"
+          name: "role"
+          widget: "hidden"
+          default: "tank"
+      - label: "Melees"
+        name: "melees"
+        file: "content/jobs/melees/_index.md"
+        fields:
+        - {label: "Body", name: "body", widget: "markdown"}
+        - label: "Menu hierarchy"
+          name: "menu"
+          widget: "hidden"
+          default:
+            main:
+              name: "Melees"
+              parent: "jobs"
+        - label: "Role"
+          name: "role"
+          widget: "hidden"
+          default: "melee"
+      - label: "Ranged"
+        name: "ranged"
+        file: "content/jobs/ranged/_index.md"
+        fields:
+        - {label: "Body", name: "body", widget: "markdown"}
+        - label: "Menu hierarchy"
+          name: "menu"
+          widget: "hidden"
+          default:
+            main:
+              name: "Ranged"
+              parent: "jobs"
+        - label: "Role"
+          name: "role"
+          widget: "hidden"
+          default: "ranged"
+      - label: "Casters"
+        name: "casters"
+        file: "content/jobs/casters/_index.md"
+        fields:
+        - {label: "Body", name: "body", widget: "markdown"}
+        - label: "Menu hierarchy"
+          name: "menu"
+          widget: "hidden"
+          default:
+            main:
+              name: "Casters"
+              parent: "jobs"
+        - label: "Role"
+          name: "role"
+          widget: "hidden"
+          default: "caster"
   # user "profiles"
   - label: "Author profile"
     name: "author-profile"
