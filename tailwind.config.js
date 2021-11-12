@@ -11,9 +11,11 @@ module.exports = {
     extend: {
       dropShadow: {
         'lg': '2px 2px 3px #000000',
-        'lg-healer': '2px 2px 3px #256A1D',
-        'lg-tank': '2px 2px 3px #1D3D6A',
-        'lg-dps': '2px 2px 3px #6A1D1D',
+        'lg-healers': '2px 2px 3px #256A1D',
+        'lg-tanks': '2px 2px 3px #1D3D6A',
+        'lg-melee': '2px 2px 3px #6A1D1D',
+        'lg-ranged': '2px 2px 3px #6A1D1D',
+        'lg-casters': '2px 2px 3px #6A1D1D',
         '3xl': '0 100px 100px rgba(0, 0, 0, 0.75)',
       },
       colors: {
@@ -24,9 +26,11 @@ module.exports = {
         'card-dark': '#101111',
         'card-border-color' : '#3871c2',
         'card-header-text-color' : '#7b8794',
-        'tank': '#3A7AD6',
-        'healer': '#47C168',
-        'dps': '#D84D4D',
+        'tanks': '#3A7AD6',
+        'healers': '#47C168',
+        'melee': '#D84D4D',
+        'ranged': '#D84D4D',
+        'casters': '#D84D4D',
         'page': '#222528',
         'gray': {
             'light': '#C9C9C9',
