@@ -3,6 +3,6 @@ menu:
   main:
     name: Melees
     parent: jobs
-role: dps
+role: melee
 ---
 Melees do positionals and stuff

@@ -3,6 +3,6 @@ menu:
   main:
     name: Ranged
     parent: jobs
-role: dps
+role: ranged
 ---
 Ranged DPS move and shoot and stuff

@@ -3,6 +3,6 @@ menu:
   main:
     name: Casters
     parent: jobs
-role: dps
+role: caster
 ---
 Casters cast big spells and stuff

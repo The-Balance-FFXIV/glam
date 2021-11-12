@@ -178,8 +178,9 @@ collections:
               parent: "jobs"
         - label: "Role"
           name: "role"
-          widget: "hidden"
-          default: "healer"
+          widget: "select"
+          options: ["healer"]
+          default: ["healer"]
       - label: "Tanks"
         name: "tanks"
         file: "content/jobs/tanks/_index.md"
@@ -194,8 +195,9 @@ collections:
               parent: "jobs"
         - label: "Role"
           name: "role"
-          widget: "hidden"
-          default: "tank"
+          widget: "select"
+          options: ["tank"]
+          default: ["tank"]
       - label: "Melees"
         name: "melees"
         file: "content/jobs/melees/_index.md"
@@ -210,8 +212,9 @@ collections:
               parent: "jobs"
         - label: "Role"
           name: "role"
-          widget: "hidden"
-          default: "melee"
+          widget: "select"
+          options: ["melee"]
+          default: ["melee"]
       - label: "Ranged"
         name: "ranged"
         file: "content/jobs/ranged/_index.md"
@@ -226,8 +229,9 @@ collections:
               parent: "jobs"
         - label: "Role"
           name: "role"
-          widget: "hidden"
-          default: "ranged"
+          widget: "select"
+          options: ["ranged"]
+          default: ["ranged"]
       - label: "Casters"
         name: "casters"
         file: "content/jobs/casters/_index.md"
@@ -242,8 +246,9 @@ collections:
               parent: "jobs"
         - label: "Role"
           name: "role"
-          widget: "hidden"
-          default: "caster"
+          widget: "select"
+          options: ["caster"]
+          default: ["caster"]
   # user "profiles"
   - label: "Author profile"
     name: "author-profile"
