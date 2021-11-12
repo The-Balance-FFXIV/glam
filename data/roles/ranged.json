@@ -11,17 +11,17 @@
         {
             "name": "Bard",
             "job_link": "/jobs/ranged/bard/",
-            "icon": "/theme-assets/jobs/ranged/bard.svg"
+            "icon": "/theme-assets/jobs/ranged/bard/bard.svg"
         },
         {
             "name": "Machinist",
             "job_link": "/jobs/ranged/machinist/",
-            "icon": "/theme-assets/jobs/ranged/machinist.svg"
+            "icon": "/theme-assets/jobs/ranged/machinist/machinist.svg"
         },
         {
             "name": "Dancer",
             "job_link": "/jobs/ranged/dancer/",
-            "icon": "/theme-assets/jobs/ranged/dancer.svg"
+            "icon": "/theme-assets/jobs/ranged/dancer/dancer.svg"
         }
     ]
 }
