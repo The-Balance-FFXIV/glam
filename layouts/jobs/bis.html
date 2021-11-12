@@ -1,7 +1,6 @@
 {{ define "main" }}
 
 {{ $role := .Page.Parent.Page.Parent.Params.role }}
-{{ $job := .Params.job_name }}
 
 <div class="space-y-16">
   {{ $header := dict
@@ -40,7 +39,7 @@
     {{ partial "job/job_resources.html" .Parent }}
   </div>
 
-  {{ partial "job/role_resources.html" .Parent }}
+  {{/* {{ partial "job/role_resources.html" .Parent }} */}}
 
 </div>
 {{ end }}
