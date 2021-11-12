@@ -1,13 +1,14 @@
 {{ $role := .Page.Parent.Params.role }}
+{{ $job := .Params.job_name }}
 
 <div class="h-60 xl:h-80">
   <div class="container mx-auto z-10 relative flex items-center h-full">
     <div class="flex items-center">
-      <img class="job-icon-lg mr-16 filter drop-shadow-lg-{{ $role }}" src="/theme-assets/jobs/{{ (lower .Title) }}.svg" />
+      <img class="job-icon-lg mr-16 filter drop-shadow-lg-{{ $role }}" src="/theme-assets/jobs/{{ (lower $role) }}/{{ (lower $job) }}/{{ (lower $job) }}.svg" />
       <h1 class="text-6xl font-semibold filter drop-shadow-lg-{{ $role }}">{{ .Title }}</h1>
     </div>
   </div>
   <div class="bg-gray-600 absolute top-0 left-0 w-full -z-1" style="height: 460px;">
-    <img class="object-cover w-full h-full" src="/theme-assets/jobs/{{ (lower .Title) }}_background.png" />
+    <img class="object-cover w-full h-full" src="/theme-assets/jobs/{{ (lower $role) }}/{{ (lower $job) }}/{{ (lower $job) }}_background.png" />
   </div>
 </div>

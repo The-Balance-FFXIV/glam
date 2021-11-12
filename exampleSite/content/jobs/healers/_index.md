@@ -3,6 +3,6 @@ menu:
   main:
     name: Healers
     parent: jobs
-role: healer
+role: healers
 ---
 Healers do stuff and junk.
