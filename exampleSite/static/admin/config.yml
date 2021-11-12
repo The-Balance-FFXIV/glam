@@ -31,15 +31,135 @@ collections:
           - {label: "Link", name: "job_link", widget: "string"}
           - {label: "Icon", name: "icon", widget: "string"}
   # job landing page
-  - label: "Job landing pges"
+  - label: "Job landing pages"
     name: "job-landing"
     files:
-      - label: "Combat Jobs"
-        name: "combat-jobs"
-        file: "content/jobs/_index.md"
+      - label: "Paladin"
+        name: "paladin"
+        file: "content/jobs/tanks/paladin/_index.md"
         fields:
         - {label: "Title", name: "title", widget: "string"}
-        - {label: "Body", name: "body", widget: "markdown"}
+        - {label: "Job Name", name: "job_name", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Warrior"
+        name: "warrior"
+        file: "content/jobs/tanks/warrior/_index.md"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Job Name", name: "job_name", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Dark Knight"
+        name: "dark-knight"
+        file: "content/jobs/tanks/dark-knight/_index.md"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Job Name", name: "job_name", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Gunbreaker"
+        name: "gunbreaker"
+        file: "content/jobs/tanks/gunbreaker/_index.md"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Job Name", name: "job_name", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "White Mage"
+        name: "white-mage"
+        file: "content/jobs/healers/white-mage/_index.md"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Job Name", name: "job_name", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Scholar"
+        name: "scholar"
+        file: "content/jobs/healers/scholar/_index.md"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Job Name", name: "job_name", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Astrologian"
+        name: "astrologian"
+        file: "content/jobs/healers/astrologian/_index.md"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Job Name", name: "job_name", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Monk"
+        name: "monk"
+        file: "content/jobs/melee/monk/_index.md"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Job Name", name: "job_name", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Dragoon"
+        name: "dragoon"
+        file: "content/jobs/melee/dragoon/_index.md"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Job Name", name: "job_name", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Ninja"
+        name: "ninja"
+        file: "content/jobs/melee/ninja/_index.md"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Job Name", name: "job_name", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Samurai"
+        name: "samurai"
+        file: "content/jobs/melee/samurai/_index.md"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Job Name", name: "job_name", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Reaper"
+        name: "reaper"
+        file: "content/jobs/melee/reaper/_index.md"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Job Name", name: "job_name", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Bard"
+        name: "bard"
+        file: "content/jobs/ranged/bard/_index.md"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Job Name", name: "job_name", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Machinist"
+        name: "machinist"
+        file: "content/jobs/ranged/machinist/_index.md"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Job Name", name: "job_name", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Dancer"
+        name: "dancer"
+        file: "content/jobs/ranged/dancer/_index.md"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Job Name", name: "job_name", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Black Mage"
+        name: "black-mage"
+        file: "content/jobs/casters/black-mage/_index.md"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Job Name", name: "job_name", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Summoner"
+        name: "summoner"
+        file: "content/jobs/casters/summoner/_index.md"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Job Name", name: "job_name", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown", required: false}
+      - label: "Red Mage"
+        name: "red-mage"
+        file: "content/jobs/casters/red-mage/_index.md"
+        fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Job Name", name: "job_name", widget: "string"}
+        - {label: "Body", name: "body", widget: "markdown", required: false}
   # role landing page
   - label: "Role landing pages"
     name: "role-landing"
