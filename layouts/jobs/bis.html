@@ -1,6 +1,7 @@
 {{ define "main" }}
 
 {{ $role := .Page.Parent.Page.Parent.Params.role }}
+{{ $job := .Params.job_name }}
 
 <div class="space-y-16">
   {{ $header := dict
@@ -35,7 +36,7 @@
     {{ partial "components/guide_meta_slider.html" . }}
   </div>
 
-  <div class="py-14 bg-no-repeat bg-cover" style="background-image: url('/theme-assets/jobs/{{ lower .Parent.Title }}_resources_background.png');">
+  <div class="py-14 bg-no-repeat bg-cover" style="background-image: url('/theme-assets/jobs/{{ lower $role }}/{{ lower $role }}_resources_background.png');">
     {{ partial "job/job_resources.html" .Parent }}
   </div>
 

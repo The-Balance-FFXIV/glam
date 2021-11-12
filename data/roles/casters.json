@@ -11,17 +11,17 @@
         {
             "name": "Black Mage",
             "job_link": "/jobs/casters/black-mage/",
-            "icon": "/theme-assets/jobs/casters/black_mage.svg"
+            "icon": "/theme-assets/jobs/casters/black_mage/black_mage.svg"
         },
         {
             "name": "Summoner",
             "job_link": "/jobs/casters/summoner/",
-            "icon": "/theme-assets/jobs/casters/summoner.svg"
+            "icon": "/theme-assets/jobs/casters/summoner/summoner.svg"
         },
         {
             "name": "Red Mage",
             "job_link": "/jobs/casters/red-mage/",
-            "icon": "/theme-assets/jobs/casters/red_mage.svg"
+            "icon": "/theme-assets/jobs/casters/red_mage/red_mage.svg"
         }
     ]
 }

@@ -7,7 +7,7 @@
   {{ $content := dict
     "role" .role
     "name" "Guide 1"
-    "icon" (printf "/theme-assets/jobs/%s.svg" (lower .role))
+    "icon" (printf "/theme-assets/jobs/%s/%s.svg" (lower .role) (lower .role))
     "patch" "5.3"
     "updated" "8 Sep, 2021"
   }}
@@ -16,7 +16,7 @@
   {{ $content := dict
     "role" .role
     "name" "Guide 2"
-    "icon" (printf "/theme-assets/jobs/%s.svg" (lower .role))
+    "icon" (printf "/theme-assets/jobs/%s/%s.svg" (lower .role) (lower .role))
     "patch" "5.3"
     "updated" "8 Sep, 2021"
   }}
@@ -25,7 +25,7 @@
   {{ $content := dict
     "role" .role
     "name" "Guide 3"
-    "icon" (printf "/theme-assets/jobs/%s.svg" (lower .role))
+    "icon" (printf "/theme-assets/jobs/%s/%s.svg" (lower .role) (lower .role))
     "patch" "5.3"
     "updated" "8 Sep, 2021"
   }}
