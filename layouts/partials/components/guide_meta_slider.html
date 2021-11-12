@@ -1,5 +1,5 @@
 <div class="tabbed">
-  {{ $metaCategories := slice "Guide Meta" "Contributors" "Changelog"}}
+  {{ $metaCategories := slice "Authors" "Contributors" "Changelog"}}
   {{ range $index, $role := $metaCategories }}
     <input type="radio" id="tab-{{ $role }}" name="css-tabs" {{ if eq $index 0 }}checked{{ end }}>
   {{ end }}
@@ -13,7 +13,7 @@
   {{ range $role := $metaCategories }}
     <div class="tab-content">
       {{/* This implementation is probably less than ideal right now */}}
-      {{ if eq . "Guide Meta" }}
+      {{ if eq . "Authors" }}
         <div class="card-title mb-5">Have any questions?</div>
         <div class="flex items-center mb-9">
           <img class="mr-4" src="/theme-assets/the_balance.png">
