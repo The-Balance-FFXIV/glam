@@ -28,7 +28,9 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Run Hugo
-        run: hugo server -s exampleSite/ --themesDir=../.. --disableFastRender &
+        run: |
+          echo "PATH=${PATH}:${PWD}/node_modules/.bin" >>"${GITHUB_PATH}"
+          hugo server -s exampleSite/ --themesDir=../.. --disableFastRender &
 
       - name: Install puppeteer-headful
         uses: mujo-code/puppeteer-headful@master
