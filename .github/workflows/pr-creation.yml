@@ -29,7 +29,7 @@ jobs:
 
       - name: Run Hugo
         run: |
-          echo "PATH=${PATH}:${PWD}/node_modules/.bin" >>"${GITHUB_PATH}"
+          echo "$PWD/node_modules/.bin" >> "${GITHUB_PATH}"
           hugo server -s exampleSite/ --themesDir=../.. --disableFastRender &
 
       - name: Install puppeteer-headful
