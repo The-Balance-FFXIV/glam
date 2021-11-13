@@ -74,6 +74,9 @@ web_modules/
 # Optional REPL history
 .node_repl_history
 
+# Output of 'npm install'
+package-lock.json
+
 # Output of 'npm pack'
 *.tgz
 
