@@ -2,7 +2,7 @@
 menu:
   main:
     name: Melee
-    parent: melee
+    parent: jobs
 role: melee
 ---
 Melee do positional and stuff.
