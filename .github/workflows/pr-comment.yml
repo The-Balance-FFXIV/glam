@@ -32,6 +32,7 @@ jobs:
             });
             var fs = require('fs');
             fs.writeFileSync('${{github.workspace}}/screenshots.zip', Buffer.from(download.data));
+
       - run: unzip screenshots.zip
 
       - id: pr_nr
@@ -45,18 +46,21 @@ jobs:
         with:
           path: ./*1920x1080* 
           client_id: ${{secrets.IMGUR_CLIENT_ID}} 
+
       - name: Upload a 1280x720 picture
         uses: devicons/public-upload-to-imgur@v2.2.1
         id: imgur_1280x720
         with:
           path: ./*1280x720* 
           client_id: ${{secrets.IMGUR_CLIENT_ID}} 
+
       - name: Upload an iPhone X picture
         uses: devicons/public-upload-to-imgur@v2.2.1
         id: imgur_iPhoneX
         with:
           path: ./*iPhone_X*
           client_id: ${{secrets.IMGUR_CLIENT_ID}} 
+
       - name: Create comment
         uses: peter-evans/create-or-update-comment@v1
         with:
@@ -68,5 +72,3 @@ jobs:
             ![1280x720](${{ fromJSON(steps.imgur_1280x720.outputs.imgur_urls)[0] }})
             ## iPhone X
             ![iPhoneX](${{ fromJSON(steps.imgur_iPhoneX.outputs.imgur_urls)[0] }})
-
-            
