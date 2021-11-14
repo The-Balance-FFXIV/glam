@@ -23,7 +23,7 @@
       {{ end }}
     </div>
     <div>
-      {{ with .Page.GetPage "fight-tips"}}
+      {{ with $fightTips}}
         {{ $content := dict
           "role" $role
           "icon" "/theme-assets/fight_tips.svg"
