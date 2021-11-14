@@ -26,11 +26,11 @@ jobs:
 
       - name: Install dependencies
         run: |
+          yarn
           yarn global add postcss-cli@8.3.1 autoprefixer postcss tailwindcss
 
       - name: Run Hugo
-        run: |
-          hugo server -s exampleSite/ --themesDir=../.. --disableFastRender &
+        run: hugo server -s exampleSite/ --themesDir=../.. --disableFastRender &
 
       - name: Install puppeteer-headful
         uses: mujo-code/puppeteer-headful@master
