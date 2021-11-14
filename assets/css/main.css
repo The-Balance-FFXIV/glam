@@ -325,3 +325,7 @@ Markdown - Can be used to auto apply styling to tags within the .markdown class
 .markdown ol {
     @apply list-decimal pl-10 space-y-2;
 }
+
+.markdown p > a {
+	@apply text-link-orange;
+}
