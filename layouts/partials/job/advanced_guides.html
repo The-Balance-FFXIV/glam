@@ -1,10 +1,14 @@
 {{ $role := .Page.Parent.Params.role }}
 
+{{ $advancedGuide := .Page.GetPage "advanced-guide"}}
+{{ $fightTips := .Page.GetPage "fight-Tips"}}
+
+{{ if or ($advancedGuide) ($fightTips) }}
 <div class="container mx-auto">
   <div class="role-header mb-8">Advanced Guides</div>
   <section class="grid grid-cols-2 gap-8">
     <div>
-      {{ with .Page.GetPage "advanced-guide"}}
+      {{ with $advancedGuide}}
         {{ $content := dict
           "role" $role
           "icon" "/theme-assets/advanced_guide.svg"
@@ -19,7 +23,7 @@
       {{ end }}
     </div>
     <div>
-      {{ with .Page.GetPage "fight-tips"}}
+      {{ with $fightTips}}
         {{ $content := dict
           "role" $role
           "icon" "/theme-assets/fight_tips.svg"
@@ -35,3 +39,4 @@
     </div>
   </section>
 </div>
+{{ end }}

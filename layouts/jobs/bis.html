@@ -19,7 +19,7 @@
         <div class="markdown max-w-none">
           {{ range .Params.bis }}
             <h2><a href="{{ .link }}">{{ .name }}</a></h2>
-            {{ .description | .Page.RenderString }}
+            {{ .description | markdownify }}
           {{ end }}
         </div>
       </div>
@@ -35,9 +35,9 @@
     {{ partial "components/guide_meta_slider.html" . }}
   </div>
 
-  <div class="py-14 bg-no-repeat bg-cover" style="background-image: url('/theme-assets/jobs/{{ lower $role }}/{{ lower $role }}_resources_background.png');">
+  {{/* <div class="py-14 bg-no-repeat bg-cover" style="background-image: url('/theme-assets/jobs/{{ lower $role }}/{{ lower $role }}_resources_background.png');">
     {{ partial "job/job_resources.html" .Parent }}
-  </div>
+  </div> */}}
 
   {{/* {{ partial "job/role_resources.html" .Parent }} */}}
 
