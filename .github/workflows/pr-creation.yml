@@ -25,11 +25,11 @@ jobs:
           node-version: '14.1'
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: |
+          yarn global add postcss-cli@8.3.1 autoprefixer postcss tailwindcss
 
       - name: Run Hugo
         run: |
-          echo "$PWD/node_modules/.bin" >> "${GITHUB_PATH}"
           hugo server -s exampleSite/ --themesDir=../.. --disableFastRender &
 
       - name: Install puppeteer-headful
