@@ -19,7 +19,7 @@
         <div class="markdown max-w-none">
           {{ range .Params.bis }}
             <h2><a href="{{ .link }}">{{ .name }}</a></h2>
-            {{ .description | .Page.RenderString }}
+            {{ .description | markdownify }}
           {{ end }}
         </div>
       </div>
