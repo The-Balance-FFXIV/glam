@@ -235,7 +235,7 @@ Footer
 
 
 .footer {
-	@apply bg-card-light mt-24;
+	@apply bg-card-light;
 }
 
 .footer a {

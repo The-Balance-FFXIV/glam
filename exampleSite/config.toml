@@ -45,3 +45,4 @@ theme = "glam"
   maxLevel = 90
   maxTierGearsets = 8 
   maxUltimateGearsets = 4
+  copyrightMessage = '© SQUARE ENIX CO., LTD. All Rights Reserved | FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.'
