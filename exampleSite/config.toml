@@ -38,7 +38,8 @@ theme = "glam"
   [[menu.footer]]
     identifier = 'info'
     name = 'Info'
-    weight = 60
+    url = '/pages/'
+    weight = 10
 
 [params]
   maxLevel = 90

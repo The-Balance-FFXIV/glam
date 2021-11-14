@@ -296,6 +296,10 @@ Markdown - Can be used to auto apply styling to tags within the .markdown class
     @apply text-base text-gray-light;
 }
 
+.markdown h1 {
+    @apply text-4xl font-bold text-white flex items-center;
+}
+
 .markdown h2 {
     @apply text-3xl font-bold text-white flex items-center;
 }
