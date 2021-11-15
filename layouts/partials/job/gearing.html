@@ -9,7 +9,7 @@
           {{ $content := dict
             "role" $role
             "icon" "/theme-assets/armoury.svg"
-            "name" "Best-in-slot (BIS) Gear Sets"
+            "name" .Params.title
             "patch" .Params.patch
             "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
             "bis" .Params.bis
