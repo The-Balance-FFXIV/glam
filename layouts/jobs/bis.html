@@ -5,7 +5,7 @@
 <div class="space-y-16">
   {{ $header := dict
     "role" $role
-    "job" .Parent.Title
+    "job" .Parent.Params.job_name
     "title" "Best-in-slot (BIS) Gear Sets"
     "icon" "/theme-assets/armoury.svg"
     "lastmod" .Params.lastmod

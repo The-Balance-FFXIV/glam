@@ -5,7 +5,7 @@
 <div class="space-y-16">
   {{ $header := dict
     "role" $role
-    "job" .Parent.Title
+    "job" .Parent.Params.job_name
     "title" "FAQ"
     "icon" "/theme-assets/question_bubble.svg"
     "lastmod" .Params.lastmod
