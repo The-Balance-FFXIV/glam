@@ -6,7 +6,8 @@
   {{ $header := dict
     "role" $role
     "job" .Parent.Params.job_name
-    "title" "Best-in-slot (BIS) Gear Sets"
+    "jobTitle" .Parent.Title
+    "title" .Params.title
     "icon" "/theme-assets/armoury.svg"
     "lastmod" .Params.lastmod
     "patch" .Params.patch

@@ -6,6 +6,7 @@
   {{ $header := dict
     "role" $role
     "job" .Parent.Params.job_name
+    "jobTitle" .Parent.Title
     "title" "FAQ"
     "icon" "/theme-assets/question_bubble.svg"
     "lastmod" .Params.lastmod
