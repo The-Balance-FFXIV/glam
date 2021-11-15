@@ -11,23 +11,17 @@
       {{ partial "cards/_header.html" . }}
     </div>
     <div class="py-3">
-      <div class="grid grid-cols-3 grid-rows-1 gap-3">
-          <div class="col-span-2">
-              <div class="text-white font-bold py-3 uppercase tracking-widest">Current Tier</div>
-              <div class="grid grid-cols-2 gap-3">
-                  {{ $gearsetsList := first site.Params.maxTierGearsets .bis }}
+      <div class="grid grid-cols-3 grid-rows-1">
+          <div class="col-span-3">
+              <!-- Splitting into Gearing categories (current tier, savage, ultimate) is not working as intended. 
+              We need to add a frontmatter to each of the bis sections in the best-in-slot.md in order for us
+              to generate an array for each category. For now. I'm removing the 'ultimate' column and setting
+              all this to a fixed value so that it generates everything. We can revisit this after the soft launch. -->
+              <div class="grid grid-cols-3 gap-3">
+                  {{ $gearsetsList := first site.Params.maxGearsets .bis }}
                   {{ range $index, $item := $gearsetsList }}
                       <div class="link"><a href={{ printf "best-in-slot/#%d" $index }}>{{ $item.name }} »</a></div>
                   {{ end }}
-              </div>
-          </div>
-          <div>
-              <div class="text-white font-bold py-3 uppercase tracking-widest">Ultimates</div>
-              <div class="grid grid-cols-1 gap-3">
-                {{ $gearsetsList := first site.Params.maxUltimateGearsets .bis }}
-                {{ range $index, $item := $gearsetsList }}
-                    <div class="link"><a href={{ printf "best-in-slot/#%d" $index }}>{{ $item.name }} »</a></div>
-                {{ end }}
               </div>
           </div>
       </div>
