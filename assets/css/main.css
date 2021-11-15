@@ -68,6 +68,15 @@ Heading
 
 
 /**
+Table of Contents
+ */
+
+nav#TableOfContents ul a + ul {
+	padding-left: 1em;
+}
+
+
+/**
 Content
  */
 

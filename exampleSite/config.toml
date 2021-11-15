@@ -41,6 +41,11 @@ theme = "glam"
     url = '/pages/'
     weight = 10
 
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    startLevel = 1
+
 [params]
   maxLevel = 90
   maxTierGearsets = 8 
