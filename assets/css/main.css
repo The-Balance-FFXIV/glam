@@ -318,15 +318,21 @@ Markdown - Can be used to auto apply styling to tags within the .markdown class
 }
 
 .markdown h2 {
-    @apply text-3xl font-bold text-white flex items-center;
+    @apply text-2xl font-bold text-white flex items-center uppercase;
+	letter-spacing: 2px;
 }
 
 .markdown h3 {
-    @apply text-xl font-bold text-white uppercase tracking-widest mb-6 font-head;
+    @apply text-xl font-bold text-white uppercase font-head;
+	letter-spacing: 2.25px;
 }
 
 .markdown p, h1, h2, h3, ol {
     @apply mb-8;
+}
+
+.markdown h1:not(:first-child) {
+	@apply mt-11;
 }
 
 .markdown ol {
