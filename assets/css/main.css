@@ -21,6 +21,10 @@ body {
 	@apply container px-4 lg:px-8 mx-auto;
 }
 
+.html {
+	scroll-behavior: smooth;
+}
+
 /*
 Header/Navbar
  */
