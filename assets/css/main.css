@@ -114,6 +114,13 @@ nav#TableOfContents ul a + ul {
 	padding-left: 1em;
 }
 
+nav#TableOfContents a {
+	font-size: 0.875rem;
+}
+
+nav#TableOfContents #tocSelected {
+	color: white;
+}
 
 /**
 Content
