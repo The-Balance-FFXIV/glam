@@ -19,11 +19,13 @@ body {
 Header/Navbar
  */
 
-header {
+header,
+.general-page-bg {
 	background-image: url("/theme-assets/homepage/endwalker@2x.png");
 	height: 500px;
 }
-header::after {
+header::after,
+.general-page-bg:after {
 	content:'';
 	position:absolute;
 	top:0;
