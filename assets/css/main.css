@@ -336,7 +336,11 @@ Markdown - Can be used to auto apply styling to tags within the .markdown class
 }
 
 .markdown ol {
-    @apply list-decimal pl-10 space-y-2;
+    @apply list-decimal pl-10 space-y-2 mb-8;
+}
+
+.markdown ul {
+	@apply list-disc pl-10 space-y-2 mb-8;
 }
 
 .markdown a {
