@@ -309,15 +309,7 @@ Markdown - Can be used to auto apply styling to tags within the .markdown class
     @apply text-4xl font-bold text-white flex items-center;
 }
 
-.markdown h2 {
-    @apply text-3xl font-bold text-white flex items-center;
-}
-
-.markdown h2:not(:first-child) {
-    @apply mt-11;
-}
-
-.markdown h2:after {
+.markdown h1:after {
     @apply bg-page ml-5;
     flex: 1 0 0%;
     content: '';
@@ -325,14 +317,22 @@ Markdown - Can be used to auto apply styling to tags within the .markdown class
     height: 1px;
 }
 
-.markdown h3 {
-    @apply text-xl font-bold text-white uppercase tracking-widest mb-6 font-head;
+.markdown h2 {
+    @apply text-2xl font-bold text-white flex items-center uppercase;
+	letter-spacing: 2px;
 }
 
-.markdown p,
-.markdown h2,
-.markdown ol {
+.markdown h3 {
+    @apply text-xl font-bold text-white uppercase font-head;
+	letter-spacing: 2.25px;
+}
+
+.markdown p, h1, h2, h3, ol {
     @apply mb-8;
+}
+
+.markdown h1:not(:first-child) {
+	@apply mt-11;
 }
 
 .markdown ol {
