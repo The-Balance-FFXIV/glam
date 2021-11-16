@@ -346,3 +346,29 @@ Markdown - Can be used to auto apply styling to tags within the .markdown class
 .markdown a {
 	@apply text-link-orange;
 }
+
+.markdown table > thead > tr > th:empty {
+	display:none;
+}
+
+.markdown table > thead {
+	@apply text-link-orange text-left font-bold text-lg bg-card-dark;
+}
+
+.markdown table > thead > tr > th {
+	@apply px-4 py-2; 
+}
+
+.markdown table > tbody > tr > td,
+.markdown table > thead > tr > td {
+	@apply px-4 py-2 border-table-divider-color border-r;
+}
+
+.markdown table > tbody > tr > td:last-of-type,
+.markdown table > thead > tr > td:last-of-type {
+	@apply border-r-0;
+}
+
+.markdown table > tbody > tr:nth-of-type(odd) {
+	@apply bg-table-light;
+}
