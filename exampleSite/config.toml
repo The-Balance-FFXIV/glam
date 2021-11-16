@@ -1,7 +1,7 @@
 baseURL = "https://example.com"
 languageCode = "en-us"
 defaultContentLanguage = "en"
-title = "Balance Glam"
+title = "The Balance"
 theme = "glam"
 
 [menu]
