@@ -137,7 +137,7 @@ Content
 }
 
 .role-info {
-	@apply flex flex-col w-full lg:w-4/12 xl:w-1/3 text-center justify-center;
+	@apply flex flex-col w-full lg:w-4/12 xl:w-1/4 text-center justify-center;
 }
 
 /*
@@ -216,7 +216,7 @@ It unfortunately also means we're limited to 5 tabs at current.
 .tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs > .tab:nth-of-type(3) > .tab-content,
 .tabbed [type="radio"]:nth-of-type(4):checked ~ .tabs > .tab:nth-of-type(4) > .tab-content,
 .tabbed [type="radio"]:nth-of-type(5):checked ~ .tabs > .tab:nth-of-type(5) > .tab-content {
-	@apply block bg-card-light flex content-center xl:h-96;
+	@apply block bg-card-light flex content-center xl:h-120;
 }
 
 #meta-slider {
