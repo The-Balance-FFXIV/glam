@@ -14,6 +14,12 @@ body {
 	min-height: 100vh;
 }
 
+/*
+*  Container (Mobile + Desktop)
+*/
+.responsive-container {
+	@apply container px-4 lg:px-8 xl:px-0 mx-auto;
+}
 
 /*
 Header/Navbar
@@ -147,11 +153,11 @@ Content
 }
 
 .tabs {
-	@apply flex items-stretch font-head p-0 list-none flex-col sm:flex-row border-b border-card-dark;
+	@apply flex items-stretch font-head p-0 list-none flex-col md:flex-row border-b border-card-dark;
 }
 
 .tab-jobs {
-	@apply items-center block sm:flex sm:flex-wrap sm:flex-grow w-full lg:w-1/2 md:justify-evenly font-head mt-4 lg:mt-0;
+	@apply items-center block md:flex md:flex-wrap md:flex-grow w-full lg:w-1/2 md:justify-evenly font-head mt-4 lg:mt-0;
 }
 
 .tab > label {
@@ -179,12 +185,15 @@ Content
 }
 
 .tab-content {
-	@apply hidden p-4 sm:p-8;
+	@apply hidden p-4 md:p-8;
 }
 
-.tab-jobs img {
-	/* @apply mb-2;
-	height:50px; */
+.tab-job-container {
+	@apply flex flex-col w-auto py-3 md:w-1/2 xl:w-auto justify-center items-start md:items-center;
+}
+
+.tab-job-link {
+	@apply flex flex-row items-center md:flex-col md:text-center;
 }
 
 /*
