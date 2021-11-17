@@ -250,7 +250,7 @@ Footer
 }
 
 .footer a {
-	color: #FF9956;
+	@apply text-link-orange;
 	font-size: 17px;
 }
 
