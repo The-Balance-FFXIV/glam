@@ -1,14 +1,14 @@
 <footer class="footer">
-  <div class="container mx-auto mt-16 mb-8">
+  <div class="responsive-container mt-16">
     <img src="/theme-assets/the_balance.png" />
-    <div class="flex mt-16">
+    <div class="flex flex-wrap md:flex-row lg:flex-nowrap mt-16">
       {{ range .Site.Menus.main }}
-        <div class="flex-auto">
-          <h3 class="footer-header pb-1 font-bold">
+        <div class="flex flex-col w-1/2 sm:w-1/3">
+          <h3 class="footer-header">
             {{ .Name }}
           </h3>
           {{ if .HasChildren }}
-              <ul>
+              <ul class="footer-list">
               {{ range .Children}}
                 <li><a href="{{ .URL }}">{{ .Name }}</a></li>
               {{ end }}
@@ -19,11 +19,11 @@
       {{/* Extra menus for footer */}}
       {{ range .Site.Menus.footer }}
         <div class="flex-auto">
-          <h3 class="footer-header pb-1">
+          <h3 class="footer-header">
             {{ .Name }}
           </h3>
           {{ if .HasChildren }}
-              <ul>
+              <ul class="footer-list">
               {{ range .Children}}
                 <li><a href="{{ .URL }}">{{ .Name }}</a></li>
               {{ end }}
