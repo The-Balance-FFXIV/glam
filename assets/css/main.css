@@ -266,7 +266,7 @@ Footer
 	@apply text-white font-head;
 	font-size: 14px;
 	text-transform: uppercase;
-	letter-spacing: 2.8px;
+	letter-spacing: 3px;
 }
 
 .footer-copyright {
@@ -326,7 +326,7 @@ Markdown - Can be used to auto apply styling to tags within the .markdown class
 
 .markdown h3 {
     @apply text-xl font-bold text-white uppercase font-head;
-	letter-spacing: 2.25px;
+	letter-spacing: 2px;
 }
 
 .markdown h4 {
