@@ -4,7 +4,9 @@
         <div class="col-span-9 text-white">
           <div class="flex items-center mb-7">
             <img class="job-icon-sm mr-4 filter drop-shadow-lg-{{ .role }}" src='{{ print "/theme-assets/jobs/" (lower .role) "/" (lower .job) "/" (lower .job) ".svg" }}' />
-            <div class="card-title filter drop-shadow-lg-{{ .role }}">{{ .jobTitle }}</div> 
+              <a href="/jobs/{{ .role }}/{{ .job }}/" class="card-title filter drop-shadow-lg-{{ .role }}">
+                {{ .jobTitle }}
+              </a>
           </div>
           <div>
             <div class="flex items-center mb-3">
