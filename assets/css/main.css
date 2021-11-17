@@ -302,10 +302,14 @@ Footer
 }
 
 .footer-header {
-	@apply text-white font-head;
+	@apply text-white font-head mb-0 pb-1 font-bold;
 	font-size: 14px;
 	text-transform: uppercase;
 	letter-spacing: 2.8px;
+}
+
+.footer-list {
+	@apply mb-8;
 }
 
 .footer-copyright {
