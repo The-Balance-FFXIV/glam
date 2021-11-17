@@ -139,7 +139,7 @@ Content
 }
 
 .tabs {
-	@apply flex items-stretch font-head p-0 list-none divide-x divide-card-dark border-b border-card-dark;
+	@apply flex flex-col lg:flex-row items-stretch font-head p-0 list-none divide-x divide-card-dark border-b border-card-dark;
 }
 
 .tab > label {
