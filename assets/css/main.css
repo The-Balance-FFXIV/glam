@@ -55,16 +55,16 @@ header nav {
 Link
  */
 
- .orange-link {
-	 @apply text-link-orange font-bold tracking-wide;
- }
+.orange-link {
+	@apply text-link-orange font-bold tracking-wide;
+}
 
 
 /**
 Heading
  */
 
- .section-head {
+.section-head {
 	@apply h-shadow flex-grow text-4xl font-head tracking-wider uppercase font-bold;
 }
 
