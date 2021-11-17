@@ -16,6 +16,15 @@ contributors:
     image: image
 description: The Endwalker-updated guide on how to pick up and play Scholar in
   trials and raids.
+images:
+  - /theme-assets/jobs/healers/scholar/scholar.svg
+tags:
+  - scholar guide
+  - ffxiv scholar
+  - endwalker guide
+  - foo
+  - bar
+  - baz
 ---
 
 ## Openers
