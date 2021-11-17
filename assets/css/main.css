@@ -328,9 +328,16 @@ Footer
     width: 35px;
 }
 
-.job-icon-lg {
-    width: 150px;
-    height: 150px;
+.job-icon-header {
+    width: 75px;
+    height: 75px;
+}
+
+@screen md {
+	.job-icon-header {
+		width: 150px;
+		height: 150px;
+	}
 }
 
 .h-shadow {
