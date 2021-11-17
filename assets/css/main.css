@@ -329,6 +329,10 @@ Markdown - Can be used to auto apply styling to tags within the .markdown class
 	letter-spacing: 2.25px;
 }
 
+.markdown h4 {
+	@apply text-base font-bold text-white uppercase tracking-widest mb-6 font-head;
+}
+
 .markdown p, h1, h2, h3, ol {
     @apply mb-8;
 }
