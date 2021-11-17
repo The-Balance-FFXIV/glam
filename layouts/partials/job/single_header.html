@@ -1,10 +1,12 @@
 <div class="h-60 xl:h-80 bg-no-repeat bg-cover" style='background-image: url(/theme-assets/jobs/{{ lower .role }}/{{ .job }}/{{ .job }}_background.png);'>
-  <div class="container mx-auto z-10 relative flex items-center h-full">
+  <div class="container mx-auto z-10 relative flex items-center h-full mt-4 lg:mt-0">
     <div class="grid grid-cols-12 gap-8 w-full items-center">
         <div class="col-span-9 text-white">
           <div class="flex items-center mb-7">
             <img class="job-icon-sm mr-4 filter drop-shadow-lg-{{ .role }}" src='{{ print "/theme-assets/jobs/" (lower .role) "/" (lower .job) "/" (lower .job) ".svg" }}' />
-            <div class="card-title filter drop-shadow-lg-{{ .role }}">{{ .jobTitle }}</div> 
+              <a href="/jobs/{{ .role }}/{{ .job }}/" class="card-title filter drop-shadow-lg-{{ .role }}">
+                {{ .jobTitle }}
+              </a>
           </div>
           <div>
             <div class="flex items-center mb-3">

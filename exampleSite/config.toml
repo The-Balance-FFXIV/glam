@@ -1,7 +1,7 @@
 baseURL = "https://example.com"
 languageCode = "en-us"
 defaultContentLanguage = "en"
-title = "Balance Glam"
+title = "The Balance"
 theme = "glam"
 
 [menu]
@@ -43,7 +43,7 @@ theme = "glam"
 
 [markup]
   [markup.tableOfContents]
-    endLevel = 3
+    endLevel = 2
     startLevel = 1
 
 [params]
