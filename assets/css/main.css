@@ -146,6 +146,10 @@ Content
 	@apply block px-7 py-3 cursor-pointer text-xl font-bold text-white uppercase tracking-widest bg-card-lighter transition-all;
 }
 
+.tab > label:hover{
+	@apply bg-card-dark;
+}
+
 .tab-content {
 	@apply hidden p-8;
 }
