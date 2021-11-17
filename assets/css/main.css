@@ -333,10 +333,6 @@ Markdown - Can be used to auto apply styling to tags within the .markdown class
 	@apply text-base font-bold text-white uppercase tracking-widest mb-6 font-head;
 }
 
-.markdown p, h1, h2, h3, ol {
-    @apply mb-8;
-}
-
 .markdown h1:not(:first-child) {
 	@apply mt-11;
 }
