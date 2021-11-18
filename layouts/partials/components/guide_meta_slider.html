@@ -1,3 +1,4 @@
+{{ $discord := $.Site.Params.discord }}
 <div class="tabbed md:pt-8">
   {{ $metaCategories := slice "Authors" "Contributors" "Changelog"}}
   {{ range $index, $role := $metaCategories }}
@@ -19,8 +20,8 @@
       <label for="tab-{{ $role }}">{{ $role }}</label>
       {{/* This implementation is probably less than ideal right now */}}
       {{ if eq . "Authors" }}
-      <div class="meta-content">
-        {{ partial "components/questions.html" }}
+      <div class="tab-content meta-content">
+        {{ partial "components/questions.html" (dict "discord" $discord)}}
         <div class="card-title mb-5">Authors</div>
         <div class="flex flex-row gap-12">
           {{ range $author := $.Page.Params.authors }}
@@ -29,14 +30,14 @@
         </div>
       </div>
       {{ else if eq . "Contributors" }}
-      <div class="meta-content">
+      <div class="tab-content meta-content">
         {{ range $author := $.Page.Params.contributors }}
         {{ partial "components/author_box.html" $author }}
         {{ end }}
       </div>
       {{ else }}
       {{ range $change := $.Page.Params.changelog }}
-      <div class="meta-content">
+      <div class="tab-content meta-content">
         <div>{{ time.Format "2 Jan, 2006" .date }}</div>
         <div>{{ .message | markdownify }}</div>
       </div>

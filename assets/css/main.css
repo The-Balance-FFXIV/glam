@@ -18,7 +18,7 @@ body {
 *  Container (Mobile + Desktop)
 */
 .responsive-container {
-	@apply container px-4 lg:px-8 xl:px-4 mx-auto;
+	@apply container px-4 lg:px-8 xl:px-0 mx-auto;
 }
 
 /*
@@ -199,14 +199,19 @@ Content
 	@apply border-r-0 border-card-dark border-t-2;
 }
 
-.meta-content {
-	@apply hidden bg-card-dark px-4 py-6 w-full;
+.tab-content.meta-content {
+	@apply hidden bg-card-dark px-8 py-8 w-full flex-col items-start;
 }
 
 /*
 This is honestly a dirty, very bad, no good hack, but it does make the tabs nice
 It unfortunately also means we're limited to 5 tabs at current.
 */
+
+#content .meta-content {
+	/* force .meta-content to not obey the h-120 below. */
+	@apply h-auto;
+}
 
 /* this is styling for tabs that are checked */
 .tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) label,
@@ -223,13 +228,7 @@ It unfortunately also means we're limited to 5 tabs at current.
 .tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs > .tab:nth-of-type(3) > .tab-content,
 .tabbed [type="radio"]:nth-of-type(4):checked ~ .tabs > .tab:nth-of-type(4) > .tab-content,
 .tabbed [type="radio"]:nth-of-type(5):checked ~ .tabs > .tab:nth-of-type(5) > .tab-content {
-	@apply block bg-card-light flex content-center xl:h-120;
-}
-
-.tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs > .tab:nth-of-type(1) > .meta-content,
-.tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs > .tab:nth-of-type(2) > .meta-content,
-.tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs > .tab:nth-of-type(3) > .meta-content {
-	@apply block;
+	@apply flex bg-card-light content-center xl:h-120;
 }
 
 #meta-slider {
