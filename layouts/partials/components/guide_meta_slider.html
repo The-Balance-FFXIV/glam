@@ -1,47 +1,49 @@
-<div class="tabbed">
+{{ $discord := $.Site.Params.discord }}
+<div class="tabbed md:pt-8">
   {{ $metaCategories := slice "Authors" "Contributors" "Changelog"}}
   {{ range $index, $role := $metaCategories }}
-    <input type="radio" id="tab-{{ $role }}" name="css-tabs" {{ if eq $index 0 }}checked{{ end }}>
+  <input type="radio" id="tab-{{ $role }}" name="css-tabs" {{ if eq $index 0 }}checked{{ end }}>
   {{ end }}
-    
-  <ul class="tabs">
+
+  <!-- Same deal with the homepage role slider to make it work on mobile -->
+  <ul class="tabs desktop">
     {{ range $role := $metaCategories }}
-      <li class="tab meta-tab"><label for="tab-{{ $role }}">{{ $role }}</label></li>
+    <li class="tab desktop">
+      <label for="tab-{{ $role }}">{{ $role }}</label>
+    </li>
     {{ end }}
   </ul>
-    
-  {{ range $role := $metaCategories }}
-    <div id="meta-slider" class="tab-content">
+
+  <ul class="tabs meta-tabs">
+    {{ range $role := $metaCategories }}
+    <li class="tab meta-tab">
+      <label for="tab-{{ $role }}">{{ $role }}</label>
       {{/* This implementation is probably less than ideal right now */}}
       {{ if eq . "Authors" }}
-        <div class="card-title mb-5">Have any questions?</div>
-        <div class="flex items-center mb-9">
-          <img class="mr-4" src="/theme-assets/the_balance.png">
-          <div class="flex items-center">
-            <img class="mr-2" src="/theme-assets/orange_discord_no_text.png">
-            <a class="link" href="https://discord.gg/thebalanceffxiv">discord.gg/thebalanceffxiv</a>
-          </div>
-        </div>
+      <div class="tab-content meta-content">
+        {{ partial "components/questions.html" (dict "discord" $discord)}}
         <div class="card-title mb-5">Authors</div>
         <div class="flex flex-row gap-12">
           {{ range $author := $.Page.Params.authors }}
-            {{ partial "components/author_box.html" (index $.Site.Data.author $author) }}
+          {{ partial "components/author_box.html" (index $.Site.Data.author $author) }}
           {{ end }}
         </div>
+      </div>
       {{ else if eq . "Contributors" }}
-        <div class="py-6">
-          {{ range $author := $.Page.Params.contributors }}
-            {{ partial "components/author_box.html" $author }}
-          {{ end }}
-        </div>
-      {{ else }}
-        {{ range $change := $.Page.Params.changelog }}
-          <div class="py-4">
-              <div>{{ time.Format "2 Jan, 2006" .date }}</div>
-              <div>{{ .message | markdownify }}</div>
-          </div>
+      <div class="tab-content meta-content">
+        {{ range $author := $.Page.Params.contributors }}
+        {{ partial "components/author_box.html" $author }}
         {{ end }}
+      </div>
+      {{ else }}
+      {{ range $change := $.Page.Params.changelog }}
+      <div class="tab-content meta-content">
+        <div>{{ time.Format "2 Jan, 2006" .date }}</div>
+        <div>{{ .message | markdownify }}</div>
+      </div>
       {{ end }}
-    </div>
-  {{ end }}
+      {{ end }}
+    </li>
+    {{ end }}
+  </ul>
 </div>

@@ -153,23 +153,11 @@ Content
 }
 
 .tabs {
-	@apply flex items-stretch font-head p-0 list-none flex-col md:flex-row border-b border-card-dark;
+	@apply flex items-stretch font-head p-0 list-none flex-col md:flex-row border-b border-card-light;
 }
 
 .tab-jobs {
 	@apply items-center block md:flex md:flex-wrap md:flex-grow w-full lg:w-1/2 md:justify-evenly font-head mt-4 lg:mt-0;
-}
-
-.tab > label {
-	@apply block md:hidden px-3 py-3 cursor-pointer;
-	margin-bottom: -1px;
-	font-size: 1.5rem; 
-	font-weight: 600;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	transition: all 0.3s;
-	background: #1E1E1F;
-	border-right: 2px solid #141415;
 }
 
 .tabs.desktop {
@@ -177,7 +165,10 @@ Content
 }
 
 .tab.desktop > label {
-	@apply hidden md:block border-b border-card-dark;
+	@apply hidden md:block border-card-dark border-r border-b;
+}
+.tab.desktop:first-of-type > label {
+	@apply border-l;
 }
 
 .tab > label {
@@ -193,7 +184,23 @@ Content
 }
 
 .tab-job-link {
-	@apply flex flex-row items-center md:flex-col md:text-center;
+	@apply flex flex-row items-center w-full md:flex-col md:text-center py-1 md:px-4 md:py-6 md:rounded md:transition-all;
+}
+
+.meta-tabs {
+	@apply flex-col;
+}
+
+.meta-tab {
+	@apply w-full;
+}
+
+.meta-tabs > .meta-tab > label {
+	@apply border-r-0 border-card-dark border-t-2;
+}
+
+.tab-content.meta-content {
+	@apply hidden bg-card-dark px-8 py-8 w-full flex-col items-start;
 }
 
 /*
@@ -201,14 +208,19 @@ This is honestly a dirty, very bad, no good hack, but it does make the tabs nice
 It unfortunately also means we're limited to 5 tabs at current.
 */
 
+#content .meta-content {
+	/* force .meta-content to not obey the h-120 below. */
+	@apply h-auto;
+}
+
 /* this is styling for tabs that are checked */
 .tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs .tab:nth-of-type(1) label,
 .tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs .tab:nth-of-type(2) label,
 .tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs .tab:nth-of-type(3) label,
 .tabbed [type="radio"]:nth-of-type(4):checked ~ .tabs .tab:nth-of-type(4) label,
 .tabbed [type="radio"]:nth-of-type(5):checked ~ .tabs .tab:nth-of-type(5) label {
-	@apply bg-card-light;
-	border-bottom-color: theme(colors.card-light);
+	@apply bg-card-light border-card-dark md:border-r;
+	border-bottom-color: #19191A;
 }
 
 .tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs > .tab:nth-of-type(1) > .tab-content,
@@ -216,7 +228,7 @@ It unfortunately also means we're limited to 5 tabs at current.
 .tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs > .tab:nth-of-type(3) > .tab-content,
 .tabbed [type="radio"]:nth-of-type(4):checked ~ .tabs > .tab:nth-of-type(4) > .tab-content,
 .tabbed [type="radio"]:nth-of-type(5):checked ~ .tabs > .tab:nth-of-type(5) > .tab-content {
-	@apply block bg-card-light flex content-center xl:h-120;
+	@apply flex bg-card-light content-center xl:h-120;
 }
 
 #meta-slider {
@@ -347,6 +359,19 @@ Footer
 
 .join-community {
 	background-image: url("/theme-assets/homepage/join-community.png");
+}
+
+/**
+Various Containers
+*/
+.guide-info-container {
+	@apply col-span-12 lg:col-span-3 bg-card-light text-white divide-y divide-page px-5 mb-6 md:mb-0;
+}
+.job-guides-container {
+	@apply col-span-12 lg:col-span-9 bg-card-light text-white py-8 md:py-14 px-4 md:px-10;
+}
+.table-of-contents-container {
+	@apply col-span-12 lg:col-span-3 bg-card-light text-white divide-y divide-page px-5 md:sticky md:top-8 mt-8 mb-8 md:mt-0 md:mb-0;
 }
 
 /**
