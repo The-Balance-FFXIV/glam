@@ -4,9 +4,9 @@
 {{ $fightTips := .Page.GetPage "fight-Tips"}}
 
 {{ if or ($advancedGuide) ($fightTips) }}
-<div class="container mx-auto">
+<div class="responsive-container">
   <div class="role-header mb-8">Advanced Guides</div>
-  <section class="grid grid-cols-2 gap-8">
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
     <div>
       {{ with $advancedGuide}}
         {{ $content := dict
