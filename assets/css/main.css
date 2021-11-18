@@ -193,7 +193,7 @@ Content
 }
 
 .tab-job-link {
-	@apply flex flex-row items-center md:flex-col md:text-center;
+	@apply flex flex-row items-center w-full md:flex-col md:text-center py-1 md:px-4 md:py-6 md:rounded md:transition-all;
 }
 
 /*
