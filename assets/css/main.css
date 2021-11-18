@@ -395,6 +395,10 @@ Markdown - Can be used to auto apply styling to tags within the .markdown class
 	@apply mt-11;
 }
 
+.markdown h2:not(:first-child) {
+	@apply mt-8;
+}
+
 .markdown ol {
     @apply list-decimal pl-10 space-y-2 mb-8;
 }
@@ -405,6 +409,10 @@ Markdown - Can be used to auto apply styling to tags within the .markdown class
 
 .markdown a {
 	@apply text-link-orange;
+}
+
+.markdown hr {
+	@apply mb-8;
 }
 
 .markdown table > thead > tr > th:empty {
