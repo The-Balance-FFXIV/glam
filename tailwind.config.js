@@ -40,7 +40,7 @@ module.exports = {
       },
       height: {
         '100': '25rem', 
-        '108': '27rem',
+        '112': '28rem',
         '120': '30rem',
       },
       zIndex: {

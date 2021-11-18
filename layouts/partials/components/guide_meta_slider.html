@@ -1,4 +1,4 @@
-<div class="tabbed pt-8">
+<div class="tabbed md:pt-8">
   {{ $metaCategories := slice "Authors" "Contributors" "Changelog"}}
   {{ range $index, $role := $metaCategories }}
   <input type="radio" id="tab-{{ $role }}" name="css-tabs" {{ if eq $index 0 }}checked{{ end }}>
