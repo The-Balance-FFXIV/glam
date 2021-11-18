@@ -153,23 +153,11 @@ Content
 }
 
 .tabs {
-	@apply flex items-stretch font-head p-0 list-none flex-col md:flex-row border-b border-card-dark;
+	@apply flex items-stretch font-head p-0 list-none flex-col md:flex-row border-b border-card-light;
 }
 
 .tab-jobs {
 	@apply items-center block md:flex md:flex-wrap md:flex-grow w-full lg:w-1/2 md:justify-evenly font-head mt-4 lg:mt-0;
-}
-
-.tab > label {
-	@apply block md:hidden px-3 py-3 cursor-pointer;
-	margin-bottom: -1px;
-	font-size: 1.5rem; 
-	font-weight: 600;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	transition: all 0.3s;
-	background: #1E1E1F;
-	border-right: 2px solid #141415;
 }
 
 .tabs.desktop {
@@ -177,7 +165,10 @@ Content
 }
 
 .tab.desktop > label {
-	@apply hidden md:block border-b border-card-dark;
+	@apply hidden md:block border-card-dark border-r border-b;
+}
+.tab.desktop:first-of-type > label {
+	@apply border-l;
 }
 
 .tab > label {
@@ -196,6 +187,22 @@ Content
 	@apply flex flex-row items-center md:flex-col md:text-center;
 }
 
+.meta-tabs {
+	@apply flex-col;
+}
+
+.meta-tab {
+	@apply w-full;
+}
+
+.meta-tabs > .meta-tab > label {
+	@apply border-r-0 border-card-dark border-t-2;
+}
+
+.meta-content {
+	@apply hidden bg-card-light px-4 py-6 w-full;
+}
+
 /*
 This is honestly a dirty, very bad, no good hack, but it does make the tabs nice
 It unfortunately also means we're limited to 5 tabs at current.
@@ -207,8 +214,8 @@ It unfortunately also means we're limited to 5 tabs at current.
 .tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs .tab:nth-of-type(3) label,
 .tabbed [type="radio"]:nth-of-type(4):checked ~ .tabs .tab:nth-of-type(4) label,
 .tabbed [type="radio"]:nth-of-type(5):checked ~ .tabs .tab:nth-of-type(5) label {
-	@apply bg-card-light;
-	border-bottom-color: theme(colors.card-light);
+	@apply bg-card-light border-card-dark md:border-r;
+	border-bottom-color: #19191A;
 }
 
 .tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs > .tab:nth-of-type(1) > .tab-content,
@@ -217,6 +224,12 @@ It unfortunately also means we're limited to 5 tabs at current.
 .tabbed [type="radio"]:nth-of-type(4):checked ~ .tabs > .tab:nth-of-type(4) > .tab-content,
 .tabbed [type="radio"]:nth-of-type(5):checked ~ .tabs > .tab:nth-of-type(5) > .tab-content {
 	@apply block bg-card-light flex content-center xl:h-120;
+}
+
+.tabbed [type="radio"]:nth-of-type(1):checked ~ .tabs > .tab:nth-of-type(1) > .meta-content,
+.tabbed [type="radio"]:nth-of-type(2):checked ~ .tabs > .tab:nth-of-type(2) > .meta-content,
+.tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs > .tab:nth-of-type(3) > .meta-content {
+	@apply block;
 }
 
 #meta-slider {
