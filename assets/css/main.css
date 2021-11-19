@@ -297,7 +297,7 @@ Footer
 
 
 .footer {
-	@apply bg-card-light;
+	@apply bg-card-light z-50 mt-auto;
 }
 
 .footer a {
