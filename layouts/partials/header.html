@@ -17,13 +17,15 @@
       <!-- Navbar items -->
       <div class="hidden lg:flex items-center space-x-3 ">
         {{ range $list }}
-        <a
-          href="{{ .URL }}"
-          class="py-4 px-2 font-semibold text-white hover:opacity-75 {{ if eq $current.URL .URL }} text-link-orange {{ end }}"
-          title="{{ .Title }}"
-        >
-          {{ .Name }}
-        </a>
+          {{ if .HasChildren }}
+          <a
+            href="{{ .URL }}"
+            class="py-4 px-2 font-semibold text-white hover:opacity-75 {{ if eq $current.URL .URL }} text-link-orange {{ end }}"
+            title="{{ .Title }}"
+          >
+            {{ .Name }}
+          </a>
+          {{ end }}
         {{ end }}
       </div>
       <!-- Mobile menu button -->
@@ -48,6 +50,7 @@
   <div class="hidden mobile-menu">
     <ul class="">
       {{ range $list }}
+        {{ if .HasChildren }}
         <li>
           <a
             href="{{ .URL }}"
@@ -56,6 +59,7 @@
             {{ .Name }}
           </a>
         </li>
+        {{ end }}
       {{ end }}
     </ul>
   </div>
