@@ -3,7 +3,7 @@
     <div class="grid grid-cols-12 lg:gap-8 w-full items-center mt-8 lg:mt-0">
         <div class="col-span-12 lg:col-span-9 text-white responsive-container">
           <div class="flex items-center mb-7">
-            <a href="/jobs/{{ lower .role }}/{{ lower .jobTitle }}/" class="flex flex-row items-center" >
+            <a href="/jobs/{{ lower .role | urlize }}/{{ lower .jobTitle | urlize }}/" class="flex flex-row items-center" >
               <img class="job-icon-sm mr-4 filter drop-shadow-lg-{{ .role }}" src='{{ print "/theme-assets/jobs/" (lower .role) "/" (lower .job) "/" (lower .job) ".svg" }}' />
               <div class="card-title filter drop-shadow-lg-{{ .role }}">{{ .jobTitle }}</div> 
             </a>
