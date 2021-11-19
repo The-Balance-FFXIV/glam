@@ -28,7 +28,6 @@ Header/Navbar
 header,
 .general-page-bg {
 	background-image: url("/theme-assets/homepage/endwalker@2x.png");
-	@apply h-96;
 }
 header::after,
 .general-page-bg:after {
@@ -109,7 +108,7 @@ Content
 .role-header-melee,
 .role-header-ranged,
 .role-header-casters {
-	@apply font-bold text-white text-4xl filter uppercase font-head tracking-wider;
+	@apply font-bold text-white text-2xl md:text-4xl filter uppercase font-head tracking-wider;
 }
 
 .role-header {
@@ -341,14 +340,18 @@ Footer
 }
 
 .job-icon-header {
-    width: 75px;
-    height: 75px;
+    width: 60px;
 }
 
 @screen md {
 	.job-icon-header {
+		width: 72px;
+	}
+}
+
+@screen xl {
+	.job-icon-header {
 		width: 150px;
-		height: 150px;
 	}
 }
 

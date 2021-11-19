@@ -4,7 +4,7 @@
     <body>
         {{ $title := .Title }}
         {{ if eq $title "Home"}}
-        <header class="bg-center bg-cover relative z-10"></header>
+        <header class="bg-center bg-cover relative z-10 h-64 md:h-96 mt-10 lg:mt-0"></header>
           {{- partial "header_home.html" . -}}
         {{ else }}
           {{- partial "header.html" . -}}
