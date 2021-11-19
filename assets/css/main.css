@@ -18,7 +18,7 @@ body {
 *  Container (Mobile + Desktop)
 */
 .responsive-container {
-	@apply container px-4 lg:px-8 xl:px-0 mx-auto;
+	@apply container px-4 lg:px-8 mx-auto;
 }
 
 /*
