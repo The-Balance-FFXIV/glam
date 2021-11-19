@@ -1,15 +1,15 @@
 {{ $current := . }}
 {{ $list := .Site.Menus.main | append .Site.Menus.header }}
-<nav class="fixed w-full lg:relative bg-black z-50">
-  <div class="container mx-auto px-4 lg:px-0">
+<nav class="fixed w-full lg:relative bg-card-light z-50">
+  <div class="responsive-container px-4 lg:px-0">
     <div class="flex justify-between">
       <div class="flex space-x-7">
         <div>
           <!-- Website Logo -->
           <a href="/" class="flex items-center py-4">
             <div class="flex flex-row items-center">
-              <img src="/theme-assets/the_balance_icon.svg" class="mr-4" alt="The Balance Icon" />
-              <img src="/theme-assets/the_balance.svg" class="h-4 md:h-6" alt="The Balance" />
+              <img src="/theme-assets/the_balance_icon.svg" class="mr-2 h-5 lg:h-8" alt="The Balance Icon" />
+              <img src="/theme-assets/the_balance.svg" class="h-3 lg:h-5" alt="The Balance" />
             </div>
           </a>
         </div>
@@ -29,7 +29,7 @@
       <!-- Mobile menu button -->
       <div class="lg:hidden flex items-center">
         <button class="outline-none mobile-menu-button">
-          <svg class=" w-8 h-8 text-link-orange hover:opacity-75 "
+          <svg class=" w-6 text-link-orange hover:opacity-75"
                x-show="!showMenu"
                fill="none"
                stroke-linecap="round"
@@ -45,13 +45,13 @@
     </div>
   </div>
   <!-- mobile menu -->
-  <div class="hidden mobile-menu">
+  <div class="hidden responsive-container mobile-menu">
     <ul class="">
       {{ range $list }}
         <li>
           <a
             href="{{ .URL }}"
-            class="block text-sm px-6 py-4 text-white font-semibold {{ if eq $current.URL .URL }}text-link-orange{{ end }}" title="{{ .Title }}"
+            class="block text-sm px-6 py-2 md:py-3 text-white font-semibold {{ if eq $current.URL .URL }}text-link-orange{{ end }}" title="{{ .Title }}"
           >
             {{ .Name }}
           </a>
@@ -60,4 +60,4 @@
     </ul>
   </div>
 </nav>
-<div class="mt-16 lg:mt-0 block"></div>
+<div class="mt-8 lg:mt-0 block"></div>
