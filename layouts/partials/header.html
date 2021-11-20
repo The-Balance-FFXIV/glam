@@ -15,15 +15,9 @@
         </div>
       </div>
       <!-- Navbar items -->
-      <div class="hidden lg:flex items-center space-x-3 ">
+      <div class="hidden lg:flex items-center space-x-3 my-4 right-dropdown">
         {{ range $list }}
-        <a
-          href="{{ .URL }}"
-          class="py-4 px-2 font-semibold text-white hover:opacity-75 {{ if eq $current.URL .URL }} text-link-orange {{ end }}"
-          title="{{ .Title }}"
-        >
-          {{ .Name }}
-        </a>
+          {{ partial "nav_item.html" . }}
         {{ end }}
       </div>
       <!-- Mobile menu button -->

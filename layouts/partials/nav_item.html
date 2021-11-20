@@ -1,0 +1,27 @@
+<ul class="nav-item">
+  <li class="block transition-all duration-75 relative">
+    <a href="{{ .URL | urlize }}"
+       class="py-2 px-4 font-semibold text-xl text-white hover:text-link-orange border-b-2 border-link-orange border-opacity-0 hover:border-opacity-100"
+       title="{{ .Title }}">
+      {{ .Name }}
+    </a>
+    {{ if .HasChildren }}
+    <ul class="nav-dropdown py-2">
+      <li>
+        <div class="flex items-start bg-card-light py-6">
+          {{ range .Children }}
+          <div class="mx-6">
+            <p class="text-link-orange font-bold tracking-wide mb-1">{{ .Name }}</p>
+            {{ range .Children }}
+            <a href="{{ .URL }}" class="block font-semibold hover:text-link-orange mb-1">
+              {{ htmlUnescape (replace .Name " " "&nbsp;") }}
+            </a>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </li>
+    </ul>
+    {{ end }}
+  </li>
+</ul>
