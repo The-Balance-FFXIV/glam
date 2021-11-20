@@ -2,22 +2,35 @@
     {{ range $index, $role := sort .Site.Data.roles "order" }}
         <input type="radio" id="tab-{{ $role.name | urlize }}" name="css-tabs" {{ if eq $index 0 }}checked{{ end }}>
     {{ end }}
-    
-    <ul class="tabs flex">
+    {{/*  This extra ul below is to create the desktop look + feel while keeping a mobile accordion. 
+      It was tough to make the mobile work with the previous layout but hopefully this can suffice. */}}
+    <ul class="tabs desktop">
+      {{ range $role := sort .Site.Data.roles "order" }}
+        <li class="tab desktop flex-grow text-center">
+          <label for="tab-{{ $role.name | urlize }}" class="border-t-4"
+            style="border-top-color: {{ $role.color }}">
+            <div class="flex items-center justify-center">
+              <img class="inline-block mr-2" src="/theme-assets/icons/role/role_{{ $role.title | urlize }}.svg" alt="" />
+              <span class="md:hidden xl:inline">{{ $role.name }}</span>
+              <span class="hidden md:inline xl:hidden text-lg">{{ replace $role.name "DPS" "" }}</span>
+            </div>
+          </label>
+        </li>
+      {{ end }}
+    </ul>
+    {{/*  Below is the mobile tabs with the content partial that will show on both mobile and desktop  */}}
+    <ul class="tabs flex flex-col md:flex-row">
         {{ range $role := sort .Site.Data.roles "order" }}
-            <li class="tab flex-grow text-center">
+            <li class="tab flex-grow text-left">
               <label for="tab-{{ $role.name | urlize }}" class="border-t-4"
                 style="border-top-color: {{ $role.color }}">
-                <div class="flex items-center justify-center">
+                <div class="flex items-center justify-left text-lg">
                   <img class="inline-block mr-2" src="/theme-assets/icons/role/role_{{ $role.title | urlize }}.svg" alt="" />
                   {{ $role.name }}
                 </div>
               </label>
+              {{ partial "homepage/role_slider/content.html" $role }}
             </li>
         {{ end }}
     </ul>
-    
-    {{ range $role := sort .Site.Data.roles "order" }}
-        {{ partial "homepage/role_slider/content.html" $role }}
-    {{ end }}
 </div>
