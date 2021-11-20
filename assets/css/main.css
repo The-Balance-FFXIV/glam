@@ -397,11 +397,7 @@ Markdown - Can be used to auto apply styling to tags within the .markdown class
  */
 
 .markdown {
-    @apply text-gray-light;
-}
-
-.markdown p {
-	@apply text-lg;
+    @apply text-gray-light text-lg;
 }
 
 .markdown h1 {
