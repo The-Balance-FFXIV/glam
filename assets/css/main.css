@@ -56,6 +56,21 @@ header nav {
 	@apply container mx-auto;
 	height: 100%;
 }
+
+ul.nav-item li ul.nav-dropdown{
+	@apply invisible opacity-0 absolute transition-all delay-75 mt-1 left-0 hidden;
+}
+
+ul.nav-item li:hover > ul.nav-dropdown,
+ul.nav-item li ul:hover{
+	@apply visible opacity-100 block;
+}
+
+ul.nav-item li ul.nav-dropdown li{
+	clear: both;
+	width: 100%;
+}
+
 /**
 Link
  */

@@ -1,16 +1,38 @@
 {{ $current := . }}
 {{ $list := .Site.Menus.main | append .Site.Menus.header }}
-  <nav class="fixed lg:absolute top-0 left-0 w-full z-50 bg-card-light lg:bg-transparent">
+  <nav role="navigation" class="fixed lg:absolute top-0 left-0 w-full z-50 bg-card-light lg:bg-transparent">
     <div class="responsive-container">
       <div class="flex justify-center">
         <!-- Navbar items -->
-        <div class="hidden lg:flex items-center space-x-3 ">
+        <div class="hidden lg:flex items-center space-x-3 my-4">
           {{ range $list }}
-          <a href="{{ .URL }}"
-            class="py-4 px-4 font-semibold text-xl text-white hover:opacity-75 {{ if eq $current.URL .URL }} text-link-orange {{ end }}"
-            title="{{ .Title }}">
-            {{ .Name }}
-          </a>
+          <ul class="nav-item">
+            <li class="block transition-all duration-75 relative">
+              <a href="{{ .URL | urlize }}"
+                 class="py-2 px-4 font-semibold text-xl text-white hover:text-link-orange border-b-2 border-link-orange border-opacity-0 hover:border-opacity-100"
+                 title="{{ .Title }}">
+                {{ .Name }}
+              </a>
+              {{ if .HasChildren }}
+              <ul class="nav-dropdown py-2">
+                <li>
+                  <div class="flex items-start bg-card-light py-6">
+                    {{ range .Children }}
+                    <div class="mx-6">
+                      <p class="text-link-orange font-bold tracking-wide mb-1">{{ .Name }}</p>
+                      {{ range .Children }}
+                        <a href="#" class="block font-semibold hover:text-link-orange mb-1">
+                          {{ htmlUnescape (replace .Name " " "&nbsp;") }}
+                        </a>
+                      {{ end }}
+                    </div>
+                    {{ end }}
+                  </div>
+                </li>
+              </ul>
+              {{ end }}
+            </li>
+          </ul>
           {{ end }}
         </div>
         <!-- Mobile menu button -->
