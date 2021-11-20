@@ -58,7 +58,12 @@ header nav {
 }
 
 ul.nav-item li ul.nav-dropdown{
-	@apply invisible opacity-0 absolute transition-all delay-75 mt-1 left-0 hidden;
+	@apply invisible opacity-0 absolute transition-all delay-75 left-0 mt-1 hidden;
+}
+
+div.right-dropdown ul.nav-item li ul.nav-dropdown{
+	right: 0;
+	left: auto !important;
 }
 
 ul.nav-item li:hover > ul.nav-dropdown,
