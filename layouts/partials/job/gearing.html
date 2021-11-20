@@ -21,25 +21,25 @@
       </div>
       <div class="xl:col-span-4 text-white">
         {{ with .Page.GetPage "stat-priority" }}
-          {{ if .Content }}
-            {{ $content := dict
+          {{if .Content }}
+            {{ .Scratch.Add "content" (dict
               "role" $role
               "icon" "/theme-assets/materia.svg"
               "name" "Stats & Materia"
               "text" .Params.priority
               "readMoreText" "Why this priority?"
-              "readMoreLink" "stat-priority"
+              "readMoreLink" "stat-priority")
             }}
-            {{ partial "cards/default.html" $content }}
           {{ else }}
-            {{ $content := dict
+            {{ .Scratch.Add "content" (dict
               "role" $role
               "icon" "/theme-assets/materia.svg"
               "name" "Stats & Materia"
-              "text" .Params.priority
+              "text" .Params.priority)
             }}
-            {{ partial "cards/default.html" $content }}
           {{ end }}
+          {{ $content := .Scratch.Get "content" }}
+          {{ partial "cards/default.html" $content }}
         {{ end }}
       </div>
     </section>
