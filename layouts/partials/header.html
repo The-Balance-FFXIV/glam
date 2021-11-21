@@ -1,30 +1,24 @@
 {{ $current := . }}
 {{ $list := .Site.Menus.main | append .Site.Menus.header }}
-<nav class="fixed w-full lg:relative bg-black z-50">
-  <div class="container mx-auto px-4 lg:px-0">
+<nav class="fixed w-full lg:relative bg-card-light z-50">
+  <div class="responsive-container px-4 lg:px-0">
     <div class="flex justify-between">
       <div class="flex space-x-7">
         <div>
           <!-- Website Logo -->
           <a href="/" class="flex items-center py-4">
             <div class="flex flex-row items-center">
-              <img src="/theme-assets/the_balance_icon.svg" class="mr-4" alt="The Balance Icon" />
-              <img src="/theme-assets/the_balance.svg" class="h-4 md:h-6" alt="The Balance" />
+              <img src="/theme-assets/the_balance_icon.svg" class="mr-2 h-5 lg:h-8" alt="The Balance Icon" />
+              <img src="/theme-assets/the_balance.svg" class="h-3 lg:h-5" alt="The Balance" />
             </div>
           </a>
         </div>
       </div>
       <!-- Navbar items -->
-      <div class="hidden lg:flex items-center space-x-3 ">
+      <div class="hidden lg:flex items-center space-x-3 my-4 right-dropdown">
         {{ range $list }}
           {{ if .HasChildren }}
-          <a
-            href="{{ .URL }}"
-            class="py-4 px-2 font-semibold text-white hover:opacity-75 {{ if eq $current.URL .URL }} text-link-orange {{ end }}"
-            title="{{ .Title }}"
-          >
-            {{ .Name }}
-          </a>
+            {{ partial "nav_item.html" . }}
           {{ end }}
         {{ end }}
       </div>
@@ -47,14 +41,15 @@
     </div>
   </div>
   <!-- mobile menu -->
-  <div class="hidden mobile-menu">
-    <ul class="">
+  <div class="hidden responsive-container mobile-menu">
+    <ul>
       {{ range $list }}
         {{ if .HasChildren }}
         <li>
           <a
             href="{{ .URL }}"
-            class="block text-sm px-6 py-4 text-white font-semibold {{ if eq $current.URL .URL }}text-link-orange{{ end }}" title="{{ .Title }}"
+            class="block text-sm px-6 py-4 text-white font-semibold {{ if eq $current.URL .URL }}text-link-orange{{ end }}"
+            title="{{ .Title }}"
           >
             {{ .Name }}
           </a>
