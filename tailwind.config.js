@@ -88,6 +88,7 @@ module.exports = {
       },
       fontSize: {
         'base': '0.9375rem',
+        '6xl':	'3.75rem; line-height: 1;',
       },
     },
   },
