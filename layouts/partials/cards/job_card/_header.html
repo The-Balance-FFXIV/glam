@@ -1,0 +1,15 @@
+<div class="flex items-center {{ if isset . "inlineLink" }}transform-gpu translate-x-0 group-hover:translate-x-2 transition-all{{ end }}">
+  {{ with .icon }}
+  <div class="mr-8">
+    <img src="{{ . }}" />
+  </div>
+  {{ end }}
+  <div class="flex flex-grow">
+    <div class="card-title">
+      {{ .name }}
+    </div>
+  </div>
+  <a href="{{ .job_link }}" class="text-link-orange">
+    View this job &raquo;
+  </a>
+</div>

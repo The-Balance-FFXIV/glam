@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+{{ $params := .Page.Params }}
+{{ $rolePath := printf "%s%s" "/content/" $.Page.Dir }}
+
+{{ partial "role/header.html" . }}
+<script>console.log({{ $rolePath }})</script>
+<div class="responsive-container mt-16">
+    <h1 class="text-4xl uppercase font-bold tracking-wide">{{ $params.rolesingle}} Jobs</h1>
+    <div class="grid grid-cols-2 gap-8 items-start">
+      {{ range .Site.Data.roles.tanks.jobs }}
+          {{/*  {{ $path := printf "%s%s%s%s%s%s" "/content/jobs" "/" $params.role "/" .Name "/_index.md" }}  */}}
+          {{ partial "cards/job_card.html" (dict "jobData" . "siteVar" $.Site) }}
+      {{ end }}
+    </div>
+</div>
+{{ end }}
+
+{{/*  {{ with .Site.GetPage "/content/jobs/{{ .role.title }}/{{ . }}/_index.md" }}
+{{ .Body }}
+{{ end }}  */}}

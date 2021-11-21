@@ -1,0 +1,22 @@
+<script>console.log({{ .jobData }})</script>
+{{ $path := printf "%s%s%s%s" "/content/jobs" "/tanks/" (urlize (lower .jobData.name)) "/_index.md" }}
+<div class="mt-24">
+  <div class="flex flex-col w-full py-3 justify-center items-start">
+    <div class="card card- space-y-3 w-full">
+      {{ if isset .jobData "name" }}
+        <div class="border-b border-card-dark pb-4">
+          {{ partial "cards/job_card/_header.html" .jobData }}
+        </div>
+      {{ end }}
+      <div>
+        <script>console.log({{ $path }})</script>
+        {{ with .siteVar.GetPage $path}}
+          {{ .Content }}
+        {{end}}
+      </div>
+      {{ if isset .jobData "readMoreLink" }}
+        {{ partial "cards/_footer.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</div>
