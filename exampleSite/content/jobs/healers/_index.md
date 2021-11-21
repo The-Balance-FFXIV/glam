@@ -6,4 +6,4 @@ menu:
     parent: combat-jobs
 role: healers
 ---
-Healers do stuff and junk.
+Healers do big heals and stuff.
