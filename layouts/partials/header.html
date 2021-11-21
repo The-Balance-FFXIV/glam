@@ -17,15 +17,13 @@
       <!-- Navbar items -->
       <div class="hidden lg:flex items-center space-x-3 my-4 right-dropdown">
         {{ range $list }}
-          {{ if .HasChildren }}
-            {{ partial "nav_item.html" . }}
-          {{ end }}
+        {{ partial "nav_item.html" . }}
         {{ end }}
       </div>
       <!-- Mobile menu button -->
       <div class="lg:hidden flex items-center">
         <button class="outline-none mobile-menu-button">
-          <svg class="w-6 text-link-orange hover:opacity-75"
+          <svg class=" w-6 text-link-orange hover:opacity-75"
                x-show="!showMenu"
                fill="none"
                stroke-linecap="round"
@@ -42,19 +40,16 @@
   </div>
   <!-- mobile menu -->
   <div class="hidden responsive-container mobile-menu">
-    <ul>
+    <ul class="">
       {{ range $list }}
-        {{ if .HasChildren }}
-        <li>
-          <a
-            href="{{ .URL }}"
-            class="block text-sm px-6 py-4 text-white font-semibold {{ if eq $current.URL .URL }}text-link-orange{{ end }}"
-            title="{{ .Title }}"
-          >
-            {{ .Name }}
-          </a>
-        </li>
-        {{ end }}
+      <li>
+        <a
+          href="{{ .URL }}"
+          class="block text-sm px-6 py-2 md:py-3 text-white font-semibold {{ if eq $current.URL .URL }}text-link-orange{{ end }}" title="{{ .Title }}"
+        >
+          {{ .Name }}
+        </a>
+      </li>
       {{ end }}
     </ul>
   </div>
