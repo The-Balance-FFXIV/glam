@@ -1,7 +1,10 @@
 const plugin = require('tailwindcss/plugin');
 
 module.exports = {
-  purge: ['layouts/**/*.html'],
+    purge: {
+        enabled: true,
+        content: ['layouts/**/*.html']
+    },
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
@@ -26,6 +29,8 @@ module.exports = {
         'card-dark': '#101111',
         'card-border-color' : '#3871c2',
         'card-header-text-color' : '#7b8794',
+        'table-light': "#29292c",
+        'table-divider-color': "#414141",
         'tanks': '#3A7AD6',
         'healers': '#47C168',
         'melee': '#D84D4D',
@@ -38,6 +43,8 @@ module.exports = {
       },
       height: {
         '100': '25rem', 
+        '112': '28rem',
+        '120': '30rem',
       },
       zIndex: {
           '-1': '-1',

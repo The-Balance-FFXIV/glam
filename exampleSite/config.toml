@@ -1,35 +1,15 @@
 baseURL = "https://example.com"
 languageCode = "en-us"
 defaultContentLanguage = "en"
-title = "Balance Glam"
+title = "The Balance"
 theme = "glam"
 
 [menu]
   [[menu.main]]
-    identifier = 'jobs'
+    identifier = 'combat-jobs'
     name = 'Combat Jobs'
     url = '/jobs/'
     weight = 10
-  [[menu.main]]
-    identifier = 'other-jobs'
-    name = 'Other Jobs'
-    url = '/jobs/'
-    weight = 20
-  [[menu.main]]
-    identifier = 'encounters'
-    name = 'Fight Encounters'
-    url = '/encounters/'
-    weight = 30
-  [[menu.main]]
-    identifier = 'tools'
-    name = 'Tools'
-    url = '/tools/'
-    weight = 40
-  [[menu.main]]
-    identifier = 'other-guides'
-    name = 'Other Guides'
-    url = '/guides/'
-    weight = 50
   [[menu.header]]
     identifier = 'news'
     name = 'Newsfeed'
@@ -41,8 +21,15 @@ theme = "glam"
     url = '/pages/'
     weight = 10
 
+[markup]
+  [markup.tableOfContents]
+    endLevel = 2
+    startLevel = 1
+
 [params]
   maxLevel = 90
   maxTierGearsets = 8 
   maxUltimateGearsets = 4
+  maxGearsets = 12
+  discord = 'discord.gg/thebalanceffxiv'
   copyrightMessage = '© SQUARE ENIX CO., LTD. All Rights Reserved | FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.'

@@ -1,23 +1,18 @@
 {{ $current := . }}
 {{ $list := .Site.Menus.main | append .Site.Menus.header }}
-<header class="bg-center bg-cover relative z-10">
-  <nav class="z-20">
-    <div class="container mx-auto px-2 md:px-0">
+  <nav role="navigation" class="fixed lg:absolute top-0 left-0 w-full z-50 bg-card-light lg:bg-transparent">
+    <div class="responsive-container">
       <div class="flex justify-center">
         <!-- Navbar items -->
-        <div class="hidden md:flex items-center space-x-3 ">
+        <div class="hidden lg:flex items-center space-x-3 my-4">
           {{ range $list }}
-          <a href="{{ .URL }}"
-            class="py-4 px-4 font-semibold text-xl text-white hover:opacity-75 {{ if eq $current.URL .URL }} text-link-orange {{ end }}"
-            title="{{ .Title }}">
-            {{ .Name }}
-          </a>
+            {{ partial "nav_item.html" . }}
           {{ end }}
         </div>
         <!-- Mobile menu button -->
-        <div class="md:hidden flex items-center">
+        <div class="lg:hidden flex items-center bg-card-light w-full px-4 py-2">
           <button class="outline-none mobile-menu-button">
-            <svg class=" w-6 h-6 text-gray-500 hover:opacity-75 " x-show="!showMenu" fill="none" stroke-linecap="round"
+            <svg class="w-6 h-6 text-link-orange hover:opacity-75" x-show="!showMenu" fill="none" stroke-linecap="round"
               stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
               <path d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -26,12 +21,12 @@
       </div>
     </div>
     <!-- mobile menu -->
-    <div class="hidden mobile-menu">
+    <div class="hidden responsive-container mobile-menu">
       <ul class="">
         {{ range $list }}
         <li>
           <a href="{{ .URL }}"
-            class="block text-sm px-2 py-4 text-white font-semibold {{ if eq $current.URL .URL }}text-link-orange{{ end }}"
+            class="block text-sm px-6 py-3 text-white font-semibold {{ if eq $current.URL .URL }}text-link-orange{{ end }}"
             title="{{ .Title }}">
             {{ .Name }}
           </a>
@@ -40,10 +35,9 @@
       </ul>
     </div>
   </nav>
-  <div class="flex items-center justify-center my-20 z-10">
+  <div class="absolute top-16 left-0 w-full flex items-center justify-center my-20 z-10">
     <!-- Website Logo -->
-    <a href="/" class="flex items-center py-4">
-      <img src="/theme-assets/the_balance.svg" alt="The Balance" />
+    <a href="/" class="flex items-center px-10 sm:px-0 py-4">
+      <img src="/theme-assets/the_balance.svg" alt="The Balance" class="w-96 lg:w-full" />
     </a>
   </div>
-</header>

@@ -1,7 +1,7 @@
 {{ $role := .Page.Parent.Params.role }}
 
 <div class="py-10 xl:py-14 bg-no-repeat bg-cover" style="background-image: url('/theme-assets/jobs/{{lower $role }}/{{ lower $role }}_gearing_background.png');">
-  <div class="container mx-auto">
+  <div class="responsive-container">
     <div class="role-header mb-8">Gearing</div>
     <section class="grid xl:grid-cols-12 gap-6 xl:gap-8">
       <div class="xl:col-span-8">
@@ -9,7 +9,7 @@
           {{ $content := dict
             "role" $role
             "icon" "/theme-assets/armoury.svg"
-            "name" "Best-in-slot (BIS) Gear Sets"
+            "name" .Title
             "patch" .Params.patch
             "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
             "bis" .Params.bis
@@ -21,14 +21,24 @@
       </div>
       <div class="xl:col-span-4 text-white">
         {{ with .Page.GetPage "stat-priority" }}
-          {{ $content := dict
-            "role" $role
-            "icon" "/theme-assets/materia.svg"
-            "name" "Stats & Materia"
-            "text" .Params.priority
-            "readMoreText" "Why this priority?"
-            "readMoreLink" "stat-priority"
-          }}
+          {{if .Content }}
+            {{ .Scratch.Add "content" (dict
+              "role" $role
+              "icon" "/theme-assets/materia.svg"
+              "name" "Stats & Materia"
+              "text" .Params.priority
+              "readMoreText" "Why this priority?"
+              "readMoreLink" "stat-priority")
+            }}
+          {{ else }}
+            {{ .Scratch.Add "content" (dict
+              "role" $role
+              "icon" "/theme-assets/materia.svg"
+              "name" "Stats & Materia"
+              "text" .Params.priority)
+            }}
+          {{ end }}
+          {{ $content := .Scratch.Get "content" }}
           {{ partial "cards/default.html" $content }}
         {{ end }}
       </div>

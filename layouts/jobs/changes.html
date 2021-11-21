@@ -5,17 +5,19 @@
 <div class="space-y-16">
   {{ $header := dict
     "role" $role
-    "job" .Parent.Title
-    "title" "Latest Job Changes"
+    "job" .Parent.Params.job_name
+    "jobTitle" .Parent.Title
+    "title" .Title
     "icon" "/theme-assets/news.svg"
     "lastmod" .Params.lastmod
     "patch" .Params.patch
+    "pageContext" .
   }}
   {{ partial "job/single_header.html" $header }}
 
-  <div class="container mx-auto">
-    <div class="grid grid-cols-12 items-start gap-8 w-full">
-      <div class="col-span-9 bg-card-light text-white py-14 px-10">
+  <div class="responsive-container">
+    <div class="md:grid grid-cols-12 items-start gap-8 w-full">
+      <div class="job-guides-container">
         <div class="markdown max-w-none">
           {{ range sort .Params.changes "patch" "desc" }}
             <h2>{{ .patch }}</h2>
@@ -23,7 +25,7 @@
           {{ end }}
         </div>
       </div>
-      <div class="col-span-3 bg-card-light text-white divide-y divide-page px-5 sticky top-8">
+      <div class="table-of-contents-container max-h-screen overflow-y-auto">
         <div class="card-title pt-6 pb-5">Table of Contents</div>
         <div class="nested-link font-bold py-2">{{ .TableOfContents }}</div>
         <div>&nbsp;</div>
@@ -31,7 +33,7 @@
     </div>
   </div>
 
-  <div class="container mx-auto">
+  <div class="responsive-container">
     {{ partial "components/guide_meta_slider.html" . }}
   </div>
 

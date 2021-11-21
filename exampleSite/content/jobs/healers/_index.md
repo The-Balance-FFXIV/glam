@@ -1,8 +1,9 @@
 ---
 menu:
   main:
+    identifier: healers
     name: Healers
-    parent: jobs
+    parent: combat-jobs
 role: healers
 ---
 Healers do big heals and stuff.

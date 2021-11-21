@@ -1,26 +1,28 @@
 {{ $savageEncounters := .Site.Data.encounter.savage.encounters }}
 {{ $ultimateEncounters := .Site.Data.encounter.ultimate.encounters }}
 <div class="flex flex-col">
-  <div class="w-full">
+  <div class="w-full mb-24">
     <div class="flex flex-row items-end">
-      <h1 class="section-head">Savage Encounter Guides</h1>
-      <a class="orange-link" href="#">See all Encounter Guides &raquo;</a>
+      <h1 class="h-shadow flex-grow text-3xl sm:text-4xl uppercase font-bold">Savage Encounter Guides</h1>
+      <a class="text-link-orange hidden sm:block" href="#">See all encounter guides &raquo;</a>
     </div>
-    <div class="flex flex-row mt-8">
+    <div class="flex flex-row flex-wrap mt-8">
       {{ range $encounter := $savageEncounters }}
         {{ partial "homepage/encounters/card.html" $encounter }}
       {{ end }}
     </div>
+    <a class="text-link-orange sm:hidden" href="#">See all encounter guides >></a>
   </div>
-  <div class="w-full mt-24">
+  <div class="w-full mb-24">
     <div class="flex flex-row items-end">
-      <h1 class="section-head">Ultimate Encounter Guides</h1>
-      <a class="orange-link" href="#">See all Encounter Guides &raquo;</a>
+      <h1 class="h-shadow flex-grow text-3xl sm:text-4xl uppercase font-bold">Ultimate Encounter Guides</h1>
+      <a class="text-link-orange hidden sm:block" href="#">See all encounter guides &raquo;</a>
     </div>
-    <div class="flex flex-row mt-8">
+    <div class="flex flex-row flex-wrap mt-8">
       {{ range $ultimateEncounter := $ultimateEncounters }}
         {{ partial "homepage/encounters/card.html" $ultimateEncounter }}
       {{ end }}
     </div>
+    <a class="text-link-orange sm:hidden" href="#">See all encounter guides >></a>
   </div>
 </div>

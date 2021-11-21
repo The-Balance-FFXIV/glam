@@ -1,4 +1,9 @@
 ---
+menu:
+  main:
+    identifier: scholar
+    name: Scholar
+    parent: healers
 title: Scholar
 job_name: scholar
 ---
