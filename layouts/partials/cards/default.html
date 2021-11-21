@@ -15,8 +15,10 @@
     <div>
       {{ .text }}
     </div>
-    {{ if isset . "readMoreLink" }}
-      {{ partial "cards/_footer.html" . }}
-    {{ end }}
+    <div class="border-t border-card-dark pt-5 text-right">
+      {{ if isset . "readMoreLink" }}
+        {{ partial "cards/_footer.html" . }}
+      {{ end }}
+    </div>
 	</div>
 </div>
