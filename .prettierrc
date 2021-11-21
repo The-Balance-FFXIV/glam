@@ -1,0 +1,13 @@
+{
+  "useTabs": false,
+  "tabWidth": 2,
+  "goTemplateBracketSpacing": true,
+  "overrides": [
+    {
+      "files": ["*.html"],
+      "options": {
+        "parser": "go-template"
+      }
+    }
+  ]
+}
