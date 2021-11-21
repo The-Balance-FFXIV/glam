@@ -18,7 +18,7 @@ body {
 *  Container (Mobile + Desktop)
 */
 .responsive-container {
-	@apply container px-4 lg:px-8 xl:px-0 mx-auto;
+	@apply container px-4 lg:px-8 mx-auto;
 }
 
 /*
@@ -28,7 +28,6 @@ Header/Navbar
 header,
 .general-page-bg {
 	background-image: url("/theme-assets/homepage/endwalker@2x.png");
-	@apply h-96;
 }
 header::after,
 .general-page-bg:after {
@@ -57,6 +56,26 @@ header nav {
 	@apply container mx-auto;
 	height: 100%;
 }
+
+ul.nav-item li ul.nav-dropdown{
+	@apply invisible opacity-0 absolute transition-all delay-75 left-0 mt-1 hidden;
+}
+
+div.right-dropdown ul.nav-item li ul.nav-dropdown{
+	right: 0;
+	left: auto !important;
+}
+
+ul.nav-item li:hover > ul.nav-dropdown,
+ul.nav-item li ul:hover{
+	@apply visible opacity-100 block;
+}
+
+ul.nav-item li ul.nav-dropdown li{
+	clear: both;
+	width: 100%;
+}
+
 /**
 Link
  */
@@ -109,7 +128,7 @@ Content
 .role-header-melee,
 .role-header-ranged,
 .role-header-casters {
-	@apply font-bold text-white text-4xl filter uppercase font-head tracking-wider;
+	@apply font-bold text-white text-2xl md:text-4xl filter uppercase font-head tracking-wider;
 }
 
 .role-header {
@@ -297,7 +316,7 @@ Footer
 
 
 .footer {
-	@apply bg-card-light;
+	@apply bg-card-light z-50 mt-auto;
 }
 
 .footer a {
@@ -341,14 +360,18 @@ Footer
 }
 
 .job-icon-header {
-    width: 75px;
-    height: 75px;
+    width: 60px;
 }
 
 @screen md {
 	.job-icon-header {
+		width: 72px;
+	}
+}
+
+@screen xl {
+	.job-icon-header {
 		width: 150px;
-		height: 150px;
 	}
 }
 
@@ -379,11 +402,7 @@ Markdown - Can be used to auto apply styling to tags within the .markdown class
  */
 
 .markdown {
-    @apply text-gray-light;
-}
-
-.markdown p {
-	@apply text-lg;
+    @apply text-gray-light text-lg;
 }
 
 .markdown h1 {
