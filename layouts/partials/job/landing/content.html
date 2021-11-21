@@ -1,21 +1,42 @@
-{{ $role := . }}
+{{ $borderClass := default "gray-600" (lower .role.name) }}
+{{ $site := .site }}
 <div class="tab-content job-landing mt-16">
   <div class="flex flex-col lg:flex-row items-center bg-card-light py-8">
     <div class="w-2/3 mx-auto text-center">
       <div class="hidden flex-row text-left sm:text-center justify-center md:flex">
         <a href="#" class="my-4">
-        <h1 class="text-6xl">{{ .name }}</h1>
-        <span class="text-link-orange font-sans font-bold tracking-wide">{{ .nameSingular }} Guides & Resources &raquo;</span>
+        <h1 class="text-6xl">{{ .role.name }}</h1>
+        <span class="text-link-orange font-sans font-bold tracking-wide">{{ .role.nameSingular }} Guides & Resources &raquo;</span>
         </a>
       </div>
       <div class="card-content text-center text-white leading-7">
-          {{ .role_text_md | markdownify }}
+          {{ .role.role_text_md | markdownify }}
       </div>
     </div>
   </div>
   <div class="mt-24 grid grid-cols-2 gap-6">
-    {{ range (index . "jobs") }}
-        {{ partial "job/landing/job.html" (dict "jobs" . "role" $role) }}
+    {{ range (index .role "jobs") }}
+      <div class="flex flex-col w-full py-3 justify-center items-start">
+        <div class="card card-{{ $borderClass }} space-y-3 w-full">
+          {{ if isset . "name" }}
+            <div class="border-b border-card-dark pb-4">
+              {{ partial "cards/job_landing/_header.html" .}}
+            </div>
+          {{ end }}
+          <div>
+            <script>console.log("About.md: ", {{ $site.GetPage "/content/about.md" }})</script> <!-- This works -->
+            <script>console.log("Scholar's test page: ", {{ $site.GetPage "/content/jobs/healers/scholar/_index.md" }})</script> <!-- This doesn't works -->
+            {{ with $site.GetPage "/content/jobs/{{ .role.title }}/{{ urlize (lower .jobs.name) }}/_index.md" }}
+              {{ .Content }}
+            {{ end }}
+          </div>
+          {{ if isset . "readMoreLink" }}
+            {{ partial "cards/_footer.html" . }}
+          {{ end }}
+        </div>
+      </div>
     {{ end }}
   </div>
 </div>
+
+

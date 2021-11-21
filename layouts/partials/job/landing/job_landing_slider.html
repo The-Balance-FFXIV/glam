@@ -29,7 +29,7 @@
                 {{ $role.name }}
               </div>
             </label>
-            {{ partial "job/landing/content.html" $role }}
+            {{ partial "job/landing/content.html" (dict "role" . "site" $.Site)}}
           </li>
       {{ end }}
   </ul>
