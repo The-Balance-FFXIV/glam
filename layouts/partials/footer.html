@@ -19,23 +19,23 @@
       {{/* Extra menus for footer */}}
       {{ range .Site.Menus.footer }}
         {{ if .HasChildren }}
-        <div class="flex-auto">
-          <h3 class="footer-header">
-            {{ .Name }}
-          </h3>
-          <ul class="footer-list">
-            {{ range .Children}}
-            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-            {{ end }}
-          </ul>
-        </div>
+          <div class="flex-auto">
+            <h3 class="footer-header">
+              {{ .Name }}
+            </h3>
+            <ul class="footer-list">
+              {{ range .Children}}
+              <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+              {{ end }}
+            </ul>
+          </div>
         {{ end }}
       {{ end }}
     </div>
     {{ if .Site.Params.copyrightMessage }}
-      <div class="py-5 footer-copyright">
-        {{ .Site.Params.copyrightMessage}}
-      </div>
+    <div class="py-5 footer-copyright">
+      {{ .Site.Params.copyrightMessage}}
+    </div>
     {{ end }}
   </div>
 </footer>
