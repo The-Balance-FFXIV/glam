@@ -1,4 +1,4 @@
-
+{{ $borderClass := default "gray-600" (lower .role) }}
 {{ $path := printf "%s%s%s%s%s" "/content/jobs" "/" (lower .role) "/" (urlize (lower .jobData.name)) }}
 {{ $indexPath := printf "%s%s" $path "/_index.md" }}
 {{ $advancedGuide := printf "%s%s" $path "/advanced-guide.md" }}
@@ -25,7 +25,7 @@
 
 <div class="mt-0 lg:mt-12">
   <div class="flex flex-col w-full py-3 justify-center items-start">
-    <div class="card card- space-y-3 w-full">
+    <div class="card card-{{ $borderClass }} space-y-3 w-full">
       {{ if isset .jobData "name" }}
         <div class="border-b border-card-dark pb-4">
           {{ partial "cards/job_card/_header.html" .jobData }}
