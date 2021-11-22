@@ -1,21 +1,20 @@
 {{ $role := .Page.Params.role }}
 {{ $title := .Page.Params.menu.main.name }}
 
-<script>console.log({{ .Content }})</script>
 <div class="h-36 xl:h-80 flex flex-row">
   <div class="responsive-container z-10 relative flex items-center h-full">
-    <div class="flex items-center md:items-center flex-row mt-0 md:mt-16 lg:mt-0">
-      <img class="job-icon-header mr-2 xl:mr-8 filter drop-shadow-lg-{{ $role }}" src="/theme-assets/jobs/{{ (lower $role) }}/{{ (lower $role) }}.svg" />
+    <div class="flex md:items-center flex-col mt-0 md:mt-16 lg:-mt-10">
+      <img class="job-icon-header mr-2 xl:mr-8 filter drop-shadow-lg-{{ $role }}" src="/theme-assets/icons/role/role_{{ (lower $role) }}_white.svg" />
     </div>
     <div class="w-8/12">
       <h1 class="text-3xl md:text-4xl xl:text-6xl tracking-wider font-semibold filter mb-4 drop-shadow-lg-{{ $role }} mb-0">{{ $title }}</h1>
       {{ .Content }}
     </div>
     <div class="mt-48 flex justify-end">
-      <img class="w-5/6" src="/theme-assets/jobs/{{ (lower $role) }}/{{ (lower $role) }}_group.png" />
+      <img class="w-5/6" src="{{ .Page.Params.role_hero_image }}" />
     </div>
   </div>
   <div class="bg-gray-600 absolute top-0 left-0 w-full -z-1 h-96 md:h-72 xl:h-96">
-    <img class="object-cover w-full h-full" src="/theme-assets/jobs/{{ (lower $role) }}/{{ (lower $role) }}_background.png" />
+    <img class="object-cover w-full h-full" src="{{ .Page.Params.bg_header_image }}" />
   </div>
 </div>

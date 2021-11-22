@@ -11,21 +11,16 @@
 {{ $skillsOverview := printf "%s%s" $path "/skills-overview.md" }}
 {{ $statPriority := printf "%s%s" $path "/stat-priority.md" }}
 
-{{/*  
-  I'm sorry for the attribute names... 
-  dict auto sorts alphabetically and
-  not by the order you add items in.  
-*/}}
-{{ $pages := dict
-  "a" (.siteVar.GetPage $levelingGuide)
-  "b" (.siteVar.GetPage $basicGuide)
-  "c" (.siteVar.GetPage $advancedGuide)
-  "d" (.siteVar.GetPage $skillsOverview)
-  "e" (.siteVar.GetPage $openers)
-  "f" (.siteVar.GetPage $faq)
-  "g" (.siteVar.GetPage $bis)
-  "h" (.siteVar.GetPage $jobChanges)
-  "i" (.siteVar.GetPage $statPriority)
+{{ $pages := slice
+  (.siteVar.GetPage $levelingGuide)
+  (.siteVar.GetPage $basicGuide)
+  (.siteVar.GetPage $advancedGuide)
+  (.siteVar.GetPage $skillsOverview)
+  (.siteVar.GetPage $openers)
+  (.siteVar.GetPage $faq)
+  (.siteVar.GetPage $bis)
+  (.siteVar.GetPage $jobChanges)
+  (.siteVar.GetPage $statPriority)
 }}
 
 <div class="mt-12">
