@@ -29,6 +29,18 @@ const observerCallback = () => {
   }
 
   const currentHeader = findCurrentHeader(headers)
+
+  // Find all H2 tags between current and the next H1
+  const subheaders = []
+  let sibling = currentHeader.nextElementSibling
+
+  while (sibling && sibling.tagName !== "H1") {
+    if (sibling.tagName === "H2") {
+      subheaders.push(sibling)
+    }
+    sibling = sibling.nextElementSibling
+  }
+
   const currentSubheader = findCurrentHeader(subheaders)
 
   for (const header of [currentHeader, currentSubheader]) {
@@ -39,7 +51,10 @@ const observerCallback = () => {
       anchor.classList.add("active")
   
       if (next && next.tagName === "UL") {
-        next.classList.add("active")
+        // Hugo generates empty lists for some reason, ignore those
+        if (next.children.length > 0 && next.children[0].children.length > 0) {
+          next.classList.add("active")
+        }
       }
     }
   }
