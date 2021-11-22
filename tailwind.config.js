@@ -3,7 +3,7 @@ const plugin = require('tailwindcss/plugin');
 module.exports = {
     purge: {
         enabled: true,
-        content: ['layouts/**/*.html']
+        content: ['layouts/**/*.html', "themes/glam/layouts/**/*.html"]
     },
   darkMode: false, // or 'media' or 'class'
   theme: {
