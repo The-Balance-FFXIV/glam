@@ -21,8 +21,6 @@
         <div class="markdown max-w-none">
           {{ range .Params.bis }}
             <h2><a href="{{ .link }}">{{ .name }}</a></h2>
-            <!-- {{ $link := dict "uuid" (index (last 1 (split .link "/")) 0) }} 
-            {{ partial "components/etro.html" $link}} -->
             {{ .description | markdownify }}
           {{ end }}
         </div>
