@@ -4,11 +4,11 @@
 {{ $roleData := (index .Site.Data.roles $params.role )}}
 
 {{ partial "role/header.html" . }}
-<div class="responsive-container mt-16">
+<div class="responsive-container mt-8 lg:mt-14">
     <h1 class="text-4xl uppercase font-bold tracking-wide">{{ $roleData.nameSingular }} Jobs</h1>
-    <div class="grid grid-cols-2 gap-4 items-start">
+    <div class="grid grid-cols-1 md:grid-cols-2 md:gap-4 items-start">
       {{ range $roleData.jobs }}
-          {{ partial "cards/job_card.html" (dict "jobData" . "siteVar" $.Site "role" $roleData.name) }}
+          {{ partial "cards/job_card/job_card.html" (dict "jobData" . "siteVar" $.Site "role" $roleData.name) }}
       {{ end }}
     </div>
 </div>

@@ -23,7 +23,7 @@
   (.siteVar.GetPage $statPriority)
 }}
 
-<div class="mt-12">
+<div class="mt-0 lg:mt-12">
   <div class="flex flex-col w-full py-3 justify-center items-start">
     <div class="card card- space-y-3 w-full">
       {{ if isset .jobData "name" }}
@@ -38,7 +38,7 @@
       </div>
       <div>
         <h4 class="uppercase tracking-widest border-t border-black my-4 pt-4">Guides</h4>
-        <div class="grid grid-cols-3">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {{ range $pages }}
             {{ if .Path }}
               <div>

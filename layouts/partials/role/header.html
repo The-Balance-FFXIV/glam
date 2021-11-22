@@ -1,20 +1,22 @@
 {{ $role := .Page.Params.role }}
 {{ $title := .Page.Params.menu.main.name }}
 
-<div class="h-36 xl:h-80 flex flex-row">
-  <div class="responsive-container z-10 relative flex items-center h-full">
-    <div class="flex md:items-center flex-col mt-0 md:mt-16 lg:-mt-10">
-      <img class="job-icon-header mr-2 xl:mr-8 filter drop-shadow-lg-{{ $role }}" src="/theme-assets/icons/role/role_{{ (lower $role) }}_white.svg" />
+<div class="h-auto md:h-84 xl:h-80 flex flex-col lg:flex-row">
+  <div class="responsive-container z-10 relative flex flex-col md:flex-row items-center h-full mt-12 md:mt-0">
+    <div class="w-full md:w-6/12 flex-grow flex flex-col md:flex-row text-center items-center md:text-left mb-4 lg:pr-8 lg:mb-0">
+      <div class="w-full mr-4 lg:-mr-8 flex self-start">
+        <img class="job-icon-header mb-2 mx-auto md:mx-0 lg:mb-0 xl:mr-8 filter drop-shadow-lg-{{ $role }}" src="/theme-assets/icons/role/role_{{ (lower $role) }}_white.svg" />
+      </div>
+      <div class="flex flex-col items-center md:items-start justify-center md:justify-start mt-0">
+        <h1 class="text-3xl md:text-4xl xl:text-6xl tracking-wider font-semibold filter drop-shadow-lg-{{ $role }} mb-4">{{ $title }}</h1>
+        {{ .Content }}
+      </div>
     </div>
-    <div class="w-8/12">
-      <h1 class="text-3xl md:text-4xl xl:text-6xl tracking-wider font-semibold filter mb-4 drop-shadow-lg-{{ $role }} mb-0">{{ $title }}</h1>
-      {{ .Content }}
-    </div>
-    <div class="mt-48 flex justify-end">
-      <img class="w-5/6" src="{{ .Page.Params.role_hero_image }}" />
+    <div class="mt-0 xl:mt-48 md:w-5/12 flex flex-end justify-center lg:justify-end">
+      <img src="{{ .Page.Params.role_hero_image }}" />
     </div>
   </div>
-  <div class="bg-gray-600 absolute top-0 left-0 w-full -z-1 h-96 md:h-72 xl:h-96">
+  <div class="bg-gray-600 absolute top-0 left-0 w-full -z-1 h-112 md:h-88 xl:h-96">
     <img class="object-cover w-full h-full" src="{{ .Page.Params.bg_header_image }}" />
   </div>
 </div>
