@@ -1,0 +1,11 @@
+{{/*
+Shortcode for embedding etro.gg link
+Usage:
+{{< etro uuid >}}
+ */}}
+<div class="h-96">
+  <iframe class="w-full h-full"
+    title="Etro Gearset" 
+    src="https://etro.gg/embed/gearset/{{ .Get 0 }}">
+  </iframe>
+</div>
