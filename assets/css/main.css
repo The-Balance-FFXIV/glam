@@ -14,12 +14,18 @@ body {
 	min-height: 100vh;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
+
 /*
 *  Container (Mobile + Desktop)
 */
 .responsive-container {
 	@apply container px-4 lg:px-8 mx-auto;
 }
+
 
 /*
 Header/Navbar
@@ -106,10 +112,29 @@ Heading
 Table of Contents
  */
 
-nav#TableOfContents ul a + ul {
-	padding-left: 1em;
+ nav#TableOfContents ul a + ul {
+	padding-left: 1.5em;
+	max-height: 0;
+	overflow: hidden;
+	display: block;
+	transition: max-height 0.4s;
 }
 
+nav#TableOfContents ul a + ul.active {
+	max-height: 1000px;
+	display: block;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	transition: max-height 1s;
+}
+
+nav#TableOfContents a {
+	font-size: 0.925rem;
+}
+
+nav#TableOfContents a.active {
+	color: white;
+}
 
 /**
 Content
@@ -394,7 +419,7 @@ Various Containers
 	@apply col-span-12 lg:col-span-9 bg-card-light text-white py-8 md:py-14 px-4 md:px-10;
 }
 .table-of-contents-container {
-	@apply col-span-12 lg:col-span-3 bg-card-light text-white divide-y divide-page px-5 md:sticky md:top-8 mt-8 mb-8 md:mt-0 md:mb-0;
+	@apply col-span-12 lg:order-last lg:sticky lg:col-span-3 bg-card-light text-white divide-y divide-page px-5 md:top-8 mt-8 mb-8 md:mt-0 md:mb-0;
 }
 
 /**
