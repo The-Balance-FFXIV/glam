@@ -166,6 +166,8 @@ collections:
     files:
       - label: "Tanks"
         name: "tanks"
+        media_folder: "/static/img/jobs/tanks"
+        public_folder: "/img/jobs/tanks"
         file: "content/jobs/tanks/_index.md"
         fields:
         - {label: "Body", name: "body", widget: "markdown"}
@@ -184,9 +186,14 @@ collections:
           widget: "select"
           options: ["tanks"]
           default: ["tanks"]
+        - {label: "Layout", name: "layout", widget: "select", options: ["role_home"], default: ["role_home"]}
+        - {label: "Background Header Image", name: "bg_header_image", widget: "image", choose_url: false}
+        - {label: "Role Hero Image", name: "role_hero_image", widget: "image", choose_url: false}
       - label: "Healers"
         name: "healers"
         file: "content/jobs/healers/_index.md"
+        media_folder: "/static/img/jobs/healers"
+        public_folder: "/img/jobs/healers"
         fields:
         - {label: "Body", name: "body", widget: "markdown"}
         - label: "Menu hierarchy"
@@ -204,9 +211,14 @@ collections:
           widget: "select"
           options: ["healers"]
           default: ["healers"]
+        - {label: "Layout", name: "layout", widget: "select", options: ["role_home"], default: ["role_home"]}
+        - {label: "Background Header Image", name: "bg_header_image", widget: "image", choose_url: false}
+        - {label: "Role Hero Image", name: "role_hero_image", widget: "image", choose_url: false}
       - label: "Melee"
         name: "melee"
         file: "content/jobs/melee/_index.md"
+        media_folder: "/static/img/jobs/melee"
+        public_folder: "/img/jobs/melee"
         fields:
         - {label: "Body", name: "body", widget: "markdown"}
         - label: "Menu hierarchy"
@@ -224,9 +236,14 @@ collections:
           widget: "select"
           options: ["melee"]
           default: ["melee"]
+        - {label: "Layout", name: "layout", widget: "select", options: ["role_home"], default: ["role_home"]}
+        - {label: "Background Header Image", name: "bg_header_image", widget: "image", choose_url: false}
+        - {label: "Role Hero Image", name: "role_hero_image", widget: "image", choose_url: false}
       - label: "Ranged"
         name: "ranged"
         file: "content/jobs/ranged/_index.md"
+        media_folder: "/static/img/jobs/ranged"
+        public_folder: "/img/jobs/ranged"
         fields:
         - {label: "Body", name: "body", widget: "markdown"}
         - label: "Menu hierarchy"
@@ -244,9 +261,14 @@ collections:
           widget: "select"
           options: ["ranged"]
           default: ["ranged"]
+        - {label: "Layout", name: "layout", widget: "select", options: ["role_home"], default: ["role_home"]}
+        - {label: "Background Header Image", name: "bg_header_image", widget: "image", choose_url: false}
+        - {label: "Role Hero Image", name: "role_hero_image", widget: "image", choose_url: false}
       - label: "Casters"
         name: "casters"
         file: "content/jobs/casters/_index.md"
+        media_folder: "/static/img/jobs/casters"
+        public_folder: "/img/jobs/casters"
         fields:
         - {label: "Body", name: "body", widget: "markdown"}
         - label: "Menu hierarchy"
@@ -264,6 +286,9 @@ collections:
           widget: "select"
           options: ["casters"]
           default: ["casters"]
+        - {label: "Layout", name: "layout", widget: "select", options: ["role_home"], default: ["role_home"]}
+        - {label: "Background Header Image", name: "bg_header_image", widget: "image", choose_url: false}
+        - {label: "Role Hero Image", name: "role_hero_image", widget: "image", choose_url: false}
   # user "profiles"
   - label: "Author profile"
     name: "author-profile"
