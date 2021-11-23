@@ -1,7 +1,7 @@
 <div class="flex flex-wrap items-center {{ if isset . "inlineLink" }}transform-gpu translate-x-0 group-hover:translate-x-2 transition-all{{ end }}">
   {{ with .icon }}
   <div class="mr-8">
-    <img src="{{ . }}" />
+    <img class="h-12" src="{{ . }}" />
   </div>
   {{ end }}
   <div class="flex flex-grow">
