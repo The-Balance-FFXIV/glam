@@ -16,25 +16,8 @@
   </div>
   <div class="mt-24 grid grid-cols-2 gap-6">
     {{ range (index .role "jobs") }}
-      <div class="flex flex-col w-full py-3 justify-center items-start">
-        <div class="card card-{{ $borderClass }} space-y-3 w-full">
-          {{ if isset . "name" }}
-            <div class="border-b border-card-dark pb-4">
-              {{ partial "cards/job_landing/_header.html" .}}
-            </div>
-          {{ end }}
-          <div>
-            <script>console.log("About.md: ", {{ $site.GetPage "/content/about.md" }})</script> <!-- This works -->
-            <script>console.log("Scholar's test page: ", {{ $site.GetPage "/content/jobs/healers/scholar/_index.md" }})</script> <!-- This doesn't works -->
-            {{ with $site.GetPage "/content/jobs/{{ .role.title }}/{{ urlize (lower .jobs.name) }}/_index.md" }}
-              {{ .Content }}
-            {{ end }}
-          </div>
-          {{ if isset . "readMoreLink" }}
-            {{ partial "cards/_footer.html" . }}
-          {{ end }}
-        </div>
-      </div>
+      {{ $role := delimit (findRE "melee|tanks|healers|casters|ranged" .job_link) "" }}
+      {{ partial "cards/job_card/job_card.html" (dict "jobData" . "siteVar" $site "role" $role ) }}
     {{ end }}
   </div>
 </div>
