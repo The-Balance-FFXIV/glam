@@ -23,7 +23,7 @@
   $statPriority
 }}
 
-<div class="mt-0 lg:mt-12">
+<div class="mt-0">
   <div class="flex flex-col w-full py-3 justify-center items-start">
     <div class="card card-{{ $borderClass }} space-y-3 w-full">
       {{ if isset .jobData "name" }}
@@ -31,7 +31,7 @@
           {{ partial "cards/job_card/_header.html" .jobData }}
         </div>
       {{ end }}
-      <div>
+      <div class="min-h-36 flex items-center">
         {{ with .siteVar.GetPage $indexPath}}
           {{ .Content }}
         {{end}}
