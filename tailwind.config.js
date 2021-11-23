@@ -77,6 +77,11 @@ module.exports = {
         '116': '29rem',
         '120': '30rem',
       },
+      minHeight: {
+        '0': '0',
+        '36': "9rem",
+        'full': '100%',
+      },
       zIndex: {
           '-1': '-1',
       },
