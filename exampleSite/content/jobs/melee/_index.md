@@ -2,7 +2,7 @@
 menu:
   main:
     name: Melee
-    parent: jobs
+    parent: combat-jobs
 role: melee
 layout: role_home
 ---

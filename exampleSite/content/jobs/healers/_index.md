@@ -3,7 +3,7 @@ menu:
   main:
     identifier: healers
     name: Healers
-    parent: jobs
+    parent: combat-jobs
 role: healers
 layout: role_home
 ---
