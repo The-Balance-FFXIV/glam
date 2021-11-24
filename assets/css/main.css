@@ -104,16 +104,27 @@ Heading
 }
 
 .responsive-container.mobile-menu {
-	@apply bg-card-light px-0 lg:hidden;
+	@apply bg-card-light px-0 mx-0 lg:hidden w-full;
+	max-width:100%;
 }
 
 .mobile-menu > ul > li {
-	@apply border-t border-nav-border text-lg lg:border-none;
+	@apply border-t border-nav-border text-lg lg:border-none px-4 sm:px-8;
 }
 
 .mobile-menu > ul > li.nav-active,
 .mobile-menu > ul > li.nav-active > a {
 	@apply border-link-orange text-link-orange;
+}
+
+.mobile-menu > ul > li > .chevron {
+	background-image: url("/theme-assets/chevron-down.svg");
+	background-position: right 50%;
+	background-repeat: no-repeat;
+}
+
+.mobile-menu > ul > li.nav-active > .chevron {
+	background-image: url("/theme-assets/chevron-up.svg");
 }
 
 /**
