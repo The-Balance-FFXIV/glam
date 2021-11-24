@@ -269,7 +269,7 @@ Content
 	@apply hidden bg-card-dark px-8 py-8 w-full flex-col items-start;
 }
 .tab-content.job-landing {
-	@apply bg-transparent flex-col;
+	@apply bg-transparent flex-col px-0;
 }
 
 /*

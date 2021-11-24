@@ -1,6 +1,6 @@
 {{ $borderClass := default "gray-600" (lower .role.name) }}
 {{ $site := .site }}
-<div class="tab-content job-landing mt-16">
+<div class="tab-content job-landing mt-4">
   <div class="flex flex-col lg:flex-row items-center bg-card-light py-8">
     <div class="w-2/3 mx-auto text-center">
       <div class="hidden flex-row text-left sm:text-center justify-center md:flex">
@@ -14,7 +14,7 @@
       </div>
     </div>
   </div>
-  <div class="mt-24 grid grid-cols-2 gap-6">
+  <div class="grid grid-cols-2 gap-6">
     {{ range (index .role "jobs") }}
       {{ $role := delimit (findRE "melee|tanks|healers|casters|ranged" .job_link) "" }}
       {{ partial "cards/job_card/job_card.html" (dict "jobData" . "siteVar" $site "role" $role ) }}
