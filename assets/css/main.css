@@ -64,7 +64,7 @@ header nav {
 }
 
 ul.nav-item li ul.nav-dropdown{
-	@apply invisible opacity-0 absolute transition-all delay-75 left-0 mt-1 hidden;
+	@apply lg:invisible lg:opacity-0 lg:absolute transition-all delay-75 left-0 mt-1 hidden;
 }
 
 div.right-dropdown ul.nav-item li ul.nav-dropdown{
@@ -74,7 +74,7 @@ div.right-dropdown ul.nav-item li ul.nav-dropdown{
 
 ul.nav-item li:hover > ul.nav-dropdown,
 ul.nav-item li ul:hover{
-	@apply visible opacity-100 block;
+	@apply lg:visible lg:opacity-100 lg:block;
 }
 
 ul.nav-item li ul.nav-dropdown li{
@@ -99,13 +99,21 @@ Heading
 	@apply h-shadow flex-grow text-4xl font-head tracking-wider uppercase font-bold;
 }
 
-
 .nav-item {
 	font-size: 16px;
 }
 
-.mobile-menu {
-	@apply bg-card-light;
+.responsive-container.mobile-menu {
+	@apply bg-card-light px-0 lg:hidden;
+}
+
+.mobile-menu > ul > li {
+	@apply border-t border-nav-border text-lg lg:border-none;
+}
+
+.mobile-menu > ul > li.nav-active,
+.mobile-menu > ul > li.nav-active > a {
+	@apply border-link-orange text-link-orange;
 }
 
 /**
