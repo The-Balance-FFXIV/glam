@@ -2,7 +2,7 @@
 menu:
   main:
     name: Tanks
-    parent: jobs
+    parent: combat-jobs
 role: tanks
 layout: role_home
 bg_header_image: /img/jobs/tanks/tanks_background.png

@@ -2,7 +2,7 @@
 menu:
   main:
     name: Ranged
-    parent: jobs
+    parent: combat-jobs
 role: ranged
 layout: role_home
 ---

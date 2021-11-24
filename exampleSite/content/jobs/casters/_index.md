@@ -2,7 +2,7 @@
 menu:
   main:
     name: Casters
-    parent: jobs
+    parent: combat-jobs
 role: casters
 layout: role_home
 ---
