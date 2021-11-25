@@ -1,27 +1,4 @@
 {{ $borderClass := default "gray-600" (lower .role) }}
-{{ $path := print "/content/jobs" "/" (lower .role) "/" (urlize (lower .jobData.name)) }}
-{{ $indexPath := print $path "/_index.md" }}
-{{ $advancedGuide := print $path "/advanced-guide.md" }}
-{{ $basicGuide := print $path "/basic-guide.md" }}
-{{ $bis := print $path "/best-in-slot.md" }}
-{{ $faq := print $path "/faq.md" }}
-{{ $jobChanges := print $path "/job-changes.md" }}
-{{ $levelingGuide := print $path "/leveling-guide.md" }}
-{{ $openers := print $path "/openers.md" }}
-{{ $skillsOverview := print $path "/skills-overview.md" }}
-{{ $statPriority := print $path "/stat-priority.md" }}
-
-{{ $pages := slice
-  $levelingGuide
-  $basicGuide
-  $advancedGuide
-  $skillsOverview
-  $openers
-  $faq
-  $bis
-  $jobChanges
-  $statPriority
-}}
 
 <div class="mt-0">
   <div class="flex flex-col w-full py-3 justify-center items-start">
@@ -32,21 +9,19 @@
         </div>
       {{ end }}
       <div class="min-h-36 flex items-center">
-        {{ with .siteVar.GetPage $indexPath}}
+        {{ with .siteVar.GetPage .jobData.job_link}}
           {{ .Content }}
         {{end}}
       </div>
       <div>
         <h4 class="uppercase tracking-widest border-t border-black my-4 pt-4">Guides</h4>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {{ range $pages }}
-            {{ with $.siteVar.GetPage . }}
+          {{ range (.siteVar.GetPage .jobData.job_link).Pages }}
               {{ if .Permalink }}
                 <div>
                   <a href="{{ .Permalink }}" class="text-link-orange">{{ .Name }}</a>
                 </div>
               {{ end }}
-            {{ end }}
           {{ end}}
         </div>
       </div>
