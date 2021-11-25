@@ -54,6 +54,7 @@ module.exports = {
         'ranged': '#D84D4D',
         'casters': '#D84D4D',
         'page': '#222528',
+        'nav-border': '#949494',
         'gray': {
             'light': '#C9C9C9',
         }

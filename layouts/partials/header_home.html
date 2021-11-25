@@ -10,7 +10,7 @@
           {{ end }}
         </div>
         <!-- Mobile menu button -->
-        <div class="lg:hidden flex items-center bg-card-light w-full px-4 py-2">
+        <div class="lg:hidden flex items-center bg-card-light w-full py-2">
           <button class="outline-none mobile-menu-button">
             <svg class="w-6 h-6 text-link-orange hover:opacity-75" x-show="!showMenu" fill="none" stroke-linecap="round"
               stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -24,12 +24,31 @@
     <div class="hidden responsive-container mobile-menu">
       <ul class="">
         {{ range $list }}
-        <li>
+        <li class="flex flex-wrap">
           <a href="{{ .URL }}"
-            class="block text-sm px-6 py-3 text-white font-semibold {{ if eq $current.URL .URL }}text-link-orange{{ end }}"
+            class="w-11/12 text-lg block py-3 text-white font-semibold {{ if eq $current.URL .URL }}text-link-orange{{ end }}"
             title="{{ .Title }}">
             {{ .Name }}
           </a>
+          {{ if .HasChildren }}
+            <div class="chevron w-1/12 flex justify-end items-center text-right py-2 lg:hidden"></div>
+            <ul class="hidden lg:hidden nav-dropdown py-2 w-full">
+              <li>
+                <div class="flex flex-wrap flex-row items-start bg-card-light">
+                  {{ range .Children }}
+                  <div class="w-1/2 sm:w-1/3 lg:w-auto mb-4">
+                    <p class="text-link-orange font-bold tracking-wide mb-1 text-base">{{ .Name }}</p>
+                    {{ range .Children }}
+                    <a href="{{ .URL }}" class="block text-white hover:text-link-orange mb-1 text-base">
+                      {{ htmlUnescape (replace .Name " " "&nbsp;") }}
+                    </a>
+                    {{ end }}
+                  </div>
+                  {{ end }}
+                </div>
+              </li>
+            </ul>
+          {{ end }}
         </li>
         {{ end }}
       </ul>
