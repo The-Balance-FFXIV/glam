@@ -8,7 +8,7 @@
     <h1 class="text-4xl uppercase font-bold tracking-wide">{{ $roleData.nameSingular }} Jobs</h1>
     <div class="grid grid-cols-1 lg:grid-cols-2 md:gap-4 items-start mt-12 mb-8">
       {{ range $roleData.jobs }}
-          {{ partial "cards/job_card/job_card.html" (dict "jobData" . "siteVar" $.Site "role" $roleData.name) }}
+          {{ partial "cards/job_card/job_card.html" (dict "jobData" . "siteVar" $.Site "role" $params.role) }}
       {{ end }}
     </div>
 </div>
