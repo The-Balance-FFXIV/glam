@@ -3,12 +3,12 @@
 
 <div class="h-auto md:h-84 xl:h-80 flex flex-col lg:flex-row">
   <div class="responsive-container z-10 relative flex flex-col md:flex-row items-center h-full mt-12 md:mt-0">
-    <div class="w-full md:w-6/12 flex-grow flex flex-col md:flex-row text-center items-center md:text-left mb-4 lg:pr-8 lg:mb-0">
-      <div class="w-full xl:w-116 mr-4 lg:mr-0 xl:mr-8 flex self-start">
+    <div class="md:w-1/2 flex-grow flex flex-col md:flex-row text-center items-center md:text-left my-4 lg:pr-8 lg:mb-0">
+      <div class="w-full md:w-72 mr-4 xl:mr-8 flex self-start">
         <img class="job-icon-header mb-2 mx-auto md:mx-0 lg:mb-0 filter drop-shadow-lg-{{ $role }}" src="/theme-assets/icons/role/role_{{ (lower $role) }}_white.svg" />
       </div>
-      <div class="flex flex-col items-center md:items-start justify-center md:justify-start mt-0">
-        <h1 class="text-3xl md:text-4xl xl:text-6xl tracking-wider font-semibold filter drop-shadow-lg-{{ $role }} mb-4">{{ $title }}</h1>
+      <div class="w-full flex flex-col items-center md:items-start justify-center md:justify-start mt-0 md:mr-4 lg:mr-0">
+        <h1 class="text-3xl md:text-4xl xl:text-6xl tracking-wider font-semibold filter drop-shadow-lg-{{ $role }} md:mb-4">{{ $title }}</h1>
         {{ .Content }}
       </div>
     </div>
