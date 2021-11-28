@@ -405,17 +405,20 @@ Footer
 
 .job-icon-header {
     width: 60px;
+	width: 60px;
 }
 
 @screen md {
 	.job-icon-header {
 		width: 72px;
+		height: 72px;
 	}
 }
 
 @screen xl {
 	.job-icon-header {
 		width: 150px;
+		height: 150px;
 	}
 }
 
