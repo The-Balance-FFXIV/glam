@@ -19,7 +19,7 @@
     {{ end }}
   </ul>
   {{/*  Below is the mobile tabs with the content partial that will show on both mobile and desktop  */}}
-  <ul class="tabs flex flex-col md:flex-row">
+  <ul class="tabs job-landing flex flex-col md:flex-row">
       {{ range $role := sort .Site.Data.roles "order" }}
           <li class="tab flex-grow text-left">
             <label for="tab-{{ $role.name | urlize }}" class="border-t-4"

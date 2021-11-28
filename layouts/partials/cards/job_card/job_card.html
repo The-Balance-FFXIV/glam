@@ -1,7 +1,7 @@
 {{ $borderClass := default "gray-600" (lower .role) }}
 
 <div class="mt-0">
-  <div class="flex flex-col w-full py-3 justify-center items-start">
+  <div class="flex flex-col w-full justify-center items-start">
     <div class="card card-{{ $borderClass }} space-y-3 w-full">
       {{ if isset .jobData "name" }}
         <div class="border-b border-card-dark pb-4">
