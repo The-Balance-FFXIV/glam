@@ -1,0 +1,36 @@
+{{ $encounterPages := (.site.GetPage "/encounters").Pages }}
+{{ $savage := where $encounterPages ".Params.encounter_category" "savage"}}
+{{ $ultimate := where $encounterPages ".Params.encounter_category" "ultimate"}}
+<div class="flex flex-col">
+  <div class="w-full mb-24">
+    <div class="flex flex-row items-end">
+      <h1 class="h-shadow flex-grow text-3xl sm:text-5xl uppercase tracking-wider font-head font-bold mb-8">Savage Tiers</h1>
+    </div>
+    <div class="w-full">
+      {{ range $savage.GroupByParam "tier_weight" }}
+        {{ range .Pages.GroupByParam "series_name"}}
+          <h2 class="text-2xl">{{ .Key }}</h2>
+        {{ end }}
+        <div class="grid grid-cols-4 gap-8 mb-8">
+          {{ range sort .Pages "Weight" "desc" }}
+            {{ partial "cards/encounters/fight_card.html" . }}
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+  <div class="w-full mb-24">
+    <div class="flex flex-row items-end">
+      <h1 class="h-shadow flex-grow text-3xl sm:text-5xl uppercase tracking-wider font-head font-bold mb-8">Ultimates</h1>
+    </div>
+    <div class="w-full">
+      {{ range $ultimate.GroupByParam "tier_weight" }}
+        <div class="grid grid-cols-3 gap-8 mb-8">
+          {{ range sort .Pages "Weight" "desc" }}
+            {{ partial "cards/encounters/fight_card.html" . }}
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</div>

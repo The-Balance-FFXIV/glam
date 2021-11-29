@@ -1,0 +1,17 @@
+<div class="relative mb-8">
+  {{ if eq .Params.coming_soon true}}
+  <a class="block bg-card-light">
+  {{ else }}
+  <a class="block bg-card-light" href="{{ .Permalink }}">
+  {{ end }}
+    <img class="block object-cover w-full" src="{{ .Params.tier_image}}" alt="" />
+    <div class="bg-card-light">
+      <h2 class="flex items-center text-md md:text-2xl uppercase px-4 font-semibold tracking-wider h-20 mb-0">{{ .Title }}</h2>
+    </div>
+    {{if eq .Params.coming_soon true }}
+      <div class="absolute top-0 left-0 w-full h-full bg-black opacity-80 z-10 flex items-center justify-center">
+        <h1 class="text-3xl font-head font-light uppercase tracking-widest">Coming Soon</h1>
+      </div>
+    {{ end }}
+  </a>
+</div>

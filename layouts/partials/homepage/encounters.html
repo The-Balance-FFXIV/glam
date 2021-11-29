@@ -8,7 +8,7 @@
     </div>
     <div class="flex flex-row flex-wrap mt-8">
       {{ range $encounter := $savageEncounters }}
-        {{ partial "homepage/encounters/card.html" $encounter }}
+        {{ partial "cards/encounters/card.html" $encounter }}
       {{ end }}
     </div>
     <a class="text-link-orange sm:hidden" href="#">See all encounter guides >></a>
@@ -20,7 +20,7 @@
     </div>
     <div class="flex flex-row flex-wrap mt-8">
       {{ range $ultimateEncounter := $ultimateEncounters }}
-        {{ partial "homepage/encounters/card.html" $ultimateEncounter }}
+        {{ partial "cards/encounters/card.html" $ultimateEncounter }}
       {{ end }}
     </div>
     <a class="text-link-orange sm:hidden" href="#">See all encounter guides >></a>

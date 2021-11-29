@@ -1,0 +1,14 @@
+---
+title: P4
+card_image: /theme-assets/gaia-test.png
+tier_image: /theme-assets/gaia-test.png
+encounter_category: savage
+tier_name: Pandaemonium
+series_name: Pandaemonium Series
+weight: 4
+tier_weight: 1
+coming_soon: true
+expansion: endwalker
+aliases:
+  - /encounters/savage/pandaemonium/p4s/
+---
