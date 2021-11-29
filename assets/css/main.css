@@ -531,3 +531,10 @@ Markdown - Can be used to auto apply styling to tags within the .markdown class
 .markdown table > tbody > tr:nth-of-type(odd) {
 	@apply bg-table-light;
 }
+
+/* shortcode additions */
+.markdown .image-inline {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+}
