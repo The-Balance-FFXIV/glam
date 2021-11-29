@@ -29,6 +29,7 @@ const observerCallback = () => {
   }
 
   const currentHeader = findCurrentHeader(headers)
+  if (!currentHeader) { return }
 
   // Find all H2 tags between current and the next H1
   const subheaders = []
