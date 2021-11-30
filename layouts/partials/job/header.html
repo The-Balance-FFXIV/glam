@@ -10,7 +10,8 @@
       <h1 class="text-3xl md:text-4xl xl:text-6xl font-semibold filter ml-8 drop-shadow-lg-{{ $role }} mb-0">{{ .Title }}</h1>
     </div>
   </div>
-  <div class="bg-gray-600 absolute top-0 left-0 w-full -z-1 h-96 md:h-72 xl:h-120">
-    <img class="object-cover w-full h-full" src="/theme-assets/jobs/{{ (lower $role) }}/{{ (lower $job) }}/{{ (lower $job) }}_background.png" />
+  <div 
+    class="bg-gray-600 absolute top-0 left-0 w-full -z-1 h-96 md:h-72 xl:h-112 xl:mt-16 bg-bottom md:bg-top bg-cover" 
+    style="background-image: url(/theme-assets/jobs/{{ (lower $role) }}/{{ (lower $job) }}/{{ (lower $job) }}_background.png);">
   </div>
 </div>
