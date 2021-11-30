@@ -314,21 +314,21 @@ collections:
     identifier_field: "title"
     create: true
     fields:
-      - {label: "Title of Fight", name: "title", widget: "string"}
+      - {label: "Fight Title", name: "title", widget: "string"}
       - {label: "Encounter Category", 
         name: "encounter_category", 
         widget: "select", 
         options: ["savage", "ultimate", "extreme"]}
       - {label: "Fight Card Image", name: "card_image", widget: "image", choose_url: false}
       - {label: "Fight Banner (for individual guides)", name: "banner_image", widget: "image", choose_url: false}
-      - {label: "Encounter Tier Image", name: "tier_image", widget: "image", choose_url: false}
+      - {label: "Encounter Tier Image", name: "tier_image", widget: "image", choose_url: false, required: false}
       - {label: "Encounter Tier Name (Capitalized)", name: "tier_name", widget: "string"}
       - {label: "Encounter Series Name (Capitalized)", name: "series_name", widget: "string"}
       - {label: "Weight (1 - first, 2 - second, etc.)", name: "weight", widget: "number"}
       - {label: "Tier Weight (1 - EW, 2 - ShB, 3 - SB, 4 - HW, 5 - ARR)", name: "tier_weight", widget: "number"}
       - {label: "Coming Soon?", name: "coming_soon", widget: "boolean", required: false}
       - {label: "Spoilers?", name: "spoilers", widget: "boolean", required: false}
-      - {label: "Expansion", name: "expansion", widget: "select", options: ["endwalker", "shadowbringers", "stormblood", "heavensward", "arr"]}
+      - {label: "Expansion", name: "expansion", widget: "select", options: ["ew", "shb", "sb", "hw", "arr"]}
       - {label: "Body", name: "body", widget: "markdown"}
       - label: "Author(s)"
         name: "authors"

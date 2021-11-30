@@ -1,9 +1,5 @@
 <div class="relative mb-8 overflow-hidden">
-  {{ if or (eq .Params.coming_soon true) (eq .Params.spoiler true)}}
-    <a class="block bg-card-light">
-  {{ else }}
-    <a class="block bg-card-light" href="{{ .Permalink }}">
-  {{ end }}
+  <a class="block bg-card-light" {{ if (eq .Params.coming_soon false) }}href="{{ .Permalink }}"{{ end }}>
     {{ if eq .Params.spoiler true}}
       <img class="block object-cover w-full filter blur-md" src="{{ .Params.tier_image}}" alt="" />
     {{ else }}
