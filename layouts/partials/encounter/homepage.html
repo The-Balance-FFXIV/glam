@@ -1,7 +1,9 @@
 {{ $encounterPages := (.site.GetPage "/encounters").Pages }}
 {{ $savage := where $encounterPages ".Params.encounter_category" "savage"}}
 {{ $ultimate := where $encounterPages ".Params.encounter_category" "ultimate"}}
+{{ $extreme := where $encounterPages ".Params.encounter_category" "extreme"}}
 <div class="flex flex-col">
+  {{ if isset $savage .Key }}
   <div class="w-full mb-24">
     <div class="flex flex-row items-end">
       <h1 class="h-shadow flex-grow text-3xl sm:text-5xl uppercase tracking-wider font-head font-bold mb-8">Savage Tiers</h1>
@@ -19,6 +21,8 @@
       {{ end }}
     </div>
   </div>
+  {{ end }}
+  {{ if isset $ultimate .Key }}
   <div class="w-full mb-24">
     <div class="flex flex-row items-end">
       <h1 class="h-shadow flex-grow text-3xl sm:text-5xl uppercase tracking-wider font-head font-bold mb-8">Ultimates</h1>
@@ -33,4 +37,21 @@
       {{ end }}
     </div>
   </div>
+  {{ end }}
+  {{ if isset $extreme .Key }}
+  <div class="w-full mb-24">
+    <div class="flex flex-row items-end">
+      <h1 class="h-shadow flex-grow text-3xl sm:text-5xl uppercase tracking-wider font-head font-bold mb-8">Extreme / Unreal</h1>
+    </div>
+    <div class="w-full">
+      {{ range $extreme.GroupByParam "tier_weight" }}
+        <div class="grid grid-cols-3 gap-8 mb-8">
+          {{ range sort .Pages "Weight" "desc" }}
+            {{ partial "cards/encounters/fight_card.html" . }}
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
 </div>

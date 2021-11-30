@@ -319,10 +319,11 @@ collections:
         name: "encounter_category", 
         widget: "select", 
         options: ["savage", "ultimate", "extreme"]}
-      - {label: "Card Image", name: "card_image", widget: "image", choose_url: false}
-      - {label: "Tier Image", name: "tier_image", widget: "image", choose_url: false}
-      - {label: "Tier Name (Capitalized)", name: "tier_name", widget: "string"}
-      - {label: "Series Name (Capitalized)", name: "series_name", widget: "string"}
+      - {label: "Fight Card Image", name: "card_image", widget: "image", choose_url: false}
+      - {label: "Fight Banner (for individual guides)", name: "banner_image", widget: "image", choose_url: false}
+      - {label: "Encounter Tier Image", name: "tier_image", widget: "image", choose_url: false}
+      - {label: "Encounter Tier Name (Capitalized)", name: "tier_name", widget: "string"}
+      - {label: "Encounter Series Name (Capitalized)", name: "series_name", widget: "string"}
       - {label: "Weight (1 - first, 2 - second, etc.)", name: "weight", widget: "number"}
       - {label: "Tier Weight (1 - EW, 2 - ShB, 3 - SB, 4 - HW, 5 - ARR)", name: "tier_weight", widget: "number"}
       - {label: "Coming Soon?", name: "coming_soon", widget: "boolean", required: false}
