@@ -330,6 +330,23 @@ collections:
       - {label: "Spoilers?", name: "spoilers", widget: "boolean", required: false}
       - {label: "Expansion", name: "expansion", widget: "select", options: ["endwalker", "shadowbringers", "stormblood", "heavensward", "arr"]}
       - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Author(s)"
+        name: "authors"
+        widget: "relation"
+        multiple: true
+        collection: "author-profile"
+        search_fields: ["username", "name"]
+        value_field: "username"
+        display_fields: ["username", "name"]
+      - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+      - {label: "Patch", name: "patch", widget: "string"}
+      - label: "Changelog entry"
+        name: "changelog"
+        widget: "list"
+        summary: "{{fields.date}}: {{fields.message}}"
+        fields:
+          - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+          - {label: "Message", name: "message", widget: "string"}
   ##
   # Scholar guide
   ##
