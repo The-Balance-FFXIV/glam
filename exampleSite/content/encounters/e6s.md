@@ -9,7 +9,7 @@ weight: 6
 tier_weight: 2
 coming_soon: false
 spoiler: false
-expansion: shadowbringers
+expansion: shb
 aliases:
   - /encounters/savage/edens-promise/e12s/
 ---

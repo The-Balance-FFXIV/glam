@@ -9,7 +9,7 @@ weight: 3
 tier_weight: 1
 coming_soon: true
 spoiler: false
-expansion: endwalker
+expansion: ew
 aliases:
   - /encounters/savage/pandaemonium/p3s/
 ---

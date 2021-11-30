@@ -9,7 +9,7 @@ weight: 4
 tier_weight: 1
 coming_soon: true
 spoiler: false
-expansion: Endwalker
+expansion: ew
 aliases:
   - /encounters/ultimate/ucob/
 ---

@@ -9,7 +9,7 @@ weight: 2
 tier_weight: 1
 coming_soon: false
 spoiler: false
-expansion: Stormblood
+expansion: sb
 aliases:
   - /encounters/ultimate/uwu/
 ---

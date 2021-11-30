@@ -9,7 +9,7 @@ weight: 3
 tier_weight: 1
 coming_soon: false
 spoiler: false
-expansion: Shadowbringers
+expansion: shb
 aliases:
   - /encounters/ultimate/tea/
 ---
