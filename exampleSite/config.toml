@@ -4,6 +4,17 @@ defaultContentLanguage = "en"
 title = "The Balance"
 theme = "glam"
 
+[outputFormats]
+  [outputFormats.SearchIndex]
+    baseName = "search"
+    mediaType = "application/json"
+
+[outputs]
+  home = [
+    "HTML",
+    "SearchIndex"
+  ]
+
 [menu]
   [[menu.main]]
     identifier = 'combat-jobs'
