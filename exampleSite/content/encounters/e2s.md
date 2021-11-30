@@ -8,6 +8,7 @@ series_name: Eden Series
 weight: 2
 tier_weight: 2
 coming_soon: false
+spoiler: false
 expansion: shadowbringers
 aliases:
   - /encounters/savage/edens-promise/e12s/

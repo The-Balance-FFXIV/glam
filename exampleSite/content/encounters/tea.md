@@ -8,6 +8,7 @@ series_name: Ultimate
 weight: 3
 tier_weight: 1
 coming_soon: false
+spoiler: false
 expansion: Shadowbringers
 aliases:
   - /encounters/ultimate/tea/

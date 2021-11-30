@@ -8,6 +8,7 @@ series_name: Pandaemonium Series
 weight: 4
 tier_weight: 1
 coming_soon: true
+spoiler: false
 expansion: endwalker
 aliases:
   - /encounters/savage/pandaemonium/p4s/

@@ -8,6 +8,7 @@ series_name: Ultimate
 weight: 1
 tier_weight: 1
 coming_soon: false
+spoiler: false
 expansion: Stormblood
 aliases:
   - /encounters/ultimate/ucob/
