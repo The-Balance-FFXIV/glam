@@ -1,5 +1,5 @@
 ---
-title: The Unending Coil of Bahamut
+fight_title: The Unending Coil of Bahamut
 card_image: /theme-assets/homepage/encounters/savage/old_tiers/Image@2x.png
 tier_image: /theme-assets/homepage/encounters/savage/old_tiers/Image@2x.png
 encounter_category: ultimate

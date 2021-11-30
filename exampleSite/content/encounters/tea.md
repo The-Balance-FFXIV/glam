@@ -1,5 +1,5 @@
 ---
-title: The Epic of Alexander
+fight_title: The Epic of Alexander
 card_image: /theme-assets/homepage/encounters/savage/old_tiers/Image@2x.png
 tier_image: /theme-assets/homepage/encounters/savage/old_tiers/Image@2x.png
 encounter_category: ultimate

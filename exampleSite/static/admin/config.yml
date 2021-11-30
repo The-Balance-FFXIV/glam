@@ -311,10 +311,10 @@ collections:
   - label: "Encounters"
     name: "encounter-data"
     folder: "content/encounters"
-    identifier_field: "title"
+    identifier_field: "fight_title"
     create: true
     fields:
-      - {label: "Fight Title", name: "title", widget: "string"}
+      - {label: "Fight Title", name: "fight_title", widget: "string"}
       - {label: "Encounter Category", 
         name: "encounter_category", 
         widget: "select", 
