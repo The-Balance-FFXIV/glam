@@ -307,6 +307,28 @@ collections:
         widget: "object"
         fields:
           - {label: "Discord Name", name: "discord_id", widget: "string"}
+  # Encounters Metadata
+  - label: "Encounters"
+    name: "encounter-data"
+    folder: "content/encounters"
+    identifier_field: "title"
+    create: true
+    fields:
+      - {label: "Title of Fight", name: "title", widget: "string"}
+      - {label: "Encounter Category", 
+        name: "encounter_category", 
+        widget: "select", 
+        options: ["savage", "ultimate", "extreme"]}
+      - {label: "Card Image", name: "card_image", widget: "image", choose_url: false}
+      - {label: "Tier Image", name: "tier_image", widget: "image", choose_url: false}
+      - {label: "Tier Name (Capitalized)", name: "tier_name", widget: "string"}
+      - {label: "Series Name (Capitalized)", name: "series_name", widget: "string"}
+      - {label: "Weight (1 - first, 2 - second, etc.)", name: "weight", widget: "number"}
+      - {label: "Tier Weight (1 - EW, 2 - ShB, 3 - SB, 4 - HW, 5 - ARR)", name: "tier_weight", widget: "number"}
+      - {label: "Coming Soon?", name: "coming_soon", widget: "boolean", required: false}
+      - {label: "Spoilers?", name: "spoilers", widget: "boolean", required: false}
+      - {label: "Expansion", name: "expansion", widget: "select", options: ["endwalker", "shadowbringers", "stormblood", "heavensward", "arr"]}
+      - {label: "Body", name: "body", widget: "markdown"}
   ##
   # Scholar guide
   ##
