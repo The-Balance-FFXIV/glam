@@ -316,11 +316,11 @@ collections:
     fields:
       - {label: "Fight Name",
         name: "title", 
-        description: This is the fight name (Ex. "E12 (Eternity)" or "O12 (Alphascape 4.0)"),
+        hint: This is the fight name (Ex. "E12 (Eternity)" or "O12 (Alphascape 4.0)"),
         widget: "string"}
       - {label: "Short Name of Fight", 
         name: "fight_title", 
-        description: This is the short name of the fight (Ex. "o12s" or "e12s-p2"),
+        hint: This is the short name of the fight (Ex. "o12s" or "e12s-p2"),
         widget: "string"}
       - {label: "Encounter Category", 
         name: "encounter_category", 
@@ -331,28 +331,28 @@ collections:
       - {label: "Encounter Tier Image", name: "tier_image", widget: "image", choose_url: false, required: false}
       - {label: "Encounter Tier Name", 
         name: "tier_name", 
-        description: Please capitalize the name (Ex. "Eden's Promise" or "Alphascape"),
+        hint: Please capitalize the name (Ex. "Eden's Promise" or "Alphascape"),
         widget: "string"}
       - {label: "Encounter Series Name (Capitalized)", 
         name: "series_name", 
-        description: Please capitalize the series name (Ex. "Eden Series" or "Alexander Series"),
+        hint: Please capitalize the series name (Ex. "Eden Series" or "Alexander Series"),
         widget: "string"}
       - {label: "Weight", 
         name: "weight", 
-        description: (1 - first, 2 - second, etc.)
+        hint: (1 - first, 2 - second, etc.)
         widget: "number"}
       - {label: "Tier Weight",
         name: "tier_weight",
-        description: (1 - EW, 2 - ShB, 3 - SB, 4 - HW, 5 - ARR)
+        hint: (1 - EW, 2 - ShB, 3 - SB, 4 - HW, 5 - ARR)
         widget: "number"}
       - {label: "Coming Soon?", 
         name: "coming_soon", 
-        description: This adds the coming soon overlay. Only enable Coming Soon or Spoilers. Not both.,
+        hint: This adds the coming soon overlay. Only enable Coming Soon or Spoilers. Not both.,
         widget: "boolean", 
         required: false}
       - {label: "Spoilers?", 
         name: "spoilers", 
-        description: This adds the spoiler overlay. Only enable Coming Soon or Spoilers. Not both.,
+        hint: This adds the spoiler overlay. Only enable Coming Soon or Spoilers. Not both.,
         widget: "boolean", 
         required: false}
       - {label: "Expansion", name: "expansion", widget: "select", options: ["ew", "shb", "sb", "hw", "arr"]}
