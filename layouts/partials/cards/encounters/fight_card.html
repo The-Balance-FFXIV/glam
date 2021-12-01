@@ -6,14 +6,14 @@
       <img class="block object-cover w-full" src="{{ .Params.tier_image}}" alt="" />
     {{ end }}
     <div class="bg-card-light">
-      <h2 class="flex items-center text-md md:text-2xl uppercase px-4 font-semibold tracking-wider h-20 mb-0">{{ .Params.fight_title }}</h2>
+      <h2 class="flex items-center text-md md:text-md uppercase px-4 font-semibold tracking-wider py-2 mb-0">{{ .Params.fight_title }}</h2>
     </div>
     {{if or (eq .Params.coming_soon true) (eq .Params.spoiler true) }}
       <div class="absolute top-0 left-0 w-full h-full bg-black opacity-80 z-10 flex items-center justify-center">
         {{ if eq .Params.coming_soon true}}
-          <h1 class="text-3xl font-head font-light uppercase tracking-widest">Coming Soon</h1>
+          <h1 class="text-xl md:text-3xl font-head font-light uppercase tracking-widest text-center">Coming Soon</h1>
         {{ else if eq .Params.spoiler true }}
-          <h1 class="text-3xl font-head font-light uppercase tracking-widest">Spoiler</h1>
+          <h1 class="text-xl md:text-3xl font-head font-light uppercase tracking-widest text-center">Spoiler</h1>
         {{ end }}
       </div>
     {{ end }}
