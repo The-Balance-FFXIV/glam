@@ -1,5 +1,6 @@
 ---
-fight_title: The Weapon's Refrain
+title: The Weapon's Refrain
+fight_title: uwu
 card_image: /theme-assets/homepage/encounters/savage/old_tiers/Image@2x.png
 tier_image: /theme-assets/homepage/encounters/savage/old_tiers/Image@2x.png
 encounter_category: ultimate

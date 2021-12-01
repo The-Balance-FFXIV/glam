@@ -1,5 +1,6 @@
 ---
-fight_title: P1
+title: P1
+fight_title: p1s
 card_image: /theme-assets/homepage/encounters/savage/old_tiers/Image@2x.png
 tier_image: /theme-assets/homepage/encounters/savage/old_tiers/Image@2x.png
 encounter_category: savage

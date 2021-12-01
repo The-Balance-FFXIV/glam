@@ -1,5 +1,6 @@
 ---
-fight_title: E2
+title: E2
+fight_title: e2s
 card_image: /theme-assets/homepage/encounters/savage/old_tiers/Image@2x.png
 tier_image: /theme-assets/homepage/encounters/savage/old_tiers/Image@2x.png
 encounter_category: savage

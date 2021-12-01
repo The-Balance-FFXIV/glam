@@ -1,5 +1,6 @@
 ---
-fight_title: E9
+title: E9
+fight_title: e9s
 card_image: /theme-assets/homepage/encounters/savage/old_tiers/Image@2x.png
 tier_image: /theme-assets/homepage/encounters/savage/old_tiers/Image@2x.png
 encounter_category: savage

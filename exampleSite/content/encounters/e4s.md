@@ -1,5 +1,6 @@
 ---
-fight_title: E4 (Sepulture)
+title: E4 (Sepulture)
+fight_title: e4s
 card_image: /theme-assets/homepage/encounters/savage/old_tiers/Image@2x.png
 tier_image: /theme-assets/homepage/encounters/savage/old_tiers/Image@2x.png
 encounter_category: savage
