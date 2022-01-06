@@ -8,7 +8,7 @@ tier_name: Pandaemonium
 series_name: Pandaemonium Series
 weight: 1
 tier_weight: 1
-coming_soon: true
+coming_soon: false
 spoiler: false
 expansion: ew
 aliases:
