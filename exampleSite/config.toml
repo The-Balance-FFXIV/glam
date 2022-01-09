@@ -32,7 +32,6 @@ theme = "glam"
     startLevel = 1
 
 [params]
-  maxLevel = 90
   maxTierGearsets = 8 
   maxUltimateGearsets = 4
   maxGearsets = 12

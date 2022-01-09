@@ -17,7 +17,7 @@
 {{ end }}
 
 {{ with .Page.GetPage "basic-guide" }}
-  {{ $guideList = $guideList | append (dict "icon" "/theme-assets/book.svg" "name" (printf "Basic Guide (LV %d)" .Site.Params.maxLevel) "link" "basic-guide") }}
+  {{ $guideList = $guideList | append (dict "icon" "/theme-assets/book.svg" "name" "Basic Guide" "link" "basic-guide") }}
 {{ end }}
 
 {{ with .Page.GetPage "openers" }}
