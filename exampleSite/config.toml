@@ -12,7 +12,7 @@ theme = "glam"
     weight = 10
   [[menu.main]]
     identifier = 'encounters'
-    name = 'Fight Encounters'
+    name = 'Encounters'
     url = '/encounters/'
     weight = 20
   [[menu.header]]

@@ -12,5 +12,5 @@ coming_soon: true
 spoiler: false
 expansion: ew
 aliases:
-  - /encounters/ultimate/ucob/
+  - /encounters/ultimates/dragonsong/
 ---
