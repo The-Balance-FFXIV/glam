@@ -22,9 +22,10 @@
       </div>
       <div class="job-guides-container">
         <div class="markdown max-w-none">
-          {{ range .Params.bis }}
-            <h2><a href="{{ .link }}">{{ .name }}</a></h2>
-            {{ .description | markdownify }}
+          {{ range $index, $bis := .Params.bis }}
+            <h2 id="{{ $index }}">{{ $bis.name }}</h2>
+            {{ partial "components/etro.html" $bis.link }}
+            {{ $bis.description | markdownify }}
           {{ end }}
         </div>
       </div>
