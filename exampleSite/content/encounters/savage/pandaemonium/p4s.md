@@ -13,4 +13,6 @@ spoiler: false
 expansion: ew
 aliases:
   - /encounters/savage/pandaemonium/p4s/
+  - /encounters/pandaemonium/p4s/
+  - /encounters/p4s/
 ---

@@ -12,5 +12,7 @@ coming_soon: false
 spoiler: false
 expansion: shb
 aliases:
-  - /encounters/savage/edens-promise/e12s/
+  - /encounters/savage/edens-promise/e9s/
+  - /encounters/edens-promise/e9s/
+  - /encounters/e9s/
 ---

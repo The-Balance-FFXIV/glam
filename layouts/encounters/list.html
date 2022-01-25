@@ -1,8 +1,10 @@
 {{ define "main" }}
-  {{ partial "general_header.html" . }}
+{{ $difficulty := .Page.Params.difficulty }}
+
+{{ partial "general_header.html" . }}
   <div class="responsive-container mt-8 lg:mt-14">
       <div class="grid grid-cols-1 md:gap-4 items-start mt-12 mb-8">
-          {{ partial "encounter/homepage.html" (dict "site" $.Site) }}
+          {{ partial "encounter/homepage.html" (dict "site" . "site" $.Site "difficulty" .Page.Params.difficulty) }}
       </div>
   </div>
 {{ end }}
