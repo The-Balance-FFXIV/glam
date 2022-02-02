@@ -17,7 +17,7 @@
 <title>{{ .Site.Title }}{{ with .Title }} | {{ . }}{{ end }}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100,700&family=Roboto:ital,wght@0,100,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;700&family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
 {{ $styles := resources.Get "css/main.css" | postCSS }}
 {{ $headerJs := resources.Get "js/header.js" }}
 {{ $navJs := resources.Get "js/nav.js" }}
