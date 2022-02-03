@@ -1,8 +1,10 @@
 ---
 menu:
   main:
+    identifier: healers
     name: Healers
-    parent: jobs
+    parent: combat-jobs
 role: healers
+layout: role_home
 ---
-Healers do stuff and junk.
+Healers do big heals and stuff.

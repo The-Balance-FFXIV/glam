@@ -1,7 +1,7 @@
 {{ if isset . "readMoreLink" }}
-<div class="border-t border-card-dark pt-5 text-right">
-  <a href="{{ .readMoreLink }}" class="link">
-    {{ default "Read more" .readMoreText }} »
-  </a>
-</div>
+  <div class="border-t border-card-dark pt-5 text-right">
+    <a href="{{ .readMoreLink }}" class="link">
+      {{ default "Read more" .readMoreText }} »
+    </a>
+  </div>
 {{ end }}

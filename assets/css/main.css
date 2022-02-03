@@ -14,12 +14,18 @@ body {
 	min-height: 100vh;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
+
 /*
 *  Container (Mobile + Desktop)
 */
 .responsive-container {
 	@apply container px-4 lg:px-8 mx-auto;
 }
+
 
 /*
 Header/Navbar
@@ -58,12 +64,17 @@ header nav {
 }
 
 ul.nav-item li ul.nav-dropdown{
-	@apply invisible opacity-0 absolute transition-all delay-75 mt-1 left-0 hidden;
+	@apply lg:invisible lg:opacity-0 lg:absolute transition-all delay-75 left-0 mt-1 hidden;
+}
+
+div.right-dropdown ul.nav-item li ul.nav-dropdown{
+	right: 0;
+	left: auto !important;
 }
 
 ul.nav-item li:hover > ul.nav-dropdown,
 ul.nav-item li ul:hover{
-	@apply visible opacity-100 block;
+	@apply lg:visible lg:opacity-100 lg:block;
 }
 
 ul.nav-item li ul.nav-dropdown li{
@@ -88,23 +99,61 @@ Heading
 	@apply h-shadow flex-grow text-4xl font-head tracking-wider uppercase font-bold;
 }
 
-
 .nav-item {
 	font-size: 16px;
 }
 
-.mobile-menu {
-	@apply bg-card-light;
+.responsive-container.mobile-menu {
+	@apply bg-card-light px-0 mx-0 lg:hidden w-full;
+	max-width:100%;
+}
+
+.mobile-menu > ul > li {
+	@apply border-t border-nav-border text-lg lg:border-none px-4 sm:px-8;
+}
+
+.mobile-menu > ul > li.nav-active,
+.mobile-menu > ul > li.nav-active > a {
+	@apply border-link-orange text-link-orange;
+}
+
+.mobile-menu > ul > li > .chevron {
+	background-image: url("/theme-assets/chevron-down.svg");
+	background-position: right 50%;
+	background-repeat: no-repeat;
+}
+
+.mobile-menu > ul > li.nav-active > .chevron {
+	background-image: url("/theme-assets/chevron-up.svg");
 }
 
 /**
 Table of Contents
  */
 
-nav#TableOfContents ul a + ul {
-	padding-left: 1em;
+ nav#TableOfContents ul a + ul {
+	padding-left: 1.5em;
+	max-height: 0;
+	overflow: hidden;
+	display: block;
+	transition: max-height 0.4s;
 }
 
+nav#TableOfContents ul a + ul.active {
+	max-height: 1000px;
+	display: block;
+	padding-top: 0.2em;
+	padding-bottom: 0.2em;
+	transition: max-height 1s;
+}
+
+nav#TableOfContents a {
+	font-size: 0.925rem;
+}
+
+nav#TableOfContents a.active {
+	color: white;
+}
 
 /**
 Content
@@ -356,17 +405,13 @@ Footer
 
 .job-icon-header {
     width: 60px;
+	height: 60px;
 }
 
 @screen md {
 	.job-icon-header {
-		width: 72px;
-	}
-}
-
-@screen xl {
-	.job-icon-header {
-		width: 150px;
+		width: 100%;
+		height: 100%;
 	}
 }
 
@@ -386,10 +431,10 @@ Various Containers
 	@apply col-span-12 lg:col-span-3 bg-card-light text-white divide-y divide-page px-5 mb-6 md:mb-0;
 }
 .job-guides-container {
-	@apply col-span-12 lg:col-span-9 bg-card-light text-white py-8 md:py-14 px-4 md:px-10;
+	@apply col-span-12 lg:col-span-9 bg-card-light text-white py-8 md:py-14 px-8 md:px-14 lg:px-20 xl:px-28;
 }
 .table-of-contents-container {
-	@apply col-span-12 lg:col-span-3 bg-card-light text-white divide-y divide-page px-5 md:sticky md:top-8 mt-8 mb-8 md:mt-0 md:mb-0;
+	@apply col-span-12 lg:order-last lg:sticky lg:col-span-3 bg-card-light text-white divide-y divide-page px-5 md:top-8 mt-8 mb-8 md:mt-0 md:mb-0;
 }
 
 /**
@@ -478,4 +523,21 @@ Markdown - Can be used to auto apply styling to tags within the .markdown class
 
 .markdown table > tbody > tr:nth-of-type(odd) {
 	@apply bg-table-light;
+}
+
+.markdown blockquote {
+	border-left: 4px solid #ccc;
+	margin: 1.5em 10px;
+	padding: 0.5em 10px;
+}
+
+.markdown blockquote p {
+	display: inline;
+}
+
+/* shortcode additions */
+.markdown .image-inline {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
 }

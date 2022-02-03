@@ -164,22 +164,131 @@ collections:
   - label: "Role landing pages"
     name: "role-landing"
     files:
-      - label: "Healers"
-        name: "healers"
-        file: "content/jobs/healers/_index.md"
+      - label: "Tanks"
+        name: "tanks"
+        media_folder: "/static/img/jobs/tanks"
+        public_folder: "/img/jobs/tanks"
+        file: "content/jobs/tanks/_index.md"
         fields:
         - {label: "Body", name: "body", widget: "markdown"}
         - label: "Menu hierarchy"
           name: "menu"
-          widget: "hidden"
-          default:
-            main:
-              name: "Healers"
-              parent: "jobs"
+          widget: "object"
+          fields:
+            - label: "Main"
+              name: "main"
+              widget: "object"
+              fields: 
+                - {label: "Name", name: "name", widget: "select", options: ["Tanks"], default: ["Tanks"]}
+                - {label: "Parent", name: "parent", widget: "select", options: ["jobs"], default: ["jobs"]}
         - label: "Role"
           name: "role"
-          widget: "hidden"
-          default: "healer"
+          widget: "select"
+          options: ["tanks"]
+          default: ["tanks"]
+        - {label: "Layout", name: "layout", widget: "select", options: ["role_home"], default: ["role_home"]}
+        - {label: "Background Header Image", name: "bg_header_image", widget: "image", choose_url: false}
+        - {label: "Role Hero Image", name: "role_hero_image", widget: "image", choose_url: false}
+      - label: "Healers"
+        name: "healers"
+        file: "content/jobs/healers/_index.md"
+        media_folder: "/static/img/jobs/healers"
+        public_folder: "/img/jobs/healers"
+        fields:
+        - {label: "Body", name: "body", widget: "markdown"}
+        - label: "Menu hierarchy"
+          name: "menu"
+          widget: "object"
+          fields:
+            - label: "Main"
+              name: "main"
+              widget: "object"
+              fields: 
+                - {label: "Name", name: "name", widget: "select", options: ["Healers"], default: ["Healers"]}
+                - {label: "Parent", name: "parent", widget: "select", options: ["jobs"], default: ["jobs"]}
+        - label: "Role"
+          name: "role"
+          widget: "select"
+          options: ["healers"]
+          default: ["healers"]
+        - {label: "Layout", name: "layout", widget: "select", options: ["role_home"], default: ["role_home"]}
+        - {label: "Background Header Image", name: "bg_header_image", widget: "image", choose_url: false}
+        - {label: "Role Hero Image", name: "role_hero_image", widget: "image", choose_url: false}
+      - label: "Melee"
+        name: "melee"
+        file: "content/jobs/melee/_index.md"
+        media_folder: "/static/img/jobs/melee"
+        public_folder: "/img/jobs/melee"
+        fields:
+        - {label: "Body", name: "body", widget: "markdown"}
+        - label: "Menu hierarchy"
+          name: "menu"
+          widget: "object"
+          fields:
+            - label: "Main"
+              name: "main"
+              widget: "object"
+              fields: 
+                - {label: "Name", name: "name", widget: "select", options: ["Melee"], default: ["Melee"]}
+                - {label: "Parent", name: "parent", widget: "select", options: ["jobs"], default: ["jobs"]}
+        - label: "Role"
+          name: "role"
+          widget: "select"
+          options: ["melee"]
+          default: ["melee"]
+        - {label: "Layout", name: "layout", widget: "select", options: ["role_home"], default: ["role_home"]}
+        - {label: "Background Header Image", name: "bg_header_image", widget: "image", choose_url: false}
+        - {label: "Role Hero Image", name: "role_hero_image", widget: "image", choose_url: false}
+      - label: "Ranged"
+        name: "ranged"
+        file: "content/jobs/ranged/_index.md"
+        media_folder: "/static/img/jobs/ranged"
+        public_folder: "/img/jobs/ranged"
+        fields:
+        - {label: "Body", name: "body", widget: "markdown"}
+        - label: "Menu hierarchy"
+          name: "menu"
+          widget: "object"
+          fields:
+            - label: "Main"
+              name: "main"
+              widget: "object"
+              fields: 
+                - {label: "Name", name: "name", widget: "select", options: ["Ranged"], default: ["Ranged"]}
+                - {label: "Parent", name: "parent", widget: "select", options: ["jobs"], default: ["jobs"]}
+        - label: "Role"
+          name: "role"
+          widget: "select"
+          options: ["ranged"]
+          default: ["ranged"]
+        - {label: "Layout", name: "layout", widget: "select", options: ["role_home"], default: ["role_home"]}
+        - {label: "Background Header Image", name: "bg_header_image", widget: "image", choose_url: false}
+        - {label: "Role Hero Image", name: "role_hero_image", widget: "image", choose_url: false}
+      - label: "Casters"
+        name: "casters"
+        file: "content/jobs/casters/_index.md"
+        media_folder: "/static/img/jobs/casters"
+        public_folder: "/img/jobs/casters"
+        fields:
+        - {label: "Body", name: "body", widget: "markdown"}
+        - label: "Menu hierarchy"
+          name: "menu"
+          widget: "object"
+          fields:
+            - label: "Main"
+              name: "main"
+              widget: "object"
+              fields: 
+                - {label: "Name", name: "name", widget: "select", options: ["Casters"], default: ["Casters"]}
+                - {label: "Parent", name: "parent", widget: "select", options: ["jobs"], default: ["jobs"]}
+        - label: "Role"
+          name: "role"
+          widget: "select"
+          options: ["casters"]
+          default: ["casters"]
+        - {label: "Layout", name: "layout", widget: "select", options: ["role_home"], default: ["role_home"]}
+        - {label: "Background Header Image", name: "bg_header_image", widget: "image", choose_url: false}
+        - {label: "Role Hero Image", name: "role_hero_image", widget: "image", choose_url: false}
   # user "profiles"
   - label: "Author profile"
     name: "author-profile"
@@ -198,23 +307,73 @@ collections:
         widget: "object"
         fields:
           - {label: "Discord Name", name: "discord_id", widget: "string"}
-  # encounter metadata
-  - label: "Encounter metadata"
-    name: "encounter-guide"
-    folder: "data/encounter"
-    format: "json"
-    identifier_field: "category"
+  # Encounters Metadata
+  - label: "Encounters"
+    name: "encounter-data"
+    folder: "content/encounters"
+    identifier_field: "fight_title"
     create: true
     fields:
-      - {label: "Category", name: "category", widget: "string"}
-      - label: "Encounters" 
-        name: "encounters"
+      - {label: "Fight Name",
+        name: "title", 
+        hint: This is the fight name (Ex. "E12 (Eternity)" or "O12 (Alphascape 4.0)"),
+        widget: "string"}
+      - {label: "Short Name of Fight", 
+        name: "fight_title", 
+        hint: This is the short name of the fight (Ex. "o12s" or "e12s-p2"),
+        widget: "string"}
+      - {label: "Encounter Category", 
+        name: "encounter_category", 
+        widget: "select", 
+        options: ["savage", "ultimate", "extreme"]}
+      - {label: "Fight Card Image", name: "card_image", widget: "image", choose_url: false}
+      - {label: "Fight Banner (for individual guides)", name: "banner_image", widget: "image", choose_url: false}
+      - {label: "Encounter Tier Image", name: "tier_image", widget: "image", choose_url: false, required: false}
+      - {label: "Encounter Tier Name", 
+        name: "tier_name", 
+        hint: Please capitalize the name (Ex. "Eden's Promise" or "Alphascape"),
+        widget: "string"}
+      - {label: "Encounter Series Name (Capitalized)", 
+        name: "series_name", 
+        hint: Please capitalize the series name (Ex. "Eden Series" or "Alexander Series"),
+        widget: "string"}
+      - {label: "Weight", 
+        name: "weight", 
+        hint: (1 - first, 2 - second, etc.)
+        widget: "number"}
+      - {label: "Tier Weight",
+        name: "tier_weight",
+        hint: (1 - EW, 2 - ShB, 3 - SB, 4 - HW, 5 - ARR)
+        widget: "number"}
+      - {label: "Coming Soon?", 
+        name: "coming_soon", 
+        hint: This adds the coming soon overlay. Only enable Coming Soon or Spoilers. Not both.,
+        widget: "boolean", 
+        required: false}
+      - {label: "Spoilers?", 
+        name: "spoilers", 
+        hint: This adds the spoiler overlay. Only enable Coming Soon or Spoilers. Not both.,
+        widget: "boolean", 
+        required: false}
+      - {label: "Expansion", name: "expansion", widget: "select", options: ["ew", "shb", "sb", "hw", "arr"]}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - label: "Author(s)"
+        name: "authors"
+        widget: "relation"
+        multiple: true
+        collection: "author-profile"
+        search_fields: ["username", "name"]
+        value_field: "username"
+        display_fields: ["username", "name"]
+      - {label: "Last Updated", name: "lastmod", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+      - {label: "Patch", name: "patch", widget: "string"}
+      - label: "Changelog entry"
+        name: "changelog"
         widget: "list"
+        summary: "{{fields.date}}: {{fields.message}}"
         fields:
-          - {label: "Identifier", name: "id", widget: "string"}
-          - {label: "Name of Encounter", name: "name", widget: "string"}
-          - {label: "Image Link", name: "image_link", widget: "string"}
-          - {label: "Encounter Link", name: "encounter_link", widget: "string"}
+          - {label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false}
+          - {label: "Message", name: "message", widget: "string"}
   ##
   # Scholar guide
   ##
@@ -403,7 +562,7 @@ collections:
             fields:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Type", name: "type", widget: "select", options: ["etro"], default: "etro"}
-              - {label: "Link", name: "link", widget: "string"}
+              - {label: "Set id", name: "link", widget: "string"}
               - {label: "Description", name: "description", widget: "markdown", required: false, default: ""}
       - label: "Stat Priority"
         name: "stat-priority"

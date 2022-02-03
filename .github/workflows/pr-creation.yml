@@ -22,9 +22,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v1
         with:
-          node-version: '14.1'
-        env:
-          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
+          node-version: '14.13'
 
       - name: Install dependencies
         run: |

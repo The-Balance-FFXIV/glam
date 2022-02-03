@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="space-y-16">
+  {{ partial "encounter/single_header" . }}
+
+  <div class="responsive-container">
+    <div class="md:grid grid-cols-12 items-start gap-8 w-full">
+      <div class="table-of-contents-container max-h-screen overflow-y-auto">
+        {{ partial "components/toc.html" . }}
+      </div>
+      <div class="job-guides-container">
+        <div class="markdown max-w-none">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="responsive-container pt-8 lg:pt-0">
+    {{ partial "components/guide_meta_slider.html" . }}
+  </div>
+
+</div>
+{{ end }}

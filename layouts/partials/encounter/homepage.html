@@ -1,0 +1,57 @@
+{{ $savage := (.site.GetPage "/encounters/savage").Pages }}
+{{ $ultimate := (.site.GetPage "/encounters/ultimates").Pages}}
+{{ $extreme := (.site.GetPage "/encounters/extremes").Pages}}
+
+<div class="flex flex-col">
+  {{ if and (isset $savage .Key) (ne .difficulty "ultimate") (ne .difficulty "extreme") }}
+  <div class="w-full mb-24">
+    <div class="flex flex-row items-end">
+      <h1 class="h-shadow flex-grow text-3xl sm:text-5xl uppercase tracking-wider font-head font-bold mb-8">Savage Tiers</h1>
+    </div>
+    <div class="w-full">
+      {{ range $savage.GroupByParam "tier_weight" }}
+        {{ range .Pages.GroupByParam "series_name"}}
+          <h2 class="text-2xl">{{ .Key }}</h2>
+        {{ end }}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          {{ range sort .Pages "Weight" "desc" }}
+            {{ partial "cards/encounters/fight_card.html" . }}
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+  {{ if and (isset $ultimate .Key) (ne .difficulty "savage") (ne .difficulty "extreme") }}
+  <div class="w-full mb-24">
+    <div class="flex flex-row items-end">
+      <h1 class="h-shadow flex-grow text-3xl sm:text-5xl uppercase tracking-wider font-head font-bold mb-8">Ultimates</h1>
+    </div>
+    <div class="w-full">
+      {{ range $ultimate.GroupByParam "tier_weight" }}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          {{ range sort .Pages "Weight" "desc" }}
+            {{ partial "cards/encounters/fight_card.html" . }}
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+  {{ if and (isset $extreme .Key) (ne .difficulty "ultimate") (ne .difficulty "savage") }}
+  <div class="w-full mb-24">
+    <div class="flex flex-row items-end">
+      <h1 class="h-shadow flex-grow text-3xl sm:text-5xl uppercase tracking-wider font-head font-bold mb-8">Extreme / Unreal</h1>
+    </div>
+    <div class="w-full">
+      {{ range $extreme.GroupByParam "tier_weight" }}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+          {{ range sort .Pages "Weight" "desc" }}
+            {{ partial "cards/encounters/fight_card.html" . }}
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+</div>

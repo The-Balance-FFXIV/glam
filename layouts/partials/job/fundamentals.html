@@ -26,7 +26,7 @@
     <div class="xl:col-span-6 xl:row-start-1 xl:row-span-3">
       <div class="divide-y divide-card-dark">
         {{ with .Page.GetPage "basic-guide" }}
-          {{ $guideName := printf "Basic Guide (LV %d)" .Site.Params.maxLevel}}
+          {{ $guideName := "Basic Guide" }}
           {{ $basicInfo := dict
             "role" $role
             "image" .Params.card_header_image
@@ -51,7 +51,7 @@
           {{ partial "cards/guide.html" $skillsInfo }}
         {{ end }}
         {{ with .Page.GetPage "openers" }}
-          {{ $guideName := printf "Openers (LV %d)" .Site.Params.maxLevel}}
+          {{ $guideName := printf "Openers" }}
           {{ $openerInfo := dict
             "role" $role
             "icon" "/theme-assets/clock.svg"

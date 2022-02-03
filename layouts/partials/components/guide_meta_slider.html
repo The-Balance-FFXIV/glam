@@ -23,7 +23,7 @@
       <div class="tab-content meta-content">
         {{ partial "components/questions.html" (dict "discord" $discord)}}
         <div class="card-title mb-5">Authors</div>
-        <div class="flex flex-row gap-12">
+        <div class="flex flex-row flex-wrap xl:flex-nowrap xl:gap-12 w-full">
           {{ range $author := $.Page.Params.authors }}
           {{ partial "components/author_box.html" (index $.Site.Data.author $author) }}
           {{ end }}

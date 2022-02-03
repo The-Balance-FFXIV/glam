@@ -1,10 +1,8 @@
 {{ define "main" }}
-    <div class="general-page-bg bg-center bg-cover relative flex items-center text-center justify-center z-10">
-        <h1 class="text-8xl h-shadow font-bold">{{ .Title }}</h1>
-    </div>
-    <div class="container mx-auto my-16 bg-card-light p-16">
-        <div class="markdown">
-            {{ .Content }}
-        </div>
-    </div>
+  {{ partial "general_header.html" . }}
+  <div class="container mx-auto my-16 bg-card-light p-16">
+      <div class="markdown">
+          {{ .Content }}
+      </div>
+  </div>
 {{ end }}
