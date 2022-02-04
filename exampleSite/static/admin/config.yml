@@ -562,7 +562,7 @@ collections:
             fields:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Type", name: "type", widget: "select", options: ["etro"], default: "etro"}
-              - {label: "Set id", name: "link", widget: "string"}
+              - {label: "Set ID (the part after /gearset/)", name: "link", widget: "string"}
               - {label: "Description", name: "description", widget: "markdown", required: false, default: ""}
       - label: "Stat Priority"
         name: "stat-priority"
