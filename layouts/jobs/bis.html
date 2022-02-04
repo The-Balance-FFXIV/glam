@@ -17,18 +17,17 @@
 
   <div class="responsive-container">
     <div class="md:grid grid-cols-12 items-start gap-8 w-full">
+      <div class="table-of-contents-container max-h-screen overflow-y-auto">
+        {{ partial "components/toc.html" . }}
+      </div>
       <div class="job-guides-container">
         <div class="markdown max-w-none">
-          {{ range .Params.bis }}
-            <h2><a href="{{ .link }}">{{ .name }}</a></h2>
-            {{ .description | markdownify }}
+          {{ range $index, $bis := .Params.bis }}
+            <h2 id="{{ $index }}">{{ $bis.name }}</h2>
+            {{ partial "components/etro.html" $bis.link }}
+            {{ $bis.description | markdownify }}
           {{ end }}
         </div>
-      </div>
-      <div class="table-of-contents-container max-h-screen overflow-y-auto">
-        <div class="card-title pt-6 pb-5">Table of Contents</div>
-        <div class="nested-link font-bold py-2">{{ .TableOfContents }}</div>
-        <div>&nbsp;</div>
       </div>
     </div>
   </div>

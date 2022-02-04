@@ -21,14 +21,16 @@
       </div>
       <div class="xl:col-span-4 text-white">
         {{ with .Page.GetPage "stat-priority" }}
-          {{ $content := dict
+          {{
+            $content := dict
             "role" $role
             "icon" "/theme-assets/materia.svg"
             "name" "Stats & Materia"
             "text" .Params.priority
-            "readMoreText" "Why this priority?"
-            "readMoreLink" "stat-priority"
           }}
+          {{if .Content }}
+            {{ $content = merge $content (dict "readMoreText" "Why this priority?" "readMoreLink" "stat-priority") }}
+          {{ end }}
           {{ partial "cards/default.html" $content }}
         {{ end }}
       </div>

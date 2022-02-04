@@ -1,7 +1,27 @@
 const plugin = require('tailwindcss/plugin');
 
 module.exports = {
-  purge: ['layouts/**/*.html'],
+    purge: {
+        enabled: true,
+        content: ['layouts/**/*.html', "themes/glam/layouts/**/*.html"],
+        safelist: [
+          "role-header-tanks",
+          "role-header-healers",
+          "role-header-melee",
+          "role-header-ranged",
+          "role-header-casters",
+          "drop-shadow-lg-tanks",
+          "drop-shadow-lg-healers",
+          "drop-shadow-lg-melee",
+          "drop-shadow-lg-ranged",
+          "drop-shadow-lg-casters",
+          "card-tanks",
+          "card-healers",
+          "card-melee",
+          "card-ranged",
+          "card-casters"
+        ]
+    },
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
@@ -34,14 +54,34 @@ module.exports = {
         'ranged': '#D84D4D',
         'casters': '#D84D4D',
         'page': '#222528',
+        'nav-border': '#949494',
         'gray': {
             'light': '#C9C9C9',
         }
       },
-      height: {
+      width: {
         '100': '25rem', 
+        '104': '26rem',
+        '108': '27rem',
         '112': '28rem',
+        '116': '29rem',
         '120': '30rem',
+      },
+      height: {
+        '68': '17rem',
+        '84': '21rem',
+        '88': '22rem',
+        '100': '25rem', 
+        '104': '26rem',
+        '108': '27rem',
+        '112': '28rem',
+        '116': '29rem',
+        '120': '30rem',
+      },
+      minHeight: {
+        '0': '0',
+        '36': "9rem",
+        'full': '100%',
       },
       zIndex: {
           '-1': '-1',

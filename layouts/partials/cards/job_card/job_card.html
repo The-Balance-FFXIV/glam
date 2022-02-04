@@ -1,0 +1,33 @@
+{{ $borderClass := default "gray-600" (lower .role) }}
+
+<div class="mt-0">
+  <div class="flex flex-col w-full py-3 justify-center items-start">
+    <div class="card card-{{ $borderClass }} space-y-3 w-full">
+      {{ if isset .jobData "name" }}
+        <div class="border-b border-card-dark pb-4">
+          {{ partial "cards/job_card/_header.html" .jobData }}
+        </div>
+      {{ end }}
+      <div class="min-h-36 flex items-center">
+        {{ with .siteVar.GetPage .jobData.job_link}}
+          {{ .Content }}
+        {{end}}
+      </div>
+      <div>
+        <h4 class="uppercase tracking-widest border-t border-black my-4 pt-4">Guides</h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {{ range (.siteVar.GetPage .jobData.job_link).Pages }}
+              {{ if .Permalink }}
+                <div>
+                  <a href="{{ .Permalink }}" class="text-link-orange">{{ .Name }}</a>
+                </div>
+              {{ end }}
+          {{ end}}
+        </div>
+      </div>
+      {{ if isset .jobData "readMoreLink" }}
+        {{ partial "cards/_footer.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</div>

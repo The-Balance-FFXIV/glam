@@ -1,7 +1,8 @@
 {
-    "recommendations": [
-        "budparr.language-hugo-vscode",
-        "bradlc.vscode-tailwindcss",
-        "EditorConfig.EditorConfig"
-    ]
+  "recommendations": [
+    "budparr.language-hugo-vscode",
+    "bradlc.vscode-tailwindcss",
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode"
+  ]
 }

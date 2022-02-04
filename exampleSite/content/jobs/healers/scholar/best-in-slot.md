@@ -10,20 +10,20 @@ changelog:
 bis:
   - name: Comfy 2.42 spell speed (high piety)
     type: etro
-    link: https://etro.gg/gearset/4f21e0e3-d02e-4c58-a11d-a5cb062efcf8
+    link: 6c93e15c-6d23-4e41-b524-fdd57b185201
     description: |
       No problems - useful for any kind of content
   - name: Hardcore low-piety set
     type: etro
-    link: https://etro.gg/gearset/4f21e0e3-d02e-4c58-a11d-a5cb062efcf8
+    link: 6c93e15c-6d23-4e41-b524-fdd57b185201
     description: |
       **Do not use this unless you know what you're doing**
   - name: "'Nuff said"
     type: etro
-    link: https://etro.gg/gearset/4f21e0e3-d02e-4c58-a11d-a5cb062efcf8
+    link: 6c93e15c-6d23-4e41-b524-fdd57b185201
   - type: etro
     name: another set
-    link: https://etro.gg/gearset/4f21e0e3-d02e-4c58-a11d-a5cb062efcf8
+    link: 6c93e15c-6d23-4e41-b524-fdd57b185201
     description: |-
       *a markdown description, with more text*
 
