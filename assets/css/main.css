@@ -543,5 +543,5 @@ Markdown - Can be used to auto apply styling to tags within the .markdown class
 }
 
 td img {
-	width: 3rem;
+	min-width: 3rem;
 }
