@@ -162,6 +162,11 @@ Content
 #content {
 }
 
+/* tables */
+td img {
+	min-width: 3rem;
+}
+
 /*
   Jobs List
 */
@@ -540,8 +545,4 @@ Markdown - Can be used to auto apply styling to tags within the .markdown class
 	display: flex;
 	flex-wrap: wrap;
 	gap: 5px;
-}
-
-td img {
-	min-width: 3rem;
 }
