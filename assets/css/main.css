@@ -162,6 +162,11 @@ Content
 #content {
 }
 
+/* tables */
+td img {
+	min-width: 3rem;
+}
+
 /*
   Jobs List
 */
