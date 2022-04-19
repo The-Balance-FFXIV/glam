@@ -24,7 +24,12 @@
         <div class="markdown max-w-none">
           {{ range $index, $bis := .Params.bis }}
             <h2 id="{{ $index }}">{{ $bis.name }}</h2>
-            {{ partial "components/etro.html" $bis.link }}
+            {{ if eq $bis.type "etro"}}
+              {{ partial "components/etro.html" $bis.link }}
+            {{ end }}
+            {{ if eq $bis.type "gsheets"}}
+              {{ partial "components/gsheets.html" $bis.link }}
+            {{ end }}
             {{ $bis.description | markdownify }}
           {{ end }}
         </div>

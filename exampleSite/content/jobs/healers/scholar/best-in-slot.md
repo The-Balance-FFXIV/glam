@@ -28,4 +28,8 @@ bis:
       *a markdown description, with more text*
 
       It has multiple lines too.
+  - name: Gsheets integration
+    type: gsheets
+    link: https://docs.google.com/spreadsheets/d/e/2PACX-1vSCsbn5CJAMRXv-WJEV-W1FCPtrVhZeMU0JD8SleJ_Ga_5ur7wgLisKdca5M-KzTqahrtCjAP9qLtvG/pubhtml
+    description: gsheet test uwu
 ---

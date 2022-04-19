@@ -33,7 +33,7 @@ jobs:
         run: hugo server -s exampleSite/ --themesDir=../.. --disableFastRender &
 
       - name: Install puppeteer-headful
-        uses: mujo-code/puppeteer-headful@master
+        uses: mujo-code/puppeteer-headful@v2
         env:
           CI: 'true'
 
