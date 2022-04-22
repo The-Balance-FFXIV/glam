@@ -165,7 +165,7 @@ Content
 	min-width: 3rem;
 }
 
-#content table {
+#content table, #content .codeblock {
 	display: block;
 	max-width: -moz-fit-content;
 	max-width: fit-content;
