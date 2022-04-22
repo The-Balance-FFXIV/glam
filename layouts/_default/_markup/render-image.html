@@ -1,0 +1,4 @@
+<!-- source: https://gist.github.com/zjeaton/0cdd7e4bed9d292ab6f3d76b0369f16d -->
+<div class="md__image">
+  <img id="{{ first 6 (shuffle (seq 1 500)) }}" src="{{ .Destination | safeURL }}" onclick="openModal(this.id)" alt="{{ .Text }}" {{ with .Title}} title="{{ . }}"{{ end }} />
+</div>
