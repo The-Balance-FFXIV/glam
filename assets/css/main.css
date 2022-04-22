@@ -231,12 +231,19 @@ Modal markdown images
 Content
  */
 
-#content {
-}
 
 /* tables */
-td img {
+#content td img {
 	min-width: 3rem;
+}
+
+#content table, #content .codeblock {
+	display: block;
+	max-width: -moz-fit-content;
+	max-width: fit-content;
+	margin: 0 auto;
+	overflow-x: auto;
+	white-space: nowrap;
 }
 
 /*
