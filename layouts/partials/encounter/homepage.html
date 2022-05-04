@@ -1,6 +1,6 @@
 {{ $savage := (.site.GetPage "/encounters/savage").Pages }}
-{{ $ultimate := (.site.GetPage "/encounters/ultimates").Pages}}
-{{ $extreme := (.site.GetPage "/encounters/extremes").Pages}}
+{{ $ultimate := (.site.GetPage "/encounters/ultimate").Pages}}
+{{ $extreme := (.site.GetPage "/encounters/extreme").Pages}}
 
 <div class="flex flex-col">
   {{ if and (isset $savage .Key) (ne .difficulty "ultimate") (ne .difficulty "extreme") }}
