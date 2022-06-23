@@ -1,22 +1,21 @@
 {{ $borderClass := default "gray-600" .role }}
-
 <div>
-	{{ with .image }}
-	<div>
-		<img class="w-full" src="{{ . }}" />
-	</div>
-	{{ end }}
-	<div class="card card-{{ $borderClass }} space-y-3">
-    {{ if isset . "name" }}
-    <div class="border-b border-card-dark pb-8">
-      {{ partial "cards/_header.html" . }}
+  {{ with .image }}
+    <div>
+      <img class="w-full" src="{{ . }}" />
     </div>
+  {{ end }}
+  <div class="card card-{{ $borderClass }} space-y-3">
+    {{ if isset . "name" }}
+      <div class="border-b border-card-dark pb-8">
+        {{ partial "cards/_header.html" . }}
+      </div>
     {{ end }}
     <div>
-      {{ .text }}
+      {{ .text | markdownify }}
     </div>
     {{ if isset . "readMoreLink" }}
       {{ partial "cards/_footer.html" . }}
     {{ end }}
-	</div>
+  </div>
 </div>
