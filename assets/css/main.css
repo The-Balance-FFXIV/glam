@@ -628,7 +628,10 @@ ol {
   @apply list-disc pl-10 space-y-2 mb-8;
 }
 
-.markdown ul ul {
+.markdown ul ul,
+.markdown ul ol,
+.markdown ol ul,
+.markdown ol ol {
   margin-bottom: 0;
 }
 
