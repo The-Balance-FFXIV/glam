@@ -1,11 +1,5 @@
 let GenericJobGuide = createClass({
   render: function () {
-    console.log(
-      "perhaps author list?",
-      this.props.entry.getIn(["data", "authors"]).map(function (author, index) {
-        console.log("individual author:", author);
-      })
-    );
     return h(
       "div",
       { class: "space-y-16" },
