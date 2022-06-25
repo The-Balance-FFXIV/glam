@@ -4,11 +4,40 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Content Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;700&family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
     <!-- Include the script that enables Netlify Identity on this page. -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- Darkreader -->
+    <script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.27/darkreader.min.js"></script>
   </head>
   <body>
     <!-- Include the script that builds the page and powers Netlify CMS -->
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <!-- Include the script for previewing Hugo shortcodes -->
+    <script src="https://sharadcodes.github.io/hugo-shortcodes-netlify-cms/dist/hugo_shortcodes_netlify_cms.js"></script>
+    <script>
+      DarkReader.enable(); // Enable darkreader
+      CMS.registerPreviewStyle("/css/main.css"); // Register preview styles in Netlify
+
+      let LandingPreviewTemplate = createClass({
+        render: function () {
+          return h(
+            "div",
+            { class: "job-guides-container" },
+            h(
+              "div",
+              { class: "markdown max-w-none" },
+              this.props.widgetFor("body")
+            )
+          );
+        },
+      });
+      CMS.registerPreviewTemplate("landing", LandingPreviewTemplate);
+    </script>
   </body>
 </html>
