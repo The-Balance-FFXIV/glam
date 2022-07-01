@@ -16,6 +16,7 @@ const renderGuideContainer = function (body, ...children) {
 };
 
 const renderAuthorList = function (authors) {
+  let authorList = authors ?? [];
   return h(
     "div",
     { class: "job-guides-container markdown" },
@@ -23,7 +24,7 @@ const renderAuthorList = function (authors) {
     h(
       "ul",
       {},
-      authors.map(function (author) {
+      authorList.map(function (author) {
         return h("li", {}, author);
       })
     )
