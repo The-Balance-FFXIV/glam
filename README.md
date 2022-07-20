@@ -28,16 +28,31 @@ yarn start:static
 First run the static site server with `yarn start:static`, then run `yarn start:admin` and navigate to `http://localhost:1313/admin`.
 Alternatively, `yarn start` will start both servers.
 
-# The wiggly bits
+# Configuration
 
-This is some general documentation until we can clean it out.
+## `[params]` section
 
-## Adding an item to the footer
+| Key Name            | Type   | Description                                                            |
+| ------------------- | ------ | ---------------------------------------------------------------------- |
+| maxTierGearsets     | int    | Maximum number of 'tier' gearsets to display on a job landing page     |
+| maxUltimateGearsets | int    | Maximum number of 'ultimate' gearsets to display on a job landing page |
+| maxGearsets         | int    | Maximum number of gearsets to display, total                           |
+| discord             | string | Discord join url (without any leading `https://`)                      |
+| description         | string | Description for the site                                               |
+| copyrightMessage    | string | Copyright string to display on the bottom of the site                  |
 
-Currently, the configuration for the footer is under exampleSite/config.toml.
+## Notes
 
-If you want to add a new column, add it here.
+- the `[menu]` section must contain at least one `[[menu.header]]` and `[[menu.footer]]` section:
 
-Updating an entry: add it as a folder into exampleSite/content/\*. You'll need to
-add an `_index.md` that will then list out the parent for that item, and other information
-that you want to associate with it.
+```toml
+[menu]
+  [[menu.header]]
+    identifier = 'Encounters'
+    url = '/encounters/'
+    weight = 20
+  [[menu.footer]]
+    identifier = 'Encounters'
+    url = '/encounters'
+    weight = 20
+```
