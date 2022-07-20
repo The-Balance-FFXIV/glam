@@ -52,7 +52,7 @@ Alternatively, `yarn start` will start both servers.
     url = '/encounters/'
     weight = 20
   [[menu.footer]]
-    identifier 'Encounters'
+    identifier = 'Encounters'
     url = '/encounters'
     weight = 20
 ```
