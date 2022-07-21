@@ -26,7 +26,7 @@
         {{ range $list }}
         <li class="flex flex-wrap">
           <a href="{{ .URL }}"
-            class="w-11/12 text-lg block py-3 text-white font-semibold {{ if eq $current.URL .URL }}text-link-orange{{ end }}"
+            class="w-11/12 text-lg block py-3 text-white font-semibold {{ if eq $current.Permalink .URL }}text-link-orange{{ end }}"
             title="{{ .Title }}">
             {{ .Name }}
           </a>
