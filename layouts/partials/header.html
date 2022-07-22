@@ -45,7 +45,7 @@
         <li class="flex flex-wrap">
           <a
             href="{{ .URL }}"
-            class="w-11/12 block text-lg py-3 text-white font-semibold {{ if eq $current.URL .URL }}text-link-orange{{ end }}" title="{{ .Title }}"
+            class="w-11/12 block text-lg py-3 text-white font-semibold {{ if eq $current.Permalink .URL }}text-link-orange{{ end }}" title="{{ .Title }}"
           >
             {{ .Name }}
           </a>
