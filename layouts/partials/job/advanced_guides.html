@@ -23,20 +23,33 @@
       {{ end }}
     </div>
     <div>
-      {{ with $fightTips}}
-        {{ $content := dict
-          "role" $role
-          "icon" "/theme-assets/fight_tips.svg"
-          "name" "Fight Tips"
-          "patch" .Params.patch
-          "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
-          "image" .Params.card_header_image
-          "imageClass" "h-100"
-          "inlineLink" "fight-tips"
-        }}
-        {{ partial "cards/guide.html" $content }}
+      {{ if gt (len $fightTips.Pages) 0 }}
+        {{ with index $fightTips.Pages 0}}
+          {{ $content := dict
+              "role" $role
+              "icon" "/theme-assets/fight_tips.svg"
+              "name" .Title
+              "patch" .Params.patch
+              "image" .Params.card_header_image
+              "imageClass" "h-100"
+              "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
+              "inlineLink" .RelPermalink
+            }}
+            {{ partial "cards/guide.html" $content }}
+          {{ end }}
+          {{ range (after 1 $fightTips.Pages) }}
+            {{ $content := dict
+              "role" $role
+              "icon" "/theme-assets/fight_tips.svg"
+              "name" .Title
+              "patch" .Params.patch
+              "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
+              "inlineLink" .RelPermalink
+            }}
+            {{ partial "cards/guide.html" $content }}
+        {{ end }}
       {{ end }}
-    </div>
+      </div>
   </section>
 </div>
 {{ end }}
