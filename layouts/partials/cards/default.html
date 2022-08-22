@@ -12,7 +12,7 @@
       </div>
     {{ end }}
     <div>
-      {{ .text | markdownify }}
+      {{ .text }}
     </div>
     {{ if isset . "readMoreLink" }}
       {{ partial "cards/_footer.html" . }}
