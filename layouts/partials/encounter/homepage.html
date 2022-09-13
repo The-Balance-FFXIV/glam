@@ -41,7 +41,7 @@
   {{ if and (isset $extreme .Key) (ne .difficulty "ultimate") (ne .difficulty "savage") }}
   <div class="w-full mb-24">
     <div class="flex flex-row items-end">
-      <h1 class="h-shadow flex-grow text-3xl sm:text-5xl uppercase tracking-wider font-head font-bold mb-8">Extreme / Unreal</h1>
+      <h1 class="h-shadow flex-grow text-3xl sm:text-5xl uppercase tracking-wider font-head font-bold mb-8">Trials</h1>
     </div>
     <div class="w-full">
       {{ range $extreme.GroupByParam "tier_weight" }}
