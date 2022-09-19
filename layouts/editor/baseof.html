@@ -21,9 +21,16 @@
     <!-- Include the script for previewing Hugo shortcodes -->
     <script src="https://sharadcodes.github.io/hugo-shortcodes-netlify-cms/dist/hugo_shortcodes_netlify_cms.js"></script>
     <script src="/theme-assets/editor/job-preview.js"></script>
+    <script src="/theme-assets/editor/shortcodes.js"></script>
     <script>
       DarkReader.enable(); // Enable darkreader
-      CMS.registerPreviewStyle("/css/main.css"); // Register preview styles in Netlify
+      {{ $styles := resources.Get "css/main.css" | postCSS }}
+      {{ if .Site.IsServer }}
+      CMS.registerPreviewStyle("{{ $styles.RelPermalink }}"); // Register preview styles in Netlify
+      {{ else }}
+      {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
+      CMS.registerPreviewStyle("{{ $styles.RelPermalink }}")
+      {{ end }}
 
       let LandingPreviewTemplate = createClass({
         render: function () {
