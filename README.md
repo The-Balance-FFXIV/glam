@@ -18,8 +18,8 @@ Glam is a theme for The Balance website put together by the wonderful FFXIV comm
 ### How to build the project
 1. These steps only need to be done once.
 2. Add hugo.exe to PATH.
-   1. Open the Start menu, search for `enviroment`, and choose `Edit the system environment variables` to open a dialogue.
-   2. Click the `Enviroment Variables` box near the bottom.
+   1. Open the Start menu, search for `environment`, and choose `Edit the system environment variables` to open a dialogue.
+   2. Click the `Environment Variables` box near the bottom.
    3. Select the `Path` line in the first box and hit `Edit`.
    4. Press the `New` button and input the path to the folder you extracted (i.e `C:/Users/UserName/Documents/hugo`) and hit the `Enter` key.
    5. Select `Ok` to close all the dialogue boxes.
@@ -36,7 +36,7 @@ Glam is a theme for The Balance website put together by the wonderful FFXIV comm
 
 ## Testing the theme locally
 
-Make sure you have [hugo](https://gohugo.io/getting-started/installing/) installed, either drop `hugo.exe` in the root dir or add it to your PATH. Make sure you're using hugo version [v0.86.1](https://github.com/gohugoio/hugo/releases/tag/v0.86.1)
+Make sure you have [hugo](https://gohugo.io/getting-started/installing/) installed. Either drop `hugo.exe` in the project's root folder or add it to your PATH.
 
 ```sh
 # Clone the repository
