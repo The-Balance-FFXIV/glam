@@ -1,0 +1,14 @@
+{{ $redirect_to := .Params.redirect_to }}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="refresh" content="0; url={{ $redirect_to }}">
+    <link rel="canonical" href="{{ $redirect_to }}">
+    <script>
+      window.location.href = "{{ $redirect_to }}";
+    </script>
+  </head>
+  <body>
+    <p>Please click this [link]({{ .Params.redirect }}) if you are not redirected.</p>
+  </body>
+</html>
