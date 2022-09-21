@@ -387,6 +387,11 @@ collections:
         file: "content/jobs/healers/scholar/_index.md"
         fields:
           - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "SEO Description", name: "description", widget: "string"}
+          - label: "SEO Tags (only first six are used)"
+            name: "tags"
+            widget: "list"
+            max: 6
       - label: "Leveling Guide"
         name: "leveling-guide"
         file: "content/jobs/healers/scholar/leveling-guide.md"
