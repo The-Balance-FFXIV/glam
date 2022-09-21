@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     {{- partial "head.html" . -}}
-    {{- partial "redirect.html" . -}}
   </head>
   <body>
     {{ $title := .Title }}
@@ -15,11 +14,7 @@
       {{- partial "header.html" . -}}
     {{ end }}
     <div id="content" class="z-20">
-      {{ if .Params.redirect_to }}
-        {{- partial "components/redirecting_message.html" . }}
-      {{ else }}
-        {{- block "main" . }}{{- end }}
-      {{ end }}
+      {{- block "main" . }}{{- end }}
     </div>
     {{- partial "footer.html" . -}}
     {{ $headerJs := resources.Get "js/header.js" }}
