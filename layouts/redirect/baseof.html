@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{- partial "head.html" . -}}
+    {{ if .Params.redirect_to }}
+      {{ $redirect_to := .Params.redirect_to }}
+      {{ $redirect_after := .Params.redirect_after | default "0" }}
+      <meta http-equiv="refresh" content="{{ $redirect_after }}; url={{ $redirect_to }}">
+      <link rel="canonical" href="{{ $redirect_to }}">
+      <script>
+        var redirectTimeout = {{ $redirect_after }} * 1000;
+        setTimeout(function() { 
+          window.location.href = "{{ $redirect_to }}";
+        }, redirectTimeout);
+      </script>
+    {{ end }}
+  </head>
+  <body>
+    {{ $title := .Title }}
+    {{ if eq $title "Home" }}
+      <header
+        class="bg-center bg-cover relative z-10 h-64 md:h-96 mt-10 lg:mt-0"
+      ></header>
+      {{- partial "header_home.html" . -}}
+    {{ else }}
+      {{- partial "header.html" . -}}
+    {{ end }}
+    <div id="content" class="z-20">
+      <div class="container mx-auto my-16 bg-card-light p-16">
+        <div class="flex flex-col">
+          <p>Redirecting... please click <a class="font-bold" href="{{ .Params.redirect_to }}">this link</a> if you are not redirected shortly.</p>
+        </div>
+      </div>      
+    </div>
+    {{- partial "footer.html" . -}}
+    {{ $headerJs := resources.Get "js/header.js" }}
+    {{ $navJs := resources.Get "js/nav.js" }}
+
+    <script type="text/javascript" src="{{ $headerJs.RelPermalink }}" defer></script>
+    <script type="text/javascript" src="{{ $navJs.RelPermalink }}" defer></script>
+    {{ partial "image-modal.html" . }}
+  </body>
+</html>
