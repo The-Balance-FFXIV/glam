@@ -1,3 +1,13 @@
+{{ $scratch := newScratch }}
+{{ $scratch.Set "style" (resources.Get "css/main.css" | postCSS) }}
+{{ $scratch.Set "config" (default "config.yml" (index .Params "config")) }}
+{{ if .Site.IsServer }}
+  {{/* development */}}
+  {{ $scratch.Set "config" (default "dev.yml" (index .Params "dev_config")) }}
+{{ else }}
+  {{/* production */}}
+  {{ $scratch.Set "styles" ($scratch.Get "styles" | minify | fingerprint | resources.PostProcess) }}
+{{ end }}
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,6 +20,8 @@
       href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;700&family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap"
       rel="stylesheet"
     />
+    <!-- netlify-cms config -->
+    <link href="{{ $scratch.Get "config" }}" type="text/yaml" rel="cms-config-url">
     <!-- Include the script that enables Netlify Identity on this page. -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <!-- Darkreader -->
@@ -21,9 +33,10 @@
     <!-- Include the script for previewing Hugo shortcodes -->
     <script src="https://sharadcodes.github.io/hugo-shortcodes-netlify-cms/dist/hugo_shortcodes_netlify_cms.js"></script>
     <script src="/theme-assets/editor/job-preview.js"></script>
+    <script src="/theme-assets/editor/shortcodes.js"></script>
     <script>
       DarkReader.enable(); // Enable darkreader
-      CMS.registerPreviewStyle("/css/main.css"); // Register preview styles in Netlify
+      CMS.registerPreviewStyle("{{ ($scratch.Get "style").RelPermalink }}"); // Register preview styles in Netlify
 
       let LandingPreviewTemplate = createClass({
         render: function () {
