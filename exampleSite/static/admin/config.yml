@@ -307,6 +307,18 @@ collections:
         widget: "object"
         fields:
           - {label: "Discord Name", name: "discord_id", widget: "string"}
+  # seo tags
+  - label: "SEO Tags"
+    name: "seo-tags"
+    folder: "data/seo/tags/"
+    format: "json"
+    identifier_field: "tag"
+    media_folder: '/static/img/profile'
+    public_folder: '/img/profile'
+    create: true
+    fields:
+      - {label: "Tag", name: "tag", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
   # Encounters Metadata
   - label: "Encounters"
     name: "encounter-data"
@@ -390,7 +402,11 @@ collections:
           - {label: "SEO Description", name: "description", widget: "string"}
           - label: "SEO Tags (only first six are used)"
             name: "tags"
-            widget: "list"
+            widget: "relation"
+            multiple: true
+            collection: "seo-tags"
+            search_fields: ["tag", "description"]
+            value_field: "tag"
             max: 6
       - label: "Leveling Guide"
         name: "leveling-guide"
