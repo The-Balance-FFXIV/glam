@@ -30,7 +30,7 @@ Glam is a theme for The Balance website put together by the wonderful FFXIV comm
 5. Run `yarn` to setup the necessary environment.
 ### How to run the project
 1. Navigate to your project folder in a command prompt or Powershell window.
-2. Run `yarn start`.
+2. Run `yarn start:dev`.
 3. Navigate to `localhost:1313` in a web browser to view the local version of the website.
   
 
@@ -50,15 +50,10 @@ export PATH=$PATH:${PWD}/node_modules/.bin
 yarn
 
 # Run the servers
-yarn start:static
+yarn start:dev
 
 # Server starts by default on `localhost:1313`
 ```
-
-## Using the editor locally
-
-First run the static site server with `yarn start:static`, then run `yarn start:admin` and navigate to `http://localhost:1313/admin`.
-Alternatively, `yarn start` will start both servers.
 
 # Configuration
 
