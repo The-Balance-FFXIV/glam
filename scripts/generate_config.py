@@ -275,7 +275,7 @@ def generate_job_guide(job_name: str, job_short_name: str, role: str) -> FileCol
             File(
                 name="landing",
                 label="Landing page",
-                file=f"content/jobs/tanks/{job_slug}/_index.md",
+                file=f"content/jobs/{role}/{job_slug}/_index.md",
                 fields=[
                     *title_and_body_widgets,
                     SelectWidget(
