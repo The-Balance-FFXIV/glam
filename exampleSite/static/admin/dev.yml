@@ -3122,7 +3122,7 @@ collections:
       name: menu
       required: false
       widget: object
-    file: content/jobs/tanks/scholar/_index.md
+    file: content/jobs/healers/scholar/_index.md
     label: Landing page
     name: landing
   - fields:
@@ -3692,7 +3692,7 @@ collections:
       name: menu
       required: false
       widget: object
-    file: content/jobs/tanks/white-mage/_index.md
+    file: content/jobs/healers/white-mage/_index.md
     label: Landing page
     name: landing
   - fields:
@@ -4262,7 +4262,7 @@ collections:
       name: menu
       required: false
       widget: object
-    file: content/jobs/tanks/astrologian/_index.md
+    file: content/jobs/healers/astrologian/_index.md
     label: Landing page
     name: landing
   - fields:
@@ -4832,7 +4832,7 @@ collections:
       name: menu
       required: false
       widget: object
-    file: content/jobs/tanks/sage/_index.md
+    file: content/jobs/healers/sage/_index.md
     label: Landing page
     name: landing
   - fields:
@@ -5402,7 +5402,7 @@ collections:
       name: menu
       required: false
       widget: object
-    file: content/jobs/tanks/monk/_index.md
+    file: content/jobs/melee/monk/_index.md
     label: Landing page
     name: landing
   - fields:
@@ -5972,7 +5972,7 @@ collections:
       name: menu
       required: false
       widget: object
-    file: content/jobs/tanks/dragoon/_index.md
+    file: content/jobs/melee/dragoon/_index.md
     label: Landing page
     name: landing
   - fields:
@@ -6542,7 +6542,7 @@ collections:
       name: menu
       required: false
       widget: object
-    file: content/jobs/tanks/ninja/_index.md
+    file: content/jobs/melee/ninja/_index.md
     label: Landing page
     name: landing
   - fields:
@@ -7112,7 +7112,7 @@ collections:
       name: menu
       required: false
       widget: object
-    file: content/jobs/tanks/samurai/_index.md
+    file: content/jobs/melee/samurai/_index.md
     label: Landing page
     name: landing
   - fields:
@@ -7682,7 +7682,7 @@ collections:
       name: menu
       required: false
       widget: object
-    file: content/jobs/tanks/reaper/_index.md
+    file: content/jobs/melee/reaper/_index.md
     label: Landing page
     name: landing
   - fields:
@@ -8252,7 +8252,7 @@ collections:
       name: menu
       required: false
       widget: object
-    file: content/jobs/tanks/bard/_index.md
+    file: content/jobs/ranged/bard/_index.md
     label: Landing page
     name: landing
   - fields:
@@ -8822,7 +8822,7 @@ collections:
       name: menu
       required: false
       widget: object
-    file: content/jobs/tanks/machinist/_index.md
+    file: content/jobs/ranged/machinist/_index.md
     label: Landing page
     name: landing
   - fields:
@@ -9392,7 +9392,7 @@ collections:
       name: menu
       required: false
       widget: object
-    file: content/jobs/tanks/dancer/_index.md
+    file: content/jobs/ranged/dancer/_index.md
     label: Landing page
     name: landing
   - fields:
@@ -9962,7 +9962,7 @@ collections:
       name: menu
       required: false
       widget: object
-    file: content/jobs/tanks/black-mage/_index.md
+    file: content/jobs/casters/black-mage/_index.md
     label: Landing page
     name: landing
   - fields:
@@ -10532,7 +10532,7 @@ collections:
       name: menu
       required: false
       widget: object
-    file: content/jobs/tanks/red-mage/_index.md
+    file: content/jobs/casters/red-mage/_index.md
     label: Landing page
     name: landing
   - fields:
@@ -11102,7 +11102,7 @@ collections:
       name: menu
       required: false
       widget: object
-    file: content/jobs/tanks/summoner/_index.md
+    file: content/jobs/casters/summoner/_index.md
     label: Landing page
     name: landing
   - fields:
