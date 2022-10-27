@@ -53,6 +53,16 @@ changelog = ListWidget(
     ],
 )
 
+seo_description = StringWidget(name="seo-description", label="SEO Description")
+seo_tag_relation = RelationWidget(
+    name="tags",
+    label="SEO Tags (only the first six can be used)",
+    multiple=True,
+    collection="seo-tags",
+    search_fields=["tag", "description"],
+    value_field="tag",
+)
+
 patch = StringWidget(name="patch", label="Patch")
 
 common_fields: Widgets = [
@@ -67,7 +77,8 @@ common_fields: Widgets = [
     patch,
     lastmod,
     changelog,
-    # TODO: tags???
+    seo_description,
+    seo_tag_relation,
 ]
 qna_fields: Widgets = [
     title,
@@ -84,7 +95,8 @@ qna_fields: Widgets = [
         ],
     ),
     author_relation,
-    # TODO: tags???
+    seo_description,
+    seo_tag_relation,
 ]
 bis_fields: Widgets = [
     title,
@@ -118,7 +130,8 @@ stats: Widgets = [
     changelog,
     StringWidget(name="priority", label="Priority"),
     author_relation,
-    # TODO: tags???
+    seo_description,
+    seo_tag_relation,
 ]
 changes: Widgets = [
     title,
@@ -134,7 +147,8 @@ changes: Widgets = [
         ],
     ),
     author_relation,
-    # TODO: tags???
+    seo_description,
+    seo_tag_relation,
 ]
 
 ##
@@ -188,6 +202,20 @@ author_profile = FolderCollection(
                 StringWidget(name="discord_id", label="Discord Name", required=False),
             ],
         ),
+    ],
+)
+
+seo_tag_collection = FolderCollection(
+    name="seo-tags",
+    folder="data/seo/tags",
+    format="json",
+    identifier_field="tag",
+    media_folder="/static/img/profile",
+    public_folder="/img/profile",
+    create=True,
+    fields=[
+        StringWidget(name="tag", label="Tag"),
+        StringWidget(name="description", label="Description"),
     ],
 )
 
@@ -308,7 +336,8 @@ def generate_job_guide(job_name: str, job_short_name: str, role: str) -> FileCol
                             )
                         ],
                     ),
-                    # TODO: tags???
+                    seo_description,
+                    seo_tag_relation,
                 ],
             ),
             File(
@@ -458,7 +487,8 @@ def generate_encounter_for(name: str, tier: str) -> FolderCollection:
             lastmod,
             patch,
             changelog,
-            # TODO: tags???
+            seo_description,
+            seo_tag_relation,
         ],
     )
 

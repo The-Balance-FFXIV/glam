@@ -538,6 +538,20 @@ collections:
     required: false
     summary: '{{fields.date}}: {{fields.message}}'
     widget: list
+  - label: SEO Description
+    name: seo-description
+    required: false
+    widget: string
+  - collection: seo-tags
+    label: SEO Tags (only the first six can be used)
+    multiple: true
+    name: tags
+    required: false
+    search_fields:
+    - tag
+    - description
+    value_field: tag
+    widget: relation
   folder: content/encounters/savage/pandaemonium
   identifier_field: fight_title
   label: pandaemonium
@@ -665,6 +679,20 @@ collections:
     required: false
     summary: '{{fields.date}}: {{fields.message}}'
     widget: list
+  - label: SEO Description
+    name: seo-description
+    required: false
+    widget: string
+  - collection: seo-tags
+    label: SEO Tags (only the first six can be used)
+    multiple: true
+    name: tags
+    required: false
+    search_fields:
+    - tag
+    - description
+    value_field: tag
+    widget: relation
   folder: content/encounters/ultimate/ultimates
   identifier_field: fight_title
   label: ultimates
@@ -792,6 +820,20 @@ collections:
     required: false
     summary: '{{fields.date}}: {{fields.message}}'
     widget: list
+  - label: SEO Description
+    name: seo-description
+    required: false
+    widget: string
+  - collection: seo-tags
+    label: SEO Tags (only the first six can be used)
+    multiple: true
+    name: tags
+    required: false
+    search_fields:
+    - tag
+    - description
+    value_field: tag
+    widget: relation
   folder: content/encounters/extreme/extreme
   identifier_field: fight_title
   label: extreme
@@ -842,6 +884,20 @@ collections:
       name: menu
       required: false
       widget: object
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/paladin/_index.md
     label: Landing page
     name: landing
@@ -898,6 +954,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/paladin/leveling-guide.md
     label: Leveling Guide
     name: leveling-guide
@@ -954,6 +1024,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/paladin/basic-guide.md
     label: Basic Guide
     name: basic-guide
@@ -1010,6 +1094,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/paladin/skills-overview.md
     label: Skills Overview
     name: skills-overview
@@ -1066,6 +1164,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/paladin/openers.md
     label: Openers and Rotation
     name: openers
@@ -1118,6 +1230,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/tanks/paladin/faq.md
     label: Frequently Asked Questions
@@ -1175,6 +1301,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/paladin/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -1313,6 +1453,20 @@ collections:
       - name
       value_field: username
       widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/paladin/stat-priority.md
     label: Stat Priority
     name: stat-priority
@@ -1360,6 +1514,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/tanks/paladin/job-changes.md
     label: Job Changes
@@ -1412,6 +1580,20 @@ collections:
       name: menu
       required: false
       widget: object
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/warrior/_index.md
     label: Landing page
     name: landing
@@ -1468,6 +1650,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/warrior/leveling-guide.md
     label: Leveling Guide
     name: leveling-guide
@@ -1524,6 +1720,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/warrior/basic-guide.md
     label: Basic Guide
     name: basic-guide
@@ -1580,6 +1790,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/warrior/skills-overview.md
     label: Skills Overview
     name: skills-overview
@@ -1636,6 +1860,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/warrior/openers.md
     label: Openers and Rotation
     name: openers
@@ -1688,6 +1926,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/tanks/warrior/faq.md
     label: Frequently Asked Questions
@@ -1745,6 +1997,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/warrior/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -1883,6 +2149,20 @@ collections:
       - name
       value_field: username
       widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/warrior/stat-priority.md
     label: Stat Priority
     name: stat-priority
@@ -1930,6 +2210,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/tanks/warrior/job-changes.md
     label: Job Changes
@@ -1982,6 +2276,20 @@ collections:
       name: menu
       required: false
       widget: object
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/dark-knight/_index.md
     label: Landing page
     name: landing
@@ -2038,6 +2346,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/dark-knight/leveling-guide.md
     label: Leveling Guide
     name: leveling-guide
@@ -2094,6 +2416,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/dark-knight/basic-guide.md
     label: Basic Guide
     name: basic-guide
@@ -2150,6 +2486,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/dark-knight/skills-overview.md
     label: Skills Overview
     name: skills-overview
@@ -2206,6 +2556,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/dark-knight/openers.md
     label: Openers and Rotation
     name: openers
@@ -2258,6 +2622,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/tanks/dark-knight/faq.md
     label: Frequently Asked Questions
@@ -2315,6 +2693,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/dark-knight/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -2453,6 +2845,20 @@ collections:
       - name
       value_field: username
       widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/dark-knight/stat-priority.md
     label: Stat Priority
     name: stat-priority
@@ -2500,6 +2906,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/tanks/dark-knight/job-changes.md
     label: Job Changes
@@ -2552,6 +2972,20 @@ collections:
       name: menu
       required: false
       widget: object
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/gunbreaker/_index.md
     label: Landing page
     name: landing
@@ -2608,6 +3042,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/gunbreaker/leveling-guide.md
     label: Leveling Guide
     name: leveling-guide
@@ -2664,6 +3112,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/gunbreaker/basic-guide.md
     label: Basic Guide
     name: basic-guide
@@ -2720,6 +3182,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/gunbreaker/skills-overview.md
     label: Skills Overview
     name: skills-overview
@@ -2776,6 +3252,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/gunbreaker/openers.md
     label: Openers and Rotation
     name: openers
@@ -2828,6 +3318,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/tanks/gunbreaker/faq.md
     label: Frequently Asked Questions
@@ -2885,6 +3389,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/gunbreaker/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -3023,6 +3541,20 @@ collections:
       - name
       value_field: username
       widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/gunbreaker/stat-priority.md
     label: Stat Priority
     name: stat-priority
@@ -3070,6 +3602,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/tanks/gunbreaker/job-changes.md
     label: Job Changes
@@ -3122,6 +3668,20 @@ collections:
       name: menu
       required: false
       widget: object
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/scholar/_index.md
     label: Landing page
     name: landing
@@ -3178,6 +3738,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/scholar/leveling-guide.md
     label: Leveling Guide
     name: leveling-guide
@@ -3234,6 +3808,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/scholar/basic-guide.md
     label: Basic Guide
     name: basic-guide
@@ -3290,6 +3878,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/scholar/skills-overview.md
     label: Skills Overview
     name: skills-overview
@@ -3346,6 +3948,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/scholar/openers.md
     label: Openers and Rotation
     name: openers
@@ -3398,6 +4014,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/healers/scholar/faq.md
     label: Frequently Asked Questions
@@ -3455,6 +4085,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/scholar/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -3593,6 +4237,20 @@ collections:
       - name
       value_field: username
       widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/scholar/stat-priority.md
     label: Stat Priority
     name: stat-priority
@@ -3640,6 +4298,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/healers/scholar/job-changes.md
     label: Job Changes
@@ -3692,6 +4364,20 @@ collections:
       name: menu
       required: false
       widget: object
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/white-mage/_index.md
     label: Landing page
     name: landing
@@ -3748,6 +4434,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/white-mage/leveling-guide.md
     label: Leveling Guide
     name: leveling-guide
@@ -3804,6 +4504,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/white-mage/basic-guide.md
     label: Basic Guide
     name: basic-guide
@@ -3860,6 +4574,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/white-mage/skills-overview.md
     label: Skills Overview
     name: skills-overview
@@ -3916,6 +4644,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/white-mage/openers.md
     label: Openers and Rotation
     name: openers
@@ -3968,6 +4710,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/healers/white-mage/faq.md
     label: Frequently Asked Questions
@@ -4025,6 +4781,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/white-mage/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -4163,6 +4933,20 @@ collections:
       - name
       value_field: username
       widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/white-mage/stat-priority.md
     label: Stat Priority
     name: stat-priority
@@ -4210,6 +4994,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/healers/white-mage/job-changes.md
     label: Job Changes
@@ -4262,6 +5060,20 @@ collections:
       name: menu
       required: false
       widget: object
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/astrologian/_index.md
     label: Landing page
     name: landing
@@ -4318,6 +5130,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/astrologian/leveling-guide.md
     label: Leveling Guide
     name: leveling-guide
@@ -4374,6 +5200,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/astrologian/basic-guide.md
     label: Basic Guide
     name: basic-guide
@@ -4430,6 +5270,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/astrologian/skills-overview.md
     label: Skills Overview
     name: skills-overview
@@ -4486,6 +5340,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/astrologian/openers.md
     label: Openers and Rotation
     name: openers
@@ -4538,6 +5406,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/healers/astrologian/faq.md
     label: Frequently Asked Questions
@@ -4595,6 +5477,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/astrologian/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -4733,6 +5629,20 @@ collections:
       - name
       value_field: username
       widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/astrologian/stat-priority.md
     label: Stat Priority
     name: stat-priority
@@ -4780,6 +5690,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/healers/astrologian/job-changes.md
     label: Job Changes
@@ -4832,6 +5756,20 @@ collections:
       name: menu
       required: false
       widget: object
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/sage/_index.md
     label: Landing page
     name: landing
@@ -4888,6 +5826,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/sage/leveling-guide.md
     label: Leveling Guide
     name: leveling-guide
@@ -4944,6 +5896,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/sage/basic-guide.md
     label: Basic Guide
     name: basic-guide
@@ -5000,6 +5966,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/sage/skills-overview.md
     label: Skills Overview
     name: skills-overview
@@ -5056,6 +6036,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/sage/openers.md
     label: Openers and Rotation
     name: openers
@@ -5108,6 +6102,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/healers/sage/faq.md
     label: Frequently Asked Questions
@@ -5165,6 +6173,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/sage/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -5303,6 +6325,20 @@ collections:
       - name
       value_field: username
       widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/sage/stat-priority.md
     label: Stat Priority
     name: stat-priority
@@ -5350,6 +6386,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/healers/sage/job-changes.md
     label: Job Changes
@@ -5402,6 +6452,20 @@ collections:
       name: menu
       required: false
       widget: object
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/monk/_index.md
     label: Landing page
     name: landing
@@ -5458,6 +6522,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/monk/leveling-guide.md
     label: Leveling Guide
     name: leveling-guide
@@ -5514,6 +6592,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/monk/basic-guide.md
     label: Basic Guide
     name: basic-guide
@@ -5570,6 +6662,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/monk/skills-overview.md
     label: Skills Overview
     name: skills-overview
@@ -5626,6 +6732,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/monk/openers.md
     label: Openers and Rotation
     name: openers
@@ -5678,6 +6798,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/melee/monk/faq.md
     label: Frequently Asked Questions
@@ -5735,6 +6869,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/monk/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -5873,6 +7021,20 @@ collections:
       - name
       value_field: username
       widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/monk/stat-priority.md
     label: Stat Priority
     name: stat-priority
@@ -5920,6 +7082,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/melee/monk/job-changes.md
     label: Job Changes
@@ -5972,6 +7148,20 @@ collections:
       name: menu
       required: false
       widget: object
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/dragoon/_index.md
     label: Landing page
     name: landing
@@ -6028,6 +7218,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/dragoon/leveling-guide.md
     label: Leveling Guide
     name: leveling-guide
@@ -6084,6 +7288,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/dragoon/basic-guide.md
     label: Basic Guide
     name: basic-guide
@@ -6140,6 +7358,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/dragoon/skills-overview.md
     label: Skills Overview
     name: skills-overview
@@ -6196,6 +7428,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/dragoon/openers.md
     label: Openers and Rotation
     name: openers
@@ -6248,6 +7494,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/melee/dragoon/faq.md
     label: Frequently Asked Questions
@@ -6305,6 +7565,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/dragoon/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -6443,6 +7717,20 @@ collections:
       - name
       value_field: username
       widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/dragoon/stat-priority.md
     label: Stat Priority
     name: stat-priority
@@ -6490,6 +7778,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/melee/dragoon/job-changes.md
     label: Job Changes
@@ -6542,6 +7844,20 @@ collections:
       name: menu
       required: false
       widget: object
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/ninja/_index.md
     label: Landing page
     name: landing
@@ -6598,6 +7914,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/ninja/leveling-guide.md
     label: Leveling Guide
     name: leveling-guide
@@ -6654,6 +7984,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/ninja/basic-guide.md
     label: Basic Guide
     name: basic-guide
@@ -6710,6 +8054,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/ninja/skills-overview.md
     label: Skills Overview
     name: skills-overview
@@ -6766,6 +8124,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/ninja/openers.md
     label: Openers and Rotation
     name: openers
@@ -6818,6 +8190,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/melee/ninja/faq.md
     label: Frequently Asked Questions
@@ -6875,6 +8261,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/ninja/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -7013,6 +8413,20 @@ collections:
       - name
       value_field: username
       widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/ninja/stat-priority.md
     label: Stat Priority
     name: stat-priority
@@ -7060,6 +8474,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/melee/ninja/job-changes.md
     label: Job Changes
@@ -7112,6 +8540,20 @@ collections:
       name: menu
       required: false
       widget: object
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/samurai/_index.md
     label: Landing page
     name: landing
@@ -7168,6 +8610,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/samurai/leveling-guide.md
     label: Leveling Guide
     name: leveling-guide
@@ -7224,6 +8680,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/samurai/basic-guide.md
     label: Basic Guide
     name: basic-guide
@@ -7280,6 +8750,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/samurai/skills-overview.md
     label: Skills Overview
     name: skills-overview
@@ -7336,6 +8820,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/samurai/openers.md
     label: Openers and Rotation
     name: openers
@@ -7388,6 +8886,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/melee/samurai/faq.md
     label: Frequently Asked Questions
@@ -7445,6 +8957,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/samurai/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -7583,6 +9109,20 @@ collections:
       - name
       value_field: username
       widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/samurai/stat-priority.md
     label: Stat Priority
     name: stat-priority
@@ -7630,6 +9170,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/melee/samurai/job-changes.md
     label: Job Changes
@@ -7682,6 +9236,20 @@ collections:
       name: menu
       required: false
       widget: object
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/reaper/_index.md
     label: Landing page
     name: landing
@@ -7738,6 +9306,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/reaper/leveling-guide.md
     label: Leveling Guide
     name: leveling-guide
@@ -7794,6 +9376,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/reaper/basic-guide.md
     label: Basic Guide
     name: basic-guide
@@ -7850,6 +9446,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/reaper/skills-overview.md
     label: Skills Overview
     name: skills-overview
@@ -7906,6 +9516,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/reaper/openers.md
     label: Openers and Rotation
     name: openers
@@ -7958,6 +9582,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/melee/reaper/faq.md
     label: Frequently Asked Questions
@@ -8015,6 +9653,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/reaper/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -8153,6 +9805,20 @@ collections:
       - name
       value_field: username
       widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/reaper/stat-priority.md
     label: Stat Priority
     name: stat-priority
@@ -8200,6 +9866,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/melee/reaper/job-changes.md
     label: Job Changes
@@ -8252,6 +9932,20 @@ collections:
       name: menu
       required: false
       widget: object
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/bard/_index.md
     label: Landing page
     name: landing
@@ -8308,6 +10002,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/bard/leveling-guide.md
     label: Leveling Guide
     name: leveling-guide
@@ -8364,6 +10072,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/bard/basic-guide.md
     label: Basic Guide
     name: basic-guide
@@ -8420,6 +10142,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/bard/skills-overview.md
     label: Skills Overview
     name: skills-overview
@@ -8476,6 +10212,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/bard/openers.md
     label: Openers and Rotation
     name: openers
@@ -8528,6 +10278,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/ranged/bard/faq.md
     label: Frequently Asked Questions
@@ -8585,6 +10349,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/bard/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -8723,6 +10501,20 @@ collections:
       - name
       value_field: username
       widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/bard/stat-priority.md
     label: Stat Priority
     name: stat-priority
@@ -8770,6 +10562,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/ranged/bard/job-changes.md
     label: Job Changes
@@ -8822,6 +10628,20 @@ collections:
       name: menu
       required: false
       widget: object
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/machinist/_index.md
     label: Landing page
     name: landing
@@ -8878,6 +10698,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/machinist/leveling-guide.md
     label: Leveling Guide
     name: leveling-guide
@@ -8934,6 +10768,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/machinist/basic-guide.md
     label: Basic Guide
     name: basic-guide
@@ -8990,6 +10838,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/machinist/skills-overview.md
     label: Skills Overview
     name: skills-overview
@@ -9046,6 +10908,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/machinist/openers.md
     label: Openers and Rotation
     name: openers
@@ -9098,6 +10974,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/ranged/machinist/faq.md
     label: Frequently Asked Questions
@@ -9155,6 +11045,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/machinist/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -9293,6 +11197,20 @@ collections:
       - name
       value_field: username
       widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/machinist/stat-priority.md
     label: Stat Priority
     name: stat-priority
@@ -9340,6 +11258,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/ranged/machinist/job-changes.md
     label: Job Changes
@@ -9392,6 +11324,20 @@ collections:
       name: menu
       required: false
       widget: object
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/dancer/_index.md
     label: Landing page
     name: landing
@@ -9448,6 +11394,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/dancer/leveling-guide.md
     label: Leveling Guide
     name: leveling-guide
@@ -9504,6 +11464,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/dancer/basic-guide.md
     label: Basic Guide
     name: basic-guide
@@ -9560,6 +11534,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/dancer/skills-overview.md
     label: Skills Overview
     name: skills-overview
@@ -9616,6 +11604,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/dancer/openers.md
     label: Openers and Rotation
     name: openers
@@ -9668,6 +11670,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/ranged/dancer/faq.md
     label: Frequently Asked Questions
@@ -9725,6 +11741,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/dancer/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -9863,6 +11893,20 @@ collections:
       - name
       value_field: username
       widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/dancer/stat-priority.md
     label: Stat Priority
     name: stat-priority
@@ -9910,6 +11954,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/ranged/dancer/job-changes.md
     label: Job Changes
@@ -9962,6 +12020,20 @@ collections:
       name: menu
       required: false
       widget: object
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/black-mage/_index.md
     label: Landing page
     name: landing
@@ -10018,6 +12090,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/black-mage/leveling-guide.md
     label: Leveling Guide
     name: leveling-guide
@@ -10074,6 +12160,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/black-mage/basic-guide.md
     label: Basic Guide
     name: basic-guide
@@ -10130,6 +12230,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/black-mage/skills-overview.md
     label: Skills Overview
     name: skills-overview
@@ -10186,6 +12300,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/black-mage/openers.md
     label: Openers and Rotation
     name: openers
@@ -10238,6 +12366,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/casters/black-mage/faq.md
     label: Frequently Asked Questions
@@ -10295,6 +12437,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/black-mage/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -10433,6 +12589,20 @@ collections:
       - name
       value_field: username
       widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/black-mage/stat-priority.md
     label: Stat Priority
     name: stat-priority
@@ -10480,6 +12650,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/casters/black-mage/job-changes.md
     label: Job Changes
@@ -10532,6 +12716,20 @@ collections:
       name: menu
       required: false
       widget: object
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/red-mage/_index.md
     label: Landing page
     name: landing
@@ -10588,6 +12786,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/red-mage/leveling-guide.md
     label: Leveling Guide
     name: leveling-guide
@@ -10644,6 +12856,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/red-mage/basic-guide.md
     label: Basic Guide
     name: basic-guide
@@ -10700,6 +12926,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/red-mage/skills-overview.md
     label: Skills Overview
     name: skills-overview
@@ -10756,6 +12996,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/red-mage/openers.md
     label: Openers and Rotation
     name: openers
@@ -10808,6 +13062,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/casters/red-mage/faq.md
     label: Frequently Asked Questions
@@ -10865,6 +13133,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/red-mage/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -11003,6 +13285,20 @@ collections:
       - name
       value_field: username
       widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/red-mage/stat-priority.md
     label: Stat Priority
     name: stat-priority
@@ -11050,6 +13346,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/casters/red-mage/job-changes.md
     label: Job Changes
@@ -11102,6 +13412,20 @@ collections:
       name: menu
       required: false
       widget: object
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/summoner/_index.md
     label: Landing page
     name: landing
@@ -11158,6 +13482,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/summoner/leveling-guide.md
     label: Leveling Guide
     name: leveling-guide
@@ -11214,6 +13552,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/summoner/basic-guide.md
     label: Basic Guide
     name: basic-guide
@@ -11270,6 +13622,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/summoner/skills-overview.md
     label: Skills Overview
     name: skills-overview
@@ -11326,6 +13692,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/summoner/openers.md
     label: Openers and Rotation
     name: openers
@@ -11378,6 +13758,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/casters/summoner/faq.md
     label: Frequently Asked Questions
@@ -11435,6 +13829,20 @@ collections:
       required: false
       summary: '{{fields.date}}: {{fields.message}}'
       widget: list
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/summoner/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -11573,6 +13981,20 @@ collections:
       - name
       value_field: username
       widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/summoner/stat-priority.md
     label: Stat Priority
     name: stat-priority
@@ -11620,6 +14042,20 @@ collections:
       - username
       - name
       value_field: username
+      widget: relation
+    - label: SEO Description
+      name: seo-description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
       widget: relation
     file: content/jobs/casters/summoner/job-changes.md
     label: Job Changes
