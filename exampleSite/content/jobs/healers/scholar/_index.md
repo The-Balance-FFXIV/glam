@@ -6,7 +6,7 @@ menu:
     identifier: scholar
     name: Scholar
     parent: healers
-seo-description: The landing page for Scholars
+description: The landing page for scholars, where all the cool kids hang out
 tags:
   - FFXIV
 ---

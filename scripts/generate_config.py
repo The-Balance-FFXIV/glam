@@ -53,7 +53,7 @@ changelog = ListWidget(
     ],
 )
 
-seo_description = StringWidget(name="seo-description", label="SEO Description")
+seo_description = StringWidget(name="description", label="SEO Description")
 seo_tag_relation = RelationWidget(
     name="tags",
     label="SEO Tags (only the first six can be used)",
