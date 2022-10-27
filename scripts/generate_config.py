@@ -207,6 +207,7 @@ author_profile = FolderCollection(
 
 seo_tag_collection = FolderCollection(
     name="seo-tags",
+    label="SEO tags",
     folder="data/seo/tags",
     format="json",
     identifier_field="tag",
@@ -503,6 +504,7 @@ netlify = NetlifyConfig(
     collections=[
         role_metadata,
         author_profile,
+        seo_tag_collection,
         FileCollection(
             name="role-landing",
             label="Role Landing Pages",

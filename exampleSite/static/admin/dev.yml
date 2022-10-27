@@ -84,6 +84,23 @@ collections:
   media_folder: /static/img/profile
   name: author-profile
   public_folder: /img/profile
+- create: true
+  fields:
+  - label: Tag
+    name: tag
+    required: false
+    widget: string
+  - label: Description
+    name: description
+    required: false
+    widget: string
+  folder: data/seo/tags
+  format: json
+  identifier_field: tag
+  label: SEO tags
+  media_folder: /static/img/profile
+  name: seo-tags
+  public_folder: /img/profile
 - files:
   - fields:
     - label: Body
