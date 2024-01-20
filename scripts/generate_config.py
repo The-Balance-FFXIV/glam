@@ -113,7 +113,7 @@ bis_fields: Widgets = [
             SelectWidget(
                 name="type",
                 label="Type",
-                options=["etro", "ariyala", "gsheets", "sleepyshiba"],
+                options=["etro", "ariyala", "gsheets", "sleepyshiba", "genericiframe", "genericlink", "xivgearset"],
                 default="etro",
             ),
             StringWidget(name="link", label="Link"),
