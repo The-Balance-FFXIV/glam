@@ -7,6 +7,7 @@ on:
       - 'assets/**.css'
       - 'layouts/_default/**'
       - 'partials/*.html'
+      - '.github/**'
 
 jobs:
   pr-creation:
