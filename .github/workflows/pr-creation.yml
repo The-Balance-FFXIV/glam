@@ -1,4 +1,4 @@
-name: Pull Request Creation for layouts
+name: Pull Request Creation
 on:  
   workflow_call:
 
