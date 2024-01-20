@@ -1,0 +1,13 @@
+name: Pull Request Creation for layouts
+on:  
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'assets/**.css'
+      - 'layouts/_default/**'
+      - 'partials/*.html'
+
+jobs:
+  call-workflow-layouts:
+    uses: ./.github/workflows/pr-creation.yml

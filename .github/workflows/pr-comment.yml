@@ -1,7 +1,7 @@
 name: Pull Request Comment
 on:  
   workflow_run:
-    workflows: ["Pull Request Creation"]
+    workflows: ["Pull Request Creation for layouts"]
     types:
       - completed
 

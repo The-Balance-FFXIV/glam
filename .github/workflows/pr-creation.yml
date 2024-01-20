@@ -1,13 +1,6 @@
-name: Pull Request Creation
+name: Pull Request Creation for layouts
 on:  
-  pull_request:
-    branches:
-      - main
-    paths:
-      - 'assets/**.css'
-      - 'layouts/_default/**'
-      - 'partials/*.html'
-      - '.github/**'
+  workflow_call:
 
 jobs:
   pr-creation:
