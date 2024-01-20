@@ -11,7 +11,7 @@ Glam is a theme for The Balance website put together by the wonderful FFXIV comm
   1. Choose the latest LTS release listed.
   2. Accept all default options.
 * [hugo](https://github.com/gohugoio/hugo/releases) (Optionally, you can install `hugo` via a package manager if desired.)
-  1. Choose hugo__extended_X.XXX.X_Windows-64bit.zip where the X's are the current version (Latest tested with `0.101.0`).
+  1. Choose hugo__extended_X.XXX.X_Windows-64bit.zip where the X's are the current version (Latest tested with `0.119.0`).
   2. Extract the .zip to a location of your choosing (Documents is reasonable choice).
   3. Open the extracted folder and right click on `hugo.exe` and select properties.
   4. Check the `Unblock` box near the bottom and press `Ok`.
