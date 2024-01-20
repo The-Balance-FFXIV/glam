@@ -10,36 +10,45 @@ on:
 
 jobs:
   pr-creation:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.101.0'
+          hugo-version: '0.119.0'
           extended: true
 
       - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
-          node-version: '14.13'
+          node-version: '18'
 
       - name: Install dependencies
         run: |
           yarn
           yarn global add postcss-cli@8.3.1 autoprefixer postcss tailwindcss
 
-      - name: Run Hugo
-        run: hugo server -s exampleSite/ --themesDir=../.. --disableFastRender &
-
       - name: Install puppeteer-headful
         uses: mujo-code/puppeteer-headful@v2
         env:
           CI: 'true'
+
+      - uses: actions/cache@v4
+        with:
+          path: /tmp/hugo_cache
+          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-hugomod-
+
+      - name: Run Hugo
+        run: hugo server -s exampleSite/ --themesDir=../.. --disableFastRender &
 
       - name: Take screenshots
         uses: flameddd/screenshots-ci-action@v1.1.1
