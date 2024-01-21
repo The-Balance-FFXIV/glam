@@ -45,7 +45,7 @@ jobs:
         run: hugo server -s exampleSite/ --themesDir=../.. --disableFastRender &
 
       - name: Take screenshots
-        uses: flameddd/screenshots-ci-action@v1.1.1
+        uses: flameddd/screenshots-ci-action@v2.1.0
         with:
           url: http://localhost:1313
           devices: iPhone X
