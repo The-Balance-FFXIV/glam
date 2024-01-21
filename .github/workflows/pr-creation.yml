@@ -1,12 +1,6 @@
 name: Pull Request Creation
 on:  
-  pull_request:
-    branches:
-      - main
-    paths:
-      - 'assets/**.css'
-      - 'layouts/_default/**'
-      - 'partials/*.html'
+  workflow_call:
 
 jobs:
   pr-creation:
