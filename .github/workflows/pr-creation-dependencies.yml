@@ -5,6 +5,7 @@ on:
       - main
     paths:
       - '.github/**'
+      - './*'
 
 jobs:
   call-workflow-dependencies:
