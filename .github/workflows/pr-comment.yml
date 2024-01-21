@@ -41,21 +41,21 @@ jobs:
           echo "::set-output name=pr_number::$content"
       
       - name: Upload a 1920x1080 picture
-        uses: devicons/public-upload-to-imgur@v2.2.1
+        uses: devicons/public-upload-to-imgur@v2.2.2
         id: imgur_1920x1080
         with:
           path: ./*1920x1080* 
           client_id: ${{secrets.IMGUR_CLIENT_ID}} 
 
       - name: Upload a 1280x720 picture
-        uses: devicons/public-upload-to-imgur@v2.2.1
+        uses: devicons/public-upload-to-imgur@v2.2.2
         id: imgur_1280x720
         with:
           path: ./*1280x720* 
           client_id: ${{secrets.IMGUR_CLIENT_ID}} 
 
       - name: Upload an iPhone X picture
-        uses: devicons/public-upload-to-imgur@v2.2.1
+        uses: devicons/public-upload-to-imgur@v2.2.2
         id: imgur_iPhoneX
         with:
           path: ./*iPhone_X*
