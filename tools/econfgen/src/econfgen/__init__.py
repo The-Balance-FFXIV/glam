@@ -47,7 +47,6 @@ JOBS: Final[Dict[str, List[Tuple[str, str]]]] = {
 }
 
 
-
 def generate_config(backend: Backend = Backend(name='git-gateway'), local_backend: Optional[bool] = True, jobs=JOBS):
     # TODO: generate some more collections by config
 
@@ -67,7 +66,9 @@ def generate_config(backend: Backend = Backend(name='git-gateway'), local_backen
             ),
             generate_encounter_for(name='Pandaemonium', tier='savage'),
             generate_encounter_for(name='Ultimates', tier='ultimate'),
-            generate_encounter_for(name='Extreme', tier='extreme'),  # TODO: this presents a problem with naming in the function
+            generate_encounter_for(
+                name='Extreme', tier='extreme'
+            ),  # TODO: this presents a problem with naming in the function
             *[generate_job_guide(*job, role[0]) for role in jobs.items() for job in role[1]],
             *[generate_fight_tips(*job, role[0]) for role in jobs.items() for job in role[1]],
         ],

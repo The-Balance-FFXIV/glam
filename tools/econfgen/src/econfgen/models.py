@@ -9,6 +9,7 @@ class Environment(BaseModel):
     local_backend: Optional[bool] = None
     jobs: Dict[str, List[Tuple[str, str]]]
 
+
 class OverrideableEnvironment(BaseModel):
     backend: Optional[Backend]
     local_backend: Optional[bool]
