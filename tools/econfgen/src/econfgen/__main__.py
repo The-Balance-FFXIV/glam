@@ -41,7 +41,7 @@ def main() -> int:
             **(config.default.dict() | {k: v for k, v in config.prod.dict().items() if v is not None})
         )
     else:
-        final_config = config
+        final_config = config.default
 
     config = generate_config(
         backend=final_config.backend, local_backend=final_config.local_backend, jobs=final_config.jobs
