@@ -6,6 +6,9 @@
   </div>
   <div class="text-center text-gray-light">{{ .name }}</div>
   {{ with .socials.discord_id }}
-    <div class="text-center text-gray-light">{{ . }}</div>
+    <div class="text-center text-gray-light flex flex-nowrap items-center justify-center">
+        <img class="w-4 mr-4" src="/theme-assets/icons/discord_logo_white.svg" />
+        {{ . }}
+    </div>
   {{ end }}
 </div>
