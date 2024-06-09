@@ -1,0 +1,47 @@
+---
+default:
+  # set up a backend
+  backend:
+    name: git-gateway
+  local_backend: true
+  # the jobs section is as follows:
+  # jobs:
+  #   ROLE:
+  #   - ['Long Job Name', 'lgn']
+  jobs:
+    tanks:
+    - ['Paladin', 'pld']
+    - ['Warrior', 'war']
+    - ['Dark Knight', 'drk']
+    - ['Gunbreaker', 'gbn']
+    healers:
+    - ['Scholar', 'sch']
+    - ['White Mage', 'whm']
+    - ['Astrologian', 'ast']
+    - ['Sage', 'sge']
+    melee:
+    - ['Monk', 'mnk']
+    - ['Dragoon', 'drg']
+    - ['Ninja', 'nin']
+    - ['Samurai', 'sam']
+    - ['Reaper', 'rpr']
+    - ['Viper', 'vpr']
+    ranged:
+    - ['Bard', 'brd']
+    - ['Machinist', 'mch']
+    - ['Dancer', 'dnc']
+    casters:
+    - ['Black Mage', 'blm']
+    - ['Red Mage', 'rdm']
+    - ['Summoner', 'smn']
+    - ['Pictomancer', 'pct']
+prod:
+  # any items here will override everything in the default
+  local_backend: false
+  backend: 
+    name: github
+    repo: foo/bar
+    branch: main
+    base_url: https://auth.example.com
+    site_domain: glam.thebalanceffxiv.com
+    cms_label_prefix: cms/

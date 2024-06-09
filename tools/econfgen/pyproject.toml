@@ -1,0 +1,43 @@
+[project]
+name = "econfgen"
+version = "0.1.0"
+description = "Generate netlify configurations for use with the glam theme"
+authors = [
+    { name = "Oowazu Nonowazu", email = "oowazu.nonowazu@gmail.com" }
+]
+dependencies = [
+    "PyYaml>=6.0.1",
+    "pydantic>=1.1, <2.0",
+    "netlify-config-generator~=0.1.2",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[project.scripts]
+econfgen = "econfgen.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "ruff>=0.1.14",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/econfgen"]
+
+[tool.ruff]
+line-length = 120
+indent-width = 4
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
