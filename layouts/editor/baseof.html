@@ -6,7 +6,7 @@
   {{ $scratch.Set "config" (default "dev.yml" (index .Params "dev_config")) }}
 {{ else }}
   {{/* production */}}
-  {{ $scratch.Set "styles" ($scratch.Get "styles" | minify | fingerprint | resources.PostProcess) }}
+  {{ $scratch.Set "style" ($scratch.Get "style" | minify | fingerprint | resources.PostProcess) }}
 {{ end }}
 <!DOCTYPE html>
 <html>
