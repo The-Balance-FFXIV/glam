@@ -16,6 +16,9 @@ class Environment(BaseModel):
 class OverrideableEnvironment(BaseModel):
     backend: Optional[Backend]
     local_backend: Optional[bool]
+    publish_mode: Optional[Literal['simple', 'editorial_workflow']] = None
+    site_url: Optional[str] = None
+    show_preview_links: Optional[bool] = None
     jobs: Optional[Dict[str, List[Tuple[str, str]]]]
 
 
