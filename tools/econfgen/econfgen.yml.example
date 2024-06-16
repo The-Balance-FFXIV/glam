@@ -38,6 +38,9 @@ default:
 prod:
   # any items here will override everything in the default
   local_backend: false
+  publish_mode: editorial_workflow
+  site_url: https://glam.thebalanceffxiv.com/
+  show_preview_links: true
   backend: 
     name: github
     repo: foo/bar

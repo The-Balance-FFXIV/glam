@@ -43,8 +43,14 @@ def main() -> int:
     else:
         final_config = config.default
 
+    # TODO: this is ugly, just pass the pydantic model instead
     config = generate_config(
-        backend=final_config.backend, local_backend=final_config.local_backend, jobs=final_config.jobs
+        backend=final_config.backend,
+        local_backend=final_config.local_backend,
+        publish_mode=final_config.publish_mode,
+        site_url=final_config.site_url,
+        show_preview_links=final_config.show_preview_links,
+        jobs=final_config.jobs,
     )
     print(dump(config.dict()))
     return 0

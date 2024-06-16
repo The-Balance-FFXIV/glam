@@ -12,6 +12,7 @@ from econfgen.collections import (
     generate_job_guide,
     generate_fight_tips,
 )
+from econfgen.models import PUBLISH_MODES
 
 
 JOBS: Final[Dict[str, List[Tuple[str, str]]]] = {
@@ -47,12 +48,21 @@ JOBS: Final[Dict[str, List[Tuple[str, str]]]] = {
 }
 
 
-def generate_config(backend: Backend = Backend(name='git-gateway'), local_backend: Optional[bool] = True, jobs=JOBS):
+def generate_config(
+    backend: Backend = Backend(name='git-gateway'),
+    local_backend: Optional[bool] = True,
+    publish_mode: Optional[PUBLISH_MODES] = None,
+    site_url: Optional[str] = None,
+    show_preview_links: Optional[bool] = None,
+    jobs=JOBS,
+):
     # TODO: generate some more collections by config
-
     return NetlifyConfig(
         backend=backend,
         local_backend=local_backend,
+        publish_mode=publish_mode,
+        site_url=site_url,
+        show_preview_links=show_preview_links,
         media_folder='static/img',
         public_folder='/img',
         collections=[
