@@ -26,6 +26,12 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <!-- Darkreader -->
     <script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.27/darkreader.min.js"></script>
+    {{/* https://github.com/decaporg/decap-cms/issues/5092 */}}
+    <style>
+	[data-slate-editor] { 
+	    -webkit-user-modify: read-write !important; 
+	}
+    </style>
   </head>
   <body>
     <!-- Include the script that builds the page and powers Netlify CMS -->
