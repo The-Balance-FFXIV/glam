@@ -3,12 +3,10 @@
 {{ $intermediateGuide := .Page.GetPage "intermediate-guide"}}
 {{ $fightTips := .Page.GetPage "fight-tips"}}
 
-{{ if or ($intermediateGuide) ($fightTips) }}
-<div class="responsive-container">
+{{ with $intermediateGuide}}<div class="responsive-container">
     <div class="role-header mb-8">intermediate Guides</div>
     <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
     <div>
-      {{ with $intermediateGuide}}
         {{ $content := dict
           "role" $role
           "icon" "/theme-assets/advanced_guide.svg"
@@ -20,7 +18,6 @@
           "inlineLink" "intermediate-guide"
         }}
       {{ partial "cards/guide.html" $content }}
-      {{ end }}
     </div>
   </section>
 </div>
