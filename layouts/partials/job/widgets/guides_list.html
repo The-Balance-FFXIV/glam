@@ -32,6 +32,10 @@
   {{ $guideList = $guideList | append (dict "icon" "/theme-assets/materia.svg" "name" "Stats & Materia Priority" "link" "stat-priority") }}
 {{ end }}
 
+{{ with .Page.GetPage "intermediate-guide" }}
+  {{ $guideList = $guideList | append (dict "icon" "/theme-assets/advanced_guide.svg" "name" "Intermediate Guide" "link" "intermediate-guide") }}
+{{ end }}
+
 {{ with .Page.GetPage "advanced-guide" }}
   {{ $guideList = $guideList | append (dict "icon" "/theme-assets/advanced_guide.svg" "name" "Advanced Guide" "link" "advanced-guide") }}
 {{ end }}
