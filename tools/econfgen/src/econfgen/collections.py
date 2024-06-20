@@ -1,4 +1,5 @@
 """Common collections and collection generators"""
+
 from netlifyconfig.collection import FolderCollection, File, FileCollection
 from netlifyconfig.widgets import (
     StringWidget,
