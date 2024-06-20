@@ -1332,6 +1332,76 @@ collections:
       - description
       value_field: tag
       widget: relation
+    file: content/jobs/tanks/paladin/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/paladin/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -1387,6 +1457,9 @@ collections:
         - ariyala
         - gsheets
         - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
         required: false
         widget: select
       - label: Link
@@ -2028,6 +2101,76 @@ collections:
       - description
       value_field: tag
       widget: relation
+    file: content/jobs/tanks/warrior/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/warrior/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -2083,6 +2226,9 @@ collections:
         - ariyala
         - gsheets
         - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
         required: false
         widget: select
       - label: Link
@@ -2724,6 +2870,76 @@ collections:
       - description
       value_field: tag
       widget: relation
+    file: content/jobs/tanks/dark-knight/intermediate-guide.md
+    label: adiate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/dark-knight/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -2779,6 +2995,9 @@ collections:
         - ariyala
         - gsheets
         - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
         required: false
         widget: select
       - label: Link
@@ -3420,6 +3639,76 @@ collections:
       - description
       value_field: tag
       widget: relation
+    file: content/jobs/tanks/gunbreaker/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/tanks/gunbreaker/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -3475,6 +3764,9 @@ collections:
         - ariyala
         - gsheets
         - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
         required: false
         widget: select
       - label: Link
@@ -4116,6 +4408,76 @@ collections:
       - description
       value_field: tag
       widget: relation
+    file: content/jobs/healers/scholar/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/scholar/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -4171,6 +4533,9 @@ collections:
         - ariyala
         - gsheets
         - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
         required: false
         widget: select
       - label: Link
@@ -4812,6 +5177,76 @@ collections:
       - description
       value_field: tag
       widget: relation
+    file: content/jobs/healers/white-mage/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/white-mage/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -4867,6 +5302,9 @@ collections:
         - ariyala
         - gsheets
         - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
         required: false
         widget: select
       - label: Link
@@ -5508,6 +5946,76 @@ collections:
       - description
       value_field: tag
       widget: relation
+    file: content/jobs/healers/astrologian/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/astrologian/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -5563,6 +6071,9 @@ collections:
         - ariyala
         - gsheets
         - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
         required: false
         widget: select
       - label: Link
@@ -6204,6 +6715,76 @@ collections:
       - description
       value_field: tag
       widget: relation
+    file: content/jobs/healers/sage/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/healers/sage/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -6259,6 +6840,9 @@ collections:
         - ariyala
         - gsheets
         - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
         required: false
         widget: select
       - label: Link
@@ -6900,6 +7484,76 @@ collections:
       - description
       value_field: tag
       widget: relation
+    file: content/jobs/melee/monk/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/monk/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -6955,6 +7609,9 @@ collections:
         - ariyala
         - gsheets
         - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
         required: false
         widget: select
       - label: Link
@@ -7596,6 +8253,76 @@ collections:
       - description
       value_field: tag
       widget: relation
+    file: content/jobs/melee/dragoon/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/dragoon/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -7651,6 +8378,9 @@ collections:
         - ariyala
         - gsheets
         - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
         required: false
         widget: select
       - label: Link
@@ -8292,6 +9022,76 @@ collections:
       - description
       value_field: tag
       widget: relation
+    file: content/jobs/melee/ninja/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/ninja/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -8347,6 +9147,9 @@ collections:
         - ariyala
         - gsheets
         - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
         required: false
         widget: select
       - label: Link
@@ -8988,6 +9791,76 @@ collections:
       - description
       value_field: tag
       widget: relation
+    file: content/jobs/melee/samurai/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/samurai/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -9043,6 +9916,9 @@ collections:
         - ariyala
         - gsheets
         - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
         required: false
         widget: select
       - label: Link
@@ -9684,6 +10560,76 @@ collections:
       - description
       value_field: tag
       widget: relation
+    file: content/jobs/melee/reaper/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/melee/reaper/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -9739,6 +10685,9 @@ collections:
         - ariyala
         - gsheets
         - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
         required: false
         widget: select
       - label: Link
@@ -9905,6 +10854,775 @@ collections:
   media_folder: /static/img/jobs/rpr
   name: rpr-guide
   public_folder: /img/jobs/rpr
+- files:
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - default:
+      - viper
+      label: Job Name
+      name: job_name
+      options:
+      - viper
+      required: false
+      widget: select
+    - fields:
+      - fields:
+        - default:
+          - Viper
+          label: Name
+          name: name
+          options:
+          - Viper
+          required: false
+          widget: select
+        - default:
+          - melee
+          label: Parent
+          name: parent
+          options:
+          - melee
+          required: false
+          widget: select
+        label: Main
+        name: main
+        required: false
+        widget: object
+      label: Menu hierarchy
+      name: menu
+      required: false
+      widget: object
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/melee/viper/_index.md
+    label: Landing page
+    name: landing
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/melee/viper/leveling-guide.md
+    label: Leveling Guide
+    name: leveling-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/melee/viper/basic-guide.md
+    label: Basic Guide
+    name: basic-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/melee/viper/skills-overview.md
+    label: Skills Overview
+    name: skills-overview
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/melee/viper/openers.md
+    label: Openers and Rotation
+    name: openers
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - default:
+      - qna
+      label: Layout
+      name: layout
+      options:
+      - qna
+      required: false
+      widget: select
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - label: Question
+        name: question
+        required: false
+        widget: string
+      - label: Answer
+        name: answer
+        required: false
+        widget: markdown
+      label: FAQ Entry
+      name: qna
+      required: false
+      summary: '{{fields.question}}: {{fields.answer}}'
+      widget: list
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/melee/viper/faq.md
+    label: Frequently Asked Questions
+    name: faq
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/melee/viper/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/melee/viper/advanced-guide.md
+    label: Advanced Guide
+    name: advanced-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - default:
+      - bis
+      label: layout
+      name: layout
+      options:
+      - bis
+      required: false
+      widget: select
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - fields:
+      - label: Name
+        name: name
+        required: false
+        widget: string
+      - default: etro
+        label: Type
+        name: type
+        options:
+        - etro
+        - ariyala
+        - gsheets
+        - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
+        required: false
+        widget: select
+      - label: Link
+        name: link
+        required: false
+        widget: string
+      - label: Description
+        name: description
+        required: false
+        widget: markdown
+      label: Sets
+      name: bis
+      required: false
+      summary: '{{fields.name}}'
+      widget: list
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    file: content/jobs/melee/viper/best-in-slot.md
+    label: Best in Slot
+    name: bis
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: Priority
+      name: priority
+      required: false
+      widget: string
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/melee/viper/stat-priority.md
+    label: Stat Priority
+    name: stat-priority
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - default: changes
+      label: Layout
+      name: layout
+      options:
+      - changes
+      required: false
+      widget: select
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - label: Patch
+        name: patch
+        required: false
+        widget: string
+      - label: Description
+        name: description
+        required: false
+        widget: markdown
+      label: Change
+      name: changes
+      required: false
+      summary: '{{fields.patch}}'
+      widget: list
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/melee/viper/job-changes.md
+    label: Job Changes
+    name: job-changes
+  label: Viper guide
+  media_folder: /static/img/jobs/vpr
+  name: vpr-guide
+  public_folder: /img/jobs/vpr
 - files:
   - fields:
     - label: Title
@@ -10380,6 +12098,76 @@ collections:
       - description
       value_field: tag
       widget: relation
+    file: content/jobs/ranged/bard/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/bard/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -10435,6 +12223,9 @@ collections:
         - ariyala
         - gsheets
         - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
         required: false
         widget: select
       - label: Link
@@ -11076,6 +12867,76 @@ collections:
       - description
       value_field: tag
       widget: relation
+    file: content/jobs/ranged/machinist/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/machinist/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -11131,6 +12992,9 @@ collections:
         - ariyala
         - gsheets
         - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
         required: false
         widget: select
       - label: Link
@@ -11772,6 +13636,76 @@ collections:
       - description
       value_field: tag
       widget: relation
+    file: content/jobs/ranged/dancer/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/ranged/dancer/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -11827,6 +13761,9 @@ collections:
         - ariyala
         - gsheets
         - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
         required: false
         widget: select
       - label: Link
@@ -12468,6 +14405,76 @@ collections:
       - description
       value_field: tag
       widget: relation
+    file: content/jobs/casters/black-mage/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/black-mage/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -12523,6 +14530,9 @@ collections:
         - ariyala
         - gsheets
         - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
         required: false
         widget: select
       - label: Link
@@ -13164,6 +15174,76 @@ collections:
       - description
       value_field: tag
       widget: relation
+    file: content/jobs/casters/red-mage/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/red-mage/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -13219,6 +15299,9 @@ collections:
         - ariyala
         - gsheets
         - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
         required: false
         widget: select
       - label: Link
@@ -13860,6 +15943,76 @@ collections:
       - description
       value_field: tag
       widget: relation
+    file: content/jobs/casters/summoner/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
     file: content/jobs/casters/summoner/advanced-guide.md
     label: Advanced Guide
     name: advanced-guide
@@ -13915,6 +16068,9 @@ collections:
         - ariyala
         - gsheets
         - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
         required: false
         widget: select
       - label: Link
@@ -14081,6 +16237,1993 @@ collections:
   media_folder: /static/img/jobs/smn
   name: smn-guide
   public_folder: /img/jobs/smn
+- files:
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - default:
+      - pictomancer
+      label: Job Name
+      name: job_name
+      options:
+      - pictomancer
+      required: false
+      widget: select
+    - fields:
+      - fields:
+        - default:
+          - Pictomancer
+          label: Name
+          name: name
+          options:
+          - Pictomancer
+          required: false
+          widget: select
+        - default:
+          - casters
+          label: Parent
+          name: parent
+          options:
+          - casters
+          required: false
+          widget: select
+        label: Main
+        name: main
+        required: false
+        widget: object
+      label: Menu hierarchy
+      name: menu
+      required: false
+      widget: object
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/casters/pictomancer/_index.md
+    label: Landing page
+    name: landing
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/casters/pictomancer/leveling-guide.md
+    label: Leveling Guide
+    name: leveling-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/casters/pictomancer/basic-guide.md
+    label: Basic Guide
+    name: basic-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/casters/pictomancer/skills-overview.md
+    label: Skills Overview
+    name: skills-overview
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/casters/pictomancer/openers.md
+    label: Openers and Rotation
+    name: openers
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - default:
+      - qna
+      label: Layout
+      name: layout
+      options:
+      - qna
+      required: false
+      widget: select
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - label: Question
+        name: question
+        required: false
+        widget: string
+      - label: Answer
+        name: answer
+        required: false
+        widget: markdown
+      label: FAQ Entry
+      name: qna
+      required: false
+      summary: '{{fields.question}}: {{fields.answer}}'
+      widget: list
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/casters/pictomancer/faq.md
+    label: Frequently Asked Questions
+    name: faq
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/casters/pictomancer/intermediate-guide.md
+    label: Intermediate Guide
+    name: intermediate-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - choose_url: false
+      label: Card Header Image
+      name: card_header_image
+      required: false
+      widget: image
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/casters/pictomancer/advanced-guide.md
+    label: Advanced Guide
+    name: advanced-guide
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - default:
+      - bis
+      label: layout
+      name: layout
+      options:
+      - bis
+      required: false
+      widget: select
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - fields:
+      - label: Name
+        name: name
+        required: false
+        widget: string
+      - default: etro
+        label: Type
+        name: type
+        options:
+        - etro
+        - ariyala
+        - gsheets
+        - sleepyshiba
+        - genericiframe
+        - genericlink
+        - xivgearset
+        required: false
+        widget: select
+      - label: Link
+        name: link
+        required: false
+        widget: string
+      - label: Description
+        name: description
+        required: false
+        widget: markdown
+      label: Sets
+      name: bis
+      required: false
+      summary: '{{fields.name}}'
+      widget: list
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    file: content/jobs/casters/pictomancer/best-in-slot.md
+    label: Best in Slot
+    name: bis
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - label: Patch
+      name: patch
+      required: false
+      widget: string
+    - label: Body
+      name: body
+      required: false
+      widget: markdown
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - date_format: YYYY-MM-DD
+        label: Date
+        name: date
+        required: false
+        time_format: false
+        widget: datetime
+      - label: Message
+        name: message
+        required: false
+        widget: string
+      label: Changelog Entry
+      name: changelog
+      required: false
+      summary: '{{fields.date}}: {{fields.message}}'
+      widget: list
+    - label: Priority
+      name: priority
+      required: false
+      widget: string
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/casters/pictomancer/stat-priority.md
+    label: Stat Priority
+    name: stat-priority
+  - fields:
+    - label: Title
+      name: title
+      required: false
+      widget: string
+    - default: changes
+      label: Layout
+      name: layout
+      options:
+      - changes
+      required: false
+      widget: select
+    - date_format: YYYY-MM-DD
+      label: Last Updated
+      name: lastmod
+      required: false
+      time_format: false
+      widget: datetime
+    - fields:
+      - label: Patch
+        name: patch
+        required: false
+        widget: string
+      - label: Description
+        name: description
+        required: false
+        widget: markdown
+      label: Change
+      name: changes
+      required: false
+      summary: '{{fields.patch}}'
+      widget: list
+    - collection: author-profile
+      display_fields:
+      - username
+      - name
+      label: Author(s)
+      multiple: true
+      name: authors
+      required: false
+      search_fields:
+      - username
+      - name
+      value_field: username
+      widget: relation
+    - label: SEO Description
+      name: description
+      required: false
+      widget: string
+    - collection: seo-tags
+      label: SEO Tags (only the first six can be used)
+      multiple: true
+      name: tags
+      required: false
+      search_fields:
+      - tag
+      - description
+      value_field: tag
+      widget: relation
+    file: content/jobs/casters/pictomancer/job-changes.md
+    label: Job Changes
+    name: job-changes
+  label: Pictomancer guide
+  media_folder: /static/img/jobs/pct
+  name: pct-guide
+  public_folder: /img/jobs/pct
+- create: true
+  description: Fight-specific tips for Paladin
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/tanks/paladin/fight-tips/
+  label: Paladin Fight Tips
+  name: pld-fight-tips
+- create: true
+  description: Fight-specific tips for Warrior
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/tanks/warrior/fight-tips/
+  label: Warrior Fight Tips
+  name: war-fight-tips
+- create: true
+  description: Fight-specific tips for Dark Knight
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/tanks/dark-knight/fight-tips/
+  label: Dark Knight Fight Tips
+  name: drk-fight-tips
+- create: true
+  description: Fight-specific tips for Gunbreaker
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/tanks/gunbreaker/fight-tips/
+  label: Gunbreaker Fight Tips
+  name: gbn-fight-tips
+- create: true
+  description: Fight-specific tips for Scholar
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/healers/scholar/fight-tips/
+  label: Scholar Fight Tips
+  name: sch-fight-tips
+- create: true
+  description: Fight-specific tips for White Mage
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/healers/white-mage/fight-tips/
+  label: White Mage Fight Tips
+  name: whm-fight-tips
+- create: true
+  description: Fight-specific tips for Astrologian
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/healers/astrologian/fight-tips/
+  label: Astrologian Fight Tips
+  name: ast-fight-tips
+- create: true
+  description: Fight-specific tips for Sage
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/healers/sage/fight-tips/
+  label: Sage Fight Tips
+  name: sge-fight-tips
+- create: true
+  description: Fight-specific tips for Monk
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/melee/monk/fight-tips/
+  label: Monk Fight Tips
+  name: mnk-fight-tips
+- create: true
+  description: Fight-specific tips for Dragoon
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/melee/dragoon/fight-tips/
+  label: Dragoon Fight Tips
+  name: drg-fight-tips
+- create: true
+  description: Fight-specific tips for Ninja
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/melee/ninja/fight-tips/
+  label: Ninja Fight Tips
+  name: nin-fight-tips
+- create: true
+  description: Fight-specific tips for Samurai
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/melee/samurai/fight-tips/
+  label: Samurai Fight Tips
+  name: sam-fight-tips
+- create: true
+  description: Fight-specific tips for Reaper
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/melee/reaper/fight-tips/
+  label: Reaper Fight Tips
+  name: rpr-fight-tips
+- create: true
+  description: Fight-specific tips for Viper
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/melee/viper/fight-tips/
+  label: Viper Fight Tips
+  name: vpr-fight-tips
+- create: true
+  description: Fight-specific tips for Bard
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/ranged/bard/fight-tips/
+  label: Bard Fight Tips
+  name: brd-fight-tips
+- create: true
+  description: Fight-specific tips for Machinist
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/ranged/machinist/fight-tips/
+  label: Machinist Fight Tips
+  name: mch-fight-tips
+- create: true
+  description: Fight-specific tips for Dancer
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/ranged/dancer/fight-tips/
+  label: Dancer Fight Tips
+  name: dnc-fight-tips
+- create: true
+  description: Fight-specific tips for Black Mage
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/casters/black-mage/fight-tips/
+  label: Black Mage Fight Tips
+  name: blm-fight-tips
+- create: true
+  description: Fight-specific tips for Red Mage
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/casters/red-mage/fight-tips/
+  label: Red Mage Fight Tips
+  name: rdm-fight-tips
+- create: true
+  description: Fight-specific tips for Summoner
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/casters/summoner/fight-tips/
+  label: Summoner Fight Tips
+  name: smn-fight-tips
+- create: true
+  description: Fight-specific tips for Pictomancer
+  fields:
+  - label: Title
+    name: title
+    required: false
+    widget: string
+  - choose_url: false
+    label: Card Header Imagel
+    name: card_header_image
+    required: false
+    widget: image
+  - label: Body
+    name: body
+    required: false
+    widget: markdown
+  - collection: author-profile
+    display_fields:
+    - username
+    - name
+    label: Author(s)
+    multiple: true
+    name: authors
+    required: false
+    search_fields:
+    - username
+    - name
+    value_field: username
+    widget: relation
+  - label: Patch
+    name: patch
+    required: false
+    widget: string
+  - date_format: YYYY-MM-DD
+    label: Last Updated
+    name: lastmod
+    required: false
+    time_format: false
+    widget: datetime
+  - fields:
+    - date_format: YYYY-MM-DD
+      label: Date
+      name: date
+      required: false
+      time_format: false
+      widget: datetime
+    - label: Message
+      name: message
+      required: false
+      widget: string
+    label: Changelog Entry
+    name: changelog
+    required: false
+    summary: '{{fields.date}}: {{fields.message}}'
+    widget: list
+  folder: content/jobs/casters/pictomancer/fight-tips/
+  label: Pictomancer Fight Tips
+  name: pct-fight-tips
 local_backend: true
 media_folder: static/img
 public_folder: /img
