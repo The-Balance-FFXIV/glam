@@ -158,6 +158,7 @@ Modal markdown images
 
 .md__image {
   cursor: pointer;
+  @apply my-12;
 }
 
 /* The Modal (background) */
@@ -190,7 +191,7 @@ Modal markdown images
 }
 
 /* The Close Button */
-/* Optimized for accessibility by using a button named close but 	
+/* Optimized for accessibility by using a button named close but
 	shifting the close text out of the button and only showing x */
 .modal-close {
   color: white;
@@ -642,6 +643,7 @@ ol {
 
 .markdown hr {
   @apply mb-8;
+  @apply border-page;
 }
 
 .markdown table > thead > tr > th:empty {
