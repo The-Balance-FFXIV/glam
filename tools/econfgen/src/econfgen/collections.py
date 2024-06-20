@@ -1,4 +1,5 @@
 """Common collections and collection generators"""
+
 from netlifyconfig.collection import FolderCollection, File, FileCollection
 from netlifyconfig.widgets import (
     StringWidget,
@@ -243,6 +244,12 @@ def generate_job_guide(job_name: str, job_short_name: str, role: str) -> FileCol
                 label='Frequently Asked Questions',
                 file=f'content/jobs/{role}/{job_slug}/faq.md',
                 fields=qna_fields,
+            ),
+            File(
+                name='intermediate-guide',
+                label='Intermediate Guide',
+                file=f'content/jobs/{role}/{job_slug}/intermediate-guide.md',
+                fields=common_fields,
             ),
             File(
                 name='advanced-guide',

@@ -7,6 +7,9 @@
 <div class="space-y-14">
   {{ partial "job/fundamentals.html" . }}
   {{ partial "job/gearing.html" . }}
+  {{ with .Page.GetPage "intermediate-guide" }}
+    {{ partial "job/intermediate_guides.html" . }}
+  {{ end }}
   {{ partial "job/advanced_guides.html" . }}
 
   <div class="py-14 bg-no-repeat bg-cover" style="background-image: url('/theme-assets/jobs/{{ lower $role }}/{{ lower $role }}_resources_background.png');">

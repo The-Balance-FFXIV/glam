@@ -1,0 +1,25 @@
+{{ $role := .Page.Parent.Params.role }}
+
+{{ $intermediateGuide := .Page.GetPage "intermediate-guide"}}
+{{ $fightTips := .Page.GetPage "fight-tips"}}
+
+{{ with $intermediateGuide}}<div class="responsive-container">
+    <div class="role-header mb-8">intermediate Guides</div>
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+        {{ $content := dict
+          "role" $role
+          "icon" "/theme-assets/advanced_guide.svg"
+          "name" "Intermediate Guide"
+          "patch" .Params.patch
+          "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
+          "image" .Params.card_header_image
+          "imageClass" "h-100"
+          "inlineLink" "intermediate-guide"
+        }}
+      {{ partial "cards/guide.html" $content }}
+    </div>
+  </section>
+</div>
+{{ end }}
+

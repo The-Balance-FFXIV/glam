@@ -372,6 +372,12 @@ def generate_job_guide(job_name: str, job_short_name: str, role: str) -> FileCol
                 fields=qna_fields,
             ),
             File(
+                name="intermediate-guide",
+                label="Intermediate Guide",
+                file=f"content/jobs/{role}/{job_slug}/intermediate-guide.md",
+                fields=common_fields,
+            ),
+            File(
                 name="advanced-guide",
                 label="Advanced Guide",
                 file=f"content/jobs/{role}/{job_slug}/advanced-guide.md",

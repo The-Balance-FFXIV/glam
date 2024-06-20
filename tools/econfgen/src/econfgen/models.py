@@ -5,6 +5,7 @@ from netlifyconfig.netlify import Backend
 
 PUBLISH_MODES = Literal['simple', 'editorial_workflow']
 
+
 class Environment(BaseModel):
     backend: Backend
     local_backend: Optional[bool] = None
