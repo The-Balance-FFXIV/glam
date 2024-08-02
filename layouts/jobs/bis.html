@@ -30,6 +30,15 @@
             {{ if eq $bis.type "gsheets"}}
               {{ partial "components/gsheets.html" $bis.link }}
             {{ end }}
+            {{ if eq $bis.type "genericiframe"}}
+              {{ partial "components/genericiframe.html" $bis.link }}
+            {{ end }}
+            {{ if eq $bis.type "genericlink"}}
+              {{ partial "components/genericlink.html" $bis.link }}
+            {{ end }}
+            {{ if eq $bis.type "xivgearset"}}
+              {{ partial "components/xivgear.html" $bis.link }}
+            {{ end }}
             {{ $bis.description | markdownify }}
           {{ end }}
         </div>
