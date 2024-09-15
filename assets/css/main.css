@@ -332,7 +332,7 @@ Content
 }
 
 .tab-jobs {
-  @apply items-center block md:flex md:flex-wrap md:flex-grow w-full lg:w-1/2 md:justify-evenly font-head mt-4 lg:mt-0;
+  @apply items-start block md:flex md:flex-wrap md:flex-grow w-full lg:w-1/2 font-head mt-4 lg:mt-0;
 }
 
 .tabs.desktop {
@@ -355,7 +355,7 @@ Content
 }
 
 .tab-job-container {
-  @apply flex flex-col w-auto py-3 md:w-1/2 xl:w-auto justify-center items-start md:items-center;
+  @apply flex flex-col w-auto py-3 md:w-1/2 xl:w-1/4 justify-center items-start md:items-center;
 }
 
 .tab-job-link {
