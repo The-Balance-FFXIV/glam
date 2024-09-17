@@ -32,7 +32,7 @@
   rel="stylesheet"
 />
 {{ $styles := resources.Get "css/main.css" | postCSS }}
-{{ if .Site.IsServer }}
+{{ if hugo.IsServer }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
 {{ else }}
   {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
