@@ -1,7 +1,7 @@
 {{ $scratch := newScratch }}
 {{ $scratch.Set "style" (resources.Get "css/main.css" | postCSS) }}
 {{ $scratch.Set "config" (default "config.yml" (index .Params "config")) }}
-{{ if .Site.IsServer }}
+{{ if hugo.IsServer }}
   {{/* development */}}
   {{ $scratch.Set "config" (default "dev.yml" (index .Params "dev_config")) }}
 {{ else }}
