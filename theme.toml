@@ -8,7 +8,7 @@ description = "A theme for The Balance"
 homepage = "https://github.com/The-Balance-FFXIV/glam/"
 tags = []
 features = []
-min_version = "0.120.0"
+min_version = "0.122.0"
 
 [author]
   name = ""
