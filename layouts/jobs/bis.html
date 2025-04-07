@@ -31,7 +31,7 @@
               {{/* Fallback to generic link if no template matches.
                    This shouldn't generally happen.
               */}}
-              {{ partial "components/embeds/genericlink.html" $bis.type }}
+              {{ partial "components/embeds/genericlink.html" $bis.link }}
             {{ end }}
             {{ $bis.description | markdownify }}
           {{ end }}
