@@ -121,7 +121,7 @@ bis_fields: Widgets = [
                     'sleepyshiba',
                     'genericiframe',
                     'genericlink',
-                    'xivgearset',
+                    'xivgear',
                 ],
                 default='etro',
             ),
