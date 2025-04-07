@@ -122,6 +122,7 @@ bis_fields: Widgets = [
                     'genericiframe',
                     'genericlink',
                     'xivgear',
+                    'plain-text',
                 ],
                 default='etro',
             ),
