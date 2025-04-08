@@ -116,12 +116,10 @@ bis_fields: Widgets = [
                 label='Type',
                 options=[
                     'etro',
-                    'ariyala',
                     'gsheets',
-                    'sleepyshiba',
+                    'xivgear',
                     'genericiframe',
                     'genericlink',
-                    'xivgear',
                     'plain-text',
                 ],
                 default='etro',
