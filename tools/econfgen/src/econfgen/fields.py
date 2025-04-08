@@ -119,6 +119,7 @@ bis_fields: Widgets = [
                     'gsheets',
                     'xivgear',
                     'genericiframe',
+                    'genericimage',
                     'genericlink',
                     'plain-text',
                 ],
