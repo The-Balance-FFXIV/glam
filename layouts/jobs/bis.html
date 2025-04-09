@@ -24,20 +24,14 @@
         <div class="markdown max-w-none">
           {{ range $index, $bis := .Params.bis }}
             <h2 id="{{ $index }}">{{ $bis.name }}</h2>
-            {{ if eq $bis.type "etro"}}
-              {{ partial "components/etro.html" $bis.link }}
-            {{ end }}
-            {{ if eq $bis.type "gsheets"}}
-              {{ partial "components/gsheets.html" $bis.link }}
-            {{ end }}
-            {{ if eq $bis.type "genericiframe"}}
-              {{ partial "components/genericiframe.html" $bis.link }}
-            {{ end }}
-            {{ if eq $bis.type "genericlink"}}
-              {{ partial "components/genericlink.html" $bis.link }}
-            {{ end }}
-            {{ if eq $bis.type "xivgearset"}}
-              {{ partial "components/xivgear.html" $bis.link }}
+            {{ $partialPath := printf "components/embeds/%s.html" $bis.type }}
+            {{ if templates.Exists (printf "partials/%s" $partialPath) }}
+              {{ partial $partialPath $bis.link }}
+            {{ else }}
+              {{/* Fallback to generic link if no template matches.
+                   This shouldn't generally happen.
+              */}}
+              {{ partial "components/embeds/genericlink.html" $bis.link }}
             {{ end }}
             {{ $bis.description | markdownify }}
           {{ end }}
