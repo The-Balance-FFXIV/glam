@@ -1454,12 +1454,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -2223,12 +2223,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -2871,7 +2871,7 @@ collections:
       value_field: tag
       widget: relation
     file: content/jobs/tanks/dark-knight/intermediate-guide.md
-    label: adiate Guide
+    label: Intermediate Guide
     name: intermediate-guide
   - fields:
     - label: Title
@@ -2992,12 +2992,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -3761,12 +3761,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -4530,12 +4530,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -5299,12 +5299,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -6068,12 +6068,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -6837,12 +6837,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -7606,12 +7606,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -8375,12 +8375,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -9144,12 +9144,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -9913,12 +9913,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -10682,12 +10682,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -11451,12 +11451,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -12220,12 +12220,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -12989,12 +12989,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -13758,12 +13758,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -14527,12 +14527,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -15296,12 +15296,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -16065,12 +16065,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
@@ -16834,12 +16834,12 @@ collections:
         name: type
         options:
         - etro
-        - ariyala
         - gsheets
-        - sleepyshiba
+        - xivgear
         - genericiframe
+        - genericimage
         - genericlink
-        - xivgearset
+        - plain-text
         required: false
         widget: select
       - label: Link
