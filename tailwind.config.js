@@ -28,6 +28,11 @@ module.exports = {
       'sans': ['Roboto', 'sans-serif'],
       'head': ['Kumbh Sans', 'sans-serif']
     },
+    container: {
+        screens: {
+            '3xl': '1920px',
+        }
+    }
     extend: {
       dropShadow: {
         'lg': '2px 2px 3px #000000',
