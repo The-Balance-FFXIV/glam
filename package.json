@@ -6,7 +6,6 @@
   "repository": "https://github.com/The-Balance-FFXIV/glam",
   "author": "Oowazu Nonowazu <oowazu.nonowazu@gmail.com>",
   "license": "MIT",
-  "private": false,
   "dependencies": {
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
