@@ -688,3 +688,19 @@ ol {
   flex-wrap: wrap;
   gap: 5px;
 }
+
+.xivgear-embed-size {
+  height: 44rem;
+}
+
+.xivgear-iframe-height {
+  height: 44rem;
+}
+
+.etro-embed-size {
+  height: 40rem;
+}
+
+.etro-iframe-height {
+  height: 40rem;
+}
