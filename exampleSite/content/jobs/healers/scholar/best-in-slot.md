@@ -10,7 +10,7 @@ changelog:
 bis:
   - name: Comfy 2.42 spell speed (high piety)
     type: etro
-    link: 6c93e15c-6d23-4e41-b524-fdd57b185201
+    link: https://etro.gg/gearset/f9e862f8-6854-45be-a52e-ec142c5d27a9
     description: |
       No problems - useful for any kind of content
   - name: Hardcore low-piety set

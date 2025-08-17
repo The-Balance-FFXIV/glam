@@ -35,8 +35,8 @@ module.exports = {
             'lg': '1024px',
             'xl': '1280px',
             '2xl': '1536px',
-            '3xl': '1920px',
-            '4xl': '2560px',
+            '3xl': '1930px',
+            //'4xl': '2560px', disable until bis toc fix
         }
     },
     extend: {
@@ -88,6 +88,7 @@ module.exports = {
         '112': '28rem',
         '116': '29rem',
         '120': '30rem',
+        '160': '40rem',
       },
       minHeight: {
         '0': '0',
