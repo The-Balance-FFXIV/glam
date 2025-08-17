@@ -29,7 +29,10 @@
             */}}
             {{ partial "components/embeds/genericlink.html" $bis.link }}
           {{ end }}
+          {{ if $bis.description }}
+          </br>
           {{ $bis.description | markdownify }}
+          {{ end }}
         {{ end }}
       </div>
     </div>
