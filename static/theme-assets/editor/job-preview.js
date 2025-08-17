@@ -32,7 +32,7 @@ const renderBisList = function (bis) {
 
         const bisFrame =
           type != "plain-text"
-            ? h("div", { class: "h-112" }, h("iframe", {
+            ? h("div", { class: "h-96" }, h("iframe", {
                 src:
                   type === "etro" ? `https://etro.gg/embed/gearset/${link}` :
                   link,
