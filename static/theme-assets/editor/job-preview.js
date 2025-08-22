@@ -61,7 +61,7 @@ const renderBisList = function (bis) {
             break;
           default:
             if (String(link).includes("xivgear" || "etro")) {
-              bisFrame = h("p", {}, "The type selected does not match the link provided. Please check the type selection.");
+              bisFrame = h("div", {}, h("p", {}, "You are currently using either an Etro or XIVGear link with an improper link type selected (e.g. genericiframe)."), h("p", {}, "Please double-check that the type selection matches what type of link you are using."));
             } else {
               bisFrame = h("div", { class: "h-96" }, h("iframe", {
                 src: link,
