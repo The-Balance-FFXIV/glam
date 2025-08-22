@@ -28,7 +28,7 @@ const renderBisList = function (bis) {
         // Normalize links where applicable
         switch(type) {
           case "etro":
-            const etroLink = link.match(/etro.gg\/gearset\/([A-Za-z0-9-]+)(?:[?#]|$)/i);
+            const etroLink = link.match(/\/gearset\/([A-Za-z0-9-]+)(?:[?#]|$)/i);
             if(etroLink) {
               link = etroLink[1]
             }
