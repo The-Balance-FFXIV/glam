@@ -32,7 +32,7 @@ const renderBisList = function (bis) {
         switch(type) {
           case "plain-text":
           case "genericlink":
-            // Plain text and links do not need an iframe, and can just be included as the given text (in the link field)
+            // Plain text and links does not need an iframe, and can just be included as the given text (in the link field)
             bisFrame = link;
             break;
           case "xivgear":
@@ -60,10 +60,14 @@ const renderBisList = function (bis) {
             }));
             break;
           default:
-            bisFrame = h("div", { class: "h-96" }, h("iframe", {
-              src: link,
-              class: "w-full h-full"
-            }));
+            if (String(link).includes("xivgear" || "etro")) {
+              bisFrame = h("p", {}, "The type selected does not match the link provided. Please check the type selection.");
+            } else {
+              bisFrame = h("div", { class: "h-96" }, h("iframe", {
+                src: link,
+                class: "w-full h-full"
+              }));
+            }
             break;
         }
 
