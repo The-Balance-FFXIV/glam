@@ -1459,7 +1459,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -2228,7 +2228,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -2997,7 +2997,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -3766,7 +3766,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -4535,7 +4535,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -5304,7 +5304,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -6073,7 +6073,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -6842,7 +6842,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -7611,7 +7611,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -8380,7 +8380,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -9149,7 +9149,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -9918,7 +9918,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -10687,7 +10687,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -11456,7 +11456,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -12225,7 +12225,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -12994,7 +12994,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -13763,7 +13763,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -14532,7 +14532,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -15301,7 +15301,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -16070,7 +16070,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
@@ -16839,7 +16839,7 @@ collections:
         - sleepyshiba
         - genericiframe
         - genericlink
-        - xivgearset
+        - xivgear
         required: false
         widget: select
       - label: Link
