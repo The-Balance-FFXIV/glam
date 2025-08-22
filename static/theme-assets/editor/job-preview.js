@@ -31,7 +31,8 @@ const renderBisList = function (bis) {
         let bisFrame;
         switch(type) {
           case "plain-text":
-            // Plain text does not need an iframe, and can just be included as the given text (in the link field)
+          case "genericlink":
+            // Plain text and links do not need an iframe, and can just be included as the given text (in the link field)
             bisFrame = link;
             break;
           case "xivgear":
