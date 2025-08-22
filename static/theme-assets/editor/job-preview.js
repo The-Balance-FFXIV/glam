@@ -26,27 +26,40 @@ const renderBisList = function (bis) {
         let link = bis.link;
         
         // Normalize links where applicable
+
+        // Handle special cases of the BiS display
+        let bisFrame;
         switch(type) {
+          case "plain-text":
+            // Plain text does not need an iframe, and can just be included as the given text (in the link field)
+            bisFrame = link;
+            break;
+          case "xivgear":
+            // XIVGear embed links should be checked for the embed format
+            if (!String(link).includes("embed")) {
+              bisFrame = h("p", {}, "This XIVGear link does not appear to be an embed link. Please check the link.");
+            } else {
+              bisFrame = h("div", { class: "xivgear-iframe-height" }, h("iframe", {
+                src: link,
+                class: "w-full h-full"
+              }));
+            }
+            break;
           case "etro":
+            // Etro links should be have their gearset ID extracted to always convert to the embedded format
             const etroLink = link.match(/\/gearset\/([A-Za-z0-9-]+)(?:[?#]|$)/i);
             if(etroLink) {
               link = etroLink[1]
             }
             // Make etro links always become the embedded form
             link = `https://etro.gg/embed/gearset/${link}`
+            bisFrame = h("div", { class: "etro-iframe-height" }, h("iframe", {
+              src: link,
+              class: "w-full h-full"
+            }));
             break;
           default:
-            break;
-        }
-
-        // Handle special cases of the BiS display
-        switch(type) {
-          case "plain-text":
-            // Plain text does not need an iframe, and can just be included as the given text (in the link field)
-            var bisFrame = link;
-            break;
-          default:
-            var bisFrame = h("div", { class: "etro-iframe-height" }, h("iframe", {
+            bisFrame = h("div", { class: "h-96" }, h("iframe", {
               src: link,
               class: "w-full h-full"
             }));
