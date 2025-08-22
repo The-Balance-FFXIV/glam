@@ -46,7 +46,7 @@ const renderBisList = function (bis) {
             var bisFrame = link;
             break;
           default:
-            var bisFrame = h("div", { class: "h-96" }, h("iframe", {
+            var bisFrame = h("div", { class: "etro-iframe-height" }, h("iframe", {
               src: link,
               class: "w-full h-full"
             }));
