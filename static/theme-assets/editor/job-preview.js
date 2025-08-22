@@ -22,13 +22,14 @@ const renderBisList = function (bis) {
     "div", {}, bisList.map(function (bis, indexer) {
         const name = h("h2", {}, bis.name);
         const type = bis.type;
-        const description = h("p", {}, bis.description);
+        let description = h("p", {}, bis.description);
         let link = bis.link;
         
         // Normalize links where applicable
 
         // Handle special cases of the BiS display
         let bisFrame;
+        let errorDetection = false; // Hides description if an error in link input is detected to improve error readability
         switch(type) {
           case "plain-text":
           case "genericlink":
@@ -39,6 +40,7 @@ const renderBisList = function (bis) {
             // XIVGear embed links should be checked for the embed format
             if (!String(link).includes("embed")) {
               bisFrame = h("p", {}, "This XIVGear link does not appear to be an embed link. Please check the link.");
+              errorDetection = true;
             } else {
               bisFrame = h("div", { class: "xivgear-iframe-height" }, h("iframe", {
                 src: link,
@@ -61,7 +63,11 @@ const renderBisList = function (bis) {
             break;
           default:
             if (String(link).includes("xivgear" || "etro")) {
-              bisFrame = h("div", {}, h("p", {}, "You are currently using either an Etro or XIVGear link with an improper link type selected (e.g. genericiframe)."), h("p", {}, "Please double-check that the type selection matches what type of link you are using."));
+              bisFrame = h("div", {}, 
+                h("p", {}, "You currently have either an Etro link or a XIVGear link in the link field with an improper link type selected for that type of link (e.g. genericiframe)."), 
+                h("p", {}, "Please double-check that the type selection matches what type of link you are using, or consider the use of the genericlink / plain-text type if you do not want an embed.")
+              );
+              errorDetection = true;
             } else {
               bisFrame = h("div", { class: "h-96" }, h("iframe", {
                 src: link,
@@ -69,6 +75,10 @@ const renderBisList = function (bis) {
               }));
             }
             break;
+        }
+
+        if (errorDetection) {
+          description = null;
         }
 
         return h(
