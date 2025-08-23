@@ -24,6 +24,7 @@ const renderBisList = function (bis) {
       const name = h("h2", {}, bis.name);
       const type = bis.type;
       const linkString = typeof bis.link === "string" ? bis.link : "";
+      const isLink = /^https?:\/\//i.test(linkString);
       let description = h("p", {}, bis.description);
       
       // Create embed element and check for input errors based on type
@@ -38,16 +39,17 @@ const renderBisList = function (bis) {
 
         case "xivgear": // check for embed link before creating iframe
           const isEmbed = linkString.includes("embed");
-          errorDetection = !isEmbed;
-          bisFrame = isEmbed
+          const isXIVGear = linkString.includes("xivgear");
+          errorDetection = !isEmbed || !isXIVGear || !isLink;
+          bisFrame = isEmbed && isXIVGear && isLink
             ? h("div", { class: "xivgear-iframe-height" }, h("iframe", { src: linkString, class: "w-full h-full" }))
-            : h("p", {}, "This XIVGear link does not appear to be an embed link. Please check the link.");
+            : h("p", {}, "This XIVGear link does not appear to be a valid embed link. Please check the link.");
           break;
 
         case "etro": // extract ID from link to create embed link
           const etroId =
             linkString.match(/\/gearset\/([A-Za-z0-9-]+)(?:[?#]|$)/i)?.[1] ||
-            (!/^https?:\/\//i.test(linkString) && linkString ? linkString : null);
+            (isLink && linkString ? linkString : null);
           const etroLink = etroId ? `https://etro.gg/embed/gearset/${etroId}` : linkString;
           errorDetection = !etroLink;
           bisFrame = etroLink
@@ -57,14 +59,14 @@ const renderBisList = function (bis) {
 
         default: {
           const checkTypeError = linkString.includes("xivgear") || linkString.includes("etro");
-          errorDetection = checkTypeError;
-          bisFrame = !checkTypeError
+          errorDetection = checkTypeError || !linkString;
+          bisFrame = !checkTypeError && isLink
             ? h("div", { class: "h-96" }, h("iframe", { src: linkString, class: "w-full h-full" }))
             : h(
                 "div",
                 {},
-                h("p", {}, "You currently have either an Etro link or a XIVGear link in the link field with an improper link type selected for that type of link (e.g. genericiframe)."),
-                h("p", {}, "Please double-check that the type selection matches what type of link you are using, or consider the use of the genericlink / plain-text type if you do not want an embed.")
+                h("p", {}, "An error occurred with the link provided. The link is either invalid, missing, or you are attempting to use Etro/XIVGear links with the wrong type selected."),
+                h("p", {}, "Please double check that the link field is not empty, and that the correct link type is selected. Use genericlink or plaintext if you only want a raw text link.")
               )
           break;
         }
