@@ -59,7 +59,7 @@ const renderBisList = function (bis) {
 
         default: {
           const checkTypeError = linkString.includes("xivgear") || linkString.includes("etro");
-          errorDetection = checkTypeError || !linkString;
+          errorDetection = checkTypeError || !isLink;
           bisFrame = !checkTypeError && isLink
             ? h("div", { class: "h-96" }, h("iframe", { src: linkString, class: "w-full h-full" }))
             : h(
