@@ -25,7 +25,6 @@ const renderBisList = function (bis) {
       const type = bis.type;
       const linkString = typeof bis.link === "string" ? bis.link : "";
       let description = h("p", {}, bis.description);
-      let link = bis.link;
       
       // Create embed element and check for input errors based on type
       let bisFrame;
@@ -34,7 +33,7 @@ const renderBisList = function (bis) {
       switch(type) {
         case "plain-text":
         case "genericlink":
-          bisFrame = link; // both of these types do not require an iframe
+          bisFrame = linkString; // both of these types do not require an iframe
           break;
 
         case "xivgear": // check for embed link before creating iframe
@@ -53,14 +52,14 @@ const renderBisList = function (bis) {
           errorDetection = !etroLink;
           bisFrame = etroLink
             ? h("div", { class: "etro-iframe-height" }, h("iframe", { src: etroLink, class: "w-full h-full" }))
-            : h("p", {}, "Missing etro link or invalid ID.");
+            : h("p", {}, "Please enter a link to the link field.");
           break;
 
         default: {
-          const checkTypeError = String(link).includes("xivgear") || String(link).includes("etro");
+          const checkTypeError = linkString.includes("xivgear") || linkString.includes("etro");
           errorDetection = checkTypeError;
           bisFrame = !checkTypeError
-            ? h("div", { class: "h-96" }, h("iframe", { src: link, class: "w-full h-full" }))
+            ? h("div", { class: "h-96" }, h("iframe", { src: linkString, class: "w-full h-full" }))
             : h(
                 "div",
                 {},
@@ -126,7 +125,7 @@ let GenericJobGuide = createClass({
 let bisSetTemplate = createClass({
   render: function () {
     const rawBis = this.props.entry.getIn(["data", "bis"]);
-    const bis = typeof rawBis.toJS === "function" ? rawBis.toJS() : rawBis;
+    const bis = rawBis?.toJS?.() ?? rawBis ?? [];
 
     return renderGuideContainer(
       renderBisList(bis)
@@ -137,7 +136,7 @@ let bisSetTemplate = createClass({
 let faqTemplate = createClass({
   render: function () {
     const rawFaq = this.props.entry.getIn(["data", "qna"]);
-    const faq = typeof rawFaq.toJS === "function" ? rawFaq.toJS() : rawFaq;
+    const faq = rawFaq?.toJS?.() ?? rawFaq ?? [];
 
     return renderGuideContainer(
       renderFaq(faq)
