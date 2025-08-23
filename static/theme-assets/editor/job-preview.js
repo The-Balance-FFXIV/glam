@@ -23,32 +23,39 @@ const renderBisList = function (bis) {
       // Sort bis frontmatter fields into variables and prep for rendering
       const name = h("h2", {}, bis.name);
       const type = bis.type;
+      const linkString = typeof bis.link === "string" ? bis.link : "";
       let description = h("p", {}, bis.description);
       let link = bis.link;
       
       // Create embed element and check for input errors based on type
       let bisFrame;
       let errorDetection = false; // Hides description if link or link type validation fails
+
       switch(type) {
         case "plain-text":
         case "genericlink":
           bisFrame = link; // both of these types do not require an iframe
           break;
+
         case "xivgear": // check for embed link before creating iframe
-          const isEmbed = String(link).includes("embed");
+          const isEmbed = linkString.includes("embed");
           errorDetection = !isEmbed;
           bisFrame = isEmbed
-            ? h("div", { class: "xivgear-iframe-height" }, h("iframe", { src: link, class: "w-full h-full" }))
+            ? h("div", { class: "xivgear-iframe-height" }, h("iframe", { src: linkString, class: "w-full h-full" }))
             : h("p", {}, "This XIVGear link does not appear to be an embed link. Please check the link.");
           break;
+
         case "etro": // extract ID from link to create embed link
-          const etroLink = link.match(/\/gearset\/([A-Za-z0-9-]+)(?:[?#]|$)/i);
-          link = etroLink ? `https://etro.gg/embed/gearset/${etroLink[1]}` : link;
-          bisFrame = h("div", { class: "etro-iframe-height" }, h("iframe", {
-            src: link,
-            class: "w-full h-full"
-          }));
+          const etroId =
+            linkString.match(/\/gearset\/([A-Za-z0-9-]+)(?:[?#]|$)/i)?.[1] ||
+            (!/^https?:\/\//i.test(linkString) && linkString ? linkString : null);
+          const etroLink = etroId ? `https://etro.gg/embed/gearset/${etroId}` : linkString;
+          errorDetection = !etroLink;
+          bisFrame = etroLink
+            ? h("div", { class: "etro-iframe-height" }, h("iframe", { src: etroLink, class: "w-full h-full" }))
+            : h("p", {}, "Missing etro link or invalid ID.");
           break;
+
         default: {
           const checkTypeError = String(link).includes("xivgear") || String(link).includes("etro");
           errorDetection = checkTypeError;
@@ -90,6 +97,20 @@ const renderAuthorList = function (authors) {
   );
 };
 
+const renderFaq = function (qna) {
+  let faqEntries = qna ?? [];
+  return h(
+    "div",
+    { class: "job-guides-container markdown" },
+    faqEntries.map(function (qna, index) {
+      return h("div", { key: index, class: "faq-entry" },
+        h("h2", {}, qna.question),
+        h("p", {}, qna.answer)
+      );
+    })
+  );
+}
+
 let GenericJobGuide = createClass({
   render: function () {
     const authors = this.props.entry.getIn(["data", "authors"]);
@@ -109,6 +130,17 @@ let bisSetTemplate = createClass({
 
     return renderGuideContainer(
       renderBisList(bis)
+    );
+  },
+});
+
+let faqTemplate = createClass({
+  render: function () {
+    const rawFaq = this.props.entry.getIn(["data", "qna"]);
+    const faq = typeof rawFaq.toJS === "function" ? rawFaq.toJS() : rawFaq;
+
+    return renderGuideContainer(
+      renderFaq(faq)
     );
   },
 });
