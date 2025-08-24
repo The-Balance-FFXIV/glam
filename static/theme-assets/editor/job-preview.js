@@ -90,9 +90,9 @@ const renderBisList = function (bis) {
 
       description = errorDetection // append a line break to the description or hide it if link errors exist
         ? null
-        : (description.length // ensures no break appears for empty descriptions
+        : (description.length && type !== "plain-text" // ensures no break appears for empty descriptions
             ? [h("br", {}), description]
-            : null);
+            : description);
 
       return h( // render all bis entries
         "div",
