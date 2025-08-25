@@ -125,9 +125,7 @@ const renderAuthorList = function (authors) {
 const renderFaq = function (qna) {
   let faqEntries = qna ?? [];
   return h(
-    "div",
-    { class: "job-guides-container markdown" },
-    faqEntries.map(function (qna, index) {
+    "div", {}, faqEntries.map(function (qna, index) {
       const answerStyled = textStyling(qna.answer);
       return h("div", { key: index, class: "faq-entry" },
         h("h2", {}, qna.question),
