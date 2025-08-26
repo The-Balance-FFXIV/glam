@@ -10,7 +10,7 @@ function textStyling(content) {
   return frontmatter.map((p, index) => {
     const html = hasMarked ? window.marked.parse(p) : text;
     const safe = hasPurify ? window.DOMPurify.sanitize(html) : html;
-    return h("div", { key: index, class: "markdown", dangerouslySetInnerHTML: { __html: safe } });
+    return h("div", { key: index, class: "markdown", dangerouslySetInnerHTML: { __html: safe } }); // render the text to HTML so it styles
   });
 }
 
@@ -27,6 +27,22 @@ const renderGuideContainer = function (body, ...children) {
         h("div", { class: "markdown max-w-none" }, body)
       ),
       ...children
+    )
+  );
+};
+
+const renderAuthorList = function (authors) {
+  let authorList = authors ?? [];
+  return h(
+    "div",
+    { class: "job-guides-container markdown" },
+    h("h1", {}, "Authors"),
+    h(
+      "ul",
+      {},
+      authorList.map(function (author) {
+        return h("li", {}, author);
+      })
     )
   );
 };
@@ -50,7 +66,7 @@ const renderBisList = function (bis) {
       switch(type) {
         case "plain-text":
         case "genericlink":
-          bisFrame = linkString; // both of these types do not require an iframe
+          bisFrame = textStyling(linkString); // both of these types do not require an iframe
           break;
 
         case "xivgear": // check for embed link before creating iframe
@@ -106,30 +122,19 @@ const renderBisList = function (bis) {
   )
 };
 
-const renderAuthorList = function (authors) {
-  let authorList = authors ?? [];
+const renderFrontmatter = function (field, h2, subfield = "", ...moreSubfields) {
+  let storeFrontmatter = field ?? [];
+  const subfieldsToRender = [subfield, ...moreSubfields].filter(Boolean);
+
   return h(
     "div",
-    { class: "job-guides-container markdown" },
-    h("h1", {}, "Authors"),
-    h(
-      "ul",
-      {},
-      authorList.map(function (author) {
-        return h("li", {}, author);
-      })
-    )
-  );
-};
-
-const renderFaq = function (qna) {
-  let faqEntries = qna ?? [];
-  return h(
-    "div", {}, faqEntries.map(function (qna, index) {
-      const answerStyled = textStyling(qna.answer);
-      return h("div", { key: index, class: "faq-entry" },
-        h("h2", {}, qna.question),
-        ...answerStyled
+    {},
+    storeFrontmatter.map(function (field, index) {
+      const list = subfieldsToRender.length ? subfieldsToRender : [subfield];
+      const entryStyled = list.reduce((acc, sf) => acc.concat(textStyling(field?.[sf])), []);
+      return h("div", { key: index },
+        h("h2", {}, field?.[h2]),
+        ...entryStyled
       );
     })
   );
@@ -164,7 +169,7 @@ let faqTemplate = createClass({
     const faq = rawFaq?.toJS?.() ?? rawFaq ?? [];
 
     return renderGuideContainer(
-      renderFaq(faq)
+      renderFrontmatter(faq, "question", "answer")
     );
   },
 });
