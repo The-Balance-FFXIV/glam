@@ -134,8 +134,8 @@ const renderBisList = function (bis) {
       // append a line break to the description or hide it if link errors exist
       description = errorDetection
         ? null
-        : (description.length && type !== "plain-text" // ensures no break appears for empty descriptions
-            ? [h("br", {}), description]
+        : (description.length && !["genericlink", "plain-text"].includes(type) // ensures no break appears for empty descriptions
+            ? [h("br", { key: "frame-br" }), ...description]
             : description);
 
       // return an indexed list of <div> elements for each bis entry
