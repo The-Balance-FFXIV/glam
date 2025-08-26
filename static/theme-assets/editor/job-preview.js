@@ -1,4 +1,4 @@
-function textStyling(content) {
+function textStyling(content, keyPrefix = "") {
   const frontmatter = String(content ?? "")
     .split(/\r?\n\s*\r?\n+/g) // split on one or more blank lines
     .map(s => s.trim())
@@ -8,9 +8,10 @@ function textStyling(content) {
   const hasPurify = typeof window !== "undefined" && window.DOMPurify && typeof window.DOMPurify.sanitize === "function";
 
   return frontmatter.map((p, index) => {
-    const html = hasMarked ? window.marked.parse(p) : text;
+    const html = hasMarked ? window.marked.parse(p) : p;
     const safe = hasPurify ? window.DOMPurify.sanitize(html) : html;
-    return h("div", { key: index, class: "markdown", dangerouslySetInnerHTML: { __html: safe } }); // render the text to HTML so it styles
+    const key = keyPrefix ? `${keyPrefix}-${index}` : index;
+    return h("div", { key, class: "markdown", dangerouslySetInnerHTML: { __html: safe } });
   });
 }
 
@@ -47,22 +48,48 @@ const renderAuthorList = function (authors) {
   );
 };
 
+// renders frontmatter fields that contain one or more data subfields, such as FAQs or BIS entries
+const renderFrontmatter = function (pField, hField, hType, subfield = "", ...moreSubfields) {
+  let storeFrontmatter = Array.isArray(pField) ? pField : (pField != null ? [pField] : []);
+  const subfieldsToRender = [subfield, ...moreSubfields].filter(Boolean);
+
+  return h(
+    "div",
+    {},
+    storeFrontmatter.map(function (pField, index) {
+      const list = subfieldsToRender.length ? subfieldsToRender : [subfield];
+      const entryStyled = list.reduce((acc, sf) => {
+        if (typeof sf === "string") {
+          return acc.concat(textStyling(pField?.[sf], `rf-${index}-${sf}`));
+        }
+        return Array.isArray(sf) ? acc.concat(sf) : acc.concat([sf]);
+      }, []);
+      const entryHeader = String(pField?.[hField]) && String([hType]) !== ""
+        ? h(String([hType]), {}, String(pField?.[hField])) // if desired, sets a particular child field as a designated header field
+        : null; // will return no header instead if left blank via "", "", or null, null in the renderFrontmatter function call for hField and hType
+
+      return h("div", { key: index },
+        entryHeader,
+        ...entryStyled
+      );
+    })
+  );
+}
+
 const renderBisList = function (bis) {
   const bisEntries = bis;
 
   return h(
-    "div", {}, bisEntries.map(function (bis, indexer) {
-      // sort bis frontmatter fields into variables and prep for rendering
-      const name = h("h2", {}, bis.name);
+    "div", {}, bisEntries.map(function (bis, index) {
+      // variables to prep iframe and description generation
       const type = bis.type;
       const linkString = typeof bis.link === "string" ? bis.link : "";
       const isLink = /^https?:\/\//i.test(linkString);
       let description = textStyling(bis.description);
-
-      // create embed element and check for input errors
       let bisFrame;
       let errorDetection = false; // hides description if validation fails
 
+      // decide iframe creation based on type and validate input
       switch(type) {
         case "plain-text":
         case "genericlink":
@@ -104,41 +131,23 @@ const renderBisList = function (bis) {
         }
       }
 
-      description = errorDetection // append a line break to the description or hide it if link errors exist
+      // append a line break to the description or hide it if link errors exist
+      description = errorDetection
         ? null
         : (description.length && type !== "plain-text" // ensures no break appears for empty descriptions
             ? [h("br", {}), description]
             : description);
 
-      return h( // render all bis entries
+      // return an indexed list of <div> elements for each bis entry
+      return h(
         "div",
-        { key: indexer, id: `bis-preview-${indexer}`, },
-        name,
-        bisFrame,
-        description,
+        { key: index, id: `bis-preview-${index}`, },
+        renderFrontmatter(bis, "name", "h2", bisFrame, description), // render all bis entries
         h("hr", {})
       );
     })
   )
 };
-
-const renderFrontmatter = function (field, h2, subfield = "", ...moreSubfields) {
-  let storeFrontmatter = field ?? [];
-  const subfieldsToRender = [subfield, ...moreSubfields].filter(Boolean);
-
-  return h(
-    "div",
-    {},
-    storeFrontmatter.map(function (field, index) {
-      const list = subfieldsToRender.length ? subfieldsToRender : [subfield];
-      const entryStyled = list.reduce((acc, sf) => acc.concat(textStyling(field?.[sf])), []);
-      return h("div", { key: index },
-        h("h2", {}, field?.[h2]),
-        ...entryStyled
-      );
-    })
-  );
-}
 
 let GenericJobGuide = createClass({
   render: function () {
@@ -169,7 +178,30 @@ let faqTemplate = createClass({
     const faq = rawFaq?.toJS?.() ?? rawFaq ?? [];
 
     return renderGuideContainer(
-      renderFrontmatter(faq, "question", "answer")
+      h("div", {},
+        renderFrontmatter(faq, "question", "h2", "answer")
+      )
+    );
+  },
+});
+
+let statPriorityTemplate = createClass({
+  render: function () {
+    const statPriority = this.props.entry.getIn(["data", "priority"]) ?? [];
+    const optionalInfo = this.props.widgetFor("body");
+
+    return renderGuideContainer(
+      h("div",
+       {},
+       h("div", {}, statPriority),
+       optionalInfo 
+        ? h("div", {},
+            h("br", {}),
+            h("hr", {}),
+            h("div", {}, optionalInfo)
+          ) 
+        : null,
+      ),
     );
   },
 });
