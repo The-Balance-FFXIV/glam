@@ -49,24 +49,36 @@ const renderAuthorList = function (authors) {
 };
 
 // renders frontmatter fields that contain one or more data subfields, such as FAQs or BIS entries
-const renderFrontmatter = function (pField, hField, hType, subfield = "", ...moreSubfields) {
-  let storeFrontmatter = Array.isArray(pField) ? pField : (pField != null ? [pField] : []);
-  const subfieldsToRender = [subfield, ...moreSubfields].filter(Boolean);
+const renderFrontmatter = function (parentField, hSubfield, hType, subfield = "", ...moreSubfields) {
+  // helper function to ensure that the parent frontmatter field is turned into a mutable array
+  const resolveToArray = (raw) => {
+    const field = raw?.toJS?.() ?? raw;
+    return Array.isArray(field) ? field : (field != null ? [field] : []);
+  };
 
-  return h(
-    "div",
-    {},
-    storeFrontmatter.map(function (pField, index) {
+  let storeFrontmatter;
+  const subfieldsToRender = [subfield, ...moreSubfields].filter(Boolean);
+  if (typeof parentField === "string") {
+    const entry = this?.props?.entry;
+    const raw = typeof entry?.getIn === "function" ? entry.getIn(["data", parentField]) : undefined;
+    storeFrontmatter = resolveToArray(raw ?? []);
+  } else {
+    storeFrontmatter = resolveToArray(parentField);
+  }
+
+  return h( "div", {},
+    storeFrontmatter.map(function (parent, index) {
       const list = subfieldsToRender.length ? subfieldsToRender : [subfield];
-      const entryStyled = list.reduce((acc, sf) => {
-        if (typeof sf === "string") {
-          return acc.concat(textStyling(pField?.[sf], `rf-${index}-${sf}`));
+      const entryStyled = list.reduce((acc, sfld) => {
+        if (typeof sfld === "string") {
+          return acc.concat(textStyling(parent?.[sfld], `rf-${index}-${sfld}`));
         }
-        return Array.isArray(sf) ? acc.concat(sf) : acc.concat([sf]);
+        return Array.isArray(sfld) ? acc.concat(sfld) : acc.concat([sfld]);
       }, []);
-      const entryHeader = String(pField?.[hField]) && String([hType]) !== ""
-        ? h(String([hType]), {}, String(pField?.[hField])) // if desired, sets a particular child field as a designated header field
-        : null; // will return no header instead if left blank via "", "", or null, null in the renderFrontmatter function call for hField and hType
+
+      const entryHeader = String(parent?.[hSubfield]) && String([hType]) !== ""
+        ? h(String([hType]), {}, String(parent?.[hSubfield]))
+        : null;
 
       return h("div", { key: index },
         entryHeader,
@@ -161,7 +173,7 @@ let GenericJobGuide = createClass({
   },
 });
 
-let bisSetTemplate = createClass({
+let bisTemplate = createClass({
   render: function () {
     const rawBis = this.props.entry.getIn(["data", "bis"]);
     const bis = rawBis?.toJS?.() ?? rawBis ?? [];
@@ -174,12 +186,19 @@ let bisSetTemplate = createClass({
 
 let faqTemplate = createClass({
   render: function () {
-    const rawFaq = this.props.entry.getIn(["data", "qna"]);
-    const faq = rawFaq?.toJS?.() ?? rawFaq ?? [];
-
     return renderGuideContainer(
       h("div", {},
-        renderFrontmatter(faq, "question", "h2", "answer")
+        renderFrontmatter.call(this, "qna", "question", "h2", "answer")
+      )
+    );
+  },
+});
+
+let changesTemplate = createClass({
+  render: function () {
+    return renderGuideContainer(
+      h("div", {},
+        renderFrontmatter.call(this, "changes", "patch", "h2", "description")
       )
     );
   },
