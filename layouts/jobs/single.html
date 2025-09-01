@@ -1,12 +1,14 @@
 {{ define "main" }}
 
-{{ $role := .Page.Parent.Page.Parent.Params.role }}
+{{ $isParentJob := isset .Page.Parent.Params "job_name" }}
+{{ $job := cond $isParentJob .Page.Parent .Page.Parent.Parent }}
+{{ $role := $job.Parent.Params.role }}
 
 <div class="space-y-16">
   {{ $header := dict
     "role" $role
-    "job" .Parent.Params.job_name
-    "jobTitle" .Parent.Title
+    "job" $job.Params.job_name
+    "jobTitle" $job.Title
     "title" .Title
     "icon" "/theme-assets/book.svg"
     "description" .Params.description
