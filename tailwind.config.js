@@ -1,27 +1,24 @@
 const plugin = require('tailwindcss/plugin');
 
 module.exports = {
-    purge: {
-        enabled: true,
-        content: ['layouts/**/*.html', "themes/glam/layouts/**/*.html"],
-        safelist: [
-          "role-header-tanks",
-          "role-header-healers",
-          "role-header-melee",
-          "role-header-ranged",
-          "role-header-casters",
-          "drop-shadow-lg-tanks",
-          "drop-shadow-lg-healers",
-          "drop-shadow-lg-melee",
-          "drop-shadow-lg-ranged",
-          "drop-shadow-lg-casters",
-          "card-tanks",
-          "card-healers",
-          "card-melee",
-          "card-ranged",
-          "card-casters"
-        ]
-    },
+    content: ['layouts/**/*.html', "themes/glam/layouts/**/*.html"],
+    safelist: [
+      "role-header-tanks",
+      "role-header-healers",
+      "role-header-melee",
+      "role-header-ranged",
+      "role-header-casters",
+      "drop-shadow-lg-tanks",
+      "drop-shadow-lg-healers",
+      "drop-shadow-lg-melee",
+      "drop-shadow-lg-ranged",
+      "drop-shadow-lg-casters",
+      "card-tanks",
+      "card-healers",
+      "card-melee",
+      "card-ranged",
+      "card-casters"
+    ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
