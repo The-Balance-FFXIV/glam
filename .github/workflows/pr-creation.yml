@@ -30,7 +30,7 @@ jobs:
           yarn global add postcss-cli@8.3.1 autoprefixer postcss tailwindcss
 
       - name: Install puppeteer-headful
-        uses: mujo-code/puppeteer-headful@v2
+        uses: mujo-code/puppeteer-headful@18.9.0
         env:
           CI: 'true'
 
