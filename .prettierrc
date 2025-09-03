@@ -1,4 +1,5 @@
 {
+  "plugins": ["prettier-plugin-go-template"],
   "useTabs": false,
   "tabWidth": 2,
   "goTemplateBracketSpacing": true,
