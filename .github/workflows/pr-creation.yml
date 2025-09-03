@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: |
           yarn
-          yarn global add postcss-cli@8.3.1 autoprefixer postcss tailwindcss
+          yarn global add postcss-cli autoprefixer postcss tailwindcss@3.4.17
 
       - name: Install puppeteer-headful
         uses: mujo-code/puppeteer-headful@18.9.0
@@ -62,7 +62,7 @@ jobs:
           echo ${{ github.event.number }} > ./screenshots/PR_NR
 
       - name: Upload Screenshots
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4.6.2
         with:
           name: screenshots
           path: screenshots/
