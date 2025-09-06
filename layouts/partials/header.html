@@ -3,7 +3,7 @@
 {{ $filteredList := slice }}
 {{ range $list }}
   {{ $nameUpper := upper .Name }}
-  {{ if (not (strings.Contains $nameUpper "ENCOUNTER")) }}
+  {{ if (and .Name (ne .Name "") (not (strings.Contains $nameUpper "ENCOUNTER"))) }}
     {{ $filteredList = $filteredList | append . }}
   {{ end }}
 {{ end }}
