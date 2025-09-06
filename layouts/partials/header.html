@@ -1,5 +1,12 @@
 {{ $current := . }}
 {{ $list := .Site.Menus.main | append .Site.Menus.header }}
+{{ $filteredList := slice }}
+{{ range $list }}
+  {{ $nameUpper := upper .Name }}
+  {{ if (not (strings.Contains $nameUpper "ENCOUNTER")) }}
+    {{ $filteredList = $filteredList | append . }}
+  {{ end }}
+{{ end }}
 <nav class="fixed w-full lg:relative bg-card-light z-50">
   <div class="responsive-container px-4 lg:px-0">
     <div class="flex justify-between">
@@ -16,7 +23,7 @@
       </div>
       <!-- Navbar items -->
       <div class="hidden lg:flex items-center space-x-3 my-4 right-dropdown">
-        {{ range $list }}
+        {{ range $filteredList }}
           {{ partial "nav_item.html" . }}
         {{ end }}
       </div>
@@ -41,7 +48,7 @@
   <!-- mobile menu -->
   <div class="hidden responsive-container mobile-menu">
     <ul class="">
-      {{ range $list }}
+      {{ range $filteredList }}
         <li class="flex flex-wrap">
           <a
             href="{{ .URL }}"
