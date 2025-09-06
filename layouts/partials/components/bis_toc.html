@@ -1,0 +1,17 @@
+{{ $tocJs := resources.Get "js/tableOfContents.js" }}
+
+<script type="text/javascript" src="{{ $tocJs.RelPermalink }}" defer></script>
+
+{{ if .Params.bis }}
+<div class="card-title pt-6 pb-5">Table of Contents</div>
+<div class="nested-link font-bold py-2">
+  <nav id="TableOfContents">
+    <ul>
+      {{ range $index, $bis := .Params.bis }}
+        <li><a href="#{{ $index }}">{{ $bis.name }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+</div>
+<div>&nbsp;</div>
+{{ end }}
