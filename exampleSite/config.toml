@@ -16,9 +16,9 @@ theme = "glam"
     url = '/encounters/'
     weight = 20
   [[menu.header]]
-    identifier = 'news'
-    name = 'Newsfeed'
-    url = '/news/'
+    identifier = 'discord'
+    name = 'Discord'
+    url = 'https://discord.gg/thebalanceffxiv'
     weight = 60
   [[menu.footer]]
     identifier = 'info'
