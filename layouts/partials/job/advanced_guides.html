@@ -3,27 +3,30 @@
 {{ $advancedGuide := .Page.GetPage "advanced-guide"}}
 {{ $fightTips := .Page.GetPage "fight-tips"}}
 
-{{ if or ($advancedGuide) ($fightTips) }}
+{{ $hasValidAdvancedGuide := and $advancedGuide (ge (float $advancedGuide.Params.patch) 7.0) }}
+{{ $hasFightTips := and $fightTips (gt (len $fightTips.Pages) 0) }}
+
+{{ if or ($hasValidAdvancedGuide) ($hasFightTips) }}
 <div class="responsive-container">
   <div class="role-header mb-8">Advanced Guides</div>
   <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-    <div>
-      {{ with $advancedGuide}}
+    {{ if $hasValidAdvancedGuide }}
+      <div>
         {{ $content := dict
           "role" $role
           "icon" "/theme-assets/advanced_guide.svg"
           "name" "Advanced Guide"
-          "patch" .Params.patch
-          "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
-          "image" .Params.card_header_image
+          "patch" $advancedGuide.Params.patch
+          "updated" (time.Format "2 Jan, 2006" $advancedGuide.Params.lastmod)
+          "image" $advancedGuide.Params.card_header_image
           "imageClass" "h-100"
           "inlineLink" "advanced-guide"
         }}
         {{ partial "cards/guide.html" $content }}
-      {{ end }}
-    </div>
-    <div>
-      {{ if gt (len $fightTips.Pages) 0 }}
+      </div>
+    {{ end }} 
+    {{ if $hasFightTips }}
+      <div>
         {{ with index $fightTips.Pages 0}}
           {{ $content := dict
               "role" $role
@@ -47,9 +50,9 @@
               "inlineLink" .RelPermalink
             }}
             {{ partial "cards/guide.html" $content }}
-        {{ end }}
-      {{ end }}
+          {{ end }}
       </div>
+    {{ end }}
   </section>
 </div>
 {{ end }}
