@@ -1,6 +1,6 @@
 {{ $borderClass := default "gray-600" .role }}
 
-<a href="{{ .inlineLink }}" class="flex flex-col group">
+<a href="{{ .inlineLink }}" class="flex flex-col group h-full justify-end">
   {{ if isset . "image" }}
   <div class="bg-card-dark {{ .imageClass }}">
     {{ with .image }}
