@@ -26,8 +26,8 @@
       {{ end }}
     </div>
   {{ end }}
+  {{ if $hasFightTips }}
     <div>
-      {{ if gt (len $fightTips.Pages) 0 }}
         {{ with index $fightTips.Pages 0}}
           {{ $content := dict
               "role" $role
@@ -52,8 +52,8 @@
             }}
             {{ partial "cards/guide.html" $content }}
         {{ end }}
-      {{ end }}
       </div>
+  {{ end }}
   </section>
 </div>
 {{ end }}
