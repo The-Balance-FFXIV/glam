@@ -12,14 +12,14 @@
         {{ $levelingInfo := dict
           "role" $role
           "image" .Params.card_header_image
-          "imageClass" "h-52"
+          "imageClass" "h-[14.55rem]"
           "icon" "/theme-assets/sprout.svg"
           "name" "Leveling Guide"
           "patch" .Params.patch
           "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
           "inlineLink" "leveling-guide"
         }}
-        {{ partial "cards/guide.html" $levelingInfo }}
+        {{ partial "cards/leveling.html" $levelingInfo }}
       {{ end }}
     </div>
 

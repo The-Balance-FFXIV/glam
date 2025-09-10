@@ -1,0 +1,18 @@
+{{ $borderClass := default "gray-600" .role }}
+
+<a href="{{ .inlineLink }}" class="flex flex-col group h-full justify-end">
+  {{ if isset . "image" }}
+  <div class="bg-card-dark {{ .imageClass }}">
+    {{ with .image }}
+      <img class="w-full {{ if isset $ "imageClass" }}object-cover h-full{{ end }}" src="{{ . }}" />
+    {{ else }}
+      <div class="p-12 flex items-center justify-center h-full">
+        <img class="w-full max-w-xs" src="/theme-assets/the_balance.svg" />
+      </div>
+    {{ end }}
+  </div>
+  {{ end }}
+	<div class="card card-{{ $borderClass }}">
+    {{ partial "cards/_header.html" . }}
+	</div>
+</a>

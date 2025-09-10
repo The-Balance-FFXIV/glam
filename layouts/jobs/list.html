@@ -1,6 +1,8 @@
 {{ define "main" }}
 
 {{ $role := .Page.Parent.Params.role }}
+{{ $advancedGuide := .Page.GetPage "advanced-guide"}}
+{{ $fightTips := .Page.GetPage "fight-tips"}}
 
 {{ partial "job/header.html" . }}
 
@@ -10,10 +12,8 @@
   {{ with .Page.GetPage "intermediate-guide" }}
     {{ partial "job/intermediate_guides.html" . }}
   {{ end }}
-  {{ with .Page.GetPage "advanced-guide" }}
-    {{ if ge (float .Params.patch) 7.0 }}
+  {{ if or ($advancedGuide) ($fightTips) }}
       {{ partial "job/advanced_guides.html" . }}
-    {{ end }}
   {{ end }}
   <!-- <div class="py-14 bg-no-repeat bg-cover" style="background-image: url('/theme-assets/jobs/{{ lower $role }}/{{ lower $role }}_resources_background.png');">
     {{ partial "job/role_resources.html" .Parent }}

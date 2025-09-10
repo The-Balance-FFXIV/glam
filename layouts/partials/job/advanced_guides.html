@@ -1,12 +1,15 @@
 {{ $role := .Page.Parent.Params.role }}
 
 {{ $advancedGuide := .Page.GetPage "advanced-guide"}}
+{{ $validAdvancedGuide := and $advancedGuide (ge (float $advancedGuide.Params.patch) 7.0) }}
 {{ $fightTips := .Page.GetPage "fight-tips"}}
+{{ $hasFightTips := and $fightTips (gt (len $fightTips.Pages) 0) }}
 
-{{ if or ($advancedGuide) ($fightTips) }}
+{{ if or ($validAdvancedGuide) ($hasFightTips) }}
 <div class="responsive-container">
   <div class="role-header mb-8">Advanced Guides</div>
   <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+  {{ if $validAdvancedGuide }}
     <div>
       {{ with $advancedGuide}}
         {{ $content := dict
@@ -22,8 +25,9 @@
         {{ partial "cards/guide.html" $content }}
       {{ end }}
     </div>
+  {{ end }}
+  {{ if $hasFightTips }}
     <div>
-      {{ if gt (len $fightTips.Pages) 0 }}
         {{ with index $fightTips.Pages 0}}
           {{ $content := dict
               "role" $role
@@ -48,8 +52,8 @@
             }}
             {{ partial "cards/guide.html" $content }}
         {{ end }}
-      {{ end }}
       </div>
+  {{ end }}
   </section>
 </div>
 {{ end }}
