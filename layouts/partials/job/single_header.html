@@ -1,19 +1,19 @@
 <div class="h-112 lg:h-96 xl:h-80 bg-no-repeat bg-cover" style='background-image: url(/theme-assets/jobs/{{ lower .role }}/{{ .job }}/{{ .job }}_background.png);'>
   <div class="responsive-container z-10 relative flex items-center h-full mt-4 lg:mt-0">
     <div class="grid grid-cols-12 lg:gap-8 w-full items-center mt-8 lg:mt-0">
-        <div class="col-span-12 lg:col-span-9 text-white responsive-container">
-          <div class="flex items-center mb-7">
+        <div class="col-span-12 lg:col-span-9 text-white responsive-container h-full flex flex-wrap content-evenly">
+          <div class="flex items-center mb-7 w-full">
             <a href="{{ .pageContext.Parent.Permalink }}" class="flex flex-row items-center" >
               <img class="job-icon-sm mr-4 filter drop-shadow-lg-{{ .role }}" src='{{ print "/theme-assets/jobs/" (lower .role) "/" (lower .job) "/" (lower .job) ".svg" }}' />
-              <div class="card-title filter drop-shadow-lg-{{ .role }}">{{ .jobTitle }}</div> 
+              <div class="!text-3xl card-title filter drop-shadow-lg-{{ .role }}">{{ .jobTitle }}</div> 
             </a>
           </div>
           <div>
             <div class="flex items-center mb-4">
               {{ with .icon }}
-                <img class="inline mr-8 filter drop-shadow-lg-{{ $.role }}" src="{{ . }}" />
+                <img class="job-icon-header inline mr-8 filter drop-shadow-lg-{{ $.role }}" src="{{ . }}" />
               {{ end }}
-              <div class="font-bold filter drop-shadow-lg-{{ .role }} text-2xl lg:text-6xl">{{ .title }}</div>
+              <div class="font-bold filter drop-shadow-lg-{{ .role }} text-4xl md:text-5xl xl:text-6xl md:text-nowrap">{{ .title }}</div>
             </div>
             {{ with .description }}
               <div class="filter drop-shadow-lg-{{ $.role }} mb-4">{{ . }}</div>
