@@ -11,7 +11,7 @@
           <div>
             <div class="flex items-center mb-4">
               {{ with .icon }}
-                <img class="job-icon-header inline mr-8 filter drop-shadow-lg-{{ $.role }}" src="{{ . }}" />
+                <img class="job-icon-header inline mr-4 xl:mr-8 filter drop-shadow-lg-{{ $.role }}" src="{{ . }}" />
               {{ end }}
               <div class="font-bold filter drop-shadow-lg-{{ .role }} text-4xl md:text-5xl xl:text-6xl md:text-nowrap">{{ .title }}</div>
             </div>

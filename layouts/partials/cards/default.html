@@ -11,7 +11,7 @@
         {{ partial "cards/_header.html" . }}
       </div>
     {{ end }}
-    <div>
+    <div{{ with .textClass }} class="{{ . }}"{{ end }}>
       {{ .text }}
     </div>
     {{ if isset . "readMoreLink" }}

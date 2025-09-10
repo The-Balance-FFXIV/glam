@@ -713,3 +713,9 @@ ol {
 .etro-iframe-height {
   height: 40rem;
 }
+
+/* custom scrollbar for overflow areas */
+.overflow-auto {
+  scrollbar-width: thin;
+  scrollbar-color: #5c5c5c #f1f1f100;
+}
