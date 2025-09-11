@@ -665,7 +665,7 @@ Footer
 Various Containers
 */
 .guide-info-container {
-  @apply col-span-12 lg:col-span-3 bg-card-light text-white divide-y divide-white px-5;
+  @apply col-span-12 lg:col-span-3 bg-card-light text-white divide-y divide-page px-5;
 }
 .job-guides-container {
   @apply col-span-12 lg:col-span-9 bg-card-light text-white py-8 md:py-14 px-8 md:px-14 lg:px-20 xl:px-28;
