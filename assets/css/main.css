@@ -22,13 +22,7 @@ html {
 *  Container (Mobile + Desktop)
 */
 .responsive-container {
-  @apply container mx-auto;
-}
-
-@screen lg {
-  .responsive-container {
-    @apply px-4 lg:px-8;
-  }
+  @apply container mx-auto px-4 lg:px-8;
 }
 
 /*
@@ -422,7 +416,13 @@ Content
 * TABS
 */
 .tabbed {
-  @apply overflow-x-hidden my-4 pb-2 -mt-16;
+  @apply overflow-x-hidden -mt-16;
+}
+
+@screen sm {
+  .tabbed {
+    @apply my-4 pb-2;
+  }
 }
 
 .tabbed [type="radio"] {
@@ -687,7 +687,7 @@ Various Containers
 
 /* Styling when TOC is stuck/sticky */
 @media (max-width: 1024px) {
-  .table-of-contents-container.is-stuck {
+  .table-of-contents-container.stuck-mobile {
     background-color: rgba(28, 36, 50, 0.95); /* Darker background with transparency */
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.1);

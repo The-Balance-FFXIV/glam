@@ -1,15 +1,15 @@
 const anchors = document.querySelectorAll("nav#TableOfContents ul a")
-// Look for both direct children and any h1/h2 within .markdown for broader compatibility
 const headers = document.querySelectorAll(".markdown h1, .markdown > h1")
 const subheaders = document.querySelectorAll(".markdown h2, .markdown > h2")
 
-// TOC Toggle functionality
+// elements for mobile TOC toggle
 const tocToggle = document.getElementById('toc-toggle')
 const tocNav = document.getElementById('TableOfContents')
 const expandIcon = document.getElementById('toc-expand-icon')
 const collapseIcon = document.getElementById('toc-collapse-icon')
-const tocContainer = document.querySelector('.table-of-contents-container')
+const toc = document.querySelector('.table-of-contents-container')
 
+// defaults to collapsed state on mobile, contains collapse function
 function collapseTOC() {
   if (tocNav && tocNav.classList.contains('toc-expanded')) {
     tocNav.classList.remove('toc-expanded')
@@ -23,6 +23,7 @@ function collapseTOC() {
   }
 }
 
+// contains expand function for mobile TOC
 function expandTOC() {
   if (tocNav && !tocNav.classList.contains('toc-expanded')) {
     tocNav.classList.add('toc-expanded')
@@ -36,25 +37,25 @@ function expandTOC() {
   }
 }
 
+// expands or collapses the TOC when pressing the button
 if (tocToggle && tocNav) {
-  tocToggle.addEventListener('click', function(e) {
-    e.stopPropagation()
-    const isExpanded = tocNav.classList.contains('toc-expanded')
-    
-    if (isExpanded) {
+  tocToggle.addEventListener('click', function(click) {
+    click.stopPropagation()
+    const expanded = tocNav.classList.contains('toc-expanded')
+
+    if (expanded) {
       collapseTOC()
     } else {
       expandTOC()
     }
   })
-  
-  // Set initial aria-expanded state
+
+  // screen reader initialization for accessibility
   tocToggle.setAttribute('aria-expanded', 'false')
   
-  // Handle window resize - reset TOC state on large screens
+  // resets TOC state if the window is resized to desktop size
   window.addEventListener('resize', function() {
     if (window.innerWidth >= 1024) {
-      // Reset TOC state on large screens
       if (tocNav.classList.contains('toc-expanded')) {
         collapseTOC()
       }
@@ -77,6 +78,7 @@ function findCurrentHeader(headers) {
   return bestHeader
 }
 
+// callback that detects and highlights which header is currently "active"
 const observerCallback = () => {
   // Deactivate all anchors
   for (const anchor of anchors) {
@@ -89,30 +91,27 @@ const observerCallback = () => {
     }
   }
 
-  // For BIS pages, we only have h2 elements, so treat them as main headers
-  const allHeaders = headers.length > 0 ? headers : subheaders
-  const currentHeader = findCurrentHeader(allHeaders)
-  
-  // If no header is found in the optimal position, default to the first one
-  const activeHeader = currentHeader || allHeaders[0]
+  // treat h2 as main headers if no h1s exist (BIS pages)
+  const headerList = headers.length > 0 ? headers : subheaders
+  const currentHeader = findCurrentHeader(headerList) || headerList[0]
+  const activeHeader = currentHeader || headerList[0]
   if (!activeHeader) { return }
 
   let currentSubheader = null
   
-  // Only look for subheaders if we have actual h1 headers (not BIS pages) and a current header was found
+  // check for h2 subheaders when h1 headers exist
   if (headers.length > 0 && currentHeader) {
-    // Find all H2 tags between current and the next H1
-    const subheadersInSection = []
+    const subheaders = []
     let sibling = currentHeader.nextElementSibling
 
     while (sibling && sibling.tagName !== "H1") {
       if (sibling.tagName === "H2") {
-        subheadersInSection.push(sibling)
+        subheaders.push(sibling)
       }
       sibling = sibling.nextElementSibling
     }
 
-    currentSubheader = findCurrentHeader(subheadersInSection)
+    currentSubheader = findCurrentHeader(subheaders)
   }
 
   for (const header of [activeHeader, currentSubheader]) {
@@ -124,7 +123,7 @@ const observerCallback = () => {
       
       anchor.classList.add("active")
       
-      // Also mark parent links as active for mobile view
+      // keeps header active when subheader is currently active in the TOC
       let parentLi = anchor.closest('li').parentElement?.closest('li')
       while (parentLi) {
         const parentAnchor = parentLi.querySelector('a')
@@ -144,117 +143,112 @@ const observerCallback = () => {
   }
 }
 
+// needed with observer in the next function to determine which header is currently in view
 const opts = {
 	root: null,
 	rootMargin: "0px",
 }
 
 const observer = new IntersectionObserver(observerCallback, opts)
-
-// Observe all headers found
 headers.forEach(header => observer.observe(header))
 subheaders.forEach(header => observer.observe(header))
 
-// Function to set the first header as active
-function setFirstHeaderActive() {
-  // Check if sentinel exists and is out of view (TOC is stuck)
-  const sentinel = document.querySelector('[data-toc-sentinel]')
-  if (sentinel) {
-    const sentinelRect = sentinel.getBoundingClientRect()
-    // If sentinel is above viewport (out of view), don't set first header as active
-    // Let the normal scroll detection handle it
-    if (sentinelRect.bottom < 0) {
-      return
-    }
-  }
-
-  // For BIS pages, we only have h2 elements, so treat them as main headers
-  const allHeaders = headers.length > 0 ? headers : subheaders
+// when the page loads, select an appropriate header as active
+// this is mainly to avoid having no active header when the page freshly loads
+function setActiveHeader() {
+  // collects all headers to feed to findCurrentHeader to determine what is in view
+  const headerList = headers.length > 0 ? headers : subheaders
+  if (headerList.length === 0) return
   
-  if (allHeaders.length > 0) {
-    const firstHeader = allHeaders[0]
-    const firstAnchor = document.querySelector(`a[href="#${firstHeader.id}"]`)
+  // find what header is in view at page load (in case of refresh or direct link)
+  const currentHeader = findCurrentHeader(headerList)
+  
+  // exits early if a header was found (it will return null if user is at very top of page)
+  // not doing this would cause the first header to be active at page load even if another one is active
+  if (currentHeader) {
+    return
+  }
+  
+  // if findCurrentHeader returns null (top of page/fresh page load), sets first header as active
+  const firstHeader = headerList[0]
+  const firstAnchor = document.querySelector(`a[href="#${firstHeader.id}"]`)
+  
+  if (firstAnchor) {
+    firstAnchor.classList.add("active")
     
-    if (firstAnchor) {
-      firstAnchor.classList.add("active")
-      
-      // Also handle nested UL if it exists
-      const next = firstAnchor.nextElementSibling
-      if (next && next.tagName === "UL") {
-        if (next.children.length > 0 && next.children[0].children.length > 0) {
-          next.classList.add("active")
-        }
+    // nested UL handling
+    const next = firstAnchor.nextElementSibling
+    if (next && next.tagName === "UL") {
+      if (next.children.length > 0 && next.children[0].children.length > 0) {
+        next.classList.add("active")
       }
     }
   }
 }
 
-// Set first header as active on page load - but delay to allow sentinel setup
-document.addEventListener('DOMContentLoaded', function() {
-  // Delay to ensure sentinel is created first
-  setTimeout(setFirstHeaderActive, 150)
+// set active header on page load
+window.addEventListener('load', function() {
+  setActiveHeader()
 })
 
-// Also set it after a longer delay to ensure all content is loaded
-setTimeout(setFirstHeaderActive, 250)
+// detects when the TOC is in a "stuck" position on mobile and adds a class for styling
+function detectMobileRestyle() {
+  const toc = document.querySelector('.table-of-contents-container')
+  if (!toc) return
 
-// Sticky state detection for TOC
-function setupStickyDetection() {
-  const tocContainer = document.querySelector('.table-of-contents-container')
-  if (!tocContainer) return
-
-  // Get the computed style to find the actual top value
-  const computedStyle = window.getComputedStyle(tocContainer)
-  const topValue = computedStyle.top
-  
-  // Create a sentinel element positioned just above where the TOC would stick
-  const sentinel = document.createElement('div')
-  sentinel.style.position = 'absolute'
-  sentinel.style.top = '0'
-  sentinel.style.height = '1px'
-  sentinel.style.width = '100%'
-  sentinel.style.opacity = '0'
-  sentinel.style.pointerEvents = 'none'
-  sentinel.setAttribute('data-toc-sentinel', '')
-  
-  // Insert the sentinel at the top of the TOC container's parent
-  const tocParent = tocContainer.parentNode
-  tocParent.style.position = 'relative' // Ensure parent has relative positioning
-  tocParent.insertBefore(sentinel, tocContainer)
-
-  let isStuck = false
-
-  function checkStickyState() {
-    const tocRect = tocContainer.getBoundingClientRect()
-    const sentinelRect = sentinel.getBoundingClientRect()
+  let sticky = false
+  function restyleCheck() {
+    // if screen viewport is lg+, remove any mobile sticky class and exit
+    if (window.innerWidth > 1024) {
+      if (sticky) {
+        toc.classList.remove('stuck-mobile')
+        sticky = false
+      }
+      return
+    }
     
-    // Parse the top value to get the offset where TOC should stick
-    const topOffset = parseInt(topValue) || 32
+    // get current position of the TOC container relative to viewport
+    const tocPos = toc.getBoundingClientRect()
+    const computedStyle = window.getComputedStyle(toc)
     
-    // TOC is stuck when:
-    // 1. Its top position is at or near the sticky offset
-    // 2. The sentinel is above the viewport
-    const shouldBeStuck = tocRect.top <= topOffset + 5 && sentinelRect.bottom < 0
+    // get what value the toc should be stuck at, default to top-12 if not found
+    const expectedTop = parseInt(computedStyle.top) || 48
+
+    // determines that stuck-mobile should be applied if within 10px of expected top position
+    const shouldSticky = Math.abs(tocPos.top - expectedTop) <= 10
     
-    if (shouldBeStuck && !isStuck) {
-      tocContainer.classList.add('is-stuck')
-      isStuck = true
-    } else if (!shouldBeStuck && isStuck) {
-      tocContainer.classList.remove('is-stuck')
-      isStuck = false
+    if (shouldSticky && !sticky) {
+      toc.classList.add('stuck-mobile')
+      sticky = true
+    } else if (!shouldSticky && sticky) {
+      toc.classList.remove('stuck-mobile')
+      sticky = false
     }
   }
 
-  // Use requestAnimationFrame for smooth detection
+  // check restyle necessity on scroll
   function onScroll() {
-    requestAnimationFrame(checkStickyState)
+    requestAnimationFrame(restyleCheck)
   }
 
   window.addEventListener('scroll', onScroll, { passive: true })
   
-  // Initial check
-  checkStickyState()
+  // check restyle necessity on page resize
+  let resizeTimeout
+  function onResize() {
+    
+    // check restyle necessity after a short delay to avoid excessive calls
+    clearTimeout(resizeTimeout)
+    resizeTimeout = setTimeout(() => {
+      requestAnimationFrame(restyleCheck)
+    }, 100)
+  }
+  
+  window.addEventListener('resize', onResize, { passive: true })
+
+  // first check on load
+  restyleCheck()
 }
 
-// Initialize sticky detection after DOM is loaded
-document.addEventListener('DOMContentLoaded', setupStickyDetection)
+// starts the restyle detection after DOM is loaded
+document.addEventListener('DOMContentLoaded', detectMobileRestyle)
