@@ -4,7 +4,7 @@
 {{ $job := cond $isParentJob .Page.Parent .Page.Parent.Parent }}
 {{ $role := $job.Parent.Params.role }}
 
-<div class="space-y-16">
+<div class="space-y-8 sm:space-y-16">
   {{ $header := dict
     "role" $role
     "job" $job.Params.job_name
