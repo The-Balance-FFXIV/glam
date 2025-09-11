@@ -144,20 +144,6 @@ Table of Contents
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
 
-/* flash animation for toc sticky restyle on mobile widths */
-@media (max-width: 1023px) {
-  #toc-toggle {
-    animation: flash 3s infinite;
-    animation-delay: 1s;
-  }
-  
-  #toc-toggle:hover,
-  #toc-toggle:focus,
-  nav#TableOfContents.toc-expanded + div #toc-toggle {
-    animation: none;
-  }
-}
-
 @keyframes flash {
   0%, 90%, 100% {
     opacity: 1;
@@ -672,13 +658,13 @@ Various Containers
 }
 .table-of-contents-container {
   @apply col-span-12 lg:order-last sticky lg:col-span-3 bg-card-light text-white divide-y divide-page px-5 top-12 lg:top-8 sm:mt-8 mb-8 md:mt-0 md:mb-0;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
 }
 
 /* mobile sticky toc container styling */
 @media (max-width: 1024px) {
   .table-of-contents-container.stuck-mobile {
-    background-color: rgba(28, 36, 50, 0.95);
+    background-color: rgba(34, 37, 40, 0.95);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 0px 0px 8px 8px;
