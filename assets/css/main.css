@@ -22,7 +22,7 @@ html {
 *  Container (Mobile + Desktop)
 */
 .responsive-container {
-  @apply container px-4 lg:px-8 mx-auto;
+  @apply container mx-auto px-4 lg:px-8;
 }
 
 /*
@@ -128,6 +128,80 @@ Heading
 Table of Contents
  */
 
+/* toc toggle button styling */
+#toc-toggle {
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+#toc-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#toc-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+/* flash animation for toc sticky restyle on mobile widths */
+@media (max-width: 1023px) {
+  #toc-toggle {
+    animation: flash 3s infinite;
+    animation-delay: 1s;
+  }
+  
+  #toc-toggle:hover,
+  #toc-toggle:focus,
+  nav#TableOfContents.toc-expanded + div #toc-toggle {
+    animation: none;
+  }
+}
+
+@keyframes flash {
+  0%, 90%, 100% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0.7;
+  }
+}
+
+/* hide links on smaller screens to let js show one active header */
+nav#TableOfContents a {
+  font-size: 0.925rem;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+/* show the entire toc on larger screens */
+@media (min-width: 1024px) {
+  nav#TableOfContents a {
+    display: block;
+  }
+}
+
+/* active link coloring */
+nav#TableOfContents a.active {
+  color: white;
+  display: block;
+}
+
+/* shows parent active links on smaller screens */
+@media (max-width: 1023px) {
+  nav#TableOfContents a.parent-active {
+    display: block;
+    opacity: 0.7;
+  }
+
+  /* show all links when expanding toc with button */
+  nav#TableOfContents.toc-expanded a {
+    display: block;
+    animation: fadeInDown 0.3s ease-out;
+  }
+}
+
+/* styling for nested lists in toc */
 nav#TableOfContents ul a + ul {
   padding-left: 1.5em;
   max-height: 0;
@@ -144,12 +218,25 @@ nav#TableOfContents ul a + ul.active {
   transition: max-height 1s;
 }
 
-nav#TableOfContents a {
-  font-size: 0.925rem;
+/* show full list when expanded class gets added */
+@media (max-width: 1023px) {
+  nav#TableOfContents.toc-expanded ul a + ul {
+    max-height: 1000px;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+  }
 }
 
-nav#TableOfContents a.active {
-  color: white;
+/* fade animation for toc items when expanded */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /**
@@ -319,7 +406,13 @@ Content
 * TABS
 */
 .tabbed {
-  @apply overflow-x-hidden my-4 pb-2 -mt-16;
+  @apply overflow-x-hidden -mt-16;
+}
+
+@screen sm {
+  .tabbed {
+    @apply my-4 pb-2;
+  }
 }
 
 .tabbed [type="radio"] {
@@ -572,13 +665,25 @@ Footer
 Various Containers
 */
 .guide-info-container {
-  @apply col-span-12 lg:col-span-3 bg-card-light text-white divide-y divide-page px-5 mb-6 md:mb-0;
+  @apply col-span-12 lg:col-span-3 bg-card-light text-white divide-y divide-white px-5;
 }
 .job-guides-container {
   @apply col-span-12 lg:col-span-9 bg-card-light text-white py-8 md:py-14 px-8 md:px-14 lg:px-20 xl:px-28;
 }
 .table-of-contents-container {
-  @apply col-span-12 lg:order-last lg:sticky lg:col-span-3 bg-card-light text-white divide-y divide-page px-5 md:top-8 mt-8 mb-8 md:mt-0 md:mb-0;
+  @apply col-span-12 lg:order-last sticky lg:col-span-3 bg-card-light text-white divide-y divide-page px-5 top-12 lg:top-8 sm:mt-8 mb-8 md:mt-0 md:mb-0;
+  transition: all 0.3s ease;
+}
+
+/* mobile sticky toc container styling */
+@media (max-width: 1024px) {
+  .table-of-contents-container.stuck-mobile {
+    background-color: rgba(28, 36, 50, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
 }
 
 /**
