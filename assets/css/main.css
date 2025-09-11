@@ -128,7 +128,7 @@ Heading
 Table of Contents
  */
 
-/* TOC toggle button styling */
+/* toc toggle button styling */
 #toc-toggle {
   transition: all 0.2s ease;
   border-radius: 4px;
@@ -144,10 +144,10 @@ Table of Contents
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
 
-/* Add subtle pulse animation to indicate the TOC is collapsible */
+/* flash animation for toc sticky restyle on mobile widths */
 @media (max-width: 1023px) {
   #toc-toggle {
-    animation: pulseHint 3s infinite;
+    animation: flash 3s infinite;
     animation-delay: 1s;
   }
   
@@ -158,7 +158,7 @@ Table of Contents
   }
 }
 
-@keyframes pulseHint {
+@keyframes flash {
   0%, 90%, 100% {
     opacity: 1;
   }
@@ -167,51 +167,41 @@ Table of Contents
   }
 }
 
-/* Hide all links by default on smaller screens */
+/* hide links on smaller screens to let js show one active header */
 nav#TableOfContents a {
   font-size: 0.925rem;
   display: none;
   transition: all 0.3s ease;
 }
 
-/* Show all links on lg screens and larger */
+/* show the entire toc on larger screens */
 @media (min-width: 1024px) {
   nav#TableOfContents a {
     display: block;
   }
 }
 
-/* Show active links on all screen sizes */
+/* active link coloring */
 nav#TableOfContents a.active {
   color: white;
   display: block;
 }
 
-/* Show parent-active links on smaller screens only */
+/* shows parent active links on smaller screens */
 @media (max-width: 1023px) {
   nav#TableOfContents a.parent-active {
     display: block;
     opacity: 0.7;
   }
 
-  /* When TOC is expanded, show all links */
+  /* show all links when expanding toc with button */
   nav#TableOfContents.toc-expanded a {
     display: block;
     animation: fadeInDown 0.3s ease-out;
   }
-
-  /* Maintain active state styling when expanded */
-  nav#TableOfContents.toc-expanded a.active {
-    color: white;
-  }
-
-  /* Maintain parent-active state styling when expanded */
-  nav#TableOfContents.toc-expanded a.parent-active {
-    opacity: 0.7;
-  }
 }
 
-/* Nested UL behavior */
+/* styling for nested lists in toc */
 nav#TableOfContents ul a + ul {
   padding-left: 1.5em;
   max-height: 0;
@@ -228,7 +218,7 @@ nav#TableOfContents ul a + ul.active {
   transition: max-height 1s;
 }
 
-/* When TOC is expanded, show all nested ULs */
+/* show full list when expanded class gets added */
 @media (max-width: 1023px) {
   nav#TableOfContents.toc-expanded ul a + ul {
     max-height: 1000px;
@@ -237,7 +227,7 @@ nav#TableOfContents ul a + ul.active {
   }
 }
 
-/* Fade in animation for expanded TOC items */
+/* fade animation for toc items when expanded */
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -675,7 +665,7 @@ Footer
 Various Containers
 */
 .guide-info-container {
-  @apply col-span-12 lg:col-span-3 bg-card-light text-white divide-y divide-white px-5 mb-6 md:mb-0;
+  @apply col-span-12 lg:col-span-3 bg-card-light text-white divide-y divide-white px-5;
 }
 .job-guides-container {
   @apply col-span-12 lg:col-span-9 bg-card-light text-white py-8 md:py-14 px-8 md:px-14 lg:px-20 xl:px-28;
@@ -685,10 +675,10 @@ Various Containers
   transition: all 0.3s ease;
 }
 
-/* Styling when TOC is stuck/sticky */
+/* mobile sticky toc container styling */
 @media (max-width: 1024px) {
   .table-of-contents-container.stuck-mobile {
-    background-color: rgba(28, 36, 50, 0.95); /* Darker background with transparency */
+    background-color: rgba(28, 36, 50, 0.95);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;

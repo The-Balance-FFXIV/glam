@@ -5,8 +5,8 @@ const subheaders = document.querySelectorAll(".markdown h2, .markdown > h2")
 // elements for mobile TOC toggle
 const tocToggle = document.getElementById('toc-toggle')
 const tocNav = document.getElementById('TableOfContents')
-const expandIcon = document.getElementById('toc-expand-icon')
-const collapseIcon = document.getElementById('toc-collapse-icon')
+const expandIcon = document.getElementById('toc-expand')
+const collapseIcon = document.getElementById('toc-collapse')
 const toc = document.querySelector('.table-of-contents-container')
 
 // defaults to collapsed state on mobile, contains collapse function
