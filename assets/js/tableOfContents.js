@@ -17,9 +17,6 @@ function collapseTOC() {
       expandIcon.classList.remove('hidden')
       collapseIcon.classList.add('hidden')
     }
-    if (tocToggle) {
-      tocToggle.setAttribute('aria-expanded', 'false')
-    }
   }
 }
 
@@ -30,9 +27,6 @@ function expandTOC() {
     if (expandIcon && collapseIcon) {
       expandIcon.classList.add('hidden')
       collapseIcon.classList.remove('hidden')
-    }
-    if (tocToggle) {
-      tocToggle.setAttribute('aria-expanded', 'true')
     }
   }
 }
@@ -49,9 +43,6 @@ if (tocToggle && tocNav) {
       expandTOC()
     }
   })
-
-  // screen reader initialization for accessibility
-  tocToggle.setAttribute('aria-expanded', 'false')
   
   // resets TOC state if the window is resized to desktop size
   window.addEventListener('resize', function() {
