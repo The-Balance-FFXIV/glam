@@ -4,7 +4,7 @@
 {{ $job := cond $isParentJob .Page.Parent .Page.Parent.Parent }}
 {{ $role := $job.Parent.Params.role }}
 
-<div class="space-y-16">
+<div class="space-y-8 sm:space-y-16">
   {{ $header := dict
     "role" $role
     "job" $job.Params.job_name
@@ -17,9 +17,9 @@
   }}
   {{ partial "job/single_header.html" $header }}
 
-  <div class="responsive-container">
+  <div class="container mx-auto lg:px-8">
     <div class="md:grid grid-cols-12 items-start gap-8 w-full">
-      <div class="table-of-contents-container max-h-screen overflow-y-auto">
+      <div class="mx-4 sm:mx-0 table-of-contents-container max-h-screen overflow-y-auto">
         {{ partial "components/qna_toc.html" .Params.qna }}
       </div>
       <div class="job-guides-container">
