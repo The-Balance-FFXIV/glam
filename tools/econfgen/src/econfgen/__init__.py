@@ -20,7 +20,7 @@ JOBS: Final[Dict[str, List[Tuple[str, str]]]] = {
         ('Paladin', 'pld'),
         ('Warrior', 'war'),
         ('Dark Knight', 'drk'),
-        ('Gunbreaker', 'gbn'),
+        ('Gunbreaker', 'gnb'),
     ],
     'healers': [
         ('Scholar', 'sch'),
