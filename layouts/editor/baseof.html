@@ -70,6 +70,19 @@
       CMS.registerPreviewTemplate("faq", faqTemplate);
       CMS.registerPreviewTemplate("stat-priority", statPriorityTemplate);
       CMS.registerPreviewTemplate("job-changes", changesTemplate);
+      
+      // append every job into an array and create a template for each of them
+      const jobs = [
+        "pld", "war", "drk", "gnb", // tanks
+        "whm", "sch", "ast", "sge", // healers
+        "mnk", "drg", "nin", "sam", "rpr", "vpr", // melee
+        "brd", "mch", "dnc", // ranged
+        "blm", "smn", "rdm", "pct" // casters
+      ];
+
+      jobs.forEach(job => {
+        CMS.registerPreviewTemplate(`${job}-fight-tips`, GenericJobGuide);
+      });
     </script>
   </body>
 </html>
