@@ -5,7 +5,7 @@
       <img class="w-full" src="{{ . }}" />
     </div>
   {{ end }}
-  <div class="card card-{{ $borderClass }} space-y-3">
+  <div class="card card-{{ $borderClass }} space-y-3"{{ if and .r .g .b .a }} style="background-color: rgba({{ .r }}, {{ .g }}, {{ .b }}, {{ .a }})"{{ end }}>
     {{ if isset . "name" }}
       <div class="border-b border-card-dark pb-8">
         {{ partial "cards/_header.html" . }}
