@@ -1302,6 +1302,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -1372,6 +1380,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -2071,6 +2087,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -2141,6 +2165,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -2840,6 +2872,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -2910,6 +2950,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -3609,6 +3657,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -3679,6 +3735,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -4378,6 +4442,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -4448,6 +4520,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -5147,6 +5227,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -5217,6 +5305,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -5916,6 +6012,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -5986,6 +6090,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -6685,6 +6797,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -6755,6 +6875,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -7454,6 +7582,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -7524,6 +7660,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -8223,6 +8367,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -8293,6 +8445,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -8992,6 +9152,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -9062,6 +9230,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -9761,6 +9937,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -9831,6 +10015,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -10530,6 +10722,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -10600,6 +10800,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -11299,6 +11507,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -11369,6 +11585,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -12068,6 +12292,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -12138,6 +12370,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -12837,6 +13077,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -12907,6 +13155,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -13606,6 +13862,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -13676,6 +13940,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -14375,6 +14647,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -14445,6 +14725,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -15144,6 +15432,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -15214,6 +15510,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -15913,6 +16217,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -15983,6 +16295,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -16682,6 +17002,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -16752,6 +17080,14 @@ collections:
       required: false
       time_format: false
       widget: datetime
+    - default: public
+      label: Visibility
+      name: visibility
+      required: false
+      options:
+      - public
+      - hidden
+      widget: select
     - fields:
       - date_format: YYYY-MM-DD
         label: Date
@@ -17045,6 +17381,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -17103,6 +17447,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    default: public
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -17161,6 +17513,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -17219,6 +17579,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -17277,6 +17645,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -17335,6 +17711,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -17393,6 +17777,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -17451,6 +17843,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -17509,6 +17909,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -17567,6 +17975,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -17625,6 +18041,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -17683,6 +18107,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -17741,6 +18173,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -17799,6 +18239,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -17857,6 +18305,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -17915,6 +18371,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -17973,6 +18437,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -18031,6 +18503,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -18089,6 +18569,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -18147,6 +18635,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
@@ -18205,6 +18701,14 @@ collections:
     required: false
     time_format: false
     widget: datetime
+  - default: public
+    label: Visibility
+    name: visibility
+    required: false
+    options:
+    - public
+    - hidden
+    widget: select
   - fields:
     - date_format: YYYY-MM-DD
       label: Date
