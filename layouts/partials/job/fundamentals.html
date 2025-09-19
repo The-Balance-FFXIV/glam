@@ -1,29 +1,38 @@
 {{ $role := .Page.Parent.Params.role }}
 
 <div class="responsive-container">
-  <section class="grid xl:grid-cols-12 gap-6 xl:gap-8">
-    <div class="xl:col-span-6 xl:row-start-1 xl:row-span-2">
-      <h1 class="role-header-{{ $role }} mb-6 ml-3">Job Fundamentals</h1>
-      {{ partial "cards/default.html" (dict "text" .Content "role" $role) }}
-    </div>
+  <section class="grid xl:grid-cols-12 gap-6 xl:gap-8 mt-2">
 
-    <div class="xl:col-span-6 xl:row-start-3">
-      {{ with .Page.GetPage "leveling-guide" }}
-        {{ $levelingInfo := dict
+    <div class="xl:col-span-6 xl:row-start-2">
+      <div class="divide-y divide-card-dark">
+        {{ with .Page.GetPage "leveling-guide" }}
+          {{ $levelingInfo := dict
+            "role" $role
+            "image" .Params.card_header_image
+            "imageClass" "h-72"
+            "icon" "/theme-assets/sprout.svg"
+            "name" "Leveling Guide"
+            "patch" .Params.patch
+            "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
+            "inlineLink" "leveling-guide"
+          }}
+          {{ partial "cards/leveling.html" $levelingInfo }}
+        {{ end }}
+        {{ with .Page.GetPage "skills-overview" }}
+          {{ $skillsInfo := dict
           "role" $role
-          "image" .Params.card_header_image
-          "imageClass" "h-[14.55rem]"
-          "icon" "/theme-assets/sprout.svg"
-          "name" "Leveling Guide"
+          "icon" "/theme-assets/skills.svg"
+          "name" "Skills Overview"
           "patch" .Params.patch
           "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
-          "inlineLink" "leveling-guide"
-        }}
-        {{ partial "cards/leveling.html" $levelingInfo }}
-      {{ end }}
+          "inlineLink" "skills-overview"
+          }}
+          {{ partial "cards/guide.html" $skillsInfo }}
+        {{ end }}
+      </div>
     </div>
 
-    <div class="xl:col-span-6 xl:row-start-1 xl:row-span-3">
+    <div class="xl:col-span-6 xl:row-start-1 xl:row-span-2 content-end">
       <div class="divide-y divide-card-dark">
         {{ with .Page.GetPage "basic-guide" }}
           {{ $basicInfo := dict
@@ -37,17 +46,6 @@
             "inlineLink" "basic-guide"
           }}
           {{ partial "cards/guide.html" $basicInfo }}
-        {{ end }}
-        {{ with .Page.GetPage "skills-overview" }}
-          {{ $skillsInfo := dict
-            "role" $role
-            "icon" "/theme-assets/skills.svg"
-            "name" "Skills Overview"
-            "patch" .Params.patch
-            "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
-            "inlineLink" "skills-overview"
-          }}
-          {{ partial "cards/guide.html" $skillsInfo }}
         {{ end }}
         {{ with .Page.GetPage "openers" }}
           {{ $openerInfo := dict
