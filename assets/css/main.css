@@ -816,6 +816,10 @@ ol {
   scrollbar-width: thin;
 }
 
-.overflow-bar-color {
+.scrollbar-changes {
   scrollbar-color: #5c5c5c #f1f1f100;
+}
+
+.scrollbar-header {
+  scrollbar-color: #5c5c5c rgba(34, 37, 40, 0.85);
 }

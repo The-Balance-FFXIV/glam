@@ -9,7 +9,7 @@
       </div>
       <h1 class="text-4xl md:text-5xl xl:text-6xl font-semibold filter drop-shadow-lg-{{ $role }} mb-0">{{ .Title }}</h1>
     </div>
-    <div class="mt-5 sm:mt-10 max-w-[925px] overflow-auto max-h-60">
+    <div class="mt-5 sm:mt-10 max-w-[925px] overflow-auto scrollbar-header max-h-60">
       {{ partial "cards/default.html" (dict "text" .Content "role" $role "r" 34 "g" 37 "b" 40 "a" 0.85) }}
     </div>
   </div>
