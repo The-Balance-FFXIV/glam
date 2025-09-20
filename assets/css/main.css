@@ -5,6 +5,11 @@
 /*
 * Global
  */
+@media (max-width: 640px) {
+  body {
+    zoom: 0.8;
+  }
+}
 
 body {
   @apply font-sans text-white;
@@ -809,5 +814,12 @@ ol {
 /* custom scrollbar for overflow areas */
 .overflow-auto {
   scrollbar-width: thin;
+}
+
+.scrollbar-changes {
   scrollbar-color: #5c5c5c #f1f1f100;
+}
+
+.scrollbar-header {
+  scrollbar-color: #5c5c5c rgba(34, 37, 40, 0.85);
 }
