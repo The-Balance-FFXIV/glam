@@ -5,11 +5,6 @@
 /*
 * Global
  */
-@media (max-width: 640px) {
-  body {
-    zoom: 0.8;
-  }
-}
 
 body {
   @apply font-sans text-white;
@@ -17,6 +12,12 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+@media (max-width: 639px) {
+  html {
+    font-size: 13px;
+  }
 }
 
 html {
