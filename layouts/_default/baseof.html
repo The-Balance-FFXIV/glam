@@ -16,7 +16,7 @@
     {{ else }}
       {{- partial "header.html" . -}}
     {{ end }}
-    <div id="content" class="z-20">
+    <div id="content" class="z-20{{ if eq $title "Home" }} flex flex-wrap justify-center{{ end }}">
       {{- block "main" . }}{{- end }}
     </div>
     {{- partial "footer.html" . -}}
