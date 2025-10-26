@@ -70,7 +70,7 @@ function onNav() {
 // resets TOC state if the window is resized to desktop size
 window.addEventListener('resize', function () {
     if (window.innerWidth >= 1024) {
-        if (getTocNav().classList.contains('toc-expanded')) {
+        if (getTocNav()?.classList?.contains('toc-expanded')) {
             collapseTOC()
         }
     }
