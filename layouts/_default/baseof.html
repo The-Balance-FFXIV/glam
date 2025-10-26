@@ -5,6 +5,8 @@
     {{ partialCached "math.html" . }}
     {{ end }}
     {{- partial "head.html" . -}}
+    {{ partial "image-modal-script.html" . }}
+    {{ partial "components/toc-script.html" . }}
   </head>
   <body hx-boost="true">
     {{ $title := .Title }}
