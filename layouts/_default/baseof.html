@@ -24,9 +24,13 @@
     {{- partial "footer.html" . -}}
     {{ $headerJs := resources.Get "js/header.js" }}
     {{ $navJs := resources.Get "js/nav.js" }}
+    {{ $externalLinkJs := resources.Get "js/externalLinks.js" }}
+    {{ $handle404Js := resources.Get "js/handle404.js" }}
 
     <script type="text/javascript" src="{{ $headerJs.RelPermalink }}" defer></script>
     <script type="text/javascript" src="{{ $navJs.RelPermalink }}" defer></script>
+    <script type="text/javascript" src="{{ $externalLinkJs.RelPermalink }}" defer></script>
+    <script type="text/javascript" src="{{ $handle404Js.RelPermalink }}" defer></script>
     {{ partial "image-modal.html" . }}
   </body>
 </html>
