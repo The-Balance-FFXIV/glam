@@ -6,7 +6,7 @@
     {{ end }}
     {{- partial "head.html" . -}}
   </head>
-  <body>
+  <body hx-boost="true">
     {{ $title := .Title }}
     {{ if eq $title "Home" }}
       <header
