@@ -12,7 +12,7 @@
     <script type="text/javascript" src="{{ $externalLinkJs.RelPermalink }}" defer></script>
     <script type="text/javascript" src="{{ $handle404Js.RelPermalink }}" defer></script>
   </head>
-  <body hx-boost="true">
+  <body hx-boost="true" hx-swap="transition:true">
     {{ $title := .Title }}
     {{ if eq $title "Home" }}
       <header

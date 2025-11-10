@@ -20,7 +20,7 @@
               <div class="grid grid-cols-3 gap-3">
                   {{ $gearsetsList := first site.Params.maxGearsets .bis }}
                   {{ range $index, $item := $gearsetsList }}
-                      <div class="link"><a href={{ printf "best-in-slot/#%d" $index }}>{{ $item.name }} »</a></div>
+                      <div class="link"><a href={{ printf "best-in-slot/#set-%d" $index }}>{{ $item.name }} »</a></div>
                   {{ end }}
               </div>
           </div>

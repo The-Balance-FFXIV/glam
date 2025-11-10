@@ -25,7 +25,7 @@
       <div class="job-guides-container">
         <div class="markdown max-w-none">
           {{ range $index, $bis := .Params.bis }}
-          <h2 id="{{ $index }}">{{ $bis.name }}</h2>
+          <h2 id="set-{{ $index }}">{{ $bis.name }}</h2>
           {{ $partialPath := printf "components/embeds/%s.html" $bis.type }}
           {{ if templates.Exists (printf "partials/%s" $partialPath) }}
           {{ partial $partialPath $bis.link }}
