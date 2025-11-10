@@ -1,4 +1,4 @@
-<div id="roleSlider" class="tabbed">
+<div id="roleSlider" class="tabbed" hx-ext="preload" preload="mouseover">
     {{ range $index, $role := sort .Site.Data.roles "order" }}
         <input type="radio" id="tab-{{ $role.name | urlize }}" name="css-tabs" {{ if eq $index 0 }}checked{{ end }}>
     {{ end }}
