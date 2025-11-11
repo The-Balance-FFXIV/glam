@@ -7,7 +7,7 @@
     {{ $filteredList = $filteredList | append . }}
   {{ end }}
 {{ end }}
-  <nav role="navigation" class="fixed lg:absolute top-0 left-0 w-full z-50 bg-card-light lg:bg-transparent">
+  <nav role="navigation" class="fixed lg:absolute top-0 left-0 w-full z-50 bg-card-light lg:bg-transparent" hx-ext="preload" preload="mouseover">
     <div class="responsive-container">
       <div class="flex justify-center">
         <!-- Navbar items -->

@@ -7,7 +7,7 @@
     {{ $filteredList = $filteredList | append . }}
   {{ end }}
 {{ end }}
-<nav class="fixed w-full lg:relative bg-card-light z-50">
+<nav class="fixed w-full lg:relative bg-card-light z-50" hx-ext="preload" preload="mouseover">
   <div class="responsive-container lg:px-2">
     <div class="flex justify-between">
       <div class="flex space-x-7">

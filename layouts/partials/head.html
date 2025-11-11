@@ -31,6 +31,9 @@
   href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap"
   rel="stylesheet"
 />
+<!-- Makes page navigation loads work seamlessly like an SPA, instead of a more jarring full page reload. -->
+<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/dist/htmx.min.js" integrity="sha384-/TgkGk7p307TH7EXJDuUlgG3Ce1UVolAOFopFekQkkXihi5u/6OCvVKyz1W+idaz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/htmx-ext-preload@2.1.2" integrity="sha384-PRIcY6hH1Y5784C76/Y8SqLyTanY9rnI3B8F3+hKZFNED55hsEqMJyqWhp95lgfk" crossorigin="anonymous"></script>
 {{ $styles := resources.Get "css/main.css" | postCSS }}
 {{ if hugo.IsServer }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" />
