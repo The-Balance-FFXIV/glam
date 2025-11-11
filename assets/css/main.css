@@ -824,3 +824,10 @@ ol {
 .scrollbar-header {
   scrollbar-color: #5c5c5c rgba(34, 37, 40, 0.85);
 }
+
+body {
+    transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+    transition-duration: 500ms;
+}
+

@@ -1,22 +1,32 @@
 {{ define "main" }}
-  <div class="general-page-bg bg-center bg-cover relative flex flex-col items-center text-center justify-center z-10 py-10">
-    <h1 class="text-8xl h-shadow font-bold">Oops!</h1>
-    <h2 class="text-4xl h-shadow font-bold mb-0">Something went wrong.</h2>
-  </div>
-  <div class="container mx-auto my-16 bg-card-light p-16 flex flex-col items-center justify-center">
-    <p>This page doesn't exist, or is under construction.</p>
-    <p>Redirecting to homepage in <span id="countdown">5</span> seconds...</p>
-    <p>If you are not redirected, please click <a class="font-bold text-link-orange" href="/">this link</a> to go to the homepage.</p>
-  </div>
+<div
+  class="general-page-bg bg-center bg-cover relative flex flex-col items-center text-center justify-center z-10 py-10">
+  <h1 class="text-8xl h-shadow font-bold">Oops!</h1>
+  <h2 class="text-4xl h-shadow font-bold mb-0">Something went wrong.</h2>
+</div>
+<div class="container mx-auto my-16 bg-card-light p-16 flex flex-col items-center justify-center">
+  <p>This page doesn't exist, or is under construction.</p>
+  <p>Redirecting to homepage in <span id="countdown">5</span> seconds...</p>
+  <p>If you are not redirected, please click <a class="font-bold text-link-orange" href="/">this link</a> to go to the
+    homepage.</p>
+</div>
 
-  <!-- 404 redirect functionality -->
-  <script>
-  (function() {
+<!-- 404 redirect functionality -->
+<script>
+  (function () {
     let countdown = 5;
+    const urlStart = document.location.toString();
     const element = document.getElementById('countdown');
     const timer = setInterval(() => {
       element.textContent = --countdown;
-      countdown <= 0 && (clearInterval(timer), location.assign('/'));
+      if (countdown <= 0) {
+        clearInterval(timer);
+        const urlNow = document.location.toString();
+        // Don't redirect if the user has already navigated elsewhere.
+        if (urlStart === urlNow) {
+          location.assign('/') ;
+        }
+      }
     }, 1000);
   })();
 </script>
