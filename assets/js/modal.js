@@ -1,12 +1,14 @@
-// Open the Modal
-function openModal(element) {
-    document.getElementById("modalPic").src = element.src;
-    document.getElementById("myModal").showModal();
-}
-  
-// Close the Modal
-function closeModal() { 
-    // Prevents briefly displaying previous modal image while new image is loading.
-    document.getElementById("modalPic").src = "";
-    document.getElementById("myModal").close();
+// Open the Modal and display an image
+function openModal(img) {
+  const modalImg = document.getElementById("modalPic");
+  modalImg.src = img.src;
+  const modal = document.getElementById("myModal");
+  modal.showModal();
+  // Don't use a persistent event listener - boosted navigation causes us to get
+  // a different modal on every "page".
+  modal.addEventListener(
+    "close",
+    () => (modalImg.src = ""),
+    { once: true },
+  );
 }
