@@ -831,3 +831,7 @@ body {
     transition-duration: 500ms;
 }
 
+#job-banner, #role-banner {
+    /*noinspection CssUnresolvedCustomProperty*/
+    background-color: var(--tw-border-color, inherit);
+}
