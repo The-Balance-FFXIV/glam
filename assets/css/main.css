@@ -252,7 +252,6 @@ dialog {
     /* But clicking on elements within the dialog should work normally. */
     pointer-events: auto;
   }
-  /* TODO: transitions? */
   &::backdrop {
     background-color: #000000c0;
     backdrop-filter: blur(10px) saturate(0.5);
@@ -273,24 +272,23 @@ dialog {
     text-indent: 10em;
     overflow: hidden;
     border: 0;
-  }
 
-  .modal-close::after {
-    position: absolute;
-    line-height: 0.5;
-    top: 0.2em;
-    left: 0.1em;
-    text-indent: 0;
-    content: "\00D7";
-  }
+    &::after {
+      position: absolute;
+      line-height: 0.5;
+      top: 0.2em;
+      left: 0.1em;
+      text-indent: 0;
+      content: "\00D7";
+    }
 
-  .modal-close {
     &:hover, &:focus, &:focus-visible {
       color: white;
       text-decoration: none;
       cursor: pointer;
       outline: none;
     }
+
   }
 
   /* Modal Content */
