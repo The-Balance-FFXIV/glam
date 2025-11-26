@@ -39,6 +39,7 @@ header,
 .general-page-bg {
   background-image: url("/theme-assets/homepage/endwalker@2x.png");
 }
+
 header::after,
 .general-page-bg:after {
   content: "";
@@ -241,67 +242,72 @@ Modal markdown images
 }
 
 /* The Modal (background) */
-.modal {
-  display: none;
-  position: fixed;
+dialog {
   padding-top: 4em;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
   overflow: auto;
-  background-color: black;
+  background: transparent;
+  /* When we click in the "background" of the modal, pass the click through to the actual ::backdrop */
+  pointer-events: none;
+  >* {
+    /* But clicking on elements within the dialog should work normally. */
+    pointer-events: auto;
+  }
+  &::backdrop {
+    background-color: #000000c0;
+    backdrop-filter: blur(10px) saturate(0.5);
+  }
+
+  /* The Close Button */
+  /* Optimized for accessibility by using a button named close but
+    shifting the close text out of the button and only showing x */
+  .modal-close {
+    color: #999;
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    font-size: 2em;
+    font-weight: bold;
+    height: 1em;
+    width: 1em;
+    text-indent: 10em;
+    overflow: hidden;
+    border: 0;
+
+    &::after {
+      position: absolute;
+      line-height: 0.5;
+      top: 0.2em;
+      left: 0.1em;
+      text-indent: 0;
+      content: "\00D7";
+    }
+
+    &:hover, &:focus, &:focus-visible {
+      color: white;
+      text-decoration: none;
+      cursor: pointer;
+      outline: none;
+    }
+
+  }
+
+  /* Modal Content */
+  .modal-content {
+    background-color: black;
+    max-width: 1400px;
+  }
+
+  .modal-pic {
+    cursor: pointer;
+  }
 }
 
-/* Modal Content */
-.modal-content {
-  position: relative;
-  background-color: black;
-  margin: auto;
-  padding: 0;
-  width: 90%;
-  max-width: 1400px;
-}
-
-.modal-pic {
-  display: flex;
-  align-content: center;
-  cursor: pointer;
-}
-
-/* The Close Button */
-/* Optimized for accessibility by using a button named close but
-	shifting the close text out of the button and only showing x */
-.modal-close {
-  color: white;
-  background-color: black;
-  position: absolute;
-  top: 0.5em;
-  right: 0.5em;
-  font-size: 2em;
-  font-weight: bold;
-  height: 1em;
-  width: 1em;
-  text-indent: 10em;
+/* Block scrolling on the body when the modal is open. */
+body:has(dialog:open) {
   overflow: hidden;
-  border: 0;
+  overscroll-behavior: none;
 }
 
-.modal-close::after {
-  position: absolute;
-  line-height: 0.5;
-  top: 0.2em;
-  left: 0.1em;
-  text-indent: 0;
-  content: "\00D7";
-}
-
-.modal-close:hover,
-.modal-close:focus {
-  color: #999;
-  text-decoration: none;
-  cursor: pointer;
-}
 
 /**
 Content
@@ -427,6 +433,7 @@ Content
 .tab.desktop > label {
   @apply hidden md:block border-card-dark border-r border-b;
 }
+
 .tab.desktop:first-of-type > label {
   @apply border-l;
 }
@@ -479,39 +486,39 @@ It unfortunately also means we're limited to 5 tabs at current.
 .tabbed [type="radio"]:nth-of-type(3):checked ~ .tabs .tab:nth-of-type(3) label,
 .tabbed [type="radio"]:nth-of-type(4):checked ~ .tabs .tab:nth-of-type(4) label,
 .tabbed
-  [type="radio"]:nth-of-type(5):checked
-  ~ .tabs
-  .tab:nth-of-type(5)
-  label {
+[type="radio"]:nth-of-type(5):checked
+~ .tabs
+.tab:nth-of-type(5)
+label {
   @apply bg-card-light border-card-dark md:border-r;
   border-bottom-color: #19191a;
 }
 
 .tabbed
-  [type="radio"]:nth-of-type(1):checked
-  ~ .tabs
-  > .tab:nth-of-type(1)
-  > .tab-content,
+[type="radio"]:nth-of-type(1):checked
+~ .tabs
+> .tab:nth-of-type(1)
+> .tab-content,
 .tabbed
-  [type="radio"]:nth-of-type(2):checked
-  ~ .tabs
-  > .tab:nth-of-type(2)
-  > .tab-content,
+[type="radio"]:nth-of-type(2):checked
+~ .tabs
+> .tab:nth-of-type(2)
+> .tab-content,
 .tabbed
-  [type="radio"]:nth-of-type(3):checked
-  ~ .tabs
-  > .tab:nth-of-type(3)
-  > .tab-content,
+[type="radio"]:nth-of-type(3):checked
+~ .tabs
+> .tab:nth-of-type(3)
+> .tab-content,
 .tabbed
-  [type="radio"]:nth-of-type(4):checked
-  ~ .tabs
-  > .tab:nth-of-type(4)
-  > .tab-content,
+[type="radio"]:nth-of-type(4):checked
+~ .tabs
+> .tab:nth-of-type(4)
+> .tab-content,
 .tabbed
-  [type="radio"]:nth-of-type(5):checked
-  ~ .tabs
-  > .tab:nth-of-type(5)
-  > .tab-content {
+[type="radio"]:nth-of-type(5):checked
+~ .tabs
+> .tab:nth-of-type(5)
+> .tab-content {
   @apply flex bg-card-light content-center xl:h-120;
 }
 
@@ -543,6 +550,7 @@ It unfortunately also means we're limited to 5 tabs at current.
 .card-content-updated {
   @apply font-bold text-card-header-text-color pb-3;
 }
+
 .card-flex-col-wrapper {
   @apply flex flex-col divide-y-2 border-l-8 divide-line-divide-color border-card-border-color;
 }
@@ -659,9 +667,11 @@ Various Containers
 .guide-info-container {
   @apply col-span-12 lg:col-span-3 bg-card-light text-white divide-y divide-page px-5;
 }
+
 .job-guides-container {
   @apply col-span-12 lg:col-span-9 bg-card-light text-white py-8 md:py-14 px-8 md:px-14 lg:px-20 xl:px-28;
 }
+
 .table-of-contents-container {
   @apply col-span-12 lg:order-last sticky lg:col-span-3 bg-card-light text-white divide-y divide-page px-5 top-12 lg:top-8 sm:mt-8 mb-8 md:mt-0 md:mb-0;
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
@@ -826,9 +836,9 @@ ol {
 }
 
 body {
-    transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
-    transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+  transition-duration: 500ms;
 }
 
 #job-banner, #role-banner {

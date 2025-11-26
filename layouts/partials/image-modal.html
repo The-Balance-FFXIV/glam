@@ -1,7 +1,12 @@
 <!-- The Modal -->
-<div id="myModal" class="modal z-50">
-  <button class="modal-close" onclick="closeModal()">close</button>
-  <div class="modal-content">
-    <img class="modal-pic" id="modalPic" onclick="closeModal()" style="max-width: 100%; max-height: 80vh; margin: auto;">
-  </div>
-</div>
+<dialog id="myModal" class="modal z-50" closedby="any">
+  <form method="dialog">
+    <button class="modal-close" type="submit">close</button>
+    <div class="modal-content">
+      <button style="display: contents" type="submit">
+        <img class="modal-pic" id="modalPic"
+             style="max-width: 100%; max-height: 80vh; margin: auto;">
+      </button>
+    </div>
+  </form>
+</dialog>
