@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {{ if .Param "math" }}
-    {{ partialCached "math.html" . }}
-    {{ end }}
+    {{ partial "math.html" . }}
     {{- partial "head.html" . -}}
     {{ partial "image-modal-script.html" . }}
     {{ partial "components/toc-script.html" . }}
