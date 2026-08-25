@@ -1,4 +1,3 @@
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <script>
   MathJax = {
     tex: {
@@ -6,4 +5,17 @@
       inlineMath: [['\\(', '\\)']]                  // inline
     }
   };
+
+    function triggerMathJax() {
+    if (window.MathJax && window.MathJax.typesetPromise) {
+      window.MathJax.typesetPromise();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", triggerMathJax); // Normal page load
+  document.addEventListener("swup:contentReplaced", triggerMathJax); // Swup engine
+  document.addEventListener("turbolinks:load", triggerMathJax); // Turbolinks engine
+  document.addEventListener("turbo:load", triggerMathJax); // Turbo engine
+  document.addEventListener("htmx:afterSwap", triggerMathJax); // HTMX framework
 </script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
