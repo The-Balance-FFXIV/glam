@@ -9,7 +9,7 @@
 <div class="responsive-container">
   <section class="grid xl:grid-cols-12 gap-6 xl:gap-8 mt-2">
 
-    {{ $beginnerGuides := "" }}
+    {{ $beginnerGuides := slice }}
     {{ with $leveling }}
       {{ $levelingInfo := dict
         "role" $role
@@ -21,7 +21,7 @@
         "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
         "inlineLink" "leveling-guide"
       }}
-      {{ $beginnerGuides = print $beginnerGuides (partial "cards/leveling.html" $levelingInfo) }}
+      {{ $beginnerGuides = append (partial "cards/leveling.html" $levelingInfo) $beginnerGuides }}
     {{ end }}
     {{ with $skills }}
       {{ $skillsInfo := dict
@@ -32,17 +32,19 @@
       "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
       "inlineLink" "skills-overview"
       }}
-      {{ $beginnerGuides = print $beginnerGuides (partial "cards/guide.html" $skillsInfo) }}
+      {{ $beginnerGuides = append (partial "cards/guide.html" $skillsInfo) $beginnerGuides }}
     {{ end }}
     {{ if $beginnerGuides }}
     <div class="xl:col-span-6 xl:row-start-2">
       <div class="divide-y divide-card-dark">
-        {{ safeHTML $beginnerGuides }}
+        {{ range $beginnerGuides }}
+          {{ . }}
+        {{ end }}
       </div>
     </div>
     {{ end }}
 
-    {{ $standardGuides := "" }}
+    {{ $standardGuides := slice }}
     {{ with $basic }}
       {{ $basicInfo := dict
         "role" $role
@@ -54,7 +56,7 @@
         "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
         "inlineLink" "basic-guide"
       }}
-      {{ $standardGuides = print $standardGuides (partial "cards/guide.html" $basicInfo) }}
+      {{ $standardGuides = append (partial "cards/guide.html" $basicInfo) $standardGuides }}
     {{ end }}
     {{ with $openers }}
       {{ $openerInfo := dict
@@ -65,12 +67,14 @@
         "updated" (time.Format "2 Jan, 2006" .Params.lastmod)
         "inlineLink" "openers"
       }}
-      {{ $standardGuides = print $standardGuides (partial "cards/guide.html" $openerInfo) }}
+      {{ $standardGuides = append (partial "cards/guide.html" $openerInfo) $standardGuides }}
     {{ end }}
     {{ if $standardGuides }}
     <div class="xl:col-span-6 xl:row-start-1 xl:row-span-2 content-end">
       <div class="divide-y divide-card-dark">
-        {{ safeHTML $standardGuides }}
+        {{ range $standardGuides }}
+          {{ . }}
+        {{ end }}
       </div>
     </div>
     {{ end }}
