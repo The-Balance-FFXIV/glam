@@ -1,11 +1,14 @@
 {{ $role := .Page.Parent.Params.role }}
+{{ $bis := .Page.GetPage "best-in-slot" }}
+{{ $statPrio := .Page.GetPage "stat-priority" }}
 
+{{ if or $bis $statPrio }}
 <div class="py-10 bg-no-repeat bg-cover" style="background-image: url('/theme-assets/jobs/{{lower $role }}/{{ lower $role }}_gearing_background.png');">
   <div class="responsive-container">
     <div class="role-header mb-8">Gearing</div>
     <section class="grid xl:grid-cols-12 gap-6 xl:gap-8">
       <div class="xl:col-span-8">
-        {{ with .Page.GetPage "best-in-slot"}}
+        {{ with $bis }}
           {{ $content := dict
             "role" $role
             "icon" "/theme-assets/armoury.svg"
@@ -37,3 +40,4 @@
     </section>
   </div>
 </div>
+{{ end }}
